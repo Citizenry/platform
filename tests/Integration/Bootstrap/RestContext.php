@@ -1,6 +1,6 @@
 <?php
 
-namespace Ushahidi\Tests\Integration\Bootstrap;
+namespace StreetSignal\Tests\Integration\Bootstrap;
 
 /**
  * Ushahidi Rest Context

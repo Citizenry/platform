@@ -69,7 +69,7 @@
 																				<tr>
 																					<td align="left">
 																						<a target="_blank" href="#">
-																							<img src="https://raw.githubusercontent.com/ushahidi/platform-pattern-library/master/assets/img/wordmark_GoldonLight_2x.png" border="0" alt="Ushahidi" style="vertical-align: top; width: 115px; height: 25px;" />
+																							<img src="https://raw.githubusercontent.com/streetsignal/platform-pattern-library/master/assets/img/wordmark_GoldonLight_2x.png" border="0" alt="StreetSignal" style="vertical-align: top; width: 115px; height: 25px;" />
 																						</a>
 																					</td>
 																				</tr>
@@ -143,12 +143,12 @@
 
 																				<tr>
 																					<td align="left" style="font:16px/24px Open Sans, Arial, Helvetica, sans-serif; font-weight: normal; color: #383E45; padding: 24px 0;">
-																						If you didn't initiate this request, please ignore and contact us on <a href="mailto:support@ushahidi.com" target="_blank" style="color: #AA8223; font-weight: 600; letter-spacing: 0.03125em;">support@ushahidi.com</a>
+																						If you didn't initiate this request, please ignore and contact us on <a href="mailto:support@streetsignal.com" target="_blank" style="color: #AA8223; font-weight: 600; letter-spacing: 0.03125em;">support@streetsignal.com</a>
 																					</td>
 																				</tr>
 																				<tr>
 																					<td align="left" style="font:16px/24px Open Sans, Arial, Helvetica, sans-serif; font-weight: normal; color: #383E45;">
-																						Best regards, <br> The Ushahidi Team
+																						Best regards, <br> The StreetSignal Team
 																					</td>
 																				</tr>
 																			</table>
@@ -160,13 +160,13 @@
 																				<tr>
 																					<td align="left" style="padding: 24px 0 16px;">
 																						<a target="_blank" href="#">
-																							<img src="https://raw.githubusercontent.com/ushahidi/platform-pattern-library/master/assets/img/wordmark_GoldonLight_2x.png" border="0" alt="Ushahidi" style="vertical-align: top; width: 115px; height: 25px;" />
+																							<img src="https://raw.githubusercontent.com/streetsignal/platform-pattern-library/master/assets/img/wordmark_GoldonLight_2x.png" border="0" alt="StreetSignal" style="vertical-align: top; width: 115px; height: 25px;" />
 																						</a>
 																					</td>
 																				</tr>
 																				<tr>
 																					<td align="left" style="font:14px/18px Open Sans, Arial, Helvetica, sans-serif; font-weight: normal; color: #383E45; padding: 0 0 16px;">
-																						Ushahidi empowers people through citizen-generated data to develop solutions that strengthen their communities.
+																						StreetSignal empowers people through citizen-generated data to develop solutions that strengthen their communities.
 																					</td>
 																				</tr>
 																				<!-- <tr>

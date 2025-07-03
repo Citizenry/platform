@@ -1,8 +1,8 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Modules\V2;
+namespace StreetSignal\Tests\Unit\Modules\V2;
 
-use Ushahidi\Modules\V2\Import;
+use StreetSignal\Modules\V2\Import;
 use Mockery as M;
 
 class ImportMock

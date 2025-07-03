@@ -1,15 +1,15 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\App\ExternalServices;
+namespace StreetSignal\Tests\Unit\App\ExternalServices;
 
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Core\Entity\HXL\HXLLicense;
-use Ushahidi\Core\Tool\ExternalServices\HDXInterface;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Core\Entity\HXL\HXLLicense;
+use StreetSignal\Core\Tool\ExternalServices\HDXInterface;
 
 class HDXInterfaceTest extends TestCase
 {
@@ -63,8 +63,8 @@ class HDXInterfaceTest extends TestCase
             ['name' => 'coordinates'],
         ];
         $license = new HXLLicense([
-            'code' => 'ushahidi'.rand(),
-            'name' => 'ushahidi-dataset',
+            'code' => 'streetsignal'.rand(),
+            'name' => 'streetsignal-dataset',
             'link' => 'other',
         ]);
 
@@ -148,17 +148,17 @@ class HDXInterfaceTest extends TestCase
             'help' => 'http://localhost/api/3/action/help_show?name=organization_list',
             'success' => 1,
             'result' => [[
-                'display_name' => 'UshahidiLocalOrg',
+                'display_name' => 'StreetSignalLocalOrg',
                 'description' => 'This is a local org for testing',
                 'image_display_url' => '',
                 'package_count' => 32,
                 'created' => '2018-05-12T04:57:57.903794',
-                'name' => 'ushahidilocalorg',
+                'name' => 'streetsignallocalorg',
                 'is_organization' => 1,
                 'state' => 'active',
                 'image_url' => '',
                 'type' => 'organization',
-                'title' => 'UshahidiLocalOrg',
+                'title' => 'StreetSignalLocalOrg',
                 'revision_id' => 'bcd73b5a-8563-46e8-a140-f36e8cf797a2',
                 'num_followers' => 0,
                 'id' => '98d635f0-e5c9-48f0-b2d3-871ccd5199a5',
@@ -199,8 +199,8 @@ class HDXInterfaceTest extends TestCase
                 'organization' => [
                     'description' => 'This is a local org for testing',
                     'created' => '2018-05-12T04:57:57.903794',
-                    'title' => 'UshahidiLocalOrg',
-                    'name' => 'ushahidilocalorg',
+                    'title' => 'StreetSignalLocalOrg',
+                    'name' => 'streetsignallocalorg',
                     'is_organization' => 1,
                     'state' => 'active',
                     'image_url' => '',

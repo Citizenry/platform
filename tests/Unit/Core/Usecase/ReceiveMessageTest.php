@@ -4,23 +4,23 @@
  * Integration test for ReceiveMessage usecase
  */
 
-namespace Ushahidi\Tests\Unit\Core\Usecase;
+namespace StreetSignal\Tests\Unit\Core\Usecase;
 
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Contracts\Repository\Entity\ConfigRepository;
-use Ushahidi\Contracts\Repository\Entity\ContactRepository;
-use Ushahidi\Contracts\Repository\Entity\FormAttributeRepository;
-use Ushahidi\Contracts\Repository\Entity\MessageRepository;
-use Ushahidi\Contracts\Repository\Entity\PostRepository;
-use Ushahidi\Contracts\Repository\Entity\TargetedSurveyStateRepository;
-use Ushahidi\Core\Entity\Config;
-use Ushahidi\Core\Entity\Contact;
-use Ushahidi\Core\Entity\Message;
-use Ushahidi\Core\Entity\Post;
-use Ushahidi\Modules\V3\Listener\CreatePostFromMessage;
-use Ushahidi\Modules\V3\Listener\HandleTargetedSurveyResponse;
-use Ushahidi\Modules\V3\EventSubscriber as Subscriber;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Contracts\Repository\Entity\ConfigRepository;
+use StreetSignal\Contracts\Repository\Entity\ContactRepository;
+use StreetSignal\Contracts\Repository\Entity\FormAttributeRepository;
+use StreetSignal\Contracts\Repository\Entity\MessageRepository;
+use StreetSignal\Contracts\Repository\Entity\PostRepository;
+use StreetSignal\Contracts\Repository\Entity\TargetedSurveyStateRepository;
+use StreetSignal\Core\Entity\Config;
+use StreetSignal\Core\Entity\Contact;
+use StreetSignal\Core\Entity\Message;
+use StreetSignal\Core\Entity\Post;
+use StreetSignal\Modules\V3\Listener\CreatePostFromMessage;
+use StreetSignal\Modules\V3\Listener\HandleTargetedSurveyResponse;
+use StreetSignal\Modules\V3\EventSubscriber as Subscriber;
 
 /**
  * @backupGlobals disabled

@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Ushahidi Saved Search Console Command
+ * StreetSignal Saved Search Console Command
  * Discover and queue new posts from Saved Searches
  *
- * @author     Ushahidi Team <team@ushahidi.com>
- * @copyright  2014 Ushahidi
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2014 StreetSignal
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Ushahidi\Contracts\Repository\Entity\PostRepository;
-use Ushahidi\Contracts\Repository\Entity\SetRepository;
-use Ushahidi\Core\Tool\SearchData;
+use StreetSignal\Contracts\Repository\Entity\PostRepository;
+use StreetSignal\Contracts\Repository\Entity\SetRepository;
+use StreetSignal\Core\Tool\SearchData;
 
 class SavedSearchCommand extends Command
 {

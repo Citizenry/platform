@@ -3,11 +3,11 @@
 namespace App\Passport;
 
 use Laravel\Passport\Bridge\User;
-use Ushahidi\Core\Tool\Authenticator\Password;
-use Ushahidi\Core\Usecase\User\LoginUser;
+use StreetSignal\Core\Tool\Authenticator\Password;
+use StreetSignal\Core\Usecase\User\LoginUser;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Repositories\UserRepositoryInterface;
-use Ushahidi\Contracts\Repository\Entity\UserRepository as EntityUserRepository;
+use StreetSignal\Contracts\Repository\Entity\UserRepository as EntityUserRepository;
 
 class UserRepository implements UserRepositoryInterface
 {

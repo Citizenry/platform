@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * StreetSignal Form Contact Validator
+ *
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @package    StreetSignal\Application
+ * @copyright  2014 StreetSignal
+ * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
+ */
+
+namespace StreetSignal\Modules\V3\Validator\Form\Contact;
+
+class Create extends Update
+{
+    protected $default_error_source = 'form_contact';
+}

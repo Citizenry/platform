@@ -17,9 +17,9 @@
         + offset: 0 (string) <!-- Actually a number, fix API -->
         + order: asc (string)
         + orderby: created (string)
-        + curr: https://demo.api.ushahidi.io/api/v3/messages?offset=0&limit=20 (string)
-        + next: https://demo.api.ushahidi.io/api/v3/messages?offset=20&limit=20 (string)
-        + prev: https://demo.api.ushahidi.io/api/v3/messages?offset=0&limit=20 (string)
+        + curr: https://demo.api.streetsignal.io/api/v3/messages?offset=0&limit=20 (string)
+        + next: https://demo.api.streetsignal.io/api/v3/messages?offset=20&limit=20 (string)
+        + prev: https://demo.api.streetsignal.io/api/v3/messages?offset=0&limit=20 (string)
         + total_count: 100 (number)
 
 ### Create a Message [POST /api/v3/messages]
@@ -161,14 +161,14 @@ Messages cannot be deleted
 
 ### Message
 + id: 530 (number)
-+ url: https://demo.api.ushahidi.io/api/v3/messages/530 (string)
++ url: https://demo.api.streetsignal.io/api/v3/messages/530 (string)
 + parent (object, nullable)
     + id: 1
-    + url: https://demo.api.ushahidi.io/api/v3/messages/1
+    + url: https://demo.api.streetsignal.io/api/v3/messages/1
 + contact_id: 1 (number)
 + user (object, nullable)
     + id: 1 (number)
-    + url: https://quakemap.api.ushahidi.io/api/v3/users/1
+    + url: https://quakemap.api.streetsignal.io/api/v3/users/1
 + post_id: 13 (number, nullable)
 + data_provider: smssync (string)
 + data_provider_message_id (string, nullable)
@@ -199,10 +199,10 @@ Messages cannot be deleted
 
 ### Contact
 + id: 530 (number)
-+ url: https://demo.api.ushahidi.io/api/v3/contact/530 (string)
++ url: https://demo.api.streetsignal.io/api/v3/contact/530 (string)
 + user (object, nullable)
     + id: 1 (number)
-    + url: https://quakemap.api.ushahidi.io/api/v3/users/1 (string)
+    + url: https://quakemap.api.streetsignal.io/api/v3/users/1 (string)
 + data_provider (string, nullable)
 + type: phone (enum[string])
     + Members

@@ -1,18 +1,18 @@
 <?php
 
 /**
- * Ushahidi User Console Command
+ * StreetSignal User Console Command
  *
- * @author     Ushahidi Team <team@ushahidi.com>
- * @copyright  2014 Ushahidi
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2014 StreetSignal
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Ushahidi\Contracts\Repository\Entity\UserRepository;
-use Ushahidi\Core\Exception\NotFoundException;
+use StreetSignal\Contracts\Repository\Entity\UserRepository;
+use StreetSignal\Core\Exception\NotFoundException;
 
 class UserDeleteCommand extends Command
 {

@@ -9,7 +9,7 @@ New packages can be added to your project by running npm install _example-packag
 This command does the following:
 
 * installs _example-package_ into the node\_modules directory at the project root.
-* saves _example-package_ as a project dependency in [package.json](https://github.com/ushahidi/platform-pattern-library/blob/gh-pages/package.json)
+* saves _example-package_ as a project dependency in [package.json](https://github.com/streetsignal/platform-pattern-library/blob/gh-pages/package.json)
 
 After installation you will need to follow the directions for each package in order to set up within your project. These can usually be found in the package's README file.
 

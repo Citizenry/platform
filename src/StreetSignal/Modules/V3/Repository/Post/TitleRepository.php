@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * StreetSignal Post Varchar Repository
+ *
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @package    StreetSignal\Application
+ * @copyright  2014 StreetSignal
+ * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
+ */
+
+namespace StreetSignal\Modules\V3\Repository\Post;
+
+class TitleRepository extends VarcharRepository
+{
+    public function getAllForPost(
+        $post_id,
+        array $include_attributes = [],
+        array $exclude_stages = [],
+        $excludePrivateValues = true
+    ) {
+        return [];
+    }
+
+    public function createValue($value, $form_attribute_id, $post_id)
+    {
+        return 0;
+    }
+
+    public function createManyValues(array $values, int $form_attribute_id)
+    {
+        return 0;
+    }
+
+    public function updateValue($id, $value)
+    {
+        return 0;
+    }
+}

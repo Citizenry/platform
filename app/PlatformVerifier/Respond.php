@@ -2,7 +2,7 @@
 
 namespace App\PlatformVerifier;
 
-use Ushahidi\Core\Tool\OutputText;
+use StreetSignal\Core\Tool\OutputText;
 
 class Respond
 {

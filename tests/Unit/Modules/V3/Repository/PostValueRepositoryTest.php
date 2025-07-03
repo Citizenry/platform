@@ -8,10 +8,10 @@
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\Modules\V3\Repository;
+namespace StreetSignal\Tests\Unit\Modules\V3\Repository;
 
-use Ushahidi\Core\Entity\PostValue;
-use Ushahidi\Modules\V3\Repository\Post\ValueRepository;
+use StreetSignal\Core\Entity\PostValue;
+use StreetSignal\Modules\V3\Repository\Post\ValueRepository;
 
 /**
  * @backupGlobals disabled

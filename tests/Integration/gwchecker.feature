@@ -15,7 +15,7 @@ Feature: Gateway checker
         When I request "/<endpoint>?gwcheck=<gwCheckValue>"
         Then the response is JSON
         And the response does not have a "count" property
-        And the "api.name" property equals "ushahidi:platform:gwcheck"
+        And the "api.name" property equals "streetsignal:platform:gwcheck"
         And the "api.version" property equals "0.1"
         And the "data._GET.gwcheck" property equals "<gwCheckValue>"
         And the "data._REQUEST.gwcheck" property equals "<gwCheckValue>"
@@ -58,7 +58,7 @@ Feature: Gateway checker
         When I request "/config?gwcheck=<gwCheckValue>"
         Then the response is empty
         And the guzzle status code should be 204
-        And the "X-Ushahidi-Platform-Install-Debug-Mode" header should be "off"
+        And the "X-StreetSignal-Platform-Install-Debug-Mode" header should be "off"
         Examples:
             | gwCheckValue |
             | true         |

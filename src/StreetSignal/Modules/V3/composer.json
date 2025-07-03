@@ -1,0 +1,40 @@
+{
+    "name": "streetsignal/v3",
+    "description": "StreetSignal Platform V3 API codebase",
+    "homepage": "http://streetsignal.com/",
+    "type": "project",
+    "license": "AGPL-3.0",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/streetsignal/kohana-validation"
+        }
+    ],
+    "require": {
+        "aura/di": "~3.4",
+        "beheh/flaps": "dev-master",
+        "league/event": "^2.2@dev",
+        "streetsignal/kohana-validation": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "StreetSignal\\Modules\\V3\\": ""
+        },
+        "files": [
+            "init.php",
+            "helpers.php"
+        ]
+    },
+    "extra": {},
+    "suggest": {},
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "scripts": {
+        "migrate:v3": [
+            "@verify",
+            "@php artisan phinx:migrate"
+        ]
+    }
+}

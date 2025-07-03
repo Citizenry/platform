@@ -5,20 +5,20 @@ use Phinx\Migration\AbstractMigration;
 class RestoreDefaultOauthClient extends AbstractMigration
 {
     /**
-     * Add ushahidiui client
+     * Add streetsignalui client
      */
     public function up()
     {
         // The default client is treated as a public client, and is restricted
         // by endpoint, not the secret.
-        $secret = sha1('ushahidiui');
+        $secret = sha1('streetsignalui');
         $this->execute(
             "INSERT IGNORE INTO oauth_clients (
                 id, secret, name, password_client, personal_access_client, revoked, created_at, updated_at, redirect
             ) VALUES (
-                'ushahidiui',
+                'streetsignalui',
                 '$secret',
-                'Ushahidi Platform Web Client',
+                'StreetSignal Platform Web Client',
                 1,
                 0,
                 0,

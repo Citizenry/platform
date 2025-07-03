@@ -69,7 +69,7 @@ Feature: Testing the Webhook API
 #    @resetFixture
 #        Given that I want to update a "Post"
 #        And that its "id" is "1"
-#        And that the request "X-Ushahidi-Signature" header is "PqAl0200sE/hGYgGVyKis24c9p8RjYoLk9iMVxX3llk="
+#        And that the request "X-StreetSignal-Signature" header is "PqAl0200sE/hGYgGVyKis24c9p8RjYoLk9iMVxX3llk="
 #        And that the request "data" is:
 #          """
 #          {

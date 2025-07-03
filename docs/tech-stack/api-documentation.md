@@ -1,6 +1,6 @@
 # API Documentation
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/oauth/token" method="post" summary="Get an authorization code for the client (without a user login)" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/oauth/token" method="post" summary="Get an authorization code for the client (without a user login)" %}
 {% swagger-description %}
 This endpoint allows you to get an authorization token for the client without a user login. It allows you to execute the same actions as any non-logged in user.
 {% endswagger-description %}
@@ -14,7 +14,7 @@ The client secret you added for your deployment in the database. Default value: 
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="client_id" type="string" %}
-The client_id you created for your deployment. Default value: "ushahidiui"
+The client_id you created for your deployment. Default value: "streetsignalui"
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="scope" type="string" %}
@@ -27,7 +27,7 @@ All allowed scopes for this type: "posts country_codes media forms api tags save
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/oauth/token" method="post" summary="Get an authorization code for a user" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/oauth/token" method="post" summary="Get an authorization code for a user" %}
 {% swagger-description %}
 This endpoint allows you to get an authentication token. All fields are required.
 {% endswagger-description %}
@@ -41,7 +41,7 @@ Your client secret. Default value: 35e7f0bca957836d05ca0492211b0ac707671261
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="client_id" type="string" %}
-Your client ID. Default value: ushahidiui
+Your client ID. Default value: streetsignalui
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="grant_type" type="string" %}
@@ -49,11 +49,11 @@ Fixed. Send value: password
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="password" type="string" %}
-Your Ushahidi platform password
+Your StreetSignal platform password
 {% endswagger-parameter %}
 
 {% swagger-parameter in="body" name="username" type="string" %}
-Your Ushahidi platform username
+Your StreetSignal platform username
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="Auth token created" %}
@@ -77,7 +77,7 @@ Your Ushahidi platform username
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/passwordreset" method="post" summary="Request a password reset token to be sent via email" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/passwordreset" method="post" summary="Request a password reset token to be sent via email" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -106,7 +106,7 @@ This response is sent when the password reset email is going to be sent (as long
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/passwordreset/confirm" method="post" summary="Reset your password with the reset token" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/passwordreset/confirm" method="post" summary="Reset your password with the reset token" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -125,9 +125,9 @@ The reset token sent by email
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/register" method="post" summary="Register a new user" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/register" method="post" summary="Register a new user" %}
 {% swagger-description %}
-Register your Ushahidi platform users with this endpoint.
+Register your StreetSignal platform users with this endpoint.
 {% endswagger-description %}
 
 {% swagger-parameter in="path" name="" type="string" %}
@@ -140,7 +140,7 @@ Register your Ushahidi platform users with this endpoint.
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/collections" method="get" summary="Get Collections" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/collections" method="get" summary="Get Collections" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -159,7 +159,7 @@ Bearer <your-auth-token>
             "url": null,
             "user": {
                 "id": 1,
-                "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/users\/86"
+                "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/users\/86"
             },
             "name": "Testing",
             "description": "tests",
@@ -179,7 +179,7 @@ Bearer <your-auth-token>
             "url": null,
             "user": {
                 "id": 1,
-                "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/users\/86"
+                "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/users\/86"
             },
             "name": "Testing",
             "description": "tests",
@@ -199,16 +199,16 @@ Bearer <your-auth-token>
     "offset": 0,
     "order": "DESC",
     "orderby": "created",
-    "curr": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/collections?orderby=created&order=DESC&offset=0",
-    "next": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/collections?orderby=created&order=DESC&offset=0",
-    "prev": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/collections?orderby=created&order=DESC&offset=0",
+    "curr": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/collections?orderby=created&order=DESC&offset=0",
+    "next": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/collections?orderby=created&order=DESC&offset=0",
+    "prev": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/collections?orderby=created&order=DESC&offset=0",
     "total_count": 2
 }
 ```
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/posts?order=desc&orderby=created&set=15" method="get" summary="Get Posts from a collection" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/posts?order=desc&orderby=created&set=15" method="get" summary="Get Posts from a collection" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -236,11 +236,11 @@ Options: desc, asc
     "results": [
         {
             "id": 18100,
-            "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts\/18100",
+            "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts\/18100",
             "parent_id": null,
             "form": {
                 "id": 2,
-                "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/forms\/2"
+                "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/2"
             },
             "user_id": null,
             "message": null,
@@ -286,16 +286,16 @@ Options: desc, asc
         },
         {
             "id": 8328,
-            "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts\/8328",
+            "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts\/8328",
             "parent_id": null,
             "form": {
                 "id": 1,
-                "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1"
+                "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1"
             },
             "user_id": null,
             "message": {
                 "id": 23462,
-                "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/messages\/23462"
+                "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/messages\/23462"
             },
             "color": null,
             "type": "report",
@@ -321,7 +321,7 @@ Options: desc, asc
             "source": "sms",
             "contact": {
                 "id": 2693,
-                "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/contact\/2693"
+                "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/contact\/2693"
             },
             "data_source_message_id": null,
             "allowed_privileges": [
@@ -335,16 +335,16 @@ Options: desc, asc
     "offset": 0,
     "order": "desc",
     "orderby": "created",
-    "curr": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=0",
-    "next": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=20",
-    "prev": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=0",
+    "curr": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=0",
+    "next": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=20",
+    "prev": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=0",
     "total_count": 2
 }
 ```
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/collections" method="post" summary="Create a collection" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/collections" method="post" summary="Create a collection" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -384,11 +384,11 @@ Options: map,data
     "results": [
         {
             "id": 18100,
-            "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts\/18100",
+            "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts\/18100",
             "parent_id": null,
             "form": {
                 "id": 2,
-                "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/forms\/2"
+                "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/2"
             },
             "user_id": null,
             "message": null,
@@ -434,16 +434,16 @@ Options: map,data
         },
         {
             "id": 8328,
-            "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts\/8328",
+            "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts\/8328",
             "parent_id": null,
             "form": {
                 "id": 1,
-                "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1"
+                "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1"
             },
             "user_id": null,
             "message": {
                 "id": 23462,
-                "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/messages\/23462"
+                "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/messages\/23462"
             },
             "color": null,
             "type": "report",
@@ -469,7 +469,7 @@ Options: map,data
             "source": "sms",
             "contact": {
                 "id": 2693,
-                "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/contact\/2693"
+                "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/contact\/2693"
             },
             "data_source_message_id": null,
             "allowed_privileges": [
@@ -483,16 +483,16 @@ Options: map,data
     "offset": 0,
     "order": "desc",
     "orderby": "created",
-    "curr": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=0",
-    "next": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=20",
-    "prev": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=0",
+    "curr": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=0",
+    "next": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=20",
+    "prev": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=0",
     "total_count": 2
 }
 ```
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/collections/:collectionId" method="delete" summary="Delete a collection" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/collections/:collectionId" method="delete" summary="Delete a collection" %}
 {% swagger-description %}
 Delete the collection by its id.
 {% endswagger-description %}
@@ -518,7 +518,7 @@ The Collection id is incorrect
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/config" method="get" summary="" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/config" method="get" summary="" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -533,7 +533,7 @@ The Collection id is incorrect
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/contacts/:contactId" method="get" summary="" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/contacts/:contactId" method="get" summary="" %}
 {% swagger-description %}
 Only used by deployments that require messaging capabilities such as receiving posts by SMS or Twitter.
 {% endswagger-description %}
@@ -550,7 +550,7 @@ Bearer: <your-auth-token>
 ```javascript
 {
     "id": 1234,
-    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/contacts\/1234",
+    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/contacts\/1234",
     "user_id": null,
     "data_source": "twitter",
     "type": "twitter",
@@ -577,7 +577,7 @@ Incorrect contact id
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/country-codes" method="get" summary="Get country codes" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/country-codes" method="get" summary="Get country codes" %}
 {% swagger-description %}
 This is only used to get a list of country codes that we can use for the UI of targeted surveys, a SaaS platform feature for sending surveys in steps to groups of people that they can respond to from their phones.
 {% endswagger-description %}
@@ -597,7 +597,7 @@ Bearer <your-auth-token>
     "results": [
         {
             "id": 1,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/country_codes\/1",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/country_codes\/1",
             "country_name": "Afghanistan",
             "dial_code": "+93",
             "country_code": "AF",
@@ -608,7 +608,7 @@ Bearer <your-auth-token>
         },
         {
             "id": 2,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/country_codes\/2",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/country_codes\/2",
             "country_name": "\u00c5land Islands",
             "dial_code": "+358",
             "country_code": "AX",
@@ -619,7 +619,7 @@ Bearer <your-auth-token>
         },
         {
             "id": 3,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/country_codes\/3",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/country_codes\/3",
             "country_name": "Albania",
             "dial_code": "+355",
             "country_code": "AL",
@@ -630,7 +630,7 @@ Bearer <your-auth-token>
         },
         {
             "id": 4,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/country_codes\/4",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/country_codes\/4",
             "country_name": "Algeria",
             "dial_code": "+213",
             "country_code": "DZ",
@@ -641,7 +641,7 @@ Bearer <your-auth-token>
         },
         {
             "id": 5,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/country_codes\/5",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/country_codes\/5",
             "country_name": "American Samoa",
             "dial_code": "+1684",
             "country_code": "AS",
@@ -655,9 +655,9 @@ Bearer <your-auth-token>
     "offset": 0,
     "order": "asc",
     "orderby": "id",
-    "curr": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/country-codes?orderby=id&order=asc&offset=0",
-    "next": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/country-codes?orderby=id&order=asc&offset=0",
-    "prev": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/country-codes?orderby=id&order=asc&offset=0",
+    "curr": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/country-codes?orderby=id&order=asc&offset=0",
+    "next": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/country-codes?orderby=id&order=asc&offset=0",
+    "prev": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/country-codes?orderby=id&order=asc&offset=0",
     "total_count": 246
 }
 ```
@@ -666,7 +666,7 @@ Bearer <your-auth-token>
 
 ## CSV Exports and Imports
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/exports/jobs?user=me" method="get" summary="Get a list of CSV exports jobs" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/exports/jobs?user=me" method="get" summary="Get a list of CSV exports jobs" %}
 {% swagger-description %}
 This returns all the metadata for exports of the current user
 {% endswagger-description %}
@@ -689,7 +689,7 @@ Value: me
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/csv/:id/import" method="put" summary="[WIP]Create metadata to start a CSV Import" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/csv/:id/import" method="put" summary="[WIP]Create metadata to start a CSV Import" %}
 {% swagger-description %}
 This returns all the metadata for exports of the current user
 {% endswagger-description %}
@@ -706,7 +706,7 @@ Value: me
 ```
 {
     "id": 19,
-    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/csv\/19",
+    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/csv\/19",
     "columns": [
         "Post ID",
         "Survey",
@@ -725,7 +725,7 @@ Value: me
     ],
     "maps_to": null,
     "fixed": null,
-    "filename": "ushahididocs.api.ushahidi.io\/5\/c\/csv-export-full.csv",
+    "filename": "streetsignaldocs.api.streetsignal.io\/5\/c\/csv-export-full.csv",
     "mime": "text\/csv",
     "size": 2822,
     "created": "2018-12-06T19:51:15+00:00",
@@ -749,7 +749,7 @@ Value: me
 
 ## Dataproviders (Datasources in the UI, read only config)
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/dataproviders/[:id]" method="get" summary="Get data provider options" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/dataproviders/[:id]" method="get" summary="Get data provider options" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -769,7 +769,7 @@ Bearer: <your-auth-token>
     "results": [
         {
             "id": "email",
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/dataprovider\/email",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/dataprovider\/email",
             "name": "Email",
             "services": [
                 "email"
@@ -854,7 +854,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": "frontlinesms",
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/dataprovider\/frontlinesms",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/dataprovider\/frontlinesms",
             "name": "FrontlineSMS",
             "services": [
                 "sms"
@@ -890,7 +890,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": "nexmo",
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/dataprovider\/nexmo",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/dataprovider\/nexmo",
             "name": "Nexmo",
             "services": [
                 "sms"
@@ -934,7 +934,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": "smssync",
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/dataprovider\/smssync",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/dataprovider\/smssync",
             "name": "SMSSync",
             "services": [
                 "sms"
@@ -943,12 +943,12 @@ Bearer: <your-auth-token>
                 "intro_step1": {
                     "label": "Step 1: Download the \"SMSSync\" app from the Android Market.",
                     "input": "read-only-text",
-                    "description": "Scan this QR Code with your phone to download the app from the Android Market\n\t\t\t\t\t\t<img src=\"https:\/\/ushahididocs.api.ushahidi.io\/images\/smssync.png\" width=\"150\"\/>"
+                    "description": "Scan this QR Code with your phone to download the app from the Android Market\n\t\t\t\t\t\t<img src=\"https:\/\/streetsignaldocs.api.streetsignal.io\/images\/smssync.png\" width=\"150\"\/>"
                 },
                 "intro_step2": {
                     "label": "Step 2: Android App Settings",
                     "input": "read-only-text",
-                    "description": "Turn on SMSSync and use the following link as the Sync URL: https:\/\/ushahididocs.api.ushahidi.io\/sms\/smssync"
+                    "description": "Turn on SMSSync and use the following link as the Sync URL: https:\/\/streetsignaldocs.api.streetsignal.io\/sms\/smssync"
                 },
                 "secret": {
                     "label": "Secret",
@@ -973,7 +973,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": "twilio",
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/dataprovider\/twilio",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/dataprovider\/twilio",
             "name": "Twilio",
             "services": [
                 "sms"
@@ -1025,7 +1025,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": "twitter",
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/dataprovider\/twitter",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/dataprovider\/twitter",
             "name": "Twitter",
             "services": [
                 "twitter"
@@ -1099,9 +1099,9 @@ Bearer: <your-auth-token>
     "offset": 0,
     "order": "asc",
     "orderby": "id",
-    "curr": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/dataproviders?orderby=id&order=asc&offset=0",
-    "next": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/dataproviders?orderby=id&order=asc&offset=0",
-    "prev": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/dataproviders?orderby=id&order=asc&offset=0",
+    "curr": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/dataproviders?orderby=id&order=asc&offset=0",
+    "next": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/dataproviders?orderby=id&order=asc&offset=0",
+    "prev": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/dataproviders?orderby=id&order=asc&offset=0",
     "total_count": 6
 }
 ```
@@ -1110,7 +1110,7 @@ Bearer: <your-auth-token>
 
 ## Forms (Surveys)
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/forms" method="get" summary="Get all surveys" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/forms" method="get" summary="Get all surveys" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -1126,7 +1126,7 @@ Bearer: <your-auth-token>
     "results": [
         {
             "id": 1,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1",
             "parent_id": null,
             "name": "Basic Post 2",
             "description": "Post with a location",
@@ -1145,27 +1145,27 @@ Bearer: <your-auth-token>
             "tags": [
                 {
                     "id": 1,
-                    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/1"
+                    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/1"
                 },
                 {
                     "id": 3,
-                    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/3"
+                    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/3"
                 },
                 {
                     "id": 11,
-                    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/11"
+                    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/11"
                 },
                 {
                     "id": 10,
-                    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/10"
+                    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/10"
                 },
                 {
                     "id": 12,
-                    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/12"
+                    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/12"
                 },
                 {
                     "id": 13,
-                    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/13"
+                    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/13"
                 }
             ],
             "allowed_privileges": [
@@ -1178,7 +1178,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": 2,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/2",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/2",
             "parent_id": null,
             "name": "Data for export",
             "description": null,
@@ -1205,7 +1205,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": 3,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/3",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/3",
             "parent_id": null,
             "name": "Some Testing",
             "description": "Regression Testing",
@@ -1235,7 +1235,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": 4,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/4",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/4",
             "parent_id": null,
             "name": "Another survey for api",
             "description": null,
@@ -1262,7 +1262,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": 6,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/6",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/6",
             "parent_id": null,
             "name": "All fields example",
             "description": "",
@@ -1281,11 +1281,11 @@ Bearer: <your-auth-token>
             "tags": [
                 {
                     "id": 1,
-                    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/1"
+                    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/1"
                 },
                 {
                     "id": 3,
-                    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/3"
+                    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/3"
                 }
             ],
             "allowed_privileges": [
@@ -1301,16 +1301,16 @@ Bearer: <your-auth-token>
     "offset": 0,
     "order": "asc",
     "orderby": "id",
-    "curr": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms?orderby=id&order=asc&offset=0",
-    "next": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms?orderby=id&order=asc&offset=0",
-    "prev": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms?orderby=id&order=asc&offset=0",
+    "curr": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms?orderby=id&order=asc&offset=0",
+    "next": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms?orderby=id&order=asc&offset=0",
+    "prev": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms?orderby=id&order=asc&offset=0",
     "total_count": 6
 }
 ```
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/forms/:id" method="get" summary="Get all options for one survey" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/forms/:id" method="get" summary="Get all options for one survey" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -1327,7 +1327,7 @@ Bearer: <your-auth-token>
 ```javascript
 {
     "id": 1,
-    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1",
+    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1",
     "parent_id": null,
     "name": "Basic Post 2",
     "description": "Post with a location",
@@ -1346,27 +1346,27 @@ Bearer: <your-auth-token>
     "tags": [
         {
             "id": 1,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/1"
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/1"
         },
         {
             "id": 3,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/3"
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/3"
         },
         {
             "id": 11,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/11"
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/11"
         },
         {
             "id": 10,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/10"
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/10"
         },
         {
             "id": 12,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/12"
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/12"
         },
         {
             "id": 13,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/tags\/13"
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/tags\/13"
         }
     ],
     "allowed_privileges": [
@@ -1387,7 +1387,7 @@ If the survey does not exist, a 404 will be raised
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/forms/:id/attributes" method="get" summary="Get all attributes (fields) for one survey" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/forms/:id/attributes" method="get" summary="Get all attributes (fields) for one survey" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -1407,7 +1407,7 @@ Bearer: <your-auth-token>
     "results": [
         {
             "id": 1,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/form_attributes\/1",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/form_attributes\/1",
             "key": "location_default",
             "label": "Location",
             "instructions": null,
@@ -1431,7 +1431,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": 3,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/form_attributes\/3",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/form_attributes\/3",
             "key": "ff068758-2b7e-4a3b-af14-acbe26284ed1",
             "label": "Title",
             "instructions": null,
@@ -1455,7 +1455,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": 4,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/form_attributes\/4",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/form_attributes\/4",
             "key": "794636ad-5333-44db-aa09-d0ed553c06d4",
             "label": "Description",
             "instructions": null,
@@ -1479,7 +1479,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": 58,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/form_attributes\/58",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/form_attributes\/58",
             "key": "4695fc1a-f51d-4d59-b264-97083e4e8179",
             "label": "Status",
             "instructions": null,
@@ -1508,7 +1508,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": 5,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/form_attributes\/5",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/form_attributes\/5",
             "key": "1bf39730-3019-4c49-a0c7-c988c519effa",
             "label": "Categories",
             "instructions": null,
@@ -1538,9 +1538,9 @@ Bearer: <your-auth-token>
     "offset": 0,
     "order": "asc",
     "orderby": "priority",
-    "curr": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1\/attributes?orderby=priority&order=asc&offset=0",
-    "next": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1\/attributes?orderby=priority&order=asc&offset=0",
-    "prev": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1\/attributes?orderby=priority&order=asc&offset=0",
+    "curr": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1\/attributes?orderby=priority&order=asc&offset=0",
+    "next": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1\/attributes?orderby=priority&order=asc&offset=0",
+    "prev": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1\/attributes?orderby=priority&order=asc&offset=0",
     "total_count": 5
 }
 ```
@@ -1553,7 +1553,7 @@ If the survey does not exist, a 404 will be raised
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/forms/:id/stages" method="get" summary="Get all stages (groups of fields) for one survey" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/forms/:id/stages" method="get" summary="Get all stages (groups of fields) for one survey" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -1573,7 +1573,7 @@ Bearer: <your-auth-token>
     "results": [
         {
             "id": 1,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/form_stages\/1",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/form_stages\/1",
             "form_id": 1,
             "label": "Structure",
             "priority": 0,
@@ -1593,7 +1593,7 @@ Bearer: <your-auth-token>
         },
         {
             "id": 14,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/form_stages\/14",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/form_stages\/14",
             "form_id": 1,
             "label": "completion status",
             "priority": 1,
@@ -1616,9 +1616,9 @@ Bearer: <your-auth-token>
     "offset": 0,
     "order": "asc",
     "orderby": "priority",
-    "curr": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1\/stages?orderby=priority&order=asc&offset=0",
-    "next": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1\/stages?orderby=priority&order=asc&offset=0",
-    "prev": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1\/stages?orderby=priority&order=asc&offset=0",
+    "curr": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1\/stages?orderby=priority&order=asc&offset=0",
+    "next": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1\/stages?orderby=priority&order=asc&offset=0",
+    "prev": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1\/stages?orderby=priority&order=asc&offset=0",
     "total_count": 2
 }
 ```
@@ -1631,7 +1631,7 @@ If the survey does not exist, a 404 will be raised
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/forms/:id/stats" method="get" summary="Get stats (usage data) for one survey" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/forms/:id/stats" method="get" summary="Get stats (usage data) for one survey" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -1648,7 +1648,7 @@ Bearer: <your-auth-token>
 ```javascript
 {
     "id": null,
-    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/form_stats",
+    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/form_stats",
     "total_responses": null,
     "total_recipients": null,
     "total_response_recipients": null,
@@ -1679,7 +1679,7 @@ If the survey does not exist, a 404 will be raised
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/forms/:id/roles" method="get" summary="Get all roles assigned to one survey" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/forms/:id/roles" method="get" summary="Get all roles assigned to one survey" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -1699,7 +1699,7 @@ Bearer: <your-auth-token>
     "results": [
         {
             "id": 6,
-            "url": "https:\/\/ushahididocs.api.ushahidi.io\/forms\/1\/roles\/6",
+            "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/forms\/1\/roles\/6",
             "form_id": 7,
             "role_id": 4,
             "allowed_privileges": [
@@ -1715,9 +1715,9 @@ Bearer: <your-auth-token>
     "offset": 0,
     "order": "asc",
     "orderby": "role_id",
-    "curr": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1\/roles?orderby=role_id&order=asc&offset=0",
-    "next": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1\/roles?orderby=role_id&order=asc&offset=0",
-    "prev": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1\/roles?orderby=role_id&order=asc&offset=0",
+    "curr": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1\/roles?orderby=role_id&order=asc&offset=0",
+    "next": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1\/roles?orderby=role_id&order=asc&offset=0",
+    "prev": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1\/roles?orderby=role_id&order=asc&offset=0",
     "total_count": 1
 }
 ```
@@ -1730,7 +1730,7 @@ If the survey does not exist, a 404 will be raised
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/forms" method="post" summary="Create a survey" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/forms" method="post" summary="Create a survey" %}
 {% swagger-description %}
 Create a survey in the backend.
 {% endswagger-description %}
@@ -1803,7 +1803,7 @@ The survey color (shown in map and data view)
 ```
 {
     "id": 11,
-    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/11",
+    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/11",
     "parent_id": null,
     "name": "The survey name",
     "description": null,
@@ -1832,7 +1832,7 @@ The survey color (shown in map and data view)
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/forms/:form_id" method="put" summary="Update a survey (example adding a new field)" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/forms/:form_id" method="put" summary="Update a survey (example adding a new field)" %}
 {% swagger-description %}
 Create a survey in the backend.
 {% endswagger-description %}
@@ -1905,7 +1905,7 @@ The survey color (shown in map and data view)
 ```
 {
     "id": 11,
-    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/11",
+    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/11",
     "parent_id": null,
     "name": "The survey name",
     "description": null,
@@ -1934,7 +1934,7 @@ The survey color (shown in map and data view)
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/forms/:form_id" method="delete" summary="Delete a survey" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/forms/:form_id" method="delete" summary="Delete a survey" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -1951,7 +1951,7 @@ Bearer: <your-auth-token>
 ```
 {
     "id": 11,
-    "url": "https:\/\/ushahididocs.api.ushahidi.io\/api\/v3\/forms\/11",
+    "url": "https:\/\/streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/11",
     "parent_id": null,
     "name": "A survey created to delete it",
     "description": null,
@@ -1980,7 +1980,7 @@ Bearer: <your-auth-token>
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/messages" method="post" summary="Respond to datasource messages" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/messages" method="post" summary="Respond to datasource messages" %}
 {% swagger-description %}
 Used in the "Conversation with author" UX in the platform.
 {% endswagger-description %}
@@ -2011,7 +2011,7 @@ The message you want to send
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/messages" method="get" summary="Get all messages for a post's contact" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/messages" method="get" summary="Get all messages for a post's contact" %}
 {% swagger-description %}
 Used in the "Conversation with author" UX in the platform.
 {% endswagger-description %}
@@ -2046,7 +2046,7 @@ The contact id. You can get it from the post the message is linked to.
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/messages/:messageId/post" method="get" summary="Get the post for a message" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/messages/:messageId/post" method="get" summary="Get the post for a message" %}
 {% swagger-description %}
 Used in the "Conversation with author" UX in the platform.
 {% endswagger-description %}
@@ -2081,9 +2081,9 @@ The contact id. You can get it from the post the message is linked to.
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/posts" method="post" summary="Create a new post" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/posts" method="post" summary="Create a new post" %}
 {% swagger-description %}
-Create a new post in the ushahidi platform. This method works with a user's password_grant token or with a client_credentials token generated with the client id and secret.
+Create a new post in the streetsignal platform. This method works with a user's password_grant token or with a client_credentials token generated with the client id and secret.
 {% endswagger-description %}
 
 {% swagger-parameter in="header" name="Authorization" type="string" %}
@@ -2117,7 +2117,7 @@ Example payload:
 
 {"title":"My title","content":"My content","values":{},"form":{"id":4\}}
 
-{% swagger baseUrl="https://ushahididocs.api.ushahidi.io" path="/api/v3/posts" method="get" summary="Get Posts" %}
+{% swagger baseUrl="https://streetsignaldocs.api.streetsignal.io" path="/api/v3/posts" method="get" summary="Get Posts" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -2141,11 +2141,11 @@ Options: desc, asc
     "results": [
         {
             "id": 18100,
-            "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts\/18100",
+            "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts\/18100",
             "parent_id": null,
             "form": {
                 "id": 2,
-                "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/forms\/2"
+                "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/2"
             },
             "user_id": null,
             "message": null,
@@ -2188,16 +2188,16 @@ Options: desc, asc
         },
         {
             "id": 8328,
-            "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts\/8328",
+            "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts\/8328",
             "parent_id": null,
             "form": {
                 "id": 1,
-                "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/forms\/1"
+                "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/forms\/1"
             },
             "user_id": null,
             "message": {
                 "id": 23462,
-                "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/messages\/23462"
+                "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/messages\/23462"
             },
             "color": null,
             "type": "report",
@@ -2219,7 +2219,7 @@ Options: desc, asc
             "source": "sms",
             "contact": {
                 "id": 2693,
-                "url": "https://ushahididocs.api.ushahidi.io\/api\/v3\/contact\/2693"
+                "url": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/contact\/2693"
             },
             "data_source_message_id": null,
             "allowed_privileges": [
@@ -2233,9 +2233,9 @@ Options: desc, asc
     "offset": 0,
     "order": "desc",
     "orderby": "created",
-    "curr": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=0",
-    "next": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=20",
-    "prev": "https://ushahididocs.api.ushahidi.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=0",
+    "curr": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=0",
+    "next": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=20",
+    "prev": "https://streetsignaldocs.api.streetsignal.io\/api\/v3\/posts?orderby=created&order=desc&limit=20&offset=0",
     "total_count": 2
 }
 ```

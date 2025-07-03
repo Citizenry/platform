@@ -18,9 +18,9 @@
         + offset: 0 (string) <!-- Actually a number, fix API -->
         + order: asc (string)
         + orderby: created (string)
-        + curr: https://demo.api.ushahidi.io/api/v3/collections?offset=0&limit=20 (string)
-        + next: https://demo.api.ushahidi.io/api/v3/collections?offset=20&limit=20 (string)
-        + prev: https://demo.api.ushahidi.io/api/v3/collections?offset=0&limit=20 (string)
+        + curr: https://demo.api.streetsignal.io/api/v3/collections?offset=0&limit=20 (string)
+        + next: https://demo.api.streetsignal.io/api/v3/collections?offset=20&limit=20 (string)
+        + prev: https://demo.api.streetsignal.io/api/v3/collections?offset=0&limit=20 (string)
         + total_count: 100 (number)
 
 ### Create a Collection [POST /api/v3/collections]
@@ -102,9 +102,9 @@
         + offset: 0 (string) <!-- Actually a number, fix API -->
         + order: asc (string)
         + orderby: created (string)
-        + curr: https://demo.api.ushahidi.io/api/v3/collections/1/posts?offset=0&limit=20 (string)
-        + next: https://demo.api.ushahidi.io/api/v3/collections/1/posts?offset=20&limit=20 (string)
-        + prev: https://demo.api.ushahidi.io/api/v3/collections/1/posts?offset=0&limit=20 (string)
+        + curr: https://demo.api.streetsignal.io/api/v3/collections/1/posts?offset=0&limit=20 (string)
+        + next: https://demo.api.streetsignal.io/api/v3/collections/1/posts?offset=20&limit=20 (string)
+        + prev: https://demo.api.streetsignal.io/api/v3/collections/1/posts?offset=0&limit=20 (string)
         + total_count: 100 (number)
 
 ### Add a Post to a collection [POST]
@@ -137,12 +137,12 @@
 
 ### Collection
 + id: 530 (number)
-+ url: https://demo.api.ushahidi.io/api/v3/collection/530 (string)
++ url: https://demo.api.streetsignal.io/api/v3/collection/530 (string)
 + name (string, required)
 + description (string)
 + user (object, nullable) - Owner of the collection
     + id: 1 (number)
-    + url: https://quakemap.api.ushahidi.io/api/v3/users/1
+    + url: https://quakemap.api.streetsignal.io/api/v3/users/1
 + view: map (enum[string])
     + Members
         + map

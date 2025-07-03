@@ -26,7 +26,7 @@
  * The following options are available:
  *
  * - boolean  enabled     enable switching site based on subdomain           FALSE
- * - string   domain      parent domain for site ie. ushahidi.io
+ * - string   domain      parent domain for site ie. streetsignal.io
  * - string   email       from email for password resets, etc
  */
 return [

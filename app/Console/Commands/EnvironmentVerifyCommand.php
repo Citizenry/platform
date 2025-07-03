@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use Ushahidi\Core\Tool\OutputText;
+use StreetSignal\Core\Tool\OutputText;
 use Illuminate\Console\Command;
 
 class EnvironmentVerifyCommand extends Command

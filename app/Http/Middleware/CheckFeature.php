@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Ushahidi\Core\Facade\Feature;
+use StreetSignal\Core\Facade\Feature;
 
 class CheckFeature
 {

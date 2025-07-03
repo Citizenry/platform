@@ -4,7 +4,7 @@ Feature: Testing the Media API
     Scenario: Creating a new Media
         Given that I want to make a new "Media"
         And that the post field "caption" is "ihub"
-        And that the post file "file" is "tests/datasets/ushahidi/sample.png"
+        And that the post file "file" is "tests/datasets/streetsignal/sample.png"
         When I request "/media"
         Then the response is JSON
         And the response has a "id" property
@@ -90,7 +90,7 @@ Feature: Testing the Media API
     Scenario: Fail to create a new Media with size greater than limit
         Given that I want to make a new "Media"
         And that the post field "caption" is "ihub"
-        And that the post file "file" is "tests/datasets/ushahidi/sample-large.png"
+        And that the post file "file" is "tests/datasets/streetsignal/sample-large.png"
         When I request "/media"
         Then the response is JSON
         And the response has a "errors" property

@@ -1,10 +1,10 @@
 <?php
-namespace spec\Ushahidi\Core\Tool;
+namespace spec\StreetSignal\Core\Tool;
 
 use PhpSpec\ObjectBehavior;
-use Ushahidi\Contracts\Entity;
-use Ushahidi\Contracts\Repository\Entity\ConfigRepository;
-use Ushahidi\Core\Tool\Date;
+use StreetSignal\Contracts\Entity;
+use StreetSignal\Contracts\Repository\Entity\ConfigRepository;
+use StreetSignal\Core\Tool\Date;
 
 class DateSpec extends ObjectBehavior
 {

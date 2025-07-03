@@ -1,5 +1,5 @@
 ---
-description: Details of the Ushahidi Code of Conduct.
+description: Details of the StreetSignal Code of Conduct.
 ---
 
 # Code of Conduct
@@ -12,23 +12,23 @@ description: Details of the Ushahidi Code of Conduct.
 
 Our underlying values that we strive to reflect in everything we do and how we behave are listed [here](values.md).
 
-Like Ushahidi's staff base, Ushahidi's community is incredibly diverse. Ushahidi is dedicated to creating an inclusive environment for everyone, regardless of race, ethnicity, religion, color, national origin, age, disability \(physical or mental\), sexual orientation, gender identity, parental status, marital status, and political affiliation as well as gender expression, mental illness, socioeconomic status or background, neuro\(a\)typicality, or physical appearance.
+Like StreetSignal's staff base, StreetSignal's community is incredibly diverse. StreetSignal is dedicated to creating an inclusive environment for everyone, regardless of race, ethnicity, religion, color, national origin, age, disability \(physical or mental\), sexual orientation, gender identity, parental status, marital status, and political affiliation as well as gender expression, mental illness, socioeconomic status or background, neuro\(a\)typicality, or physical appearance.
 
 We are constantly evolving this document for the ever-changing world. We strive to become more inclusive in how we support the community, and contributions are very welcome.
 
 We’re grateful for other Code of Conduct pioneers like the [Buffer Code of Conduct](https://open.buffer.com/code-of-conduct/), the [Vox Code of Conduct](http://code-of-conduct.voxmedia.com/?_ga=1.62865454.308680892.1455143920), the [Recurse Center’s Social Rules](https://www.recurse.com/manual#sub-sec-social-rules), [Write the Docs Code of Conduct](https://www.writethedocs.org/code-of-conduct/) and the [Hack Code of Conduct](https://hackcodeofconduct.org/) for their ideas and inspiration.
 
 {% hint style="info" %}
-When in doubt you can always contact the code of conduct working group at Ushahidi, by sending an email to **codeofconduct@ushahidi.com**.
+When in doubt you can always contact the code of conduct working group at StreetSignal, by sending an email to **codeofconduct@streetsignal.com**.
 {% endhint %}
 
 ### Unacceptable Behaviors
 
 {% hint style="warning" %}
-If you detect or are the target of any of the following behaviors, please tag us using the **@codeofconduct** tag in the [Platform repository](https://github.com/ushahidi/platform), or email us at **codeofconduct@ushahidi.com.**
+If you detect or are the target of any of the following behaviors, please tag us using the **@codeofconduct** tag in the [Platform repository](https://github.com/streetsignal/platform), or email us at **codeofconduct@streetsignal.com.**
 {% endhint %}
 
-The Ushahidi team is committed to providing a welcoming and safe environment for all. Discrimination and harassment are expressly prohibited. Furthermore, any behavior or language that is unwelcoming – whether or not it rises to the level of harassment – is also strongly discouraged.
+The StreetSignal team is committed to providing a welcoming and safe environment for all. Discrimination and harassment are expressly prohibited. Furthermore, any behavior or language that is unwelcoming – whether or not it rises to the level of harassment – is also strongly discouraged.
 
 * **No surprise if a contributor isn’t familiar with something**: We believe in the value of [a beginner’s mind](https://open.buffer.com/no-idea/). It’s always acceptable to say “I don’t know” or “I don’t understand.” All questions are great questions! So please don’t act surprised when people aren’t familiar with a tool, person, place or process. 
 * **No "well-actually's":** A well-actually happens when someone says something that’s almost – but not entirely – correct, and you say, [“well, actually…”](https://open.buffer.com/customer-service-emails-words/) and give a minor correction.
@@ -42,19 +42,19 @@ The Ushahidi team is committed to providing a welcoming and safe environment for
 
 ## Where does the Code of Conduct apply?
 
-This Code of Conduct applies to all spaces, physical and online, managed by Ushahidi. This includes:
+This Code of Conduct applies to all spaces, physical and online, managed by StreetSignal. This includes:
 
-* Conferences, meetups, hackathons, workshop and all other events hosted by Ushahidi
+* Conferences, meetups, hackathons, workshop and all other events hosted by StreetSignal
 * Presentation material used in talks or sessions
-* Slack, gitter, intercom and other chat-functions where Ushahidi operates
+* Slack, gitter, intercom and other chat-functions where StreetSignal operates
 * Mailinglists
 * Github
 * Social media
-* forum.ushahidi.com
+* forum.streetsignal.com
 
 ## What to do in case of violations?
 
-If a Code of Conduct incidents happens to you or if you witness it happening to someone else, please contact codeofconduct@ushahidi.com immediately. An email to codeofconduct@ushahidi.com is received by the members of the Code of Conduct working group at Ushahidi who are:
+If a Code of Conduct incidents happens to you or if you witness it happening to someone else, please contact codeofconduct@streetsignal.com immediately. An email to codeofconduct@streetsignal.com is received by the members of the Code of Conduct working group at StreetSignal who are:
 
 * Cecilia Hinga
 * Anna Iosif

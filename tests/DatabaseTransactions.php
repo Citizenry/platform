@@ -1,8 +1,8 @@
 <?php
-namespace Ushahidi\Tests;
+namespace StreetSignal\Tests;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions as LaravelDatabaseTransactions;
-use Ushahidi\Core\Tool\OhanzeeResolver;
+use StreetSignal\Core\Tool\OhanzeeResolver;
 use Ohanzee\DB;
 
 /**

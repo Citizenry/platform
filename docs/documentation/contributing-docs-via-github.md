@@ -1,6 +1,6 @@
 # Contributing docs via GitHub
 
-Ushahidi Platform's documentation is kept in GitHub and GitBook. Both of these documentation repositories are kept synchronised and they should contain exactly the same information.
+StreetSignal Platform's documentation is kept in GitHub and GitBook. Both of these documentation repositories are kept synchronised and they should contain exactly the same information.
 
 For most of the users, the preference will be to browse the documentation via GitBook. It tends to look prettier and easier to navigate.
 

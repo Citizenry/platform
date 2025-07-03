@@ -1,20 +1,20 @@
 <?php
 
-namespace spec\Ushahidi\Core\Usecase\Message;
+namespace spec\StreetSignal\Core\Usecase\Message;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Translation\Translator;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Ushahidi\Contracts\Authorizer;
-use Ushahidi\Contracts\Entity;
-use Ushahidi\Contracts\Formatter;
-use Ushahidi\Contracts\Repository\CreateRepository;
-use Ushahidi\Contracts\Repository\Entity\ContactRepository;
-use Ushahidi\Contracts\Validator;
-use Ushahidi\Core\Entity\Contact;
-use Ushahidi\Core\Exception\ValidatorException;
-use Ushahidi\Core\Usecase\Message\ReceiveMessage;
+use StreetSignal\Contracts\Authorizer;
+use StreetSignal\Contracts\Entity;
+use StreetSignal\Contracts\Formatter;
+use StreetSignal\Contracts\Repository\CreateRepository;
+use StreetSignal\Contracts\Repository\Entity\ContactRepository;
+use StreetSignal\Contracts\Validator;
+use StreetSignal\Core\Entity\Contact;
+use StreetSignal\Core\Exception\ValidatorException;
+use StreetSignal\Core\Usecase\Message\ReceiveMessage;
 
 class ReceiveMessageSpec extends ObjectBehavior
 {

@@ -1,66 +1,116 @@
-.idea
-.*swp
+# IDE and Editor files
+.idea/
+*.swp
 *~
 *.DS_Store
-.htaccess
-composer.phar
-/vendor
-vendor/*
-bin/*
-!bin/tests
-.vagrant/*
-.floo
-.flooignore
+.vscode/
 .sublime-project
-build/*
-puppet/modules
-Puppetfile.lock
-.tmp/*
-*.vscode
+.sublime-workspace
+
+# Environment and Configuration
 .env
+.env.*
+!.env.example
+.htaccess
+
+# Composer
+composer.phar
+/vendor/
+vendor/*
+
+# Laravel specific
+/bootstrap/cache/*
+/storage/app/*
+!/storage/app/.gitkeep
+/storage/framework/cache/*
+!/storage/framework/cache/.gitkeep
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitkeep
+/storage/framework/views/*
+!/storage/framework/views/.gitkeep
+/storage/logs/*
+!/storage/logs/.gitkeep
+/public/storage
+/public/hot
+/public/mix-manifest.json
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+# Testing
 phpunit.xml
 phpspec.yml
 phinx.yml
-bootstrap/gwcheck.enabled
-# Homestead / Laravel files
-Homestead.json
-Homestead.yaml
-
-# Kohana deployment specifics
-application/logs/*
-application/cache/*
-application/config/environments/development/*.php
-
-# Kohana tests
 behat.yml
 application/tests/behat.yml
+.phpunit.result.cache
+coverage/
+.phpunit.cache
 
-# Kohana app uploads
-application/media/uploads/*
+# Build and Distribution
+build/*
+dist/*
+/public/build/
 
-# Kohana modules installed composer
-system
-modules/cache
-modules/image
-modules/unittest
-modules/minion
-modules/orm
+# Vagrant
+.vagrant/*
 
-# Docker Deployment Specifics
+# Docker
 *.aes
 deployment.env
 docker.env
 vault.txt
+docker-compose.override.yml
 
-# garden.io
-.garden
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+*.log
 error.log
-# Snowboard
-dist/*
+/storage/logs/*
 
-# Garden
-.garden
+# Cache
+bootstrap/gwcheck.enabled
+application/cache/*
+application/logs/*
 
-# Test Coverage
-coverage
-.phpunit.result.cache
+# Uploads and Media
+application/media/uploads/*
+/storage/app/public/*
+
+# Kohana modules (legacy)
+system/
+modules/cache/
+modules/image/
+modules/unittest/
+modules/minion/
+modules/orm/
+
+# Development tools
+.floo
+.flooignore
+.tmp/*
+bin/*
+!bin/tests
+
+# Garden.io
+.garden/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Temporary files
+*.tmp
+*.temp

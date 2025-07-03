@@ -7,7 +7,7 @@ description: >-
 
 # The bot script
 
-If you feel adventurous you can go to the file [database/seeds/**AnswersTableSeeder.php**](https://github.com/ushahidi/platform-facebook-bot/blob/master/database/seeds/AnswersTableSeeder.php) **before** running the database seeds and migrations and change the wording of the questions. Please note, removing questions might cause the bot to break. You can change the wording of the questions, but not removing them.
+If you feel adventurous you can go to the file [database/seeds/**AnswersTableSeeder.php**](https://github.com/streetsignal/platform-facebook-bot/blob/master/database/seeds/AnswersTableSeeder.php) **before** running the database seeds and migrations and change the wording of the questions. Please note, removing questions might cause the bot to break. You can change the wording of the questions, but not removing them.
 
 ## The script
 

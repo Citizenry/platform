@@ -18,9 +18,9 @@
         + offset: 0 (string) <!-- Actually a number, fix API -->
         + order: asc (string)
         + orderby: created (string)
-        + curr: https://demo.api.ushahidi.io/api/v3/forms?offset=0&limit=20 (string)
-        + next: https://demo.api.ushahidi.io/api/v3/forms?offset=20&limit=20 (string)
-        + prev: https://demo.api.ushahidi.io/api/v3/forms?offset=0&limit=20 (string)
+        + curr: https://demo.api.streetsignal.io/api/v3/forms?offset=0&limit=20 (string)
+        + next: https://demo.api.streetsignal.io/api/v3/forms?offset=20&limit=20 (string)
+        + prev: https://demo.api.streetsignal.io/api/v3/forms?offset=0&limit=20 (string)
         + total_count: 100 (number)
 
 ### Create a Form [POST /api/v3/forms]
@@ -100,9 +100,9 @@
         + offset: 0 (string) <!-- Actually a number, fix API -->
         + order: asc (string)
         + orderby: created (string)
-        + curr: https://demo.api.ushahidi.io/api/v3/stages?offset=0&limit=20 (string)
-        + next: https://demo.api.ushahidi.io/api/v3/stages?offset=20&limit=20 (string)
-        + prev: https://demo.api.ushahidi.io/api/v3/stages?offset=0&limit=20 (string)
+        + curr: https://demo.api.streetsignal.io/api/v3/stages?offset=0&limit=20 (string)
+        + next: https://demo.api.streetsignal.io/api/v3/stages?offset=20&limit=20 (string)
+        + prev: https://demo.api.streetsignal.io/api/v3/stages?offset=0&limit=20 (string)
         + total_count: 100 (number)
 
 ### Create a Form Stage [POST /api/v3/forms/{formid}/stages]
@@ -182,9 +182,9 @@
         + offset: 0 (string) <!-- Actually a number, fix API -->
         + order: asc (string)
         + orderby: created (string)
-        + curr: https://demo.api.ushahidi.io/api/v3/attributes?offset=0&limit=20 (string)
-        + next: https://demo.api.ushahidi.io/api/v3/attributes?offset=20&limit=20 (string)
-        + prev: https://demo.api.ushahidi.io/api/v3/attributes?offset=0&limit=20 (string)
+        + curr: https://demo.api.streetsignal.io/api/v3/attributes?offset=0&limit=20 (string)
+        + next: https://demo.api.streetsignal.io/api/v3/attributes?offset=20&limit=20 (string)
+        + prev: https://demo.api.streetsignal.io/api/v3/attributes?offset=0&limit=20 (string)
         + total_count: 100 (number)
 
 ### Create a Form Attribute [POST /api/v3/forms/{formid}/attributes]
@@ -252,10 +252,10 @@
 
 ### Form
 + id: 530 (number)
-+ url: https://demo.api.ushahidi.io/api/v3/forms/530 (string)
++ url: https://demo.api.streetsignal.io/api/v3/forms/530 (string)
 + parent (object, nullable) - Parent Form **deprecated**
-    + id: https://demo.api.ushahidi.io/api/v3/forms/1
-    + url: https://demo.api.ushahidi.io/api/v3/forms/1
+    + id: https://demo.api.streetsignal.io/api/v3/forms/1
+    + url: https://demo.api.streetsignal.io/api/v3/forms/1
 + name: This is a Form (string, required)
 + description: This is a form description (string)
 + color: #ff00dd (string, optional)
@@ -269,7 +269,7 @@
 
 ### Form Stage
 + id: 530 (number)
-+ url: https://demo.api.ushahidi.io/api/v3/forms/1/stages/12 (string)
++ url: https://demo.api.streetsignal.io/api/v3/forms/1/stages/12 (string)
 + form_id: 1 (number, required)
 + label: Step 2 (string, required)
 + priority: 1 (number)
@@ -279,7 +279,7 @@
 
 ### Form Attribute
 + id: 530 (number)
-+ url: https://demo.api.ushahidi.io/api/v3/forms/1/attributes/15 (string)
++ url: https://demo.api.streetsignal.io/api/v3/forms/1/attributes/15 (string)
 + label: Some field (string, required)
 + instructions: Fill in the field (string, optional)
 + input: text (string, required)

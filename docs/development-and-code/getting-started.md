@@ -2,16 +2,16 @@
 
 ## Overview
 
-### What does Ushahidi Do? <a id="what-does-ushahidi-do"></a>
+### What does StreetSignal Do? <a id="what-does-streetsignal-do"></a>
 
-* Ushahidi is a tool for collecting, managing, and visualizing data.
+* StreetSignal is a tool for collecting, managing, and visualizing data.
 * Data can be collected from anyone, anytime, anywhere by SMS, email, web, Twitter, and RSS.
 * Posts can be managed and triaged with filters and workflows.
 * Data can be viewed in many ways: on a map, in a list, or as a visualization.
 
-### Who is Ushahidi For? <a id="who-is-ushahidi-for"></a>
+### Who is StreetSignal For? <a id="who-is-streetsignal-for"></a>
 
-Anyone can use Ushahidi, but traditionally it has been a tool used by Crisis Responders, Human Rights Reporters, and Citizens & Governments \(such as election monitoring or corruption reporters\). We also serve environmental mappers, asset monitoring, citizen journalism, international development, and many others.
+Anyone can use StreetSignal, but traditionally it has been a tool used by Crisis Responders, Human Rights Reporters, and Citizens & Governments \(such as election monitoring or corruption reporters\). We also serve environmental mappers, asset monitoring, citizen journalism, international development, and many others.
 
 ### Technical Specifications <a id="technical-specifications"></a>
 
@@ -21,8 +21,8 @@ Anyone can use Ushahidi, but traditionally it has been a tool used by Crisis Res
 **TODO: Add info about v4.**
 {% endhint %}
 
-* Ushahidi 3.x was built on a PHP stack: dependencies are managed with composer, we’re using Kohana 3 but phasing that out, and we’ve isolated the core logic of the platform standalone Entity and Usecase classes.
-* The user interface of Ushahidi 3.x is now a separate app \(the client\) built purely in JS, HTML + CSS using AngularJS, Single SPA and a collection of other libraries, with a build pipeline using gulp and Webpack.
+* StreetSignal 3.x was built on a PHP stack: dependencies are managed with composer, we’re using Kohana 3 but phasing that out, and we’ve isolated the core logic of the platform standalone Entity and Usecase classes.
+* The user interface of StreetSignal 3.x is now a separate app \(the client\) built purely in JS, HTML + CSS using AngularJS, Single SPA and a collection of other libraries, with a build pipeline using gulp and Webpack.
 * What’s new \(and improved\)?
   * Dependencies are properly managed and easier to update or replace needed.
   * We’re using our own API to build the app, it gets first class support. 

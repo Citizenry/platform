@@ -27,12 +27,12 @@ We will be offering 10 courtesy migrations to Crowdmap SaaS or self-hosted deplo
 * The migration matching logic should be documented.
   * It could available in the migration tool itself by running  a command like `migration info`
     * This command would output a match table.
-  * A matching table should be available in docs.ushahidi.com somewhere. 
+  * A matching table should be available in docs.streetsignal.com somewhere. 
 * Import media
   * Notes: it may make sense to do a queue to import media.
 * Compatibility with usernames instead of emails - forcing users to change their username to an email when they first log in after the migration. 
   * Note: check if the admin/admin thing that tells you to change your email to an email could be extended for ensuring users without emails switch to emails.
-  * [https://github.com/ushahidi/platform/issues/703](https://github.com/ushahidi/platform/issues/703)
+  * [https://github.com/streetsignal/platform/issues/703](https://github.com/streetsignal/platform/issues/703)
 
 ### Out of scope
 

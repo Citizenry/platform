@@ -11,14 +11,14 @@ class DefaultOauthClient extends AbstractMigration
     {
         // The default client is treated as a public client, and is restricted
         // by endpoint, not the secret.
-        $secret = sha1('ushahidiui');
+        $secret = sha1('streetsignalui');
 
         $this->execute(
             "INSERT INTO oauth_clients (id, secret, name)
             VALUES (
-                'ushahidiui',
+                'streetsignalui',
                 '$secret',
-                'Ushahidi Platform Client'
+                'StreetSignal Platform Client'
             )"
         );
 
@@ -26,7 +26,7 @@ class DefaultOauthClient extends AbstractMigration
         $this->execute(
             "INSERT INTO oauth_client_endpoints (client_id, redirect_uri)
             VALUES (
-                'ushahidiui',
+                'streetsignalui',
                 '/user/oauth'
             )"
         );
@@ -37,6 +37,6 @@ class DefaultOauthClient extends AbstractMigration
      */
     public function down()
     {
-        $this->execute("DELETE FROM oauth_clients WHERE id = 'ushahidiui'");
+        $this->execute("DELETE FROM oauth_clients WHERE id = 'streetsignalui'");
     }
 }

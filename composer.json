@@ -1,17 +1,17 @@
 {
-    "name": "ushahidi/platform",
-    "description": "Ushahidi Platform core and API server",
-    "homepage": "http://ushahidi.com/",
+    "name": "streetsignal/platform",
+    "description": "StreetSignal Platform core and API server",
+    "homepage": "http://streetsignal.org/",
     "type": "project",
     "license": "AGPL-3.0",
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/ushahidi/ohanzee-db"
+            "url": "https://github.com/citizenry/ohanzee-db"
         },
         {
             "type": "vcs",
-            "url": "https://github.com/ushahidi/laravel-ckan-api"
+            "url": "https://github.com/citizenry/laravel-ckan-api"
         }
     ],
     "require": {
@@ -42,8 +42,8 @@
         "symfony/event-dispatcher": "^5.4",
         "symfony/psr-http-message-bridge": "^2.0",
         "symm/gisconverter": "~1.0.5",
-        "ushahidi/kohana-validation": "dev-master",
-        "ushahidi/laravel-ckan-api": "dev-master",
+        "citizenry/kohana-validation": "dev-master",
+        "citizenry/laravel-ckan-api": "dev-master",
         "wikimedia/composer-merge-plugin": "^2.0",
         "willdurand/negotiation": "^2.3"
     },
@@ -88,7 +88,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ushahidi\\": "src/Ushahidi",
+            "StreetSignal\\": "src/StreetSignal",
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
@@ -98,7 +98,7 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/",
-            "Ushahidi\\Tests\\": "tests/"
+            "StreetSignal\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -107,8 +107,8 @@
         },
         "merge-plugin": {
             "include": [
-                "src/Ushahidi/*/composer.json",
-                "src/Ushahidi/**/*/composer.json"
+                "src/StreetSignal/*/composer.json",
+                "src/StreetSignal/**/*/composer.json"
             ],
             "require": [],
             "recurse": true,

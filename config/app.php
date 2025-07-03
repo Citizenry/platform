@@ -151,9 +151,9 @@ return [
          * Package Service Providers...
          */
 
-        Ushahidi\Authzn\ServiceProvider::class,
-        Ushahidi\Multisite\MultisiteServiceProvider::class,
-        Ushahidi\DataSource\DataSourceServiceProvider::class,
+        StreetSignal\Authzn\ServiceProvider::class,
+        StreetSignal\Multisite\MultisiteServiceProvider::class,
+        StreetSignal\DataSource\DataSourceServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -166,9 +166,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\PassportServiceProvider::class,
 
-        Ushahidi\Modules\V2\ServiceProvider::class,
-        Ushahidi\Modules\V3\ServiceProvider::class,
-        Ushahidi\Modules\V5\ServiceProvider::class,
+        StreetSignal\Modules\V2\ServiceProvider::class,
+        StreetSignal\Modules\V3\ServiceProvider::class,
+        StreetSignal\Modules\V5\ServiceProvider::class,
 
     ],
 

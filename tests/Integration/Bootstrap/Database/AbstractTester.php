@@ -1,8 +1,8 @@
 <?php
 
-namespace Ushahidi\Tests\Integration\Bootstrap\Database;
+namespace StreetSignal\Tests\Integration\Bootstrap\Database;
 
-use Ushahidi\Tests\Integration\Bootstrap\Database\Operation\Factory;
+use StreetSignal\Tests\Integration\Bootstrap\Database\Operation\Factory;
 
 abstract class AbstractTester
 {

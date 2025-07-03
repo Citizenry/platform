@@ -1,14 +1,14 @@
 <?php
 
-namespace spec\Ushahidi\Core\Tool;
+namespace spec\StreetSignal\Core\Tool;
 
 use League\Flysystem\Filesystem;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Ushahidi\Core\Tool\FileData;
-use Ushahidi\Core\Tool\UploadData;
-use Ushahidi\Multisite\MultisiteManager;
-use Ushahidi\Multisite\Site;
+use StreetSignal\Core\Tool\FileData;
+use StreetSignal\Core\Tool\UploadData;
+use StreetSignal\Multisite\MultisiteManager;
+use StreetSignal\Multisite\Site;
 
 class UploaderSpec extends ObjectBehavior
 {

@@ -19,7 +19,7 @@ cache:
 services:
 - mysql
 before_install:
-- mysql -e 'CREATE DATABASE ushahidi;'
+- mysql -e 'CREATE DATABASE streetsignal;'
 - mysql -e "SET PASSWORD FOR travis@localhost = PASSWORD('password')";
 - mysql -e "select version();"
 - mysql -e "SET GLOBAL sql_mode = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'"
@@ -55,7 +55,7 @@ after_success:
 #   file_glob: true
 #   skip_cleanup: true
 #   on:
-#     repo: ushahidi/platform
+#     repo: streetsignal/platform
 #     php: 5.5
 #     tags: true
 #     all_branches: true

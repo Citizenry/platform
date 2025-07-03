@@ -2,7 +2,7 @@
 
 ## Make changes
 
-After the [initial installation and setup](https://ushahidi.gitbook.io/platform-developer-documentation/getting-started/setup_alternatives/setting-up-the-pattern-library-for-development) follow these instructions:
+After the [initial installation and setup](https://streetsignal.gitbook.io/platform-developer-documentation/getting-started/setup_alternatives/setting-up-the-pattern-library-for-development) follow these instructions:
 
 * Make sure gulp is running in your Terminal.
 * Edit and save the appropriate Sass files.

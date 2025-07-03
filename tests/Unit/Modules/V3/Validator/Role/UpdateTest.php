@@ -8,14 +8,14 @@
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\Modules\V3\Validator\Role;
+namespace StreetSignal\Tests\Unit\Modules\V3\Validator\Role;
 
 use Mockery as M;
-use Ushahidi\Core\Tool\FeatureManager as Feature;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Core\Tool\FeatureManager as Feature;
+use StreetSignal\Tests\TestCase;
 use Kohana\Validation\Validation;
-use Ushahidi\Modules\V3\Validator\Role\Update;
-use Ushahidi\Contracts\Repository\Entity\PermissionRepository;
+use StreetSignal\Modules\V3\Validator\Role\Update;
+use StreetSignal\Contracts\Repository\Entity\PermissionRepository;
 
 /**
  * @backupGlobals disabled

@@ -5,12 +5,12 @@
   * [Values](code-of-conduct/values.md)
 * [Contributing | Getting Involved](contributing-or-getting-involved/README.md)
   * [Specific tasks needed for COVID19-support](contributing-or-getting-involved/covid.md)
-  * [Add code to Ushahidi](contributing-or-getting-involved/workflow-for-adding-code.md)
+  * [Add code to StreetSignal](contributing-or-getting-involved/workflow-for-adding-code.md)
   * [Encouraging contribution from non-developers](contributing-or-getting-involved/encouraging-contribution-from-non-developers.md)
 * [Frequently Asked Questions](frequently-asked-questions.md)
-* [Join the Ushahidi community](get-in-touch.md)
-* [Contributors ✨](contributors-to-ushahidi.md)
-* [🛣️ The Ushahidi Platform Roadmap](roadmap/README.md)
+* [Join the StreetSignal community](get-in-touch.md)
+* [Contributors ✨](contributors-to-streetsignal.md)
+* [🛣️ The StreetSignal Platform Roadmap](roadmap/README.md)
   * [V2-V3+ Migration tool](roadmap/v2-v3+-migration-tool.md)
 * [Privacy and security best practices](untitled/README.md)
   * [Security as a user](untitled/security-as-a-user.md)
@@ -29,13 +29,13 @@
     * [Migration from AngularJS](development-and-code/setup\_alternatives/setting-up-the-platform-client/migration-from-angularjs.md)
   * [Setting up the Pattern Library for development](development-and-code/setup\_alternatives/setting-up-the-pattern-library-for-development.md)
   * [\[API & Client\] Bundled release install](development-and-code/setup\_alternatives/platform\_release\_install.md)
-* [Add code to Ushahidi](development-and-code/add-code-to-ushahidi.md)
+* [Add code to StreetSignal](development-and-code/add-code-to-streetsignal.md)
 * [Development process](development-and-code/development-process.md)
 * [Coding Standards](development-and-code/coding-standards.md)
 * [Track and submit issues in Github](development-and-code/issue-tracking.md)
-* [Upgrading Ushahidi](development-and-code/upgrading-ushahidi/README.md)
-  * [Upgrading to latest release](development-and-code/upgrading-ushahidi/upgrading-to-latest-release.md)
-  * [Upgrading from V3.x.x to V4.x.x](development-and-code/upgrading-ushahidi/upgrading-from-v3.x.x-to-v4.x.x.md)
+* [Upgrading StreetSignal](development-and-code/upgrading-streetsignal/README.md)
+  * [Upgrading to latest release](development-and-code/upgrading-streetsignal/upgrading-to-latest-release.md)
+  * [Upgrading from V3.x.x to V4.x.x](development-and-code/upgrading-streetsignal/upgrading-from-v3.x.x-to-v4.x.x.md)
 * [⚙️ Installation Helper‌](development-and-code/installation-helper.md)
 
 ## Tech Stack
@@ -77,7 +77,7 @@
 
 * [🎨 Design: overview](design/design-process.md)
 * ['Best practice' design](design/best-practice-design.md)
-* [Ushahidi Platform 'Sticker Sheet'](design/ushahidi-platform-sticker-sheet.md)
+* [StreetSignal Platform 'Sticker Sheet'](design/streetsignal-platform-sticker-sheet.md)
 * [User testing process](design/user-testing-process.md)
 * [User testing script examples](design/user-testing-script-examples.md)
 * [Synthesising user testing results examples](design/synthesising-user-testing-results-examples/README.md)
@@ -97,11 +97,11 @@
 
 * [Localization and Translation](translation/software-localization-and-translation.md)
 
-## The Ushahidi Platform Facebook bot
+## The StreetSignal Platform Facebook bot
 
-* [The Facebook bot](the-ushahidi-platform-facebook-bot/the-facebook-bot/README.md)
-  * [Installing the bot](the-ushahidi-platform-facebook-bot/the-facebook-bot/installing-the-bot-for-development-and-testing.md)
-  * [The bot script](the-ushahidi-platform-facebook-bot/the-facebook-bot/the-bot-script.md)
+* [The Facebook bot](the-streetsignal-platform-facebook-bot/the-facebook-bot/README.md)
+  * [Installing the bot](the-streetsignal-platform-facebook-bot/the-facebook-bot/installing-the-bot-for-development-and-testing.md)
+  * [The bot script](the-streetsignal-platform-facebook-bot/the-facebook-bot/the-bot-script.md)
 
 ## Hackathon and events
 

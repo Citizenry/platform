@@ -6,11 +6,11 @@
  * Time: 10:23 AM
  */
 
-namespace Ushahidi\Tests\Unit\Core\Entity;
+namespace StreetSignal\Tests\Unit\Core\Entity;
 
 class MockPostEntity
 {
-    use \Ushahidi\Core\Concerns\StatefulData;
+    use \StreetSignal\Core\Concerns\StatefulData;
 
     protected $id;
 

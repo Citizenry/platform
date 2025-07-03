@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ushahidi\Tests\Integration\Bootstrap\Database\Operation;
+namespace StreetSignal\Tests\Integration\Bootstrap\Database\Operation;
 
 abstract class RowBased implements Operation
 {

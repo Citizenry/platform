@@ -3,17 +3,17 @@
 /**
  * Unit tests for Signature Verifier
  *
- * @author     Ushahidi Team <team@ushahidi.com>
- * @copyright  2013 Ushahidi
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2013 StreetSignal
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\Core\Tool;
+namespace StreetSignal\Tests\Unit\Core\Tool;
 
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Contracts\Repository\Entity\ApiKeyRepository;
-use Ushahidi\Core\Tool\Verifier;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Contracts\Repository\Entity\ApiKeyRepository;
+use StreetSignal\Core\Tool\Verifier;
 
 /**
  * @backupGlobals disabled

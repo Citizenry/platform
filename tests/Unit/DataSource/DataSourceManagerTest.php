@@ -8,17 +8,17 @@
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\DataSource;
+namespace StreetSignal\Tests\Unit\DataSource;
 
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Core\Entity\Config;
-use Ushahidi\Tests\CustomSource;
-use Ushahidi\DataSource\Email\Email;
-use Ushahidi\DataSource\Nexmo\Nexmo;
-use Ushahidi\DataSource\Twitter\Twitter;
-use Ushahidi\DataSource\DataSourceManager;
-use Ushahidi\Contracts\Repository\Entity\ConfigRepository;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Core\Entity\Config;
+use StreetSignal\Tests\CustomSource;
+use StreetSignal\DataSource\Email\Email;
+use StreetSignal\DataSource\Nexmo\Nexmo;
+use StreetSignal\DataSource\Twitter\Twitter;
+use StreetSignal\DataSource\DataSourceManager;
+use StreetSignal\Contracts\Repository\Entity\ConfigRepository;
 
 /**
  * @backupGlobals disabled

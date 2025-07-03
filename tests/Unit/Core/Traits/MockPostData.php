@@ -1,10 +1,10 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Core\Traits;
+namespace StreetSignal\Tests\Unit\Core\Traits;
 
 class MockPostData
 {
-    use \Ushahidi\Core\Concerns\StatefulData;
+    use \StreetSignal\Core\Concerns\StatefulData;
 
     protected $id;
 

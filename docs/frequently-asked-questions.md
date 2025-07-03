@@ -20,25 +20,25 @@
 
 As with many things, it depends.
 
-**Are you are planning on developing new code for Ushahidi, or testing the platform?** Use one of the development setups.
+**Are you are planning on developing new code for StreetSignal, or testing the platform?** Use one of the development setups.
 
 * If you are already familiar with XAMPP and want to avoid using Vagrant for performance or familiarity issues, then go with the [XAMPP Install guide](development-and-code/setup\_alternatives/xampp.md).
-* If you are familiar with Vagrant, or willing to learn how to setup Vagrant + Homestead and you have a machine capable of running a virtual machine and vagrant, then go with [the vagrant based setup](development-and-code/setup\_alternatives/vagrant-setup.md) (This is the setup Ushahidi staff uses on a daily basis!)
-* If you are a frontend developer that wants to contribute without setting up the backend, then try [setting up the platform client](development-and-code/setup\_alternatives/setting-up-the-platform-client/) only, and using the API route of an ushahidi.io deployment. This the fastest way to get started.
+* If you are familiar with Vagrant, or willing to learn how to setup Vagrant + Homestead and you have a machine capable of running a virtual machine and vagrant, then go with [the vagrant based setup](development-and-code/setup\_alternatives/vagrant-setup.md) (This is the setup StreetSignal staff uses on a daily basis!)
+* If you are a frontend developer that wants to contribute without setting up the backend, then try [setting up the platform client](development-and-code/setup\_alternatives/setting-up-the-platform-client/) only, and using the API route of an streetsignal.io deployment. This the fastest way to get started.
 
-**Are you ready to deploy Ushahidi for others to use?**
+**Are you ready to deploy StreetSignal for others to use?**
 
 * if you plan to modify the code in some way, follow the [Installing for production environments setup guide](development-and-code/setup\_alternatives/installing-for-production-environments.md).
-* If you want to deploy Ushahidi without worrying about upgrading, monitoring services, or hosting it yourself, start a new deployment in [http://ushahidi.io/create](http://ushahidi.io/create) and we will manage all the tech for you.
-* If you're looking for something in between, [Contact the Ushahidi team ](http://gitter.im/ushahidi/Community)and we'll figure it out! We're always happy to chat.
+* If you want to deploy StreetSignal without worrying about upgrading, monitoring services, or hosting it yourself, start a new deployment in [http://streetsignal.io/create](http://streetsignal.io/create) and we will manage all the tech for you.
+* If you're looking for something in between, [Contact the StreetSignal team ](http://gitter.im/streetsignal/Community)and we'll figure it out! We're always happy to chat.
 
-### How do I install Ushahidi?
+### How do I install StreetSignal?
 
-A step by step guide on how to install Ushahidi can be found [here](development-and-code/setup\_alternatives/installing-for-production-environments.md).
+A step by step guide on how to install StreetSignal can be found [here](development-and-code/setup\_alternatives/installing-for-production-environments.md).
 
 ### Can I install the Platform API?
 
-Yes you can. You can follow this link for more resources on how to install: [here](https://docs.ushahidi.com/platform-developer-documentation/tech-stack/api-documentation).
+Yes you can. You can follow this link for more resources on how to install: [here](https://docs.streetsignal.com/platform-developer-documentation/tech-stack/api-documentation).
 
 ### Do you support Windows installations?
 
@@ -65,20 +65,20 @@ Your web server setup is not handling the URLs as designed. There can be differe
 
 First, let's identify your stack.
 
-* Are you using ushahidi.io and running a deployment there? If YES, please contact our team through one of these channels: [https://www.ushahidi.com/contact#](https://www.ushahidi.com/contact)
-*   Are you a developer, setting up Ushahidi yourself? Start by checking the network tab in your development browser of choice and identifying any network errors. Look at the response for each and check what you see.
+* Are you using streetsignal.io and running a deployment there? If YES, please contact our team through one of these channels: [https://www.streetsignal.com/contact#](https://www.streetsignal.com/contact)
+*   Are you a developer, setting up StreetSignal yourself? Start by checking the network tab in your development browser of choice and identifying any network errors. Look at the response for each and check what you see.
 
     The most common reasons for this error:
 
-    * You have used the wrong url in the BACKEND\_URL key of your platform-client .ENV file. Check that when you access the URL in the browser + /api/v3/config it returns a valid json. It should look like this when you call the /api/v3/config endpoint for your API: [https://qa.api.ushahidi.io/api/v3/config](https://qa.api.ushahidi.io/api/v3/config)
+    * You have used the wrong url in the BACKEND\_URL key of your platform-client .ENV file. Check that when you access the URL in the browser + /api/v3/config it returns a valid json. It should look like this when you call the /api/v3/config endpoint for your API: [https://qa.api.streetsignal.io/api/v3/config](https://qa.api.streetsignal.io/api/v3/config)
     * The server is failing for some reason. If the server is failing, it will likely show an error either in the browser when you call the API URL or in the server logs, which you can see in files contained within {the\_platform\_install\_dir}/storage/logs. Check the errors in the log, as often you will see that there is a permissions error somewhere, or a directory is missing, which you can solve yourself.
 
-    When reporting issues, please note that we will need as much information as you can provide to be able to help you, so please start by checking all of the above, and then contact us with the information you found through[ the Ushahidi gitter](http://gitter.im/ushahidi/Community) channel. Including details about your development environment, what you have tried doing to solve it, what you were doing when this error occured, and your log files are critical in order for us to help you get set up.
-* Are you a developer who is only setting up the client and using ushahidi.io for the API? This is most likely an error in your .ENV file, check that your BACKEND\_URL looks like this [http://DEPLOYMENTNAME.api.ushahidi.io](http://test.api.ushahidi.io) (notice the .api after your deployment's name -- it's important!)
+    When reporting issues, please note that we will need as much information as you can provide to be able to help you, so please start by checking all of the above, and then contact us with the information you found through[ the StreetSignal gitter](http://gitter.im/streetsignal/Community) channel. Including details about your development environment, what you have tried doing to solve it, what you were doing when this error occured, and your log files are critical in order for us to help you get set up.
+* Are you a developer who is only setting up the client and using streetsignal.io for the API? This is most likely an error in your .ENV file, check that your BACKEND\_URL looks like this [http://DEPLOYMENTNAME.api.streetsignal.io](http://test.api.streetsignal.io) (notice the .api after your deployment's name -- it's important!)
 
 ### I have configured the datasources but I'm not getting any posts from them. What could be wrong?
 
-#### Are you referring to an Ushahidi.io deployment?
+#### Are you referring to an StreetSignal.io deployment?
 
 Please verify that all the fields have the correct values and that you have enabled the "Accept survey submissions from this source" toggle (it should be green/on!)
 
@@ -86,7 +86,7 @@ Please verify that all the fields have the correct values and that you have enab
 
 If you think your configuration is correct, please get in touch with your deploment name and details, and someone from the support team will be able to help.
 
-#### Are you hosting Ushahidi yourself?
+#### Are you hosting StreetSignal yourself?
 
 Please verify that all the fields have the correct values and that you have enabled the "Accept survey submissions from this source" toggle (it should be green/on!)
 
@@ -98,7 +98,7 @@ If the configuration values are correct, then proceed to check the following in 
 php artisan datasource:incoming
 ```
 
-Run the datasource:incoming task manually in the platform API directory (as the example above). It should succeed and not show any errors. If there are errors, check the logs under storage/logs to review what looks wrong. If nothing else, this will help you contact the team through[ the Ushahidi gitter](http://gitter.im/ushahidi/Community) channel with details.
+Run the datasource:incoming task manually in the platform API directory (as the example above). It should succeed and not show any errors. If there are errors, check the logs under storage/logs to review what looks wrong. If nothing else, this will help you contact the team through[ the StreetSignal gitter](http://gitter.im/streetsignal/Community) channel with details.
 
 If the incoming task worked, check if new posts are available. If they are, then this means that the problem is that the datasources work but are not being automatically fetched. Check that you have a crontab running periodically for your datasources and other tasks.
 
@@ -117,7 +117,7 @@ MAILTO=admin@example.com
 ```
 {% endcode %}
 
-If after ensuring the crontab is correct and datasources run, you don't see any new posts, please get in touch through[ the Ushahidi gitter](http://gitter.im/ushahidi/Community) channel with all the details about what you tried and what you have seen, and we'll be happy to help.
+If after ensuring the crontab is correct and datasources run, you don't see any new posts, please get in touch through[ the StreetSignal gitter](http://gitter.im/streetsignal/Community) channel with all the details about what you tried and what you have seen, and we'll be happy to help.
 
 ### I am getting some sort of PHP error.
 
@@ -135,52 +135,52 @@ Please ensure that you are using a supported version of PHP for the version of p
 
 Please verify that you have created your MySQL database, know the correct credentials for the API to connect to it and that your “.env” file is created with the expected format and at the expected location
 
-### How do I upgrade Ushahidi?
+### How do I upgrade StreetSignal?
 
-Please follow the step by step guide on how to update your deployment to the latest Ushahidi version [here](https://www.ushahidi.com/support/upgrading-ushahidi).
+Please follow the step by step guide on how to update your deployment to the latest StreetSignal version [here](https://www.streetsignal.com/support/upgrading-streetsignal).
 
 ## Platform API
 
 ### Can I add a new datasource to the platform?
 
-Yes, you can. You will need to fork and modify the Ushahidi platform API repository to do so. New datasource types need to be coded into the platform. Check out the `src/App/DataSource/` directory in the platform API codebase to learn how the current datasources are created.
+Yes, you can. You will need to fork and modify the StreetSignal platform API repository to do so. New datasource types need to be coded into the platform. Check out the `src/App/DataSource/` directory in the platform API codebase to learn how the current datasources are created.
 
-If you are planning to add a new data source, please get in touch! The Ushahidi development team will be more than happy to help answer any questions or provide guidance.
+If you are planning to add a new data source, please get in touch! The StreetSignal development team will be more than happy to help answer any questions or provide guidance.
 
 ## Platform Client
 
 ### How do I change the colours or appearance of the platform?
 
-To change the color or appearance of platform, you will need to fork and modify the Ushahidi Pattern Library, and host Ushahidi in your own servers for the changes to be available. [Please follow this guide about our pattern library to learn more.](front-end-development/changing-ui-styles-introduction-to-the-pattern-library/)
+To change the color or appearance of platform, you will need to fork and modify the StreetSignal Pattern Library, and host StreetSignal in your own servers for the changes to be available. [Please follow this guide about our pattern library to learn more.](front-end-development/changing-ui-styles-introduction-to-the-pattern-library/)
 
 ## Mobile application
 
-### How do I connect to the Ushahidi mobile application?
+### How do I connect to the StreetSignal mobile application?
 
-Please follow the step by step guide on how to connect to the Ushahidi mobile application [here](https://www.ushahidi.com/support/connecting-to-ushahidi-mobile-app).
+Please follow the step by step guide on how to connect to the StreetSignal mobile application [here](https://www.streetsignal.com/support/connecting-to-streetsignal-mobile-app).
 
 ## General
 
 ### How can I start contributing code to the platform?
 
-To contribute code to the Ushahidi platform, please follow the guidelines [here](contributing-or-getting-involved/).
+To contribute code to the StreetSignal platform, please follow the guidelines [here](contributing-or-getting-involved/).
 
 ### How can I contribute to translations?
 
-Translating the platform into different langauges helps us allow more people access to Ushahidi. You can help us translate the platform into as many languages as possible by following the instructions to start translating here: [Instructions on how to start translating](translation/software-localization-and-translation.md)
+Translating the platform into different langauges helps us allow more people access to StreetSignal. You can help us translate the platform into as many languages as possible by following the instructions to start translating here: [Instructions on how to start translating](translation/software-localization-and-translation.md)
 
-### How can I join the Ushahidi Community?
+### How can I join the StreetSignal Community?
 
-Connect with the wider Ushahidi community:
+Connect with the wider StreetSignal community:
 
-* Join the discussion on [our forum](http://forums.ushahidi.com/)
-* Sign up on the [mailing list](http://list.ushahidi.com/)
+* Join the discussion on [our forum](http://forums.streetsignal.com/)
+* Sign up on the [mailing list](http://list.streetsignal.com/)
 * Chat with us on:
-  * IRC at [#ushahidi on Freenode](http://irc/irc.freenode.net/#ushahidi)
-  * Gitter at [ushahidi/Community](https://gitter.im/ushahidi/community)
+  * IRC at [#streetsignal on Freenode](http://irc/irc.freenode.net/#streetsignal)
+  * Gitter at [streetsignal/Community](https://gitter.im/streetsignal/community)
   * [Skype](https://join.skype.com/S9t68IVKzwo8)
 * Messages to any of these channels should show up on all of them!
 
 ### How to get help in a different language?
 
-The Ushahidi community is global. If you need assistance in a different language, please [contact us](http://ushahidi.com/contact-us) and we will try connect you to a wonderful helper.
+The StreetSignal community is global. If you need assistance in a different language, please [contact us](http://streetsignal.com/contact-us) and we will try connect you to a wonderful helper.

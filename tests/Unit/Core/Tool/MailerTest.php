@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Unit tests for Lumen implementation of Ushahidi\Core\Tool\Mailer
+ * Unit tests for Lumen implementation of StreetSignal\Core\Tool\Mailer
  *
- * @author     Ushahidi Team <team@ushahidi.com>
- * @copyright  2013 Ushahidi
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2013 StreetSignal
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\Core\Tool;
+namespace StreetSignal\Tests\Unit\Core\Tool;
 
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Core\Entity\Site;
-use Ushahidi\Core\Tool\Mailer;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Core\Entity\Site;
+use StreetSignal\Core\Tool\Mailer;
 
 /**
  * @backupGlobals disabled
@@ -48,7 +48,7 @@ class MailerTest extends TestCase
         );
 
         $code = 'abc123';
-        $mailer->send('noone@ushahidi.com', 'Resetpassword', [
+        $mailer->send('noone@streetsignal.com', 'Resetpassword', [
             'code' => $code,
             'user_name' => 'No One',
             'string' => base64_encode($code),
@@ -68,7 +68,7 @@ class MailerTest extends TestCase
                 }),
                 M::on(function (\Closure $closure) {
                     $mock = M::mock('Illuminate\Mailer\Message');
-                    $mock->shouldReceive('to')->once()->with('noone@ushahidi.com')
+                    $mock->shouldReceive('to')->once()->with('noone@streetsignal.com')
                          ->andReturn($mock); // simulate the chaining
                     $mock->shouldReceive('from')->once()->with('siteemail@site.com', 'The Site')
                          ->andReturn($mock); // simulate the chaining

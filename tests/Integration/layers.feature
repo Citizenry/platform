@@ -63,7 +63,7 @@ Feature: Testing the Layers API
             """
             {
                 "name":"test",
-                "data_url":"http://ushahidi-platform.dev/media/test.geojson",
+                "data_url":"http://streetsignal-platform.dev/media/test.geojson",
                 "type":"geojson",
                 "active":true,
                 "visible_by_default":true,
@@ -77,7 +77,7 @@ Feature: Testing the Layers API
         And the response has a "result.id" property
         And the type of the "result.id" property is "numeric"
         And the "result.name" property equals "test"
-        And the "result.data_url" property equals "http://ushahidi-platform.dev/media/test.geojson"
+        And the "result.data_url" property equals "http://streetsignal-platform.dev/media/test.geojson"
         And the "result.type" property equals "geojson"
         And the "result.active" property equals "1"
         And the "result.visible_by_default" property equals "1"
@@ -91,7 +91,7 @@ Feature: Testing the Layers API
             """
             {
                 "name":"test",
-                "data_url":"http://ushahidi-platform.dev/media/test.geojson",
+                "data_url":"http://streetsignal-platform.dev/media/test.geojson",
                 "type":"shape",
                 "active":true,
                 "visible_by_default":true
@@ -109,7 +109,7 @@ Feature: Testing the Layers API
             """
             {
                 "name":"test",
-                "data_url":"http://ushahidi-platform.dev/media/test.geojson",
+                "data_url":"http://streetsignal-platform.dev/media/test.geojson",
                 "type":"geojson"
             }
             """
@@ -160,7 +160,7 @@ Feature: Testing the Layers API
             """
             {
                 "name":"test updated",
-                "data_url":"http://ushahidi-platform.dev/media/updated.geojson",
+                "data_url":"http://streetsignal-platform.dev/media/updated.geojson",
                 "type":"geojson",
                 "active":true,
                 "visible_by_default":true

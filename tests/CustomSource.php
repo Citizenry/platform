@@ -1,8 +1,8 @@
 <?php
 
-namespace Ushahidi\Tests;
+namespace StreetSignal\Tests;
 
-use Ushahidi\DataSource\Contracts\IncomingDataSource;
+use StreetSignal\DataSource\Contracts\IncomingDataSource;
 
 class CustomSource implements IncomingDataSource
 {

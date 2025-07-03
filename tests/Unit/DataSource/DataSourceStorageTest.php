@@ -8,17 +8,17 @@
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\DataSource;
+namespace StreetSignal\Tests\Unit\DataSource;
 
 use Illuminate\Support\Facades\Log;
 use Mockery as M;
-use Ushahidi\Contracts\Repository\Entity\ContactRepository;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Contracts\Repository\Entity\MessageRepository;
-use Ushahidi\Core\Entity\Message;
-use Ushahidi\Core\Exception\NotFoundException;
-use Ushahidi\Core\Usecase\Message\ReceiveMessage;
-use Ushahidi\DataSource\DataSourceStorage;
+use StreetSignal\Contracts\Repository\Entity\ContactRepository;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Contracts\Repository\Entity\MessageRepository;
+use StreetSignal\Core\Entity\Message;
+use StreetSignal\Core\Exception\NotFoundException;
+use StreetSignal\Core\Usecase\Message\ReceiveMessage;
+use StreetSignal\DataSource\DataSourceStorage;
 
 /**
  * @backupGlobals disabled

@@ -2,14 +2,14 @@
 
 **Introduction**
 
-The Platform Client is built upon Angular JS 1.5.6, which is currently in [Long Term Support ](https://docs.angularjs.org/misc/version-support-status)ending in December 2021. Because of this, Ushahidi wants to move away from this version of Angular and into a more modern JavaScript framework and architecture. In March 2021, we started the journey which will be carried out incrementally until the last piece of AngularJS code is removed.
+The Platform Client is built upon Angular JS 1.5.6, which is currently in [Long Term Support ](https://docs.angularjs.org/misc/version-support-status)ending in December 2021. Because of this, StreetSignal wants to move away from this version of Angular and into a more modern JavaScript framework and architecture. In March 2021, we started the journey which will be carried out incrementally until the last piece of AngularJS code is removed.
 
 In order to do the migration, we will make use of Micro Frontend architecture and "single-spa", a framework for bringing together multiple JavaScript micro-frontends in a frontend application.
 
 The goals of this project are:
 
-* Make the Ushahidi Platform more stable with fewer bugs
-* Make the Ushahidi Platform faster on slow networks
+* Make the StreetSignal Platform more stable with fewer bugs
+* Make the StreetSignal Platform faster on slow networks
 * Stop depending on technologies that have been abandoned
 * Migrate away from AngularJS
 * Improve performance of the Platform Client

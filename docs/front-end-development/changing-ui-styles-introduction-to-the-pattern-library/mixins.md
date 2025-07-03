@@ -1,6 +1,6 @@
 # Mixins
 
-The Ushahidi Platform uses [Bourbon](http://bourbon.io/), a Sass mixin library. While Bourbon covers most of our mixin needs, there are times when custom mixins are needed. When that is the case each custom mixin is given it's own .scss file in the [mixins](https://github.com/ushahidi/platform-pattern-library/tree/gh-pages/assets/sass/utils/mixins) directory which are then @imported via the [\_mixins.scss](https://github.com/ushahidi/platform-pattern-library/blob/gh-pages/assets/sass/utils/_mixins.scss) file.
+The StreetSignal Platform uses [Bourbon](http://bourbon.io/), a Sass mixin library. While Bourbon covers most of our mixin needs, there are times when custom mixins are needed. When that is the case each custom mixin is given it's own .scss file in the [mixins](https://github.com/streetsignal/platform-pattern-library/tree/gh-pages/assets/sass/utils/mixins) directory which are then @imported via the [\_mixins.scss](https://github.com/streetsignal/platform-pattern-library/blob/gh-pages/assets/sass/utils/_mixins.scss) file.
 
 ## Bourbon Mixins
 

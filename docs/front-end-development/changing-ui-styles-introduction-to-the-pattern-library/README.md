@@ -2,7 +2,7 @@
 
 The Platform Client uses the Pattern Library to standardize the styles and have them available in a single place that can be edited by frontend developers without advanced knowledge of AngularJS.
 
-The Pattern Library runs as a dependency of the web client, it's included in the package.json file and is just a [regular npm library](https://www.npmjs.com/package/ushahidi-platform-pattern-library). Please note that unless you specifically need to change the layout beyond what's possible in the client's codebase, or want to change styles (such as colors, fonts, etc) the pattern library will **not** need to be setup as a stand alone project.
+The Pattern Library runs as a dependency of the web client, it's included in the package.json file and is just a [regular npm library](https://www.npmjs.com/package/streetsignal-platform-pattern-library). Please note that unless you specifically need to change the layout beyond what's possible in the client's codebase, or want to change styles (such as colors, fonts, etc) the pattern library will **not** need to be setup as a stand alone project.
 
 ## Use cases for editing (or not) the pattern library
 
@@ -12,13 +12,13 @@ To add new views in the Platform Client, we recommend you first check if you can
 
 You can see the available patterns here:
 
-{% embed url="http://preview.ushahidi.com/platform-pattern-library/master/" %}
+{% embed url="http://preview.streetsignal.com/platform-pattern-library/master/" %}
 
 ### Use case: changing the color palette
 
 To change the color palette, you will need to modify the pattern library's color variables. The good thing is that all colors are defined here, and you can easily change them and see the results in the patterns before moving forward with applying the changes to the client.
 
-{% embed url="http://preview.ushahidi.com/platform-pattern-library/master/assets/html/1_basics/" %}
+{% embed url="http://preview.streetsignal.com/platform-pattern-library/master/assets/html/1_basics/" %}
 
 ### Changing other styles like icons, fonts, or adding layouts
 
@@ -26,7 +26,7 @@ When you need completely new layouts with new styles, you will need to add or mo
 
 We recommend you review the different structures in the pattern library before starting:
 
-{% embed url="http://preview.ushahidi.com/platform-pattern-library/master/index.html" %}
+{% embed url="http://preview.streetsignal.com/platform-pattern-library/master/index.html" %}
 
 ## Setting up the pattern library for development
 

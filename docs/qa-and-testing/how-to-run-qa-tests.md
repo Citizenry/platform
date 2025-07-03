@@ -12,9 +12,9 @@ For instances where the checklist is on the issue/task card, once the issue is r
 
 TestPad houses a comprehensive test suite that cover most parts of the platform application. You’ll turn to TestPad when you’re running either smoke or regression tests.
 
-[Smoke testing](https://ushahidi.ontestpad.com/script/30#//) usually happens before a release. It's usually quick and looks at the core functionality of the application to verify the main application flows are working.
+[Smoke testing](https://streetsignal.ontestpad.com/script/30#//) usually happens before a release. It's usually quick and looks at the core functionality of the application to verify the main application flows are working.
 
-[Regression tests](https://ushahidi.ontestpad.com/script/27#//) are more detailed and cover the application in its entirety.
+[Regression tests](https://streetsignal.ontestpad.com/script/27#//) are more detailed and cover the application in its entirety.
 
 Tests in TestPad are structured in a checklist format. As you run the tests,you mark off every item as either passing or failing.
 

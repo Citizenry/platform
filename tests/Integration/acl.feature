@@ -460,7 +460,7 @@ Feature: API Access Control Layer
         And that the request "data" is:
         """
         {
-            "email":"john@ushahidi.com",
+            "email":"john@streetsignal.com",
             "realname":"John Tae",
             "password":"testing",
             "role":"admin"
@@ -509,7 +509,7 @@ Feature: API Access Control Layer
         And that the request "data" is:
         """
         {
-            "email":"john@ushahidi.com",
+            "email":"john@streetsignal.com",
             "realname":"John Tae",
             "password":"testing",
             "role":"admin"
@@ -621,7 +621,7 @@ Feature: API Access Control Layer
         And that the request "data" is:
         """
         {
-            "email":"acluser@ushahidi.com",
+            "email":"acluser@streetsignal.com",
             "realname":"Acl User",
             "password":"testing",
             "role":"user"
@@ -632,7 +632,7 @@ Feature: API Access Control Layer
         And the response has a "id" property
         And the type of the "id" property is "numeric"
         And the response has a "email" property
-        And the "email" property equals "acluser@ushahidi.com"
+        And the "email" property equals "acluser@streetsignal.com"
         And the "role" property equals "user"
         And the response does not have a "password" property
         Then the guzzle status code should be 200
@@ -676,7 +676,7 @@ Feature: API Access Control Layer
     Scenario: Uploading a CSV file with the Importer role
         Given that I want to make a new "CSV"
         And that the oauth token is "testimporter"
-        And that the post file "file" is "tests/datasets/ushahidi/sample.csv"
+        And that the post file "file" is "tests/datasets/streetsignal/sample.csv"
         When I request "/csv"
         Then the response is JSON
         And the response has a "id" property

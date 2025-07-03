@@ -1,13 +1,13 @@
 <?php /** @noinspection ALL */
 
-namespace Ushahidi\Tests\Integration\Bootstrap;
+namespace StreetSignal\Tests\Integration\Bootstrap;
 
 use Behat\Behat\Context\Context;
-use Ushahidi\Tests\Integration\Bootstrap\Database\DefaultTester;
-use Ushahidi\Tests\Integration\Bootstrap\Database\DefaultConnection;
-use Ushahidi\Tests\Integration\Bootstrap\Database\Operation\Factory;
-use Ushahidi\Tests\Integration\Bootstrap\Database\Dataset\YamlDataset;
-use Ushahidi\Tests\Integration\Bootstrap\Database\Operation\Composite;
+use StreetSignal\Tests\Integration\Bootstrap\Database\DefaultTester;
+use StreetSignal\Tests\Integration\Bootstrap\Database\DefaultConnection;
+use StreetSignal\Tests\Integration\Bootstrap\Database\Operation\Factory;
+use StreetSignal\Tests\Integration\Bootstrap\Database\Dataset\YamlDataset;
+use StreetSignal\Tests\Integration\Bootstrap\Database\Operation\Composite;
 
 class PHPUnitFixtureContext implements Context
 {

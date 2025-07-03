@@ -1,15 +1,15 @@
 <?php
 
-namespace spec\Ushahidi\Core\Usecase\User;
+namespace spec\StreetSignal\Core\Usecase\User;
 
 use PhpSpec\ObjectBehavior;
-use Ushahidi\Contracts\Authorizer;
-use Ushahidi\Contracts\Entity;
-use Ushahidi\Contracts\Formatter;
-use Ushahidi\Contracts\RateLimiter;
-use Ushahidi\Contracts\Repository\Entity\UserRepository;
-use Ushahidi\Contracts\Repository\ReadRepository;
-use Ushahidi\Contracts\PasswordAuthenticator;
+use StreetSignal\Contracts\Authorizer;
+use StreetSignal\Contracts\Entity;
+use StreetSignal\Contracts\Formatter;
+use StreetSignal\Contracts\RateLimiter;
+use StreetSignal\Contracts\Repository\Entity\UserRepository;
+use StreetSignal\Contracts\Repository\ReadRepository;
+use StreetSignal\Contracts\PasswordAuthenticator;
 
 class LoginUserSpec extends ObjectBehavior
 {

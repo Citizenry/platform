@@ -1,7 +1,7 @@
 ---
 description: >-
   The purpose of this guide is to set your local environment for development of
-  the Ushahidi Platform with the help of the XAMPP bundle.
+  the StreetSignal Platform with the help of the XAMPP bundle.
 ---
 
 # Development environment with XAMPP
@@ -15,18 +15,18 @@ Download the Platform code with GitHub Desktop, recorded in Windows
 {% endembed %}
 
 {% embed url="https://www.youtube.com/watch?v=2byASqRp9hQ&feature=youtu.be" %}
-Install XAMPP and Composer to setup the Ushahidi Platform Backend, recorded in Windows.
+Install XAMPP and Composer to setup the StreetSignal Platform Backend, recorded in Windows.
 {% endembed %}
 
 ## Introduction
 
-XAMPP is a bundle of server programs including three of the requirements for running the Ushahidi Platform API: Apache, MySQL and PHP.
+XAMPP is a bundle of server programs including three of the requirements for running the StreetSignal Platform API: Apache, MySQL and PHP.
 
 XAMPP is available for Linux, Mac OS X and Windows. We are doing our best to ensure these instructions are useful for all three operating systems. However, there are a lot of details involved in getting everything right. Also, each of those operating systems can be found running in several different versions and configurations.
 
 For this reason, you may find out that some instructions are missing or not working for you. If that's the case, please consider researching the solution (you can [reach out for help](../../get-in-touch.md) too), and contributing updates for this guide.
 
-The two main components of the Ushahidi Platform are the API and the Client. We will cover each of them separately, starting with the API.
+The two main components of the StreetSignal Platform are the API and the Client. We will cover each of them separately, starting with the API.
 
 ### Setting up the Platform API with XAMPP
 
@@ -111,16 +111,16 @@ curl -sS https://getcomposer.org/installer | \
       * Right next to it you will find a drop down to select the character encoding and collation. Scroll near to the bottom of the list and select "utf8mb4\_unicode\_ci"
       * Click "Create"
 
-Next, create a new user and password for the `platform` database. The username and password can be anything; we will use `ushahidi` for both in this example. Select the `platform` database and execute the query below:
+Next, create a new user and password for the `platform` database. The username and password can be anything; we will use `streetsignal` for both in this example. Select the `platform` database and execute the query below:
 
 ```
-CREATE USER 'ushahidi'@'127.0.0.1' IDENTIFIED BY 'ushahidi';
+CREATE USER 'streetsignal'@'127.0.0.1' IDENTIFIED BY 'streetsignal';
 ```
 
 Now, grant all priviledges on the `plaform` database to this user by running the below command:
 
 ```
-GRANT ALL PRIVILEGES ON plaform.* TO 'ushahidi'@'127.0.0.1';
+GRANT ALL PRIVILEGES ON plaform.* TO 'streetsignal'@'127.0.0.1';
 ```
 
 #### Obtain the code
@@ -130,7 +130,7 @@ GRANT ALL PRIVILEGES ON plaform.* TO 'ushahidi'@'127.0.0.1';
     * This usually opens a terminal with `C:\xampp` being the active folder
     * Run `cd htdocs`
   * _Linux_ and _Mac_: open your Terminal program, the active folder should be `home/dev`.
-* Run `git clone https://github.com/ushahidi/platform.git platform` . This will download the Ushahidi Platform API code repository inside a folder named `platform` .
+* Run `git clone https://github.com/streetsignal/platform.git platform` . This will download the StreetSignal Platform API code repository inside a folder named `platform` .
 
 {% hint style="success" %}
 It's **very important** that you have a clear idea of the location of your platform folder in the filesystem. Let's quickly recapitulate:
@@ -162,8 +162,8 @@ On Windows File Explorer, the default is to hide the extension of the files (the
 * Modify the file in the following way:
   * Change the `CACHE_DRIVER` to be `array` instead of `memcache` (it's feasible set it up with memcache at some point, but for simplicity we use `array`)
   * Change the `DB_HOST` to `127.0.0.1`
-  * Change the `DB_USERNAME` to `ushahidi`
-  * Change the `DB_PASSWORD` to `ushahidi`
+  * Change the `DB_USERNAME` to `streetsignal`
+  * Change the `DB_PASSWORD` to `streetsignal`
   * Change the `DB_DATABASE` to `platform`
 
 {% hint style="info" %}
@@ -193,7 +193,7 @@ php composer.phar composer migrate
 
 ### Configuring the web server
 
-At this point you have the API ready to run, but need to setup your system and the Apache web server rules, in order to make it properly accessible through its own server name (we'll use the server name "api.ushahidi.test" in this example)
+At this point you have the API ready to run, but need to setup your system and the Apache web server rules, in order to make it properly accessible through its own server name (we'll use the server name "api.streetsignal.test" in this example)
 
 #### Configure the hosts file
 
@@ -201,7 +201,7 @@ At this point you have the API ready to run, but need to setup your system and t
 Configure the hosts file to match your API virtual host name to 127.0.0.1
 {% endhint %}
 
-Add the API virtual host name to your hosts file, by doing the following: appending a line with this content:`127.0.0.1 api.ushahidi.test`
+Add the API virtual host name to your hosts file, by doing the following: appending a line with this content:`127.0.0.1 api.streetsignal.test`
 
 * Windows:
   * Open the Notepad application **as administrator**.
@@ -210,10 +210,10 @@ Add the API virtual host name to your hosts file, by doing the following: append
     * In the search results, right-click Notepad and select Run as administrator.
   * Open the file: `C:\Windows\System32\Drivers\etc\hosts`
     * When doing this from the Notepad "File" > "Open" menu action, you should make sure to change the default file filter from "Text Documents (.txt)" to "All Files"
-  * Update the file, add a line at the bottom with these contents: `127.0.0.1 api.ushahidi.test`
+  * Update the file, add a line at the bottom with these contents: `127.0.0.1 api.streetsignal.test`
 * Linux / Mac :
   * Open the `/etc/hosts` file in an editor with administrator privileges (i.e. with the terminal command `sudo nano /etc/hosts`)
-  * Update the file, appending a line with these contents: `127.0.0.1 api.ushahidi.test`
+  * Update the file, appending a line with these contents: `127.0.0.1 api.streetsignal.test`
 
 #### Configure the platform/httpdocs/.htaccess file
 
@@ -277,7 +277,7 @@ RewriteRule .* httpdocs/$0 [PT]
 ```
 {% endcode %}
 
-Last, but not least, we are going to configure the web server to find your platform folder and link it to the "api.ushahidi.test" server name.
+Last, but not least, we are going to configure the web server to find your platform folder and link it to the "api.streetsignal.test" server name.
 
 We are going to need some extra concentration here, so read carefully.
 
@@ -291,7 +291,7 @@ We are going to need some extra concentration here, so read carefully.
 <VirtualHost *:80>
   ServerAdmin webmaster@localhost
   DocumentRoot "<your platform folder here>"
-  ServerName api.ushahidi.test
+  ServerName api.streetsignal.test
   <Directory "<your platform folder here>">
     AllowOverride all
     Require all granted
@@ -302,7 +302,7 @@ We are going to need some extra concentration here, so read carefully.
 {% hint style="warning" %}
 Please note that **you must adjust the provided lines**. Wherever it says `"<your platform folder here>"`, you should change that for the full path of your platform folder, i.e. `"C:\xampp\htdocs\platform"` in the case of Windows.
 
-If you chose a server name different from api.ushahidi.test , you should modify the line starting with `ServerName ...` as needed.
+If you chose a server name different from api.streetsignal.test , you should modify the line starting with `ServerName ...` as needed.
 {% endhint %}
 
 * After saving our changes, we need to restart the web server.
@@ -310,7 +310,7 @@ If you chose a server name different from api.ushahidi.test , you should modify 
   * _Linux: ..._
   * _Mac: ..._
 
-All set! You should be able to access [http://api.ushahidi.test](http://api.ushahidi.test) now and see the default API response. Something like this:
+All set! You should be able to access [http://api.streetsignal.test](http://api.streetsignal.test) now and see the default API response. Something like this:
 
 ```
 {"now":"2019-02-04T10:52:25+00:00","version":"3","user":{"id":null,"email":null,"realname":null}}
@@ -359,7 +359,7 @@ We have a separate document just for setting up the client. But, before you jump
 
 At some point during the client set up, you will be asked to adjust the value of the variable `BACKEND_URL` . This is a variable that configures the client to send API requests to the right API backend.
 
-As a result of the steps followed in this guide, the URL for the API backend is [http://api.ushahidi.test](http://api.ushahidi.test) . So remember that your backend configuration line would be: `BACKEND_URL=http://api.ushahidi.test`
+As a result of the steps followed in this guide, the URL for the API backend is [http://api.streetsignal.test](http://api.streetsignal.test) . So remember that your backend configuration line would be: `BACKEND_URL=http://api.streetsignal.test`
 
 With that clarified, please find below the link to the client set up guide.
 

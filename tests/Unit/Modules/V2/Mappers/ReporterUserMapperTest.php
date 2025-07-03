@@ -1,15 +1,15 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Modules\V2\Mappers;
+namespace StreetSignal\Tests\Unit\Modules\V2\Mappers;
 
 use Faker;
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Core\Entity\Contact;
-use Ushahidi\Tests\Unit\Modules\V2\ImportMock;
-use Ushahidi\Modules\V2\Mappers\ReporterUserMapper;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Core\Entity\Contact;
+use StreetSignal\Tests\Unit\Modules\V2\ImportMock;
+use StreetSignal\Modules\V2\Mappers\ReporterUserMapper;
 use DMS\PHPUnitExtensions\ArraySubset\ArraySubsetAsserts;
-use Ushahidi\Modules\V2\Contracts\ImportMappingRepository;
+use StreetSignal\Modules\V2\Contracts\ImportMappingRepository;
 
 /**
  * @backupGlobals disabled

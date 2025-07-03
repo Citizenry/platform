@@ -1,5 +1,5 @@
 ---
-description: This is a list of all tables used for the Ushahidi Platform.
+description: This is a list of all tables used for the StreetSignal Platform.
 ---
 
 # Database \| Tables overview
@@ -9,7 +9,7 @@ description: This is a list of all tables used for the Ushahidi Platform.
     <tr>
       <th style="text-align:left">Table</th>
       <th style="text-align:left">Description</th>
-      <th style="text-align:left">Relevant areas of Ushahidi UI/functionality</th>
+      <th style="text-align:left">Relevant areas of StreetSignal UI/functionality</th>
       <th style="text-align:left">Comments</th>
     </tr>
   </thead>

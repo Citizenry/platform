@@ -15,9 +15,9 @@
         + offset: 0 (string) <!-- Actually a number, fix API -->
         + order: asc (string)
         + orderby: created (string)
-        + curr: https://demo.api.ushahidi.io/api/v3/savedsearches?offset=0&limit=20 (string)
-        + next: https://demo.api.ushahidi.io/api/v3/savedsearches?offset=20&limit=20 (string)
-        + prev: https://demo.api.ushahidi.io/api/v3/savedsearches?offset=0&limit=20 (string)
+        + curr: https://demo.api.streetsignal.io/api/v3/savedsearches?offset=0&limit=20 (string)
+        + next: https://demo.api.streetsignal.io/api/v3/savedsearches?offset=20&limit=20 (string)
+        + prev: https://demo.api.streetsignal.io/api/v3/savedsearches?offset=0&limit=20 (string)
         + total_count: 100 (number)
 
 ### Create a Saved Search [POST /api/v3/savedsearches]
@@ -86,12 +86,12 @@
 
 ### Saved Search
 + id: 530 (number)
-+ url: https://demo.api.ushahidi.io/api/v3/savedsearches/530 (string) <!-- Todo fix this in API -->
++ url: https://demo.api.streetsignal.io/api/v3/savedsearches/530 (string) <!-- Todo fix this in API -->
 + name (string, required)
 + description (string)
 + user (object, nullable) - Owner of the saved search
     + id: 1 (number)
-    + url: https://quakemap.api.ushahidi.io/api/v3/users/1
+    + url: https://quakemap.api.streetsignal.io/api/v3/users/1
 + view: map (enum[string])
     + Members
         + map

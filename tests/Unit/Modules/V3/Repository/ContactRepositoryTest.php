@@ -8,11 +8,11 @@
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\Modules\V3\Repository;
+namespace StreetSignal\Tests\Unit\Modules\V3\Repository;
 
-use Ushahidi\Core\Entity\Contact;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Tests\DatabaseTransactions;
+use StreetSignal\Core\Entity\Contact;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Tests\DatabaseTransactions;
 
 /**
  * @backupGlobals disabled

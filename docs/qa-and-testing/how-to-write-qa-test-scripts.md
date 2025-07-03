@@ -27,5 +27,5 @@ The test scripts are what constitute a test case, and the pointers listed under 
 
 ![](https://lh3.googleusercontent.com/9dHFFUpl_InqLhnT6aMGXNf1mCRvX7gUwTPtJaVkraht5PB_x0eZS7IDZi8-rGGuWzZE0ddy1ZXn2wbZSvr0PIm9SgeFk6x3olDGJ_lpvwxW7S9VncE_i5O9DSBhlCGRbjlvgtnR)
 
-These are sample test scripts for testing and verification a People page where there’s a list of people and actions that can be performed on the list. [Check here](https://ushahidi.ontestpad.com/script/47#//) for more test scripts.
+These are sample test scripts for testing and verification a People page where there’s a list of people and actions that can be performed on the list. [Check here](https://streetsignal.ontestpad.com/script/47#//) for more test scripts.
 

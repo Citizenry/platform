@@ -1,5 +1,5 @@
 ---
-description: Information on how to conduct user testing for Ushahidi.
+description: Information on how to conduct user testing for StreetSignal.
 ---
 
 # User testing process
@@ -22,7 +22,7 @@ The notetaker does not talk in the session except to introduce themselves as the
 
 2 - Identify user testing needs, hypothesis and reasons for testing.
 
-3 - Write a test plan [example test plan](https://github.com/ushahidi/platform/issues/3681)
+3 - Write a test plan [example test plan](https://github.com/streetsignal/platform/issues/3681)
 
 4 - Other design team member inputs on the content of the test plan. It may also be relevant to include programs/implementation staff and Product managers in the test plan draft.
 
@@ -41,9 +41,9 @@ There should be a test leader and a note-taker on each test session. Test sessio
 
 11- Data process right after the session using a document template.
 
-12 - Formulate comms to Ushahidi team & key contributors.
+12 - Formulate comms to StreetSignal team & key contributors.
 
-13 - Share findings with Ushahidi team & key contributors.
+13 - Share findings with StreetSignal team & key contributors.
 
 ## Recruitment
 
@@ -51,13 +51,13 @@ Finding people to user test with is one of the most difficult and time consuming
 
 You need to look for a certain set of criteria that you want to test for. Typically this includes:
 
-1 - The kind of user that would use the Ushahidi tool and/or the specific feature that is being designed. Works or spends a majority of their time working with what the design is trying to solve e.g. Better data export = A user that exports data at least once per day from any software.
+1 - The kind of user that would use the StreetSignal tool and/or the specific feature that is being designed. Works or spends a majority of their time working with what the design is trying to solve e.g. Better data export = A user that exports data at least once per day from any software.
 
-2 - One that doesn't have bias e.g. has neither a good nor bad view of Ushahidi products, company or services
+2 - One that doesn't have bias e.g. has neither a good nor bad view of StreetSignal products, company or services
 
 3 - Inclusive of multiple diversity elements like; technical competency, socio-economically diverse, literacy competency, language competencies/not English as a first language, ethnically diverse, Impairment diverse, neurotypically diverse, gender identification diverse, age-diverse, geographically diverse.
 
-4 - Ushahidi cannot allocate finance budget to Usertesters. As such we request that you find people who are willing to offer their time and insight for free. In very rare occasions Ushahidi may be able to offer incentives like vouchers, free merchandise and services in kind.
+4 - StreetSignal cannot allocate finance budget to Usertesters. As such we request that you find people who are willing to offer their time and insight for free. In very rare occasions StreetSignal may be able to offer incentives like vouchers, free merchandise and services in kind.
 
 5 - Happy to be tested with, notes be taken regarding comments and participate. Preferably also sound and/or video recorded.
 
@@ -100,7 +100,7 @@ Be friendly, open, personable, and easy to talk to. This should feel like a casu
 
 Ask open-ended questions. The goal of the session is to find out things you don’t know yet, so never frame questions as a yes/no, this will limit the responses you get. Generally, you are in the clear if your question begins with “How...”, “Why...”, or “Tell me about...”. Open-ended questions can make people nervous. Be flexible with the format.
 
-Don’t ask leading questions. Leading questions frame the response before it’s ever given. For example, don’t ask “How helpful is Ushahidi?” because it assumes Ushahidi is helpful at all. Instead ask: “How have you found Ushahidi so far?” or “What has your experience with Ushahidi been like so far?”
+Don’t ask leading questions. Leading questions frame the response before it’s ever given. For example, don’t ask “How helpful is StreetSignal?” because it assumes StreetSignal is helpful at all. Instead ask: “How have you found StreetSignal so far?” or “What has your experience with StreetSignal been like so far?”
 
 Avoid asking what people want in a feature “What would you like/do/want in a _feature_” People are often unreliable self-reporters in hypothetical situations - More useful to ask them to describe a behaviour they do.
 

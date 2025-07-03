@@ -18,9 +18,9 @@ services:
     containerPort: 3306
   env: &mysql_env
     MYSQL_ROOT_PASSWORD: root
-    MYSQL_DATABASE: ushahidi
-    MYSQL_USER: ushahidi
-    MYSQL_PASSWORD: ushahidi
+    MYSQL_DATABASE: streetsignal
+    MYSQL_USER: streetsignal
+    MYSQL_PASSWORD: streetsignal
 
 tasks:
 - name: db-dump

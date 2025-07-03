@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\Bus\Handler\Query;
 
-use Ushahidi\Modules\V5\Actions\CountryCode\Queries\FetchCountryCodeByIdQuery;
-use Ushahidi\Modules\V5\Actions\CountryCode\Queries\FetchCountryCodeQuery;
-use Ushahidi\Modules\V5\Actions\CountryCode\Handlers\FetchCountryCodeByIdQueryHandler;
+use StreetSignal\Modules\V5\Actions\CountryCode\Queries\FetchCountryCodeByIdQuery;
+use StreetSignal\Modules\V5\Actions\CountryCode\Queries\FetchCountryCodeQuery;
+use StreetSignal\Modules\V5\Actions\CountryCode\Handlers\FetchCountryCodeByIdQueryHandler;
 use PHPUnit\Framework\TestCase;
-use Ushahidi\Modules\V5\Models\CountryCode;
-use Ushahidi\Modules\V5\Repository\CountryCode\CountryCodeRepository;
+use StreetSignal\Modules\V5\Models\CountryCode;
+use StreetSignal\Modules\V5\Repository\CountryCode\CountryCodeRepository;
 
 class FetchCountryCodeByIdQueryHandlerTest extends TestCase
 {

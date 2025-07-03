@@ -6,7 +6,7 @@ Feature: Testing the Users API
 		And that the request "data" is:
 			"""
 			{
-				"email":"linda@ushahidi.com",
+				"email":"linda@streetsignal.com",
 				"realname":"Linda Kamau",
 				"password":"testing",
 				"role":"admin"
@@ -17,7 +17,7 @@ Feature: Testing the Users API
 		And the response has a "id" property
 		And the type of the "id" property is "numeric"
 		And the response has a "email" property
-		And the "email" property equals "linda@ushahidi.com"
+		And the "email" property equals "linda@streetsignal.com"
 		And the "role" property equals "admin"
 		And the response does not have a "password" property
 		Then the guzzle status code should be 200
@@ -27,7 +27,7 @@ Feature: Testing the Users API
 		And that the request "data" is:
 			"""
 			{
-				"email":"robbie@ushahidi.com",
+				"email":"robbie@streetsignal.com",
 				"realname":"Robbie Mackay",
 				"password":"testing",
 				"role":"admin",
@@ -48,7 +48,7 @@ Feature: Testing the Users API
 						"user_id": "1",
 						"data_provider": null,
 						"type": "email",
-						"contact": "robbie@ushahidi.com",
+						"contact": "robbie@streetsignal.com",
 						"created": "0",
 						"updated": null,
 						"can_notify": "0",
@@ -64,7 +64,7 @@ Feature: Testing the Users API
 		And the type of the "id" property is "numeric"
 		And the "id" property equals "1"
 		And the response has a "email" property
-		And the "email" property equals "robbie@ushahidi.com"
+		And the "email" property equals "robbie@streetsignal.com"
 		And the "role" property equals "admin"
 		Then the guzzle status code should be 200
 
@@ -90,7 +90,7 @@ Feature: Testing the Users API
 		And that the request "data" is:
 			"""
 			{
-				"email":"tom@ushahidi.com",
+				"email":"tom@streetsignal.com",
 				"realname":"Tom Kamau",
 				"password":"tomkamau"
 			}
@@ -143,7 +143,7 @@ Feature: Testing the Users API
 		And the response has a "id" property
 		And the type of the "id" property is "numeric"
 		And the "realname" property equals "Test User"
-		And the "email" property equals "test@v3.ushahidi.com"
+		And the "email" property equals "test@v3.streetsignal.com"
 		Then the guzzle status code should be 200
 
 	Scenario: Loading own user gives full details
@@ -155,7 +155,7 @@ Feature: Testing the Users API
 		And the response has a "id" property
 		And the type of the "id" property is "numeric"
 		And the "realname" property equals "Robbie Mackay"
-		And the "email" property equals "robbie@ushahidi.com"
+		And the "email" property equals "robbie@streetsignal.com"
 		Then the guzzle status code should be 200
 
 	Scenario: Loading own user gives full details
@@ -201,7 +201,7 @@ Feature: Testing the Users API
 			"""
 			{
         "full_name":"New User",
-				"email":"newuser@ushahidi.com",
+				"email":"newuser@streetsignal.com",
 				"password":"testing",
 				"role":"admin"
 			}
@@ -211,7 +211,7 @@ Feature: Testing the Users API
 		And the response has a "id" property
 		And the type of the "id" property is "numeric"
 		And the response has a "email" property
-		And the "email" property equals "newuser@ushahidi.com"
+		And the "email" property equals "newuser@streetsignal.com"
 		And the "role" property equals "user"
 		And the response does not have a "password" property
 		Then the guzzle status code should be 200
@@ -223,7 +223,7 @@ Feature: Testing the Users API
 			"""
 			{
 				"full_name":"New User",
-				"email":"newuser2@ushahidi.com",
+				"email":"newuser2@streetsignal.com",
 				"password":"testing",
 				"role":"admin"
 			}
@@ -235,7 +235,7 @@ Feature: Testing the Users API
 			"""
 			{
 				"full_name":"New User",
-				"email":"newuser3@ushahidi.com",
+				"email":"newuser3@streetsignal.com",
 				"password":"testing",
 				"role":"admin"
 			}
@@ -247,7 +247,7 @@ Feature: Testing the Users API
 			"""
 			{
 				"full_name":"New User",
-				"email":"newuser4@ushahidi.com",
+				"email":"newuser4@streetsignal.com",
 				"password":"testing",
 				"role":"admin"
 			}
@@ -259,7 +259,7 @@ Feature: Testing the Users API
 			"""
 			{
 				"full_name":"New User",
-				"email":"newuser5@ushahidi.com",
+				"email":"newuser5@streetsignal.com",
 				"password":"testing",
 				"role":"admin"
 			}
@@ -273,7 +273,7 @@ Feature: Testing the Users API
 		And that the request "data" is:
 			"""
 			{
-				"email":"test@ushahidi.com"
+				"email":"test@streetsignal.com"
 			}
 			"""
 		When I request "/passwordreset"
@@ -284,7 +284,7 @@ Feature: Testing the Users API
 		And that the request "data" is:
 			"""
 			{
-				"email":"demo@ushahidi.com",
+				"email":"demo@streetsignal.com",
 				"token":"testresettoken",
 				"password":"abcd1234"
 			}
@@ -297,7 +297,7 @@ Feature: Testing the Users API
 		And that the request "data" is:
 			"""
 			{
-				"email":"demo@ushahidi.com",
+				"email":"demo@streetsignal.com",
 				"token":"testresettoken2",
 				"password":"a"
 			}

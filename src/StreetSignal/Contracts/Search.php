@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * StreetSignal Platform Search Data
+ *
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2022 StreetSignal
+ * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
+ */
+
+namespace StreetSignal\Contracts;
+
+interface Search
+{
+    /**
+     * Get an array of the sorting filters, with their values.
+     *
+     * @param bool $force
+     * @return array
+     */
+    public function getSorting(bool $force = false);
+
+    /**
+     * Change the filters used for sorting.
+     *
+     * @param  array $sorting
+     * @return $this
+     */
+    public function setSortingKeys(array $sorting);
+}

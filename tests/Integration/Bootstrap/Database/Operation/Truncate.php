@@ -1,6 +1,6 @@
 <?php
 
-namespace Ushahidi\Tests\Integration\Bootstrap\Database\Operation;
+namespace StreetSignal\Tests\Integration\Bootstrap\Database\Operation;
 
 use PDO;
 use PDOException;

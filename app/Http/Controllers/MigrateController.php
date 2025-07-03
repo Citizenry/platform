@@ -7,10 +7,10 @@ use Phinx\Console\PhinxApplication;
 use Phinx\Wrapper\TextWrapper;
 
 /**
- * Ushahidi API Migration Controller
+ * StreetSignal API Migration Controller
  *
- * @author     Ushahidi Team <team@ushahidi.com>
- * @copyright  2013 Ushahidi
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2013 StreetSignal
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 class MigrateController extends Controller
@@ -26,7 +26,7 @@ class MigrateController extends Controller
 
         $phinx_wrapper = new TextWrapper($phinx_app, $phinx_config);
 
-        $migration_results = call_user_func([$phinx_wrapper, 'getMigrate'], 'ushahidi', null);
+        $migration_results = call_user_func([$phinx_wrapper, 'getMigrate'], 'streetsignal', null);
         $error = $phinx_wrapper->getExitCode() > 0;
 
         return response()->json([

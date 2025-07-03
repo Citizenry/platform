@@ -9,7 +9,7 @@ class AutoApproveDefaultOauthClient extends AbstractMigration
      */
     public function up()
     {
-        $this->execute("UPDATE oauth_clients SET auto_approve = 1 WHERE id = 'ushahidiui'");
+        $this->execute("UPDATE oauth_clients SET auto_approve = 1 WHERE id = 'streetsignalui'");
     }
 
     /**
@@ -17,6 +17,6 @@ class AutoApproveDefaultOauthClient extends AbstractMigration
      */
     public function down()
     {
-        $this->execute("UPDATE oauth_clients SET auto_approve = 0 WHERE id = 'ushahidiui'");
+        $this->execute("UPDATE oauth_clients SET auto_approve = 0 WHERE id = 'streetsignalui'");
     }
 }

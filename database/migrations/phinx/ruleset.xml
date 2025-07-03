@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Ushahidi">
-    <description>Ushahidi migrations use PSR2 with exclusions</description>
+<ruleset name="StreetSignal">
+    <description>StreetSignal migrations use PSR2 with exclusions</description>
 
     <!-- Specs use PSR2 with an exclusion of method names -->
     <rule ref="PSR2">

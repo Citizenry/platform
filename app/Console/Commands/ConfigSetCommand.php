@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Ushahidi Config Console Command
+ * StreetSignal Config Console Command
  *
- * @author     Ushahidi Team <team@ushahidi.com>
- * @copyright  2014 Ushahidi
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2014 StreetSignal
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Ushahidi\Contracts\Repository\Entity\ConfigRepository;
-use Ushahidi\Core\Tool\Authorizer\ConsoleAuthorizer;
-use Ushahidi\Core\Usecase\UpdateUsecase;
+use StreetSignal\Contracts\Repository\Entity\ConfigRepository;
+use StreetSignal\Core\Tool\Authorizer\ConsoleAuthorizer;
+use StreetSignal\Core\Usecase\UpdateUsecase;
 use App\Console\Commands\Concerns\ConsoleFormatter;
 
 class ConfigSetCommand extends Command
@@ -42,7 +42,7 @@ class ConfigSetCommand extends Command
     protected $description = 'Set config params';
 
     /**
-     * @var \Ushahidi\Contracts\Usecase
+     * @var \StreetSignal\Contracts\Usecase
      * @todo  support multiple entity types
      */
     protected $usecase;

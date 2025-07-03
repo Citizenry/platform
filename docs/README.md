@@ -1,12 +1,12 @@
 # 👋 Welcome | README
 
-[![Build Status](https://travis-ci.org/ushahidi/platform.png)](https://travis-ci.org/ushahidi/platform) [![Coverage Status](https://coveralls.io/repos/github/ushahidi/platform/badge.svg)](https://coveralls.io/github/ushahidi/platform) [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+[![Build Status](https://travis-ci.org/streetsignal/platform.png)](https://travis-ci.org/streetsignal/platform) [![Coverage Status](https://coveralls.io/repos/github/streetsignal/platform/badge.svg)](https://coveralls.io/github/streetsignal/platform) [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ![](<../.gitbook/assets/oss-welcome-banner (1) (1) (2) (2).png>)
 
-## What is Ushahidi?
+## What is StreetSignal?
 
-Ushahidi is an open source web application for information collection, visualization and interactive mapping. It helps you to collect info from: SMS, Twitter, RSS feeds, Email. It helps you to process that information, categorize it, geo-locate it and publish it on a map.
+StreetSignal is an open source web application for information collection, visualization and interactive mapping. It helps you to collect info from: SMS, Twitter, RSS feeds, Email. It helps you to process that information, categorize it, geo-locate it and publish it on a map.
 
 ## Required reading: Code of Conduct.
 
@@ -16,11 +16,11 @@ We love having you here. To ensure everyone has a good experience, we ask **ever
 [code-of-conduct](code-of-conduct/)
 {% endcontent-ref %}
 
-![](<../.gitbook/assets/oss-ushahidi-project (1) (1) (2) (4).png>)
+![](<../.gitbook/assets/oss-streetsignal-project (1) (1) (2) (4).png>)
 
-If you are not a developer, or just don't want to set it up yourself, you can start a hosted deployment [here](https://www.ushahidi.com/pricing).
+If you are not a developer, or just don't want to set it up yourself, you can start a hosted deployment [here](https://www.streetsignal.com/pricing).
 
-If you want to install and host the Ushahidi Platform yourself, check out one of our Setup Guides
+If you want to install and host the StreetSignal Platform yourself, check out one of our Setup Guides
 
 {% content-ref url="development-and-code/setup_alternatives/" %}
 [setup\_alternatives](development-and-code/setup\_alternatives/)
@@ -38,7 +38,7 @@ If you are a developer and want to install and customise the code, read through 
 
 ### A note for grassroots organizations
 
-If you are starting a deployment for a grassroots organization, you can apply for a free social-impact responder account [here](https://www.ushahidi.com/pricing/apply-for-free) after verifying that you meet the criteria.
+If you are starting a deployment for a grassroots organization, you can apply for a free social-impact responder account [here](https://www.streetsignal.com/pricing/apply-for-free) after verifying that you meet the criteria.
 
 ## Getting Involved
 
@@ -50,7 +50,7 @@ Check out how you can get involved and contribute to our work:
 
 ## Useful Links
 
-* [User Documentation](https://www.ushahidi.com/support)
-* [Ushahidi.com](https://www.ushahidi.com)
-* [Ushahidi Platform v2](https://github.com/ushahidi/Ushahidi\_Web)
-* [Ushahidi on Github](https://github.com/ushahidi)
+* [User Documentation](https://www.streetsignal.com/support)
+* [StreetSignal.com](https://www.streetsignal.com)
+* [StreetSignal Platform v2](https://github.com/streetsignal/StreetSignal\_Web)
+* [StreetSignal on Github](https://github.com/streetsignal)

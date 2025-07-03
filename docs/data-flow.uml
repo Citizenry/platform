@@ -1,17 +1,17 @@
 @startuml
 
-title Ushahidi Data Flow
+title StreetSignal Data Flow
 
 [Twitter]
 [SMS]
 [Email]
 
-node "Ushahidi" {
+node "StreetSignal" {
     () Post
     () "REST API" as RESTAPI
     () "Notifications"
     
-    [Ushahidi Core]
+    [StreetSignal Core]
 }
 
 [Mobile App]
@@ -21,12 +21,12 @@ node "Ushahidi" {
 [Email]-right->Post
 [SMS]-right->Post
 
-Post-right->[Ushahidi Core]
+Post-right->[StreetSignal Core]
 
-RESTAPI<-left->[Ushahidi Core]
+RESTAPI<-left->[StreetSignal Core]
 
 [RESTAPI]<-right->[Web Interface]
 [RESTAPI]<->[Mobile App]
-[Ushahidi Core]-down->Notifications
+[StreetSignal Core]-down->Notifications
 
 @enduml

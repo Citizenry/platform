@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ushahidi\Tests\Integration\Bootstrap\Database;
+namespace StreetSignal\Tests\Integration\Bootstrap\Database;
 
 use PDO;
-use Ushahidi\Tests\Integration\Bootstrap\Database\Metadata\AbstractMetadata;
+use StreetSignal\Tests\Integration\Bootstrap\Database\Metadata\AbstractMetadata;
 
 class DefaultConnection
 {

@@ -17,11 +17,11 @@ For instance, if your intention is to edit a lot of pages or to create new compl
 In order to obtain permission to edit via GitBook, you will need two things:
 
 1. A github account
-2. Send us a message on [techdocs@ushahidi.com](mailto:techdocs@ushahidi.com)
+2. Send us a message on [techdocs@streetsignal.com](mailto:techdocs@streetsignal.com)
 
 ## Style considerations
 
-Our intention is to make our documentation available to as many people as possible. The Ushahidi Platform is used all over the world by people of different cultures, ages and linguistic backgrounds.
+Our intention is to make our documentation available to as many people as possible. The StreetSignal Platform is used all over the world by people of different cultures, ages and linguistic backgrounds.
 
 We use the English language as it is the most widely spread language for global communication. While making this choice, we must be mindful of the diversity of our audience. Not all our readers may be comfortable with English. We must not add to their burden with confused explanations, complicated structure or obscure wording.
 

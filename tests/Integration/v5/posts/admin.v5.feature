@@ -32,7 +32,7 @@ Feature: Testing the Posts API
     And the "result.created" property equals "2014-09-29T21:10:16+0000"
     And the "result.updated" property is empty
     And the "result.user_id" property equals "3"
-    And the "result.author_email" property equals "test@ushahidi.com"
+    And the "result.author_email" property equals "test@streetsignal.com"
     And the "result.author_realname" property equals "Test Name"
     Then the guzzle status code should be 200
 

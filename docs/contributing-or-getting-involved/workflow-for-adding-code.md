@@ -1,4 +1,4 @@
-# Add code to Ushahidi
+# Add code to StreetSignal
 
 ## Workflow for Adding Code
 
@@ -6,17 +6,17 @@
 
 First, [create a github account](https://github.com/join).
 
-Ushahidi code development is happening in [Github](https://github.com/ushahidi). We track all our tasks, both front-end and back-end, in issues connected to the repo [Platform API](https://github.com/ushahidi/platform).
+StreetSignal code development is happening in [Github](https://github.com/streetsignal). We track all our tasks, both front-end and back-end, in issues connected to the repo [Platform API](https://github.com/streetsignal/platform).
 
 ### 2. Fork the repository
 
 A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 
-The Ushahidi is built from 3 separate repositories. Depending on the task you'll need to [fork](https://help.github.com/articles/fork-a-repo/) one or more of these. Usually you'll need to fork at least the API and the Client repositories.
+The StreetSignal is built from 3 separate repositories. Depending on the task you'll need to [fork](https://help.github.com/articles/fork-a-repo/) one or more of these. Usually you'll need to fork at least the API and the Client repositories.
 
-* [Platform API](https://github.com/ushahidi/platform): This is the where the API for the platform is developed.
-* [Platform Client](https://github.com/ushahidi/platform-client): This is where the JS client for the platform is developed.
-* [Platform Pattern Library](https://github.com/ushahidi/platform-pattern-library): This is where the designs, HTML and CSS for the platform is developed.
+* [Platform API](https://github.com/streetsignal/platform): This is the where the API for the platform is developed.
+* [Platform Client](https://github.com/streetsignal/platform-client): This is where the JS client for the platform is developed.
+* [Platform Pattern Library](https://github.com/streetsignal/platform-pattern-library): This is where the designs, HTML and CSS for the platform is developed.
 
 To fork a repository:
 
@@ -46,16 +46,16 @@ When you clone a repository, the URL you clone is always created as the "origin"
 
 ### 5. Find a feature to work on
 
-The best way to pick a feature to work on is to say hi to Ushahidi’s developers in our community-channels in gitter/irc, let them know what you’d like to work on \(front end, back end, etc\), and chat about what could be suitable for you. You can find more info on how to contact us [here](../get-in-touch.md).
+The best way to pick a feature to work on is to say hi to StreetSignal’s developers in our community-channels in gitter/irc, let them know what you’d like to work on \(front end, back end, etc\), and chat about what could be suitable for you. You can find more info on how to contact us [here](../get-in-touch.md).
 
-Ushahidi issues \(bugs, feature requests, etc\) are in Github Issues. Find something that needs doing.
+StreetSignal issues \(bugs, feature requests, etc\) are in Github Issues. Find something that needs doing.
 
-* [Community tasks](https://github.com/ushahidi/platform/labels/Community%20Task) in github are feature that are up for grabs by community devs.
+* [Community tasks](https://github.com/streetsignal/platform/labels/Community%20Task) in github are feature that are up for grabs by community devs.
 * Other tasks that we haven’t labeled yet may be suitable for work. Feel free to contact the team if you intend to work on something that grabs your attention.
 
 ### 6. Start a branch for your feature
 
-If you’re working on a feature that nobody has claimed before, you will need to create a branch of Ushahidi that’s specific to this feature. To do this, cd \(change directory\) into your Ushahidi code in the terminal window, and type:
+If you’re working on a feature that nobody has claimed before, you will need to create a branch of StreetSignal that’s specific to this feature. To do this, cd \(change directory\) into your StreetSignal code in the terminal window, and type:
 
 ```text
 git checkout master
@@ -67,9 +67,9 @@ Where “some-task” is a short description _without spaces_ of what this task 
 
 ### 7. Write Code
 
-Now write your code. Make sure you meet the [Ushahidi coding standards](https://docs.ushahidi.com/platform-developer-documentation/development-and-code/coding-standards) and use the [Ushahidi pattern library](https://docs.ushahidi.com/platform-developer-documentation/front-end-development/changing-ui-styles-introduction-to-the-pattern-library) if you need to change the css.
+Now write your code. Make sure you meet the [StreetSignal coding standards](https://docs.streetsignal.com/platform-developer-documentation/development-and-code/coding-standards) and use the [StreetSignal pattern library](https://docs.streetsignal.com/platform-developer-documentation/front-end-development/changing-ui-styles-introduction-to-the-pattern-library) if you need to change the css.
 
-If you get stuck, or want to talk through ideas, you can contact [other Ushahidi developers](../get-in-touch.md).
+If you get stuck, or want to talk through ideas, you can contact [other StreetSignal developers](../get-in-touch.md).
 
 ### 8. Submit your code
 
@@ -92,9 +92,9 @@ When you’re ready to submit your code for approval, do this:
 
 In order to make it easy for someone to review your pull request, please write a checklist for how to test and evaluate your submission. You can read more about
 
-The first time you submit code you may be asked to sign Ushahidi’s [contributor agreement](https://docs.google.com/forms/d/e/1FAIpQLScqz_EQbz_CYlSHffnGx7p2GdqP23FmbACwocIWejEHYLyzdg/viewform).
+The first time you submit code you may be asked to sign StreetSignal’s [contributor agreement](https://docs.google.com/forms/d/e/1FAIpQLScqz_EQbz_CYlSHffnGx7p2GdqP23FmbACwocIWejEHYLyzdg/viewform).
 
-The Ushahidi admins will then review and comment on your code, and will either accept your code or ask you to make changes to it. If you are asked to make changes to your code, make those changes then resubmit your code using:
+The StreetSignal admins will then review and comment on your code, and will either accept your code or ask you to make changes to it. If you are asked to make changes to your code, make those changes then resubmit your code using:
 
 ```text
 git add .
@@ -102,7 +102,7 @@ git commit -m “message about this commit”
 git push origin some-task
 ```
 
-If your code is accepted, then the admin will merge your pull request. Your code will then appear in the Ushahidi Platform github repository, with you credited for it.
+If your code is accepted, then the admin will merge your pull request. Your code will then appear in the StreetSignal Platform github repository, with you credited for it.
 
 ### 9. Further Reading <a id="further-reading"></a>
 

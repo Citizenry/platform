@@ -7,7 +7,7 @@ Feature: Testing the Layers API
             """
             {
                 "name":"test",
-                "data_url":"http://ushahidi-platform.dev/media/test.geojson",
+                "data_url":"http://streetsignal-platform.dev/media/test.geojson",
                 "type":"shape",
                 "active":true,
                 "visible_by_default":true
@@ -25,7 +25,7 @@ Feature: Testing the Layers API
             """
             {
                 "name":"test",
-                "data_url":"http://ushahidi-platform.dev/media/test.geojson",
+                "data_url":"http://streetsignal-platform.dev/media/test.geojson",
                 "type":"geojson"
             }
             """

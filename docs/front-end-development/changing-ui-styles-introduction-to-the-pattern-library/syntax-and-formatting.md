@@ -1,6 +1,6 @@
 # Syntax and Formatting
 
-The Ushahidi Platform uses the SCSS syntax because it is more consistent and familiar with vanilla CSS.
+The StreetSignal Platform uses the SCSS syntax because it is more consistent and familiar with vanilla CSS.
 
 Indentation should be 4 space tabs. CSS rules should be written on multi-lines.
 
@@ -199,7 +199,7 @@ $font-stack: Helvetica Neue Light, Helvetica, Arial, sans-serif;
 
 ## Commenting
 
-Commenting is CSS is an essential practice that can help explain why and how code is written. Ushahidi's CSS commenting is simple.
+Commenting is CSS is an essential practice that can help explain why and how code is written. StreetSignal's CSS commenting is simple.
 
 ```text
 // Comments are preceeded by two backslashes

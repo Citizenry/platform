@@ -1,6 +1,6 @@
 ## Current Version
 
-Version of the Ushahidi Platform API are designated in the url `/api/v5`.
+Version of the StreetSignal Platform API are designated in the url `/api/v5`.
 
 ## Resource Names
 
@@ -10,7 +10,7 @@ In the V5 API, we are working towards more consistent and clear naming for our r
 with the intent of matching the common usage and terms we see the community, deployers, and end users apply.
 This means resource names are different when using v3 vs v5 endpoints.
 
-*Important*: V5 is an alpha that is being used exclusively by Ushahidi at this point, 
+*Important*: V5 is an alpha that is being used exclusively by StreetSignal at this point, 
 and naming conventions may still change for a while. If you plan to use V5, make sure you read every release note for
 any critical breaking changes to avoid issues. V5 is still in heavy development. This is a great time to provide input and
 help build the next generation of our APIs.
@@ -42,7 +42,7 @@ Individual resources always include URL and id properties
 ```json
 {
     "id": 1,
-    "url": "https://demo.api.ushahidi.io/api/v3/resources/1"
+    "url": "https://demo.api.streetsignal.io/api/v3/resources/1"
 }
 ```
 
@@ -60,9 +60,9 @@ When you a fetch a collection of resources we return some metadata as well as a 
     "offset": "0",
     "order": "asc",
     "orderby": "created",
-    "curr": "https://demo.api.ushahidi.io/api/v3/resources?offset=0&limit=20",
-    "next": "https://demo.api.ushahidi.io/api/v3/resources?offset=20&limit=20",
-    "prev": "https://demo.api.ushahidi.io/api/v3/resources?offset=0&limit=20",
+    "curr": "https://demo.api.streetsignal.io/api/v3/resources?offset=0&limit=20",
+    "next": "https://demo.api.streetsignal.io/api/v3/resources?offset=20&limit=20",
+    "prev": "https://demo.api.streetsignal.io/api/v3/resources?offset=0&limit=20",
     "total_count": 100
 }
 ```
@@ -75,7 +75,7 @@ When a resource has relations we return these as both a URL and id of the relati
 {
     "relation": {
         "id": 1,
-        "url": "https://demo.api.ushahidi.io/api/v3/resources/1"
+        "url": "https://demo.api.streetsignal.io/api/v3/resources/1"
     }
 }
 ```
@@ -87,7 +87,7 @@ If a relation is empty it may be ommitted or `null`.
 Many API methods take optional parameters. For GET requests, any parameters not specified as a segment in the path can be passed as an HTTP query string parameter:
 
 ```bash
-curl -i -H "Authorization: Bearer OAUTH-TOKEN" "https://demo.api.ushahidi.io/api/v3/forms/1/attributes?type=text"
+curl -i -H "Authorization: Bearer OAUTH-TOKEN" "https://demo.api.streetsignal.io/api/v3/forms/1/attributes?type=text"
 ```
 
 In this example, the `1` value is provided for the `formid` parameter in the path while `type` is passed in the query string.
@@ -96,7 +96,7 @@ Multiple parameters are treated as boolean `AND` ie. /posts?form=1&user=2 will r
 For POST and PUT requests, parameters not included in the URL should be encoded as JSON with a Content-Type of 'application/json':
 
 ```bash
-curl -i -H "Authorization: Bearer OAUTH-TOKEN" -X POST -d '{"tag":"My tag"}' "https://demo.api.ushahidi.io/api/v3/tags"
+curl -i -H "Authorization: Bearer OAUTH-TOKEN" -X POST -d '{"tag":"My tag"}' "https://demo.api.streetsignal.io/api/v3/tags"
 ```
 
 ### Multivalue parameters
@@ -200,7 +200,7 @@ Most resources required an OAuth2 Token for authentication. See the [Authorizati
 
 Requests that return multiple items may be paginated by default. You can traverse further results with the ?offset parameter. You should also set a custom limit with the ?limit parameter.
 
-        curl 'https://demo.api.ushahidi.io/api/v3/posts?limit=50&offset=50'
+        curl 'https://demo.api.streetsignal.io/api/v3/posts?limit=50&offset=50'
 
 Note that offset numbering is 0-based and that omitting the ?offset parameter will default to ?offset=0.
 
@@ -210,7 +210,7 @@ The API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any
 
 Here is what the CORS preflight request looks like
 
-    curl -i https://demo.api.ushahidi.io/api/v3/posts -H "Origin: http://example.com" -X OPTIONS
+    curl -i https://demo.api.streetsignal.io/api/v3/posts -H "Origin: http://example.com" -X OPTIONS
     HTTP/1.1 200 OK
     Access-Control-Allow-Origin: *
     Access-Control-Allow-Headers: Authorization, Content-type

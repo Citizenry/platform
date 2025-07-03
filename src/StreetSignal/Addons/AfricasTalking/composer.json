@@ -1,0 +1,29 @@
+{
+    "name": "streetsignal/africastalking-addon",
+    "description": "Addon for StreetSignal DataSource",
+    "homepage": "http://streetsignal.com/",
+    "type": "library",
+    "license": "AGPL-3.0",
+    "repositories": [],
+    "require": {
+        "africastalking/africastalking": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "StreetSignal\\Addons\\AfricasTalking\\": ""
+        },
+        "files": []
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "StreetSignal\\Addons\\AfricasTalking\\ServiceProvider"
+            ]
+        }
+    },
+    "suggest": {},
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}

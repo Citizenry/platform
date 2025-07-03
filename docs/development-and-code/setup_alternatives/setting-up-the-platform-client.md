@@ -10,11 +10,11 @@ The setup in this guide is demonstrated in the below videos as well if you want 
 
 **Please note before watching the videos**
 
-In the videos below the API-url "[https://wsc2019.api.ushahidi.io/](https://wsc2019.api.ushahidi.io/)" is used. This if for demo-purposes only, you will need to set up your own API, see guides here: [https://docs.ushahidi.com/platform-developer-documentation/development-and-code/setup\_alternatives\#platform-api-backend-install-guides](https://docs.ushahidi.com/platform-developer-documentation/development-and-code/setup_alternatives#platform-api-backend-install-guides)
+In the videos below the API-url "[https://wsc2019.api.streetsignal.io/](https://wsc2019.api.streetsignal.io/)" is used. This if for demo-purposes only, you will need to set up your own API, see guides here: [https://docs.streetsignal.com/platform-developer-documentation/development-and-code/setup\_alternatives\#platform-api-backend-install-guides](https://docs.streetsignal.com/platform-developer-documentation/development-and-code/setup_alternatives#platform-api-backend-install-guides)
 
-{% embed url="https://www.youtube.com/watch?v=-GZBJtUQqoQ&feature=youtu.be" caption="Setting up Ushahidi client for local development, recorded in MacOS." %}
+{% embed url="https://www.youtube.com/watch?v=-GZBJtUQqoQ&feature=youtu.be" caption="Setting up StreetSignal client for local development, recorded in MacOS." %}
 
-{% embed url="https://youtu.be/jPa4oB4XPZw" caption="Setting up Ushahidi client for local development, recorded in Linux." %}
+{% embed url="https://youtu.be/jPa4oB4XPZw" caption="Setting up StreetSignal client for local development, recorded in Linux." %}
 
 {% embed url="https://www.youtube.com/watch?v=zY80QpptKk0&feature=youtu.be" caption="Download the Platform code with Github-desktop, recorded in Windows" %}
 
@@ -33,7 +33,7 @@ Pre-requisite: Install Node V10.x or higher \(you might want to use NVM for this
 * In a terminal window or command prompt, clone the repository.
 
 ```bash
-git clone https://github.com/ushahidi/platform-client.git
+git clone https://github.com/streetsignal/platform-client.git
 ```
 
 {% hint style="success" %}
@@ -138,7 +138,7 @@ You can **safely skip this section** if it's your first time setting up the clie
 * The `PORT` variable specifies at which port the local development server should listen. The default for this variable is `3000`.
 * `TX_USERNAME` and `TX_PASSWORD`  are variables for configuring the credentials to the [Transifex](https://www.transifex.com/) service, which stores multi-lingual versions of the Platform client text displayed on the screen. These are only required if you are going to develop on languages other than English.
 * `APP_LANGUAGES` is a list of language codes \(in ISO-639-1 format\) to download from Transifex. For example `APP_LANGUAGES=sw,en,es` would enable the client to appear in Swahili, English and Spanish.
-* `OAUTH_CLIENT_ID` and `OAUTH_CLIENT_SECRET` are variables used during the process of authentication of a user against the API. You can ignore these 99% of the times. Also, these are not particularly secret nor provide much security. They just have to exist, and they do by default. \(If  you must know, their values default to `ushahidiui` and `35e7f0bca957836d05ca0492211b0ac707671261` respectively\)
+* `OAUTH_CLIENT_ID` and `OAUTH_CLIENT_SECRET` are variables used during the process of authentication of a user against the API. You can ignore these 99% of the times. Also, these are not particularly secret nor provide much security. They just have to exist, and they do by default. \(If  you must know, their values default to `streetsignalui` and `35e7f0bca957836d05ca0492211b0ac707671261` respectively\)
 
 ### Making \`gulp\` command available
 

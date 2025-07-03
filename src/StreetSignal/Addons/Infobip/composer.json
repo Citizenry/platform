@@ -1,0 +1,29 @@
+{
+    "name": "streetsignal/infobip-support",
+    "description": "Infobip addon for the StreetSignal data source component",
+    "homepage": "http://streetsignal.com/",
+    "type": "library",
+    "license": "AGPL-3.0",
+    "repositories": [],
+    "require": {
+        "infobip-community/infobip-api-php-sdk": "1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "StreetSignal\\Addons\\Infobip\\": ""
+        },
+        "files": []
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "StreetSignal\\Addons\\Infobip\\LaravelServiceProvider"
+            ]
+        }
+    },
+    "suggest": {},
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}

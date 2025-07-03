@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Bus\Handler\Query;
 
-use Ushahidi\Modules\V5\Actions\CountryCode\Queries\FetchCountryCodeQuery;
-use Ushahidi\Modules\V5\Actions\CountryCode\Handlers\FetchCountryCodeQueryHandler;
-use Ushahidi\Modules\V5\Http\Resources\CountryCodeCollection;
-use Ushahidi\Modules\V5\Models\CountryCode;
-use Ushahidi\Modules\V5\Repository\CountryCode\CountryCodeRepository;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Modules\V5\Actions\CountryCode\Queries\FetchCountryCodeQuery;
+use StreetSignal\Modules\V5\Actions\CountryCode\Handlers\FetchCountryCodeQueryHandler;
+use StreetSignal\Modules\V5\Http\Resources\CountryCodeCollection;
+use StreetSignal\Modules\V5\Models\CountryCode;
+use StreetSignal\Modules\V5\Repository\CountryCode\CountryCodeRepository;
+use StreetSignal\Tests\TestCase;
 
 class FetchCountryCodeQueryHandlerTest extends TestCase
 {

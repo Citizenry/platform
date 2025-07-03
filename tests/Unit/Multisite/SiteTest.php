@@ -8,15 +8,15 @@
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\Multisite;
+namespace StreetSignal\Tests\Unit\Multisite;
 
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Tests\TestCase;
 use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Mail;
-use Ushahidi\Multisite\Site;
-use Ushahidi\Core\Entity\Config;
-use Ushahidi\Contracts\Repository\Entity\ConfigRepository;
+use StreetSignal\Multisite\Site;
+use StreetSignal\Core\Entity\Config;
+use StreetSignal\Contracts\Repository\Entity\ConfigRepository;
 
 /**
  * @backupGlobals disabled

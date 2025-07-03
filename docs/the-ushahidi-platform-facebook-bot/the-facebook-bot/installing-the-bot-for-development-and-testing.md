@@ -2,7 +2,7 @@
 
 ## **Facebook Bot Setup**
 
-The Ushahidi facebook-bot is built with Lumen and a mysql database. To set it up you need to
+The StreetSignal facebook-bot is built with Lumen and a mysql database. To set it up you need to
 
 ### **Prerequisites**
 
@@ -14,14 +14,14 @@ The Ushahidi facebook-bot is built with Lumen and a mysql database. To set it up
 
 ### **Set-up**
 
-* Clone the repo: [https://github.com/ushahidi/platform-facebook-bot](https://github.com/ushahidi/platform-facebook-bot)
+* Clone the repo: [https://github.com/streetsignal/platform-facebook-bot](https://github.com/streetsignal/platform-facebook-bot)
 * Create a .env file. An example-file is found in .env.example
 
 #### **The script**
 
-Bot uses a predefined script when talking to the users. It is not possible to adjust the questions themselves without doing some coding, but during setup, some information about the ushahidi-deployment and the campaign is needed. That information is added in the .env file and is used to create and adjust this script to the organisation using the bot. These are:
+Bot uses a predefined script when talking to the users. It is not possible to adjust the questions themselves without doing some coding, but during setup, some information about the streetsignal-deployment and the campaign is needed. That information is added in the .env file and is used to create and adjust this script to the organisation using the bot. These are:
 
-**TITLE:** The title of the Ushahidi-deployment connected to the the bot is used
+**TITLE:** The title of the StreetSignal-deployment connected to the the bot is used
 
 **AIM:** The aim/a short description of the campign where the bot is used.
 
@@ -55,7 +55,7 @@ Add the access-token to your .env file together with a verify-token of your choi
 
 ![](https://lh6.googleusercontent.com/u8y4BsUeC3T9-gGZE_L5mIr2s19aMoX6mnJbgkqgedZDv3xFDIiKk2DIVk2EUhgkxz0GcPmtqdNR7u5ktI8cQ9anLkw5wmVQs5raNKbJfDdbJ7Oh6Wc9Vt_FMzxp2K-aaEBMf_0U)
 
-When all those credentials are in your .env-file, together with the credentials for the Ushahidi-deployment you want to use to send reports with, you start the application with
+When all those credentials are in your .env-file, together with the credentials for the StreetSignal-deployment you want to use to send reports with, you start the application with
 
 * vagrant up and then
 * artisan php migrate --seed \(this sets together the script for the bot, using the variables you added to the .env-file\)

@@ -1,19 +1,19 @@
-[client]: https://github.com/ushahidi/platform-client
-[download]: https://github.com/ushahidi/platform-release/releases
-[setup-guides]: https://docs.ushahidi.com/platform-developer-documentation/development-and-code/setup_alternatives
-[support]: https://www.ushahidi.com/support
-[rest-api-docs]: https://docs.ushahidi.com/platform-developer-documentation/tech-stack/api-documentation
-[getin]: https://www.ushahidi.com/support/get-involved
-[issues]: https://github.com/ushahidi/platform/issues
-[ush2]: https://github.com/ushahidi/Ushahidi_Web
-[ushahidi]: http://ushahidi.com
+[client]: https://github.com/streetsignal/platform-client
+[download]: https://github.com/streetsignal/platform-release/releases
+[setup-guides]: https://docs.streetsignal.com/platform-developer-documentation/development-and-code/setup_alternatives
+[support]: https://www.streetsignal.com/support
+[rest-api-docs]: https://docs.streetsignal.com/platform-developer-documentation/tech-stack/api-documentation
+[getin]: https://www.streetsignal.com/support/get-involved
+[issues]: https://github.com/streetsignal/platform/issues
+[ush2]: https://github.com/streetsignal/StreetSignal_Web
+[streetsignal]: http://streetsignal.com
 
-Ushahidi Platform
+StreetSignal Platform
 =================
 
-## What is Ushahidi Platform?
+## What is StreetSignal Platform?
 
-Ushahidi Platform is an open source web application for information collection, visualization and interactive mapping. It helps you to collect info from: SMS, Twitter, RSS feeds, Email. It helps you to process that information, categorize it, geo-locate it and publish it on a map.
+StreetSignal Platform is an open source web application for information collection, visualization and interactive mapping. It helps you to collect info from: SMS, Twitter, RSS feeds, Email. It helps you to process that information, categorize it, geo-locate it and publish it on a map.
 
 This repository contains the backend code with the REST API implementation.
 
@@ -31,7 +31,7 @@ The backend will be listening on localhost:8080.
 
 > **What about the browser client application?**
 
-> Once your Platform backend is running, head over to the [platform-client-mzima](https://github.com/ushahidi/platform-client-mzima) repository to get the in-browser Platform experience!
+> Once your Platform backend is running, head over to the [platform-client-mzima](https://github.com/streetsignal/platform-client-mzima) repository to get the in-browser Platform experience!
 
 ### Other helpful commands
 
@@ -50,34 +50,34 @@ To take everything down (including deleting the database) `make down` will do th
 ## Manuals and documentation
 
 ### A note for grassroots organizations
-If you are starting a deployment for a grassroots organization, you can apply for a free social-impact responder account [here](https://www.ushahidi.com/pricing/apply-for-free) after verifying that you meet the criteria.
+If you are starting a deployment for a grassroots organization, you can apply for a free social-impact responder account [here](https://www.streetsignal.com/pricing/apply-for-free) after verifying that you meet the criteria.
 
 
 ### Platform User Manual
 
 The official reference on how to use the Platform. Create surveys, configure data sources... it's all in there!
-[Platform User Manual](https://docs.ushahidi.com/platform-user-manual/)
+[Platform User Manual](https://docs.streetsignal.com/platform-user-manual/)
 
 ### Platform Developer Documentation
 
 Key pointers on installing and developing on the Platform.
 
-[Platform Developer Documentation](https://docs.ushahidi.com/platform-developer-documentation/)
+[Platform Developer Documentation](https://docs.streetsignal.com/platform-developer-documentation/)
 
 ## Credits
 
 ## Contributors ✨
 
-Thanks goes to the wonderful people who [[Contribute](CONTRIBUTING.md)]! See the list of contributors at [all-contributors](docs/contributors-to-ushahidi.md)
+Thanks goes to the wonderful people who [[Contribute](CONTRIBUTING.md)]! See the list of contributors at [all-contributors](docs/contributors-to-streetsignal.md)
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
 ## Useful Links
-- [Code of Conduct](https://docs.ushahidi.com/platform-developer-documentation/code-of-conduct)
+- [Code of Conduct](https://docs.streetsignal.com/platform-developer-documentation/code-of-conduct)
 - [Download][download]
 - [Installation guides][setup-guides]
 - [Developer and User Support][support]
 - [REST API docs][rest-api-docs]
 - [Get Involved][getin]
 - [Bug tracker][issues]
-- [About Ushahidi][ushahidi]
-- [Ushahidi Platform v2][ush2]
+- [About StreetSignal][streetsignal]
+- [StreetSignal Platform v2][ush2]

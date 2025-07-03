@@ -6,8 +6,8 @@ environments:
   variables:
     ingress-hostname: platform-dev-${local.username}-api.staging.ush.zone
     v2_db_host: mysql.v2-sample-db
-    v2_db_user: ushahidi
-    v2_db_pass: ushahidi
+    v2_db_user: streetsignal
+    v2_db_pass: streetsignal
     v2_db_db: ush_v2
   providers:
   - name: kubernetes
@@ -45,7 +45,7 @@ exclude:
 # include:
 #   - bin/release
 #   - bin/update
-#   - bin/ushahidi
+#   - bin/streetsignal
 hotReload:
   sync:
   - source: ./app/
@@ -76,11 +76,11 @@ services:
     ENABLE_PLATFORM_TASKS: "false"
     RUN_PLATFORM_MIGRATIONS: "true"
     DB_CONNECTION: mysql
-    DB_DATABASE: ushahidi
+    DB_DATABASE: streetsignal
     DB_HOST: mysql
     DB_PORT: 3306
-    DB_USERNAME: ushahidi
-    DB_PASSWORD: ushahidi
+    DB_USERNAME: streetsignal
+    DB_PASSWORD: streetsignal
     REDIS_HOST: redis
     REDIS_PORT: 6379
     CACHE_DRIVER: redis
@@ -122,11 +122,11 @@ tasks:
       set;
       composer install;
       mkdir -p /tmp/task-log;
-      { ./artisan import:ushahidiv2 
+      { ./artisan import:streetsignalv2 
       --host ${local.env.V2_DB_HOST || var.v2_db_host || "mysql"}
       --port ${local.env.V2_DB_PORT || var.v2_db_port || "3306"}
-      --user ${local.env.V2_DB_USER || var.v2_db_user || "ushahidi"}
-      --password ${local.env.V2_DB_PASS || var.v2_db_pass || "ushahidi"}
+      --user ${local.env.V2_DB_USER || var.v2_db_user || "streetsignal"}
+      --password ${local.env.V2_DB_PASS || var.v2_db_pass || "streetsignal"}
       ${local.env.V2_DB_DB || var.v2_db_db || "ush_v2"}
       2>&1 | tee /tmp/task-log/import-v2.log ;}
   env:

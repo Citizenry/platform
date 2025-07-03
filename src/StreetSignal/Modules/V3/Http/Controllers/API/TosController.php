@@ -1,0 +1,21 @@
+<?php
+
+namespace StreetSignal\Modules\V3\Http\Controllers\API;
+
+use Illuminate\Http\Request;
+use StreetSignal\Modules\V3\Http\Controllers\RESTController;
+
+/**
+ * StreetSignal API Tos Controller
+ *
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2017 StreetSignal
+ * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
+ */
+class TosController extends RESTController
+{
+    protected function getResource()
+    {
+        return 'tos';
+    }
+}

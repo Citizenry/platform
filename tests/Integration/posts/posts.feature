@@ -290,7 +290,7 @@ Feature: Testing the Posts API
 				"status":"draft",
 				"locale":"en_US",
 				"author_realname": "Robbie Mackay",
-				"author_email": "robbie@ushahidi.com",
+				"author_email": "robbie@streetsignal.com",
 				"values":
 				{
 					"full_name":["David Kobia"],
@@ -797,7 +797,7 @@ Feature: Testing the Posts API
 				"status":"published",
 				"locale":"en_US",
 				"author_realname": "Some User",
-				"author_email": "someuser@ushahidi.com",
+				"author_email": "someuser@streetsignal.com",
 				"values":
 				{
 					"full_name":["David Kobia"],
@@ -823,7 +823,7 @@ Feature: Testing the Posts API
 		And the type of the "id" property is "numeric"
 		And the "id" property equals "1"
 		And the "author_realname" property equals "Some User"
-		And the "author_email" property equals "someuser@ushahidi.com"
+		And the "author_email" property equals "someuser@streetsignal.com"
 		Then the guzzle status code should be 200
 
 	@update @resetFixture
@@ -840,7 +840,7 @@ Feature: Testing the Posts API
 				"user":{
 					"id": 1
 				},
-				"author_email": "someuser@ushahidi.com",
+				"author_email": "someuser@streetsignal.com",
 				"author_realname": "Some User",
 				"values":
 				{
@@ -1727,6 +1727,6 @@ Feature: Testing the Posts API
 		And the "created" property equals "2014-09-29T21:10:16+00:00"
 		And the "updated" property is empty
 		And the "user.id" property equals "3"
-		And the "author_email" property equals "test@ushahidi.com"
+		And the "author_email" property equals "test@streetsignal.com"
 		And the "author_realname" property equals "Test Name"
 		Then the guzzle status code should be 200

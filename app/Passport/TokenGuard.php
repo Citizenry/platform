@@ -7,7 +7,7 @@ use Firebase\JWT\JWT;
 use Laravel\Passport\Token;
 use Illuminate\Http\Request;
 use Laravel\Passport\Passport;
-use Ushahidi\Authzn\GenericUser;
+use StreetSignal\Authzn\GenericUser;
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Auth\Guard;
 use Laravel\Passport\TransientToken;
@@ -18,7 +18,7 @@ use League\OAuth2\Server\ResourceServer;
 use Illuminate\Contracts\Encryption\Encrypter;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use League\OAuth2\Server\Exception\OAuthServerException as LeagueException;
-use Ushahidi\Contracts\Repository\Entity\UserRepository;
+use StreetSignal\Contracts\Repository\Entity\UserRepository;
 use Symfony\Bridge\PsrHttpMessage\Factory\PsrHttpFactory;
 use Laravel\Passport\ClientRepository as LaravelPassportClientRepository;
 

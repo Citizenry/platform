@@ -3,10 +3,10 @@
 namespace App\Jobs;
 
 use Illuminate\Support\Facades\Log;
-use Ushahidi\Multisite\MultisiteManager;
-use Ushahidi\Core\Concerns\SiteAware;
-use Ushahidi\Contracts\Repository\Entity\ConfigRepository;
-use Ushahidi\Contracts\Repository\Entity\ExportBatchRepository;
+use StreetSignal\Multisite\MultisiteManager;
+use StreetSignal\Core\Concerns\SiteAware;
+use StreetSignal\Contracts\Repository\Entity\ConfigRepository;
+use StreetSignal\Contracts\Repository\Entity\ExportBatchRepository;
 
 class TestMultisiteJob extends Job
 {

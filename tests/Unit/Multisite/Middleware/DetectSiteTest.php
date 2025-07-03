@@ -1,13 +1,13 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Multisite\Middleware;
+namespace StreetSignal\Tests\Unit\Multisite\Middleware;
 
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Multisite\Middleware\DetectSite as DetectSiteMiddleware;
-use Ushahidi\Multisite\MultisiteManager;
-use Ushahidi\Multisite\Site;
-use Ushahidi\Multisite\SiteNotFoundException;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Multisite\Middleware\DetectSite as DetectSiteMiddleware;
+use StreetSignal\Multisite\MultisiteManager;
+use StreetSignal\Multisite\Site;
+use StreetSignal\Multisite\SiteNotFoundException;
 
 class DetectSiteTest extends TestCase
 {

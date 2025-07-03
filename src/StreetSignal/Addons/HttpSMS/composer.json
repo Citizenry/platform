@@ -1,0 +1,29 @@
+{
+    "name": "streetsignal/httpsms-addon",
+    "description": "HttpSMS addon to StreetSignal data source component",
+    "homepage": "http://streetsignal.com/",
+    "type": "library",
+    "license": "AGPL-3.0",
+    "repositories": [],
+    "require": {
+        "firebase/php-jwt": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "StreetSignal\\Addons\\HttpSMS\\": ""
+        },
+        "files": []
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "StreetSignal\\Addons\\HttpSMS\\ServiceProvider"
+            ]
+        }
+    },
+    "suggest": {},
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}

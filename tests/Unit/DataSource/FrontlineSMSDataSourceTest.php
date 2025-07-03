@@ -8,12 +8,12 @@
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\DataSource;
+namespace StreetSignal\Tests\Unit\DataSource;
 
 use GuzzleHttp\Client as GuzzleClient;
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\DataSource\FrontlineSMS\FrontlineSMS;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\DataSource\FrontlineSMS\FrontlineSMS;
 
 /**
  * @backupGlobals disabled

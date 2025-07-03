@@ -1,32 +1,32 @@
 ---
 description: >-
-  Understanding the process that internal Ushahidi designers take on and how to
-  contribute design to Ushahidi OSS products.
+  Understanding the process that internal StreetSignal designers take on and how to
+  contribute design to StreetSignal OSS products.
 ---
 
 # 🎨 Design: overview
 
-## Ushahidi Design process
+## StreetSignal Design process
 
-Ushahidi has a design process that aims to **include user voices as the key component for design insight.** As such, all design work relating to a Ushahidi product must have sound user rationale or direct user voices. The ultimate aim of design within Ushahidi is to listen, interpret, facilitate and raise voices of users directly operating the software with the direct responsibility in improving the usability, accessibility, visual design, brand recognition, interaction and purpose of that feature through the medium of design.
+StreetSignal has a design process that aims to **include user voices as the key component for design insight.** As such, all design work relating to a StreetSignal product must have sound user rationale or direct user voices. The ultimate aim of design within StreetSignal is to listen, interpret, facilitate and raise voices of users directly operating the software with the direct responsibility in improving the usability, accessibility, visual design, brand recognition, interaction and purpose of that feature through the medium of design.
 
-Designs and prototypes created in design software tools are by nature not always 100% accurate to the coded experience. The prototyped design should strive to be as accurate to the live coded experience as possible within reasonable time constraints. As such, there is a likelihood that some pixels may shift, some colours may be a hex code out or a form element may have a slight difference. Unless explicitly detailed as a design decision, the patterns existing in the Ushahidi (and other Ushahidi related properties) Pattern libraries are to be the true and accurate construction elements of an Ushahidi interface.
+Designs and prototypes created in design software tools are by nature not always 100% accurate to the coded experience. The prototyped design should strive to be as accurate to the live coded experience as possible within reasonable time constraints. As such, there is a likelihood that some pixels may shift, some colours may be a hex code out or a form element may have a slight difference. Unless explicitly detailed as a design decision, the patterns existing in the StreetSignal (and other StreetSignal related properties) Pattern libraries are to be the true and accurate construction elements of an StreetSignal interface.
 
-[Ushahidi Pattern library](http://preview.ushahidi.com/platform-pattern-library/develop/index.html)
+[StreetSignal Pattern library](http://preview.streetsignal.com/platform-pattern-library/develop/index.html)
 
-[Working files or 'sticker sheet' of Ushahidi platform UI elements](ushahidi-platform-sticker-sheet.md)
+[Working files or 'sticker sheet' of StreetSignal platform UI elements](streetsignal-platform-sticker-sheet.md)
 
-Depending on the complexity of the issue needing design work there are approximately three approaches Ushahidi takes to design.
+Depending on the complexity of the issue needing design work there are approximately three approaches StreetSignal takes to design.
 
 1. **Dev design**
 2. **Light design**
 3. **Heavy design**
 
-## Finding Design issues in the Ushahidi backlog
+## Finding Design issues in the StreetSignal backlog
 
 Looks for the labels 'Design' 'UX/UI' and 'Usertesting' 'Design Research'
 
-## Ushahidi issue structure
+## StreetSignal issue structure
 
 Every issue that needs design support should have a clear 'user story' to give detailed context as to the problem that design is trying to help solve.
 
@@ -38,9 +38,9 @@ In certain circumstances, 1st draft of UI or design layout can be done by the de
 
 This 'dev design' will be able to gather live user feedback and be a 'living testable product'. Design is then responsible for monitoring, tracking and developing any design changes that would improve this 'dev design' for users. Where able, producing a user test script (link to example) and conducting in-person or remote user testing on the 'dev design' will help to move the feature/product forward in usability.
 
-The developers at Ushahidi should be empowered to make appropriate design choices when working on a feature. For example, if design dictates a certain layout for a form element and the existing pattern for the form element is slightly different, unless the change to the element is trivial in terms of dev time or the specific design has usability/accessibility impact using the existing pattern for the element is acceptable.
+The developers at StreetSignal should be empowered to make appropriate design choices when working on a feature. For example, if design dictates a certain layout for a form element and the existing pattern for the form element is slightly different, unless the change to the element is trivial in terms of dev time or the specific design has usability/accessibility impact using the existing pattern for the element is acceptable.
 
-Developers should be able to find everything they need in the [Ushahidi Pattern library](http://preview.ushahidi.com/platform-pattern-library/develop/index.html).
+Developers should be able to find everything they need in the [StreetSignal Pattern library](http://preview.streetsignal.com/platform-pattern-library/develop/index.html).
 
 ![This design has been re-used by devs for various screens for messages.](<../../.gitbook/assets/pattern-library-snackbar (1) (1) (2).png>)
 
@@ -50,7 +50,7 @@ Developers should be able to find everything they need in the [Ushahidi Pattern 
 
 'Light design' describes a feature or issue which is a small element, interaction or UX challenge. Typically not part of a larger series of screen flows these design tasks should not take an extended period of time to complete and can typically be completed using design knowledge, existing user behaviour knowledge and good design practice
 
-[See Ushahidi best design practice here](best-practice-design.md)
+[See StreetSignal best design practice here](best-practice-design.md)
 
 'Light design' may or may not include user testing. Usertesting should be completed if there is a strong difference in design opinion on how to execute the design. User testing and insight should be impartial and test as accurately as possible for a user-initiated solution.
 
@@ -58,13 +58,13 @@ Light design can also benefit from live testing or in the future A/B testing.
 
 ### 3. Heavy design
 
-'Heavy designs' are epics, features, issues, and projects that either has no previous basis for design e.g. a completely new product, [Intellectual Property](https://en.wikipedia.org/wiki/Intellectual\_property) or campaign. or a fundamental rethink and redesign of an existing feature or product. These are often features, issues or projects that span or affect multiple parts of a Ushahidi product. e.g. A new data export integration that operates in fundamentally different ways to the existing data export methods and requires analysis of existing ways that users interact with data export as well as the new way of exporting data. ([See HDX epic](https://github.com/ushahidi/platform/issues/2397) and the [subsequent design prototype](https://xd.adobe.com/view/2690f082-d88d-4788-5db7-b04c9474a404-50a1/?fullscreen))
+'Heavy designs' are epics, features, issues, and projects that either has no previous basis for design e.g. a completely new product, [Intellectual Property](https://en.wikipedia.org/wiki/Intellectual\_property) or campaign. or a fundamental rethink and redesign of an existing feature or product. These are often features, issues or projects that span or affect multiple parts of a StreetSignal product. e.g. A new data export integration that operates in fundamentally different ways to the existing data export methods and requires analysis of existing ways that users interact with data export as well as the new way of exporting data. ([See HDX epic](https://github.com/streetsignal/platform/issues/2397) and the [subsequent design prototype](https://xd.adobe.com/view/2690f082-d88d-4788-5db7-b04c9474a404-50a1/?fullscreen))
 
 We 'heavy design', often our intention is to design within the limits of existing patterns and where appropriate and achievable, leave the usability, UI, and interactions better than they were previously.
 
 'Heavy design' will need to include user testing and user validation/feedback. The minimum requirement for user testing to observe meaningful results and mitigate bias is 5 user testers.
 
-'Heavy design' will often take longer time-wise, approximately no less than 3 days and sometimes up to 1 month inclusive of Ushahidi team feedback, demos and user testing with appropriate revisions.
+'Heavy design' will often take longer time-wise, approximately no less than 3 days and sometimes up to 1 month inclusive of StreetSignal team feedback, demos and user testing with appropriate revisions.
 
 [Usertesting process](user-testing-process.md)
 

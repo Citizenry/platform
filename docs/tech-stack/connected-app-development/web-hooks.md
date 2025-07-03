@@ -1,6 +1,6 @@
 # Web hooks
 
-When a report is created or updated, Ushahidi Platform can send a POST request to a third- party application listening to HTTP requests on the internet.
+When a report is created or updated, StreetSignal Platform can send a POST request to a third- party application listening to HTTP requests on the internet.
 
 In order to set up your Web hook, you may do this from the web client as an administrator. You will find a web hook section in the deployment's settings panel (you may also type in a direct URL to go there i.e. https://deployment.example.com**/settings/webhooks** ).
 
@@ -26,7 +26,7 @@ By featuring the fields that are relevant to the data transformation process, th
 ```
 Content-type: application/json
 Accept: application/json
-X-Ushahidi-Signature: ...
+X-StreetSignal-Signature: ...
 ```
 
 ### Body
@@ -46,7 +46,7 @@ X-Ushahidi-Signature: ...
 
 ### Signature checking
 
-If you set a shared secret while you are setting up the web hook, the callbacks sent from the API will contain a `X-Ushahidi-Signature` header that you may check in order to be certain that ...
+If you set a shared secret while you are setting up the web hook, the callbacks sent from the API will contain a `X-StreetSignal-Signature` header that you may check in order to be certain that ...
 
 1. ... the request is indeed coming from the Platform API that you configured
 2. ... and that the contents of the callback have not been tampered with
@@ -61,7 +61,7 @@ The data passed to the HMAC hashing function is the string concatenation of
 * the web hook callback URL (as configured under "API URL" in the Platform's settings)
 * the callback body JSON data
 
-Running the HMAC hash on the web hook receiving side should match the result with the contents of the  `X-Ushahidi-Signature` header.
+Running the HMAC hash on the web hook receiving side should match the result with the contents of the  `X-StreetSignal-Signature` header.
 
 ### Expected response
 

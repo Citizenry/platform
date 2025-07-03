@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * StreetSignal Form Stage Validator
+ *
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @package    StreetSignal\Application
+ * @copyright  2014 StreetSignal
+ * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
+ */
+
+namespace StreetSignal\Modules\V3\Validator\Form\Stage;
+
+class Create extends Update
+{
+    protected $default_error_source = 'form_stage';
+
+    protected function getRules()
+    {
+        return [
+            'form_id' => [
+                ['not_empty'],
+            ],
+            'label' => [
+                ['not_empty'],
+            ],
+            'type' => [
+                ['in_array', [':value', [
+                    'post',
+                    'task'
+                ]]],
+            ],
+        ];
+    }
+}

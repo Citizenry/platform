@@ -1,5 +1,5 @@
 {
-  "phabricator.uri" : "https://phabricator.ushahidi.com/",
+  "phabricator.uri" : "https://phabricator.streetsignal.com/",
   "repository.callsign" : "USH",
   "unit.engine": "PhpunitTestEngine",
   "unit.phpunit.binary": "bin/phpunit"

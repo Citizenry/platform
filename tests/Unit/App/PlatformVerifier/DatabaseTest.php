@@ -9,15 +9,15 @@
 /**
  * Tests for Database tester
  *
- * @author     Ushahidi Team <team@ushahidi.com>
- * @copyright  2013 Ushahidi
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2013 StreetSignal
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\App\PlatformVerifier;
+namespace StreetSignal\Tests\Unit\App\PlatformVerifier;
 
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Tests\TestCase;
 
 /**
  * @backupGlobals disabled

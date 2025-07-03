@@ -1,10 +1,10 @@
 <?php
-namespace Ushahidi\Tests\Feature\V3;
+namespace StreetSignal\Tests\Feature\V3;
 
 use Faker;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Core\Entity\ApiKey;
-use Ushahidi\Core\Entity\Post;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Core\Entity\ApiKey;
+use StreetSignal\Core\Entity\Post;
 
 /**
  * @group api

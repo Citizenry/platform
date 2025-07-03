@@ -8,18 +8,18 @@
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\DataSource;
+namespace StreetSignal\Tests\Unit\DataSource;
 
 use Illuminate\Contracts\Mail\Mailer;
 use Illuminate\Mailer\Message;
 use Mockery as M;
 use phpmock\mockery\PHPMockery;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Contracts\Repository\Entity\MessageRepository;
-use Ushahidi\Contracts\Repository\Entity\ConfigRepository;
-use Ushahidi\Core\Entity\Config;
-use Ushahidi\DataSource\Email\Email;
-use Ushahidi\Multisite\Site;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Contracts\Repository\Entity\MessageRepository;
+use StreetSignal\Contracts\Repository\Entity\ConfigRepository;
+use StreetSignal\Core\Entity\Config;
+use StreetSignal\DataSource\Email\Email;
+use StreetSignal\Multisite\Site;
 
 /**
  * @backupGlobals disabled

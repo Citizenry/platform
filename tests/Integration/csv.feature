@@ -2,7 +2,7 @@
 Feature: Testing the CSV API
     Scenario: Uploading a CSV file
         Given that I want to make a new "CSV"
-        And that the post file "file" is "tests/datasets/ushahidi/sample.csv"
+        And that the post file "file" is "tests/datasets/streetsignal/sample.csv"
         When I request "/csv"
         Then the response is JSON
         And the response has a "id" property
@@ -13,7 +13,7 @@ Feature: Testing the CSV API
 
     Scenario: Uploading a CSV file with OS9 line endings
         Given that I want to make a new "CSV"
-        And that the post file "file" is "tests/datasets/ushahidi/sample_os9.csv"
+        And that the post file "file" is "tests/datasets/streetsignal/sample_os9.csv"
         When I request "/csv"
         Then the response is JSON
         And the response has a "id" property

@@ -1,10 +1,10 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Core\Traits;
+namespace StreetSignal\Tests\Unit\Core\Traits;
 
 class MockDataTransformer
 {
-    use \Ushahidi\Core\Concerns\TransformData;
+    use \StreetSignal\Core\Concerns\TransformData;
 
     protected function getDefinition()
     {

@@ -1,15 +1,15 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Modules\V3\Listener;
+namespace StreetSignal\Tests\Unit\Modules\V3\Listener;
 
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Contracts\Repository\Entity\MessageRepository;
-use Ushahidi\Contracts\Repository\Entity\PostRepository;
-use Ushahidi\Contracts\Repository\Entity\TargetedSurveyStateRepository;
-use Ushahidi\Core\Entity\Message;
-use Ushahidi\Core\Entity\Post;
-use Ushahidi\Modules\V3\Listener\CreatePostFromMessage;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Contracts\Repository\Entity\MessageRepository;
+use StreetSignal\Contracts\Repository\Entity\PostRepository;
+use StreetSignal\Contracts\Repository\Entity\TargetedSurveyStateRepository;
+use StreetSignal\Core\Entity\Message;
+use StreetSignal\Core\Entity\Post;
+use StreetSignal\Modules\V3\Listener\CreatePostFromMessage;
 
 /**
  * @backupGlobals disabled

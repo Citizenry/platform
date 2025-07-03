@@ -60,7 +60,7 @@ Feature: Testing the Revisions API
                 "form":1,
                 "title":"Test post",
                 "author":"robbie",
-                "email":"robbie@ushahidi.com",
+                "email":"robbie@streetsignal.com",
                 "type":"report",
                 "status":"draft",
                 "locale":"en_US",

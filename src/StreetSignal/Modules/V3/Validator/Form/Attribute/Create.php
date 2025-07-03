@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * StreetSignal FormAttribute Validator
+ *
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @package    StreetSignal\Application
+ * @copyright  2014 StreetSignal
+ * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
+ */
+
+namespace StreetSignal\Modules\V3\Validator\Form\Attribute;
+
+class Create extends Update
+{
+    public function getRules()
+    {
+        return array_merge_recursive(parent::getRules(), [
+            'label' => [
+                ['not_empty'],
+            ],
+            'form_stage_id' => [
+                ['not_empty'],
+            ],
+        ]);
+    }
+}

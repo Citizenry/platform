@@ -5,7 +5,7 @@ Feature: Testing the Media API
         Given that I want to make a new "Media"
         And that the api_url is "api/v5"
         And that the post field "caption" is "ihub"
-        And that the post file "file" is "tests/datasets/ushahidi/sample.png"
+        And that the post file "file" is "tests/datasets/streetsignal/sample.png"
         When I request "/media"
         Then the response is JSON
         And the response has a "result.id" property
@@ -95,7 +95,7 @@ Feature: Testing the Media API
     #    Given that I want to make a new "Media"
     #    And that the api_url is "api/v5"
     #    And that the post field "caption" is "ihub"
-    #    And that the post file "file" is "tests/datasets/ushahidi/sample-large.png"
+    #    And that the post file "file" is "tests/datasets/streetsignal/sample-large.png"
     #    When I request "/media"
     #    Then the response is JSON
     #    And the response has a "errors" property

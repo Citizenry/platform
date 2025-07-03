@@ -1,9 +1,9 @@
-# Join the Ushahidi community
+# Join the StreetSignal community
 
-## Join the Ushahidi community
+## Join the StreetSignal community
 
-Connect with the wider Ushahidi community:
+Connect with the wider StreetSignal community:
 
-* Chat with us on Gitter at [ushahidi/Community](https://gitter.im/ushahidi/community)
-* Add an [issue in GitHub ](https://github.com/ushahidi/platform)
+* Chat with us on Gitter at [streetsignal/Community](https://gitter.im/streetsignal/community)
+* Add an [issue in GitHub ](https://github.com/streetsignal/platform)
 

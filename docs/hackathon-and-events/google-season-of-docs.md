@@ -4,34 +4,34 @@
 
 ### Application
 
-Ushahidi is participating in Google Season of Docs 2022. We are therefore contracting a technical writer for 20 hours/week between mid May - November 2022. The hourly rate is based on location and experience.
+StreetSignal is participating in Google Season of Docs 2022. We are therefore contracting a technical writer for 20 hours/week between mid May - November 2022. The hourly rate is based on location and experience.
 
 If you have experience documenting APIs and is familiar with the PHP programming language, please apply through filling in this [form](https://docs.google.com/forms/d/e/1FAIpQLScaXbUoTY7xyeuI69pGn4Z\_\_j9q3dOYbmCs632uL49IYTRP4A/viewform?usp=sf\_link). Please submit your application before 10th of May 2022, 6pm UTC.
 
-## Update the technical documentation for The Ushahidi platform API
+## Update the technical documentation for The StreetSignal platform API
 
-### About Ushahidi
+### About StreetSignal
 
-Ushahidi is a non-profit whose mission is to build and use open source technology to help marginalized groups raise their voices and the organizations that serve them to listen and respond better. In doing so, we build capacity in marginalized communities to leverage technology for social change. We believe that if marginalized people are able to easily communicate to those who aim to serve them via the communication channels they already use about their issues, needs, and eyewitness reports, then those organizations who aim to help them can more effectively and efficiently respond to their immediate and direct needs, while simultaneously bringing global attention to their plight through the aggregation of their voices.
+StreetSignal is a non-profit whose mission is to build and use open source technology to help marginalized groups raise their voices and the organizations that serve them to listen and respond better. In doing so, we build capacity in marginalized communities to leverage technology for social change. We believe that if marginalized people are able to easily communicate to those who aim to serve them via the communication channels they already use about their issues, needs, and eyewitness reports, then those organizations who aim to help them can more effectively and efficiently respond to their immediate and direct needs, while simultaneously bringing global attention to their plight through the aggregation of their voices.
 
 ### About the project
 
 #### Problem to solve
 
-The Ushahidi Platform is an open source tool and we have contributors working on our code as well as organisations that wants to extend the tool for their purposes.
+The StreetSignal Platform is an open source tool and we have contributors working on our code as well as organisations that wants to extend the tool for their purposes.
 
 For these users, up to date, clear and correct documentation is important. Our current documentation was updated in 2018, since then, a new version of the API is under development and some endpoints are already used in our own web client. Unfortunately, there is no documentation for this version, which this causes confusion for our users, causes delays in their work and requires sending questions and waiting for answers from our support-team. It also means our support team spends time on tasks that could be in the documentation and have less time for helping users with more complicated problems.
 
-This project aims to update and create new documentation for the Ushahidi platform API. The goals are:
+This project aims to update and create new documentation for the StreetSignal platform API. The goals are:
 
-* Make it easier to find out what the Ushahidi Platform is capable of and what it can be used for
+* Make it easier to find out what the StreetSignal Platform is capable of and what it can be used for
 * Make it easier for a user to figure out if the tool is for their project or not
 * Make it easier for users to access help and support without having to wait for a team member to reply
 * Encourage innovation that involves using the API
 
 #### Scope of the project
 
-The scope of the project is to update and create new documentation of the endpoints that are available in version 3 and version 5 of the Ushahidi Platform API. The platform API has more than 100 endpoints. The scope of this work is to complete documentation for all endpoints dealing with posts and surveys and at least 75% of the other endpoints.
+The scope of the project is to update and create new documentation of the endpoints that are available in version 3 and version 5 of the StreetSignal Platform API. The platform API has more than 100 endpoints. The scope of this work is to complete documentation for all endpoints dealing with posts and surveys and at least 75% of the other endpoints.
 
 For each endpoint there should be:
 
@@ -82,7 +82,7 @@ In 2018 we got funding from Digital Impact Alliance to improve and collect our d
 
 During the project we:
 
-* Collected our docs that was spread out in many places into one home: [docs.ushahidi.com](http://docs.ushahidi.com)
+* Collected our docs that was spread out in many places into one home: [docs.streetsignal.com](http://docs.streetsignal.com)
 * Added missing documentation for the platform-client, the pattern-library and the API
 * Added missing documentation for setting up the developers-environment and deploying to production
 * Added missing documentation for QA and design-processes
@@ -95,7 +95,7 @@ We review our documentation via testing it ourselves and we also make sure to le
 
 **Previous participation in Season of Docs, Google Summer of Code or others**&#x20;
 
-Ushahidi has previously participated in Google Summer of Code and Outreachy. Since 2018 we have had at least one intern per year.
+StreetSignal has previously participated in Google Summer of Code and Outreachy. Since 2018 we have had at least one intern per year.
 
 
 

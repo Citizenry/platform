@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ushahidi\Tests\Integration\Bootstrap\Database\Dataset;
+namespace StreetSignal\Tests\Integration\Bootstrap\Database\Dataset;
 
 abstract class AbstractDataset
 {

@@ -1,28 +1,28 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Modules\V3\Repository;
+namespace StreetSignal\Tests\Unit\Modules\V3\Repository;
 
 use Faker;
 use Ohanzee\DB;
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Tests\TestCase;
 use Ohanzee\Database;
 use Aura\Di\Injection\Factory;
-use Ushahidi\Core\Entity\Post;
-use Ushahidi\Core\Entity\User;
-use Ushahidi\Tests\DatabaseTransactions;
-use Ushahidi\Contracts\Session;
+use StreetSignal\Core\Entity\Post;
+use StreetSignal\Core\Entity\User;
+use StreetSignal\Tests\DatabaseTransactions;
+use StreetSignal\Contracts\Session;
 use Illuminate\Support\Collection;
-use Ushahidi\Core\Tool\SearchData;
-use Ushahidi\Core\Tool\OhanzeeResolver;
-use Ushahidi\Modules\V3\Repository\PostRepository;
-use Ushahidi\Modules\V3\Repository\Post\ValueFactory;
-use Ushahidi\Core\Tool\Permissions\PostPermissions;
-use Ushahidi\Contracts\Repository\Entity\FormRepository;
-use Ushahidi\Contracts\Repository\Entity\ContactRepository;
-use Ushahidi\Contracts\Repository\Entity\PostLockRepository;
-use Ushahidi\Contracts\Repository\Entity\FormStageRepository;
-use Ushahidi\Contracts\Repository\Entity\FormAttributeRepository;
+use StreetSignal\Core\Tool\SearchData;
+use StreetSignal\Core\Tool\OhanzeeResolver;
+use StreetSignal\Modules\V3\Repository\PostRepository;
+use StreetSignal\Modules\V3\Repository\Post\ValueFactory;
+use StreetSignal\Core\Tool\Permissions\PostPermissions;
+use StreetSignal\Contracts\Repository\Entity\FormRepository;
+use StreetSignal\Contracts\Repository\Entity\ContactRepository;
+use StreetSignal\Contracts\Repository\Entity\PostLockRepository;
+use StreetSignal\Contracts\Repository\Entity\FormStageRepository;
+use StreetSignal\Contracts\Repository\Entity\FormAttributeRepository;
 
 /**
  * @backupGlobals disabled

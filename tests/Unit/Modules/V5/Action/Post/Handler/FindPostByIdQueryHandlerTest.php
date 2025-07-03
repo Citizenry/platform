@@ -3,11 +3,11 @@
 namespace Tests\Unit\Modules\V5\Action\Post\Handler;
 
 use App\Bus\Query\Query;
-use Ushahidi\Modules\V5\Actions\Post\Handlers\FindPostByIdQueryHandler;
-use Ushahidi\Modules\V5\Actions\Post\Queries\FindPostByIdQuery;
-use Ushahidi\Modules\V5\Models\Post\Post;
-use Ushahidi\Modules\V5\Repository\Post\PostRepository;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Modules\V5\Actions\Post\Handlers\FindPostByIdQueryHandler;
+use StreetSignal\Modules\V5\Actions\Post\Queries\FindPostByIdQuery;
+use StreetSignal\Modules\V5\Models\Post\Post;
+use StreetSignal\Modules\V5\Repository\Post\PostRepository;
+use StreetSignal\Tests\TestCase;
 
 class FindPostByIdQueryHandlerTest extends TestCase
 {

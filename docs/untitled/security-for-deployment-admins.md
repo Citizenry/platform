@@ -4,11 +4,11 @@ description: Keep your community protected
 
 # Security for deployment admins
 
-As an administrator for a Ushahidi Platform deployment, there are a few basic things to keep in mind, in order to reduce the possibility of your deployment putting members of your community at risk.
+As an administrator for a StreetSignal Platform deployment, there are a few basic things to keep in mind, in order to reduce the possibility of your deployment putting members of your community at risk.
 
 ## Understand the risks
 
-Each Ushahidi Platform deployment is fairly unique in the sense that it is created for a specific problem in the context of a specific community.
+Each StreetSignal Platform deployment is fairly unique in the sense that it is created for a specific problem in the context of a specific community.
 
 These circumstances may \(or may not\) make the exposure of information a risk for members of the community that you are receiving reports from, your team, or both.
 
@@ -24,7 +24,7 @@ In any case, we encourage you to go through the mental exercise of asking yourse
 
 ## Privacy settings in the surveys
 
-Please do keep in mind that the survey configuration in Ushahidi Platform allows fairly fine- grained configuration, regarding which survey questions have their answers available publicly, and which others are only available to your team \(and within your team, specific roles\)
+Please do keep in mind that the survey configuration in StreetSignal Platform allows fairly fine- grained configuration, regarding which survey questions have their answers available publicly, and which others are only available to your team \(and within your team, specific roles\)
 
 Make sure to configure your surveys accordingly, and that you review this periodically.
 
@@ -38,7 +38,7 @@ One other example is the combination of location data and date of the report. In
 
 In general, the more data items an attacker may collect that bear relationship with a person's traits, possessions or circumstances, the more likely the attacker is to successfully break anonymity.
 
-The Ushahidi Platform offers settings to protect some of these information items, without completely hiding them, by making them fuzzier. This is important for data that is valuable to show aggregated \(i.e. incidents in a geographic area\), and thus is not desired to make completely private.
+The StreetSignal Platform offers settings to protect some of these information items, without completely hiding them, by making them fuzzier. This is important for data that is valuable to show aggregated \(i.e. incidents in a geographic area\), and thus is not desired to make completely private.
 
 ## Secure and non-secure data sources
 
@@ -62,7 +62,7 @@ If correctly configured, a deployment may require all its incoming Internet traf
 
 Make sure to consult with your hosting and systems person, to ensure things are properly set up, **and maintained**.
 
-In case you chose to keep your deployment at [https://ushahidi.io](https://ushahidi.io/create) , Ushahidi will be taking taking care of this for you.
+In case you chose to keep your deployment at [https://streetsignal.io](https://streetsignal.io/create) , StreetSignal will be taking taking care of this for you.
 
 ### E-mail
 

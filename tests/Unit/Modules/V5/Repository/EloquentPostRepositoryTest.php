@@ -4,10 +4,10 @@ namespace Tests\Unit\Modules\V5\Repository;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Ushahidi\Core\Exception\NotFoundException;
-use Ushahidi\Modules\V5\Models\Post\Post;
-use Ushahidi\Modules\V5\Repository\Post\EloquentPostRepository;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Core\Exception\NotFoundException;
+use StreetSignal\Modules\V5\Models\Post\Post;
+use StreetSignal\Modules\V5\Repository\Post\EloquentPostRepository;
+use StreetSignal\Tests\TestCase;
 
 class EloquentPostRepositoryTest extends TestCase
 {

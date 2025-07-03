@@ -1,0 +1,36 @@
+<?php
+
+namespace StreetSignal\Modules\V3\Http\Controllers\API;
+
+use StreetSignal\Modules\V3\Http\Controllers\RESTController;
+
+/**
+ * StreetSignal API Index Controller
+ *
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2014 StreetSignal
+ * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
+ */
+class IndexController
+{
+    /**
+     * Retrieve a basic information about the API
+     *
+     * GET /api
+     *
+     */
+    public function index()
+    {
+        $user = service('session')->getUser();
+
+        return [
+            'now'       => date(\DateTime::W3C),
+            'version'   => RESTController::version(),
+            'user'      => [
+                'id'       => $user->id,
+                'email'    => $user->email,
+                'realname' => $user->realname,
+            ],
+        ];
+    }
+}

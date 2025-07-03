@@ -4,10 +4,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Ushahidi Platform Setting
+    | StreetSignal Platform Setting
     |--------------------------------------------------------------------------
     |
-    | This is the main configuration file for the Ushahidi Platform.
+    | This is the main configuration file for the StreetSignal Platform.
     */
 
     'groups' => [

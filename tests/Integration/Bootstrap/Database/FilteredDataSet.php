@@ -1,6 +1,6 @@
 <?php
 
-namespace Ushahidi\Tests\Integration\Bootstrap\Database;
+namespace StreetSignal\Tests\Integration\Bootstrap\Database;
 /*
  * This file adapted from the DbUnit package.
  *

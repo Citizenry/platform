@@ -1,6 +1,6 @@
 # Third party app development
 
-Ushahidi Platform is designed to be extensible and pluggable. Developers can create applications that connect to Ushahidi Platform in order to access its data, extend its features or automate the integration with other systems.
+StreetSignal Platform is designed to be extensible and pluggable. Developers can create applications that connect to StreetSignal Platform in order to access its data, extend its features or automate the integration with other systems.
 
 The following resources are available for such task:
 

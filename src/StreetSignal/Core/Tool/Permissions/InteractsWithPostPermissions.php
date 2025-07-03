@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * InteractsWithPostPermissions
+ *
+ * Gives objects a method for storing a post permissions
+ *
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @package    StreetSignal\Application
+ * @copyright  2014 StreetSignal
+ * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
+ */
+
+namespace StreetSignal\Core\Tool\Permissions;
+
+trait InteractsWithPostPermissions
+{
+    protected $postPermissions;
+
+    public function setPostPermissions(PostPermissions $postPermissions)
+    {
+        $this->postPermissions = $postPermissions;
+    }
+}

@@ -40,7 +40,7 @@ The database configuration vars have been renamed.
 
 ### Artisan
 
-`bin/ushahidi` will be deprecated in future versions. You should use `artisan` instead.
+`bin/streetsignal` will be deprecated in future versions. You should use `artisan` instead.
 
 ### Command name changes
 
@@ -48,17 +48,17 @@ CLI commands have been renamed. If you had cronjobs set up to run dataproviders,
 
 | Old command | New command |
 | :--- | :--- |
-| `bin/ushahidi dataprovider incoming` | `artisan datasource:incoming` |
-| `bin/ushahidi savedsearch` | `artisan savedsearch:sync` |
-| `bin/ushahidi notification queue` | `artisan notification:queue` |
-| `bin/ushahidi dataprovider outgoing` | `artisan datasource:outgoing` |
-| `bin/ushahidi dataprovider webhook send` | `artisan webhook:send` |
-| `bin/ushahidi user create` | `artisan user:create` |
-| `bin/ushahidi user delete` | `artisan user:delete` |
-| `bin/ushahidi config get` | `artisan config:get` |
-| `bin/ushahidi config set` | `artisan config:set` |
-| `bin/ushahidi export` | `artisan export` |
-| `bin/ushahidi import` | `artisan import` |
+| `bin/streetsignal dataprovider incoming` | `artisan datasource:incoming` |
+| `bin/streetsignal savedsearch` | `artisan savedsearch:sync` |
+| `bin/streetsignal notification queue` | `artisan notification:queue` |
+| `bin/streetsignal dataprovider outgoing` | `artisan datasource:outgoing` |
+| `bin/streetsignal dataprovider webhook send` | `artisan webhook:send` |
+| `bin/streetsignal user create` | `artisan user:create` |
+| `bin/streetsignal user delete` | `artisan user:delete` |
+| `bin/streetsignal config get` | `artisan config:get` |
+| `bin/streetsignal config set` | `artisan config:set` |
+| `bin/streetsignal export` | `artisan export` |
+| `bin/streetsignal import` | `artisan import` |
 
 ### Filesystem changes
 

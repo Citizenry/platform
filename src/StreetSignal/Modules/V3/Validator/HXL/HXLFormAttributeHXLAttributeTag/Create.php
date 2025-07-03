@@ -1,0 +1,65 @@
+<?php
+/**
+ * StreetSignal Set Validator
+ *
+ * @author    StreetSignal Team <team@streetsignal.com>
+ * @package   StreetSignal\Application
+ * @copyright 2014 StreetSignal
+ * @license   https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
+ */
+
+namespace StreetSignal\Modules\V3\Validator\HXL\HXLFormAttributeHXLAttributeTag;
+
+use StreetSignal\Modules\V3\Validator\LegacyValidator;
+use StreetSignal\Contracts\Repository\Entity\HXLTagRepository;
+use StreetSignal\Contracts\Repository\Entity\ExportJobRepository;
+use StreetSignal\Contracts\Repository\Entity\HXLAttributeRepository;
+use StreetSignal\Contracts\Repository\Entity\FormAttributeRepository;
+use StreetSignal\Contracts\Repository\Entity\HXLFormAttributeHXLAttributeTagRepository;
+
+class Create extends LegacyValidator
+{
+    protected $repo;
+    protected $hxl_attribute_repo;
+    protected $hxl_tag_repo;
+    protected $form_attribute_repo;
+    protected $export_job_repo;
+
+    public function __construct(
+        HXLFormAttributeHXLAttributeTagRepository $repo,
+        HXLTagRepository $hxl_tag_repo,
+        HXLAttributeRepository $hxl_attribute_repo,
+        FormAttributeRepository $form_attribute_repo,
+        ExportJobRepository $export_job_repo
+    ) {
+        $this->repo = $repo;
+        $this->hxl_attribute_repo = $hxl_attribute_repo;
+        $this->hxl_tag_repo = $hxl_tag_repo;
+        $this->form_attribute_repo = $form_attribute_repo;
+        $this->export_job_repo = $export_job_repo;
+    }
+    /**
+     * @return array|\StreetSignal\Core\Tool\ArrayValidation
+     */
+    protected function getRules()
+    {
+        return [
+            'hxl_attribute_id' => [
+                ['numeric'],
+                [[$this->hxl_attribute_repo, 'exists'], [':value']],
+            ],
+            'hxl_tag_id' => [
+                ['numeric'],
+                [[$this->hxl_tag_repo, 'exists'], [':value']],
+            ],
+            'form_attribute_id' => [
+                ['numeric'],
+                [[$this->form_attribute_repo, 'exists'], [':value']],
+            ],
+            'export_job_id' => [
+                ['numeric'],
+                [[$this->export_job_repo, 'exists'], [':value']],
+            ],
+        ];
+    }
+}

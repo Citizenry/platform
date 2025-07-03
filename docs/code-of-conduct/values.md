@@ -47,7 +47,7 @@
 
 * Be mindful of security and privacy considerations. Do not share sensitive data \(see the [ICRC Professional Standards on Protection Work](http://www.icrc.org/eng/resources/documents/publication/p0999.htm)\).
 * Follow verification and security guidelines for mapping – do not publish dangerous speech, personal names, and personal identifying information \(guidelines to be determined\).
-* Ushahidi adheres to and is compliant with GDPR. You can find out more about our GDPR compliance in our [Privacy Policy](https://www.ushahidi.com/privacy-policy) and [Terms of Service](https://www.ushahidi.com/terms-of-service).
+* StreetSignal adheres to and is compliant with GDPR. You can find out more about our GDPR compliance in our [Privacy Policy](https://www.streetsignal.com/privacy-policy) and [Terms of Service](https://www.streetsignal.com/terms-of-service).
 
 ## Committing to Self-Improvement
 

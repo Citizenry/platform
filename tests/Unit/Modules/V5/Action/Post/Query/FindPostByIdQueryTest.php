@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Modules\V5\Action\Post\Query;
 
-use Ushahidi\Modules\V5\Actions\Post\Queries\FindPostByIdQuery;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Modules\V5\Actions\Post\Queries\FindPostByIdQuery;
+use StreetSignal\Tests\TestCase;
 
 class FindPostByIdQueryTest extends TestCase
 {

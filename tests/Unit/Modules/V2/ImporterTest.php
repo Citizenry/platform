@@ -1,14 +1,14 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Modules\V2;
+namespace StreetSignal\Tests\Unit\Modules\V2;
 
-use Ushahidi\Modules\V2\Importer;
-use Ushahidi\Modules\V2\Contracts\ImportMappingRepository;
-use Ushahidi\Modules\V2\Contracts\Mapper;
-use Ushahidi\Contracts\EntityCreateMany;
-use Ushahidi\Core\Entity;
+use StreetSignal\Modules\V2\Importer;
+use StreetSignal\Modules\V2\Contracts\ImportMappingRepository;
+use StreetSignal\Modules\V2\Contracts\Mapper;
+use StreetSignal\Contracts\EntityCreateMany;
+use StreetSignal\Core\Entity;
 use Illuminate\Support\Collection;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Tests\TestCase;
 use Mockery as M;
 use Faker;
 

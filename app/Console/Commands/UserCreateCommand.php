@@ -1,21 +1,21 @@
 <?php
 
 /**
- * Ushahidi User Console Command
+ * StreetSignal User Console Command
  *
- * @author     Ushahidi Team <team@ushahidi.com>
- * @copyright  2014 Ushahidi
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2014 StreetSignal
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Ushahidi\Core\Facade\Feature;
+use StreetSignal\Core\Facade\Feature;
 use Illuminate\Support\Facades\Validator;
-use Ushahidi\Core\Exception\ValidatorException;
-use Ushahidi\Contracts\Repository\Entity\TosRepository;
-use Ushahidi\Contracts\Repository\Entity\UserRepository;
+use StreetSignal\Core\Exception\ValidatorException;
+use StreetSignal\Contracts\Repository\Entity\TosRepository;
+use StreetSignal\Contracts\Repository\Entity\UserRepository;
 
 class UserCreateCommand extends Command
 {

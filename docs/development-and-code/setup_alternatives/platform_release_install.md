@@ -4,13 +4,13 @@
 
 We recommend most users install the latest release.
 
-If you're a developer and you want to extend Ushahidi or contribute to our code, follow the development install instructions in [the README](https://github.com/ushahidi/platform/blob/develop/README.md).
+If you're a developer and you want to extend StreetSignal or contribute to our code, follow the development install instructions in [the README](https://github.com/streetsignal/platform/blob/develop/README.md).
 
 ## Installing the latest release
 
-The release bundles are pre-built compressed files for you, which don't require further building or downloading. These files bundles are available from the platform-release repository in Github. The files are named ushahidi-platorm-release-vX.Y.Z.tar.gz .
+The release bundles are pre-built compressed files for you, which don't require further building or downloading. These files bundles are available from the platform-release repository in Github. The files are named streetsignal-platorm-release-vX.Y.Z.tar.gz .
 
-If you are in a shared hosting solution and not sure if it supports Ushahidi, you should check the requirements with your provider.
+If you are in a shared hosting solution and not sure if it supports StreetSignal, you should check the requirements with your provider.
 
 The installation procedure will vary depending on your setup, but the requirements in all cases are
 
@@ -33,7 +33,7 @@ The instructions and example commands are written specifically for Debian Linux 
 ### Apache 2 with mod\_php
 
 * Ensure mod\_rewrite is installed and enabled in your apache server.
-* Copy into your document root the contents of the `html/` folder after unzipping the ushahidi-platform-release-v4.X.Y.tar.gz bundle file.
+* Copy into your document root the contents of the `html/` folder after unzipping the streetsignal-platform-release-v4.X.Y.tar.gz bundle file.
 * The `dist/` folder contains the suggested configurations for the virtual host \(apache-vhost.conf\). The configs are quite default, you just need to ensure that there is an "AllowOverride" directive set to "All" for your document root \(where the app has been unzipped\).
 * Create a `platform/.env` file. This file will contain your database credentials and other important configurations. Use the following contents as a guide, lines starting with the character `#` are comments and you don't need to copy them
 
@@ -114,10 +114,10 @@ In all cases, you'll need to ensure that:
 If something doesn't seem to work we suggest giving a try to open your deployment website address, but adding a "/verifier" at the end of it.
 
 {% hint style="info" %}
-For instance, if the address of your deployment is [https://ushahidi.example.com](https://ushahidi.example.com) , we suggest you to try to open: [https://ushahidi.example.com\*\*/verifier\*\*](https://ushahidi.example.com**/verifier**)
+For instance, if the address of your deployment is [https://streetsignal.example.com](https://streetsignal.example.com) , we suggest you to try to open: [https://streetsignal.example.com\*\*/verifier\*\*](https://streetsignal.example.com**/verifier**)
 {% endhint %}
 
-The latest releases of the Ushahidi Platform come with a little handy tool called "[Installation Helper](../installation-helper.md)" which is started by accessing that specific address in the deployment.
+The latest releases of the StreetSignal Platform come with a little handy tool called "[Installation Helper](../installation-helper.md)" which is started by accessing that specific address in the deployment.
 
 If something is wrong, this tool may provide you with useful information about what exactly seems to be the cause.
 
@@ -131,7 +131,7 @@ If you are running the Docker container, you may set this variable using the `SI
 
 ## Queue drivers \(and "sync" driver issues\)
 
-The Ushahidi Platform API uses a queue system for running some end-user requested operations in the background. At the moment of this writing, such operations are CSV importing and exporting. More may come up in the future.
+The StreetSignal Platform API uses a queue system for running some end-user requested operations in the background. At the moment of this writing, such operations are CSV importing and exporting. More may come up in the future.
 
 The challenge during installation is that queue systems usually take additional set up. By using the "sync" queue driver as a first option, we are removing the need of that additional set up. This is not magic, just a compromise, because there will be effectively no queue: the jobs will run **synchronously, right away, when the request is made by the user**.
 
@@ -182,7 +182,7 @@ Examples of process supervisors are systemd, upstart, pm2 , supervisord or chape
 Here we'll document how to configure [supervisord](http://supervisord.org/) , which is one of the popular options. You would need to add the following block to your supervisord configurations \(usually found under `/etc/supervisor` and `/etc/supervisor/conf.d`
 
 ```text
-[program:ushahidi-platform-workers]
+[program:streetsignal-platform-workers]
 process_name=%(program_name)s_%(process_num)02d
 command=php <your document root>/platform/artisan queue:listen --sleep=3 --tries=3 --timeout=290
 autostart=true
@@ -198,7 +198,7 @@ Then the following command makes sure workers are started if they haven't alread
 ```text
 sudo supervisorctl reread
 sudo supervisorctl update
-sudo supervisorctl start ushahidi-platform-workers:*
+sudo supervisorctl start streetsignal-platform-workers:*
 ```
 
 If you check your running processes \(i.e. with the `ps -ef` \) you should see some processes with names similar to `artisan queue:work`

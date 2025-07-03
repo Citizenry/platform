@@ -1,15 +1,15 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Modules\V2\Mappers;
+namespace StreetSignal\Tests\Unit\Modules\V2\Mappers;
 
-use Ushahidi\Modules\V2\Mappers\IncidentPostMapper;
-use Ushahidi\Modules\V2\Contracts\ImportMappingRepository;
-use Ushahidi\Modules\V2\Contracts\ImportDataTools;
-use Ushahidi\Core\Entity\Post;
-use Ushahidi\Core\Entity\FormAttribute;
-use Ushahidi\Contracts\Repository\Entity\FormAttributeRepository;
-use Ushahidi\Tests\Unit\Modules\V2\ImportMock;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Modules\V2\Mappers\IncidentPostMapper;
+use StreetSignal\Modules\V2\Contracts\ImportMappingRepository;
+use StreetSignal\Modules\V2\Contracts\ImportDataTools;
+use StreetSignal\Core\Entity\Post;
+use StreetSignal\Core\Entity\FormAttribute;
+use StreetSignal\Contracts\Repository\Entity\FormAttributeRepository;
+use StreetSignal\Tests\Unit\Modules\V2\ImportMock;
+use StreetSignal\Tests\TestCase;
 use Mockery as M;
 use Faker;
 

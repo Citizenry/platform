@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Ushahidi\Tests\Integration\Bootstrap\Database\Metadata;
+namespace StreetSignal\Tests\Integration\Bootstrap\Database\Metadata;
 
 use PDO;
 use ReflectionClass;

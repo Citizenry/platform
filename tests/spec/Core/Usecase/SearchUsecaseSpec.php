@@ -1,15 +1,15 @@
 <?php
 
-namespace spec\Ushahidi\Core\Usecase;
+namespace spec\StreetSignal\Core\Usecase;
 
 use Prophecy\Argument;
 use PhpSpec\ObjectBehavior;
-use Ushahidi\Contracts\Entity;
-use Ushahidi\Contracts\Authorizer;
-use Ushahidi\Core\Tool\SearchData;
-use Ushahidi\Contracts\CollectionFormatter;
+use StreetSignal\Contracts\Entity;
+use StreetSignal\Contracts\Authorizer;
+use StreetSignal\Core\Tool\SearchData;
+use StreetSignal\Contracts\CollectionFormatter;
 use Illuminate\Contracts\Translation\Translator;
-use Ushahidi\Contracts\Repository\SearchRepository;
+use StreetSignal\Contracts\Repository\SearchRepository;
 
 class SearchUsecaseSpec extends ObjectBehavior
 {

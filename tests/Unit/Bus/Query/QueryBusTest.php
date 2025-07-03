@@ -1,6 +1,6 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Bus\Query;
+namespace StreetSignal\Tests\Unit\Bus\Query;
 
 use Illuminate\Contracts\Container\Container;
 use PHPUnit\Framework\TestCase;

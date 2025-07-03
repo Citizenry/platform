@@ -1,14 +1,14 @@
 <?php
 
-namespace spec\Ushahidi\Multisite;
+namespace spec\StreetSignal\Multisite;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Ushahidi\Multisite\MultisiteManager;
-use Ushahidi\Multisite\Site;
-use Ushahidi\Multisite\SiteNotFoundException;
-use Ushahidi\Multisite\SiteRepository;
+use StreetSignal\Multisite\MultisiteManager;
+use StreetSignal\Multisite\Site;
+use StreetSignal\Multisite\SiteNotFoundException;
+use StreetSignal\Multisite\SiteRepository;
 
 class MultisiteManagerSpec extends ObjectBehavior
 {

@@ -1,17 +1,17 @@
 # Grid, Breakpoints, & Media Queries
 
-The Ushahidi Platform grid system is built with [Neat](http://neat.bourbon.io/) by [Thoughtbot](https://thoughtbot.com/). Neat is a lightweight semantic grid framework for Sass and Bourbon.
+The StreetSignal Platform grid system is built with [Neat](http://neat.bourbon.io/) by [Thoughtbot](https://thoughtbot.com/). Neat is a lightweight semantic grid framework for Sass and Bourbon.
 
 ## Links
 
 * [Neat Examples](http://neat.bourbon.io/examples/)
 * [Neat Docs](http://thoughtbot.github.io/neat-docs/latest/)
 
-The Ushahidi Platform uses a mobile-first design approach, meaning we design with smaller devices as our default, then add components and adjust layouts as needed when the screen size increases. This approach allows the app to function and convey the appropriate information regardless of the user's device. It works on mobile phones and desktop computers alike.
+The StreetSignal Platform uses a mobile-first design approach, meaning we design with smaller devices as our default, then add components and adjust layouts as needed when the screen size increases. This approach allows the app to function and convey the appropriate information regardless of the user's device. It works on mobile phones and desktop computers alike.
 
 ## Breakpoints
 
-The breakpoints are defined under _Grid_ within [\_settings.scss](https://github.com/ushahidi/platform-pattern-library/blob/gh-pages/assets/sass/_settings.scss)
+The breakpoints are defined under _Grid_ within [\_settings.scss](https://github.com/streetsignal/platform-pattern-library/blob/gh-pages/assets/sass/_settings.scss)
 
 ```text
 /*------------------------------------*\

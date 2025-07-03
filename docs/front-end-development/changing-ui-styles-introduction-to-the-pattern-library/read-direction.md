@@ -1,6 +1,6 @@
 # Read Direction
 
-Ushahidi's user interface displays LTR \(left-to-right\) by default, but Ushahidi also supports RTL \(right-to-left\), so if the user's preferred language is a RTL language, the UI will display accordingly.
+StreetSignal's user interface displays LTR \(left-to-right\) by default, but StreetSignal also supports RTL \(right-to-left\), so if the user's preferred language is a RTL language, the UI will display accordingly.
 
 When building this feature, it was important to maintain one code base that supported both LTR and RTL read direction. In order to accomplish this we decided to use a library of Sass mixins and functions to automatically flip the CSS styles for RTL \(right-to-left\) read direction when needed. We decided to go with [RTL-Sass](https://github.com/jamesl1001/RTL-Sass) open-source library, which supports the following properties:
 
@@ -24,7 +24,7 @@ When building this feature, it was important to maintain one code base that supp
 
 ### Conflicts
 
-The Ushahidi UI uses the lightweight semantic grid [Bourbon Neat](http://neat.bourbon.io/) and this Neat span-columns mixin:
+The StreetSignal UI uses the lightweight semantic grid [Bourbon Neat](http://neat.bourbon.io/) and this Neat span-columns mixin:
 
 ```text
 @include span-columns(12);
@@ -86,28 +86,28 @@ border-right: 3px solid #000 // RTL
     @include background-position(center 100px);
 }
 #background-1 {
-    @include background(url(../img/ushahidi-logo-black.svg) no-repeat 20px center);
+    @include background(url(../img/streetsignal-logo-black.svg) no-repeat 20px center);
 }
 #background-1-left {
-    @include background(url(../img/ushahidi-logo-black.svg) no-repeat left center);
+    @include background(url(../img/streetsignal-logo-black.svg) no-repeat left center);
 }
 #background-1-right {
-    @include background(url(../img/ushahidi-logo-black.svg) no-repeat right center);
+    @include background(url(../img/streetsignal-logo-black.svg) no-repeat right center);
 }
 #background-1-center {
-    @include background(url(../img/ushahidi-logo-black.svg) no-repeat center center);
+    @include background(url(../img/streetsignal-logo-black.svg) no-repeat center center);
 }
 #background-2 {
-    @include background(#999 url(../img/ushahidi-logo.svg) no-repeat 8px center);
+    @include background(#999 url(../img/streetsignal-logo.svg) no-repeat 8px center);
 }
 #background-2-left {
-    @include background(#999 url(../img/ushahidi-logo.svg) no-repeat left center);
+    @include background(#999 url(../img/streetsignal-logo.svg) no-repeat left center);
 }
 #background-2-right {
-    @include background(#999 url(../img/ushahidi-logo.svg) no-repeat right center);
+    @include background(#999 url(../img/streetsignal-logo.svg) no-repeat right center);
 }
 #background-2-center {
-    @include background(#999 url(../img/ushahidi-logo.svg) no-repeat center center);
+    @include background(#999 url(../img/streetsignal-logo.svg) no-repeat center center);
 }
 ```
 

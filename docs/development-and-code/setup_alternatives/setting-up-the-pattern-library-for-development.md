@@ -9,7 +9,7 @@ The pattern library holds all styles for the platform-client and its here change
 Clone the pattern library
 
 ```text
-git clone https://github.com/ushahidi/platform-pattern-library.git;
+git clone https://github.com/streetsignal/platform-pattern-library.git;
 ```
 
 Install the dependencies.
@@ -40,7 +40,7 @@ The pattern-library is installed as a npm-package in the Platform Client. For de
 1. Make sure the Pattern-library is built through running `gulp build` in the terminal
 2. Copy all contents in the "assets" folder
 3. Go to your Platform-client folder
-4. Navigate to node\_modules/ushahidi-platform-pattern-library folder
+4. Navigate to node\_modules/streetsignal-platform-pattern-library folder
 5. Remove the contents in the "assets" folder
 6. Paste the contents you copied from the assets-folder in the pattern-library 
 7. Done! Now you should be able to see the changes in the Platform Client

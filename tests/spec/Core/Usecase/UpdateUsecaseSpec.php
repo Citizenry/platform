@@ -1,15 +1,15 @@
 <?php
 
-namespace spec\Ushahidi\Core\Usecase;
+namespace spec\StreetSignal\Core\Usecase;
 
 use Illuminate\Contracts\Translation\Translator;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Ushahidi\Contracts\Authorizer;
-use Ushahidi\Contracts\Entity;
-use Ushahidi\Contracts\Formatter;
-use Ushahidi\Contracts\Repository\UpdateRepository;
-use Ushahidi\Contracts\Validator;
+use StreetSignal\Contracts\Authorizer;
+use StreetSignal\Contracts\Entity;
+use StreetSignal\Contracts\Formatter;
+use StreetSignal\Contracts\Repository\UpdateRepository;
+use StreetSignal\Contracts\Validator;
 
 class UpdateUsecaseSpec extends ObjectBehavior
 {

@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * StreetSignal Platform Update Use Case
+ *
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @package    StreetSignal\Platform
+ * @copyright  2014 StreetSignal
+ * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
+ */
+
+namespace StreetSignal\Core\Usecase\Post;
+
+use StreetSignal\Contracts\Entity;
+use StreetSignal\Core\Usecase\UpdateUsecase;
+use StreetSignal\Core\Usecase\Post\Concerns\FindPost;
+
+class WebhookUpdatePost extends UpdateUsecase
+{
+    // This replaces the default getEntity() logic to allow loading
+    // posts by locale, parent id and id.
+    use FindPost {
+        // In the case of updates, we have to apply the payload after fetch.
+        getEntity as private getEntityWithoutPayload;
+    }
+
+    // Usecase
+    public function interact()
+    {
+        // Fetch the entity and apply the payload...
+        $entity = $this->getEntity()->setState($this->payload);
+
+        // ... verify that the entity is in a valid state
+        $this->verifyValid($entity);
+
+        // ... persist the changes
+        $this->repo->updateFromService($entity);
+
+        // ... and either load the updated entity from the storage layer
+        $updated_entity = $this->getEntity();
+
+        // ... and return the updated, formatted entity
+        return $this->formatter->__invoke($updated_entity);
+    }
+
+    // UpdateUsecase
+    protected function getEntity()
+    {
+        return $this->getEntityWithoutPayload();
+    }
+
+    // UpdateUsecase
+    protected function verifyValid(Entity $entity)
+    {
+        $changed = $entity->getChanged();
+
+        // Always pass values to validation
+
+        if (isset($entity->values)) {
+            $changed['values'] = $entity->values;
+        }
+
+        if (!$this->validator->check($changed, $entity->asArray())) {
+            $this->validatorError($entity);
+        }
+    }
+}

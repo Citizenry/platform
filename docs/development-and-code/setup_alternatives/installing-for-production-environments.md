@@ -33,10 +33,10 @@
 
 ## Networking environment
 
-To run the Ushahidi Platform successfully in production, please ensure you have two hostnames available:
+To run the StreetSignal Platform successfully in production, please ensure you have two hostnames available:
 
-* A hostname for accessing the web client from a browser. This is the name that is most publicly visible, and appears in the browser address bar. As an example, we use: _yourdeploymentname.ushahidi.io_
-* A hostname for accessing the backend application. As an example, we use: _yourdeploymentname.api.ushahidi.io_ . 
+* A hostname for accessing the web client from a browser. This is the name that is most publicly visible, and appears in the browser address bar. As an example, we use: _yourdeploymentname.streetsignal.io_
+* A hostname for accessing the backend application. As an example, we use: _yourdeploymentname.api.streetsignal.io_ . 
 
 {% hint style="warning" %}
 Ensure you have valid SSL certificates for both host names.
@@ -44,7 +44,7 @@ Ensure you have valid SSL certificates for both host names.
 
 ## Installation
 
-### Clone the Ushahidi platform repositories
+### Clone the StreetSignal platform repositories
 
 In your server, you should clone the “platform” and “platform-client” repositories. For the purpose of this documentation, we are going to assume the repository clones will be done in
 
@@ -305,7 +305,7 @@ You should also check the /api/v3/config resource , like this : [https://\_your-
 
 ### Adjusting your queue configuration
 
-Some features of the Ushahidi Platform can be set up to run in the background using a queue system. This may be specially important for high traffic scenarios or to be able to run heavy tasks.
+Some features of the StreetSignal Platform can be set up to run in the background using a queue system. This may be specially important for high traffic scenarios or to be able to run heavy tasks.
 
 {% hint style="warning" %}
 Please see [the section covering queue drivers](platform_release_install.md#queue-drivers-and-sync-driver-issues) in the bundled release install document.
@@ -323,16 +323,16 @@ You should also logging in as an administrator to verify that the authentication
 
 As an extra safety check, try creating a post in the platform by clicking the yellow + plus in the /views/data path or the /views/map path.
 
-## Deploying Ushahidi for multiple languages
+## Deploying StreetSignal for multiple languages
 
 In order to display the web client in languages other than English, it’s necessary to download translations from Transifex. Authorized credentials are required to perform that step.
 
 1. Create a user at [https://transifex.com](https://transifex.com) if you don't have one already.
-2. Request access to the following project: [https://www.transifex.com/ushahidi/ushahidi-v3](https://www.transifex.com/ushahidi/ushahidi-v3)
+2. Request access to the following project: [https://www.transifex.com/streetsignal/streetsignal-v3](https://www.transifex.com/streetsignal/streetsignal-v3)
 
-Ushahidi will grant access to the transifex project once the request is received.
+StreetSignal will grant access to the transifex project once the request is received.
 
-After Ushahidi grants access, modify the .ENV file in the platform-client to require the languages you need. For instance this is the .ENV file's LANGUAGE key when using spanish and english
+After StreetSignal grants access, modify the .ENV file in the platform-client to require the languages you need. For instance this is the .ENV file's LANGUAGE key when using spanish and english
 
 ```text
 APP_LANGUAGES=en,es

@@ -8,17 +8,17 @@
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\DataSource\Console;
+namespace StreetSignal\Tests\Unit\DataSource\Console;
 
 use Illuminate\Console\Application as Artisan;
 use Mockery as M;
 use phpmock\mockery\PHPMockery;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Contracts\Repository\Entity\ConfigRepository;
-use Ushahidi\Core\Entity\Config;
-use Ushahidi\DataSource\Console\IncomingCommand;
-use Ushahidi\DataSource\DataSourceManager;
-use Ushahidi\DataSource\DataSourceStorage;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Contracts\Repository\Entity\ConfigRepository;
+use StreetSignal\Core\Entity\Config;
+use StreetSignal\DataSource\Console\IncomingCommand;
+use StreetSignal\DataSource\DataSourceManager;
+use StreetSignal\DataSource\DataSourceStorage;
 
 /**
  * @backupGlobals disabled

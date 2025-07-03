@@ -2,7 +2,7 @@
 
 ## HDX Usertesting Insights
 
-We tested on 8 individuals - 5 on very first early concepts, 2 on a further developed IA logic and 1 on the process of using the API. We have 2 further test scripts to conduct and we aim for 5 testers for each script. We have 17 more people to test on over the rest of the year. The final test script will be on heavy Ushahidi users and those that are very familiar with working with complex datasets. Ideally, they will also have prior knowledge of HDX.
+We tested on 8 individuals - 5 on very first early concepts, 2 on a further developed IA logic and 1 on the process of using the API. We have 2 further test scripts to conduct and we aim for 5 testers for each script. We have 17 more people to test on over the rest of the year. The final test script will be on heavy StreetSignal users and those that are very familiar with working with complex datasets. Ideally, they will also have prior knowledge of HDX.
 
 General thoughts from User testers:
 
@@ -60,11 +60,11 @@ Has no idea what export to HDX will do. Say’s it must be a file format but is 
 
 _“Can the programs/software I open the hxl tagged csv in handle the mapping/tags I added?”_ A fair few users though you needed ‘special software’ to open a file with hxl tags added.
 
-Users automatically expected the tags they are using to be shared with other team members on the same system \(Ushahidi\) and the custom tags to als be shared.
+Users automatically expected the tags they are using to be shared with other team members on the same system \(StreetSignal\) and the custom tags to als be shared.
 
 When reading HDX/HXL documentation
 
-85-90% of user tester want to read documentation provided on Ushahidi via blue ‘exit’ link but many of them fear ‘losing their place’ or ‘getting lost’. Most users expect the Ushahidi system to ‘teach’ them in some way. The majority of users said they would spend multiple hours going through the documentation before attempting the export/upload within Ushahidi.
+85-90% of user tester want to read documentation provided on StreetSignal via blue ‘exit’ link but many of them fear ‘losing their place’ or ‘getting lost’. Most users expect the StreetSignal system to ‘teach’ them in some way. The majority of users said they would spend multiple hours going through the documentation before attempting the export/upload within StreetSignal.
 
 There is a reluctance to ‘have a go’ by uploading/exporting data.
 
@@ -98,19 +98,19 @@ Wonders if ‘postcard’ is a technical term
 
 Sees term ‘JSON’ - confirms a software-y type of info
 
-When Investigating Ushahidi’s HDX integration
+When Investigating StreetSignal’s HDX integration
 
 Users want to see tagged CSV example files
 
 Custom tags and attributes were tested in every user testing scenario. Users were asked _“If you couldn’t find what ‘tag’ you were looking for to describe your data in the drop down list, what would you look for or what would you expect to be able to do?”_
 
-Most users found the \#x\_ or +custom confusing but mostly due to not knowing ‘what will happen to that tag’ after the dataset has been uploaded or exported. Will it save in the Ushahidi system? What if there’s already a default tag/attribute that is most used for that? This backs up users wanting to read documentation and understand the ‘best practice’ on how to adhere to the standard.
+Most users found the \#x\_ or +custom confusing but mostly due to not knowing ‘what will happen to that tag’ after the dataset has been uploaded or exported. Will it save in the StreetSignal system? What if there’s already a default tag/attribute that is most used for that? This backs up users wanting to read documentation and understand the ‘best practice’ on how to adhere to the standard.
 
 _“Why custom? I don’t need this”_ - one user expected all tags to be in the suggested list and couldn’t understand why there was the ability to create a custom one.
 
-Potential function for users in Ushahidi to suggest you custom tag or attribute to be added to the hxl standard.
+Potential function for users in StreetSignal to suggest you custom tag or attribute to be added to the hxl standard.
 
-We suspect a high volume of ‘\#x\_survey’ tag or ‘+survey’ attribute due to the fact that Ushahidi platform is seen as a surveying tool mostly. We may even see users creating custom tags ‘\#x\_surveyhealth’ or ‘\#x\_surveyjobs’. We intend to user test this.
+We suspect a high volume of ‘\#x\_survey’ tag or ‘+survey’ attribute due to the fact that StreetSignal platform is seen as a surveying tool mostly. We may even see users creating custom tags ‘\#x\_surveyhealth’ or ‘\#x\_surveyjobs’. We intend to user test this.
 
 _“If I can only choose one tag, which is best to use? I’m not sure...”_ Users want to know how flexible and dynamic the tagging system can be.
 
@@ -126,7 +126,7 @@ _“This gives me two confusing answers and I don’t know which to use!”_
 
 _“It’s not helpful and the heading is misleading. This is geared towards experienced tech people”_
 
-There is actually guiding text on Ushahidi’s side here but this user did this:
+There is actually guiding text on StreetSignal’s side here but this user did this:
 
 \(On the HDX homepage\) User describes that they would look through the ‘quick links’ section for information on API keys
 
@@ -142,11 +142,11 @@ User would go to ‘dashboard’ NOT ‘profile’ but find the API key when cli
 
 \[Platform API\] HDX slug creation should use a library and include the org name \#2973
 
-[https://github.com/ushahidi/platform/issues/2973](https://github.com/ushahidi/platform/issues/2973)
+[https://github.com/streetsignal/platform/issues/2973](https://github.com/streetsignal/platform/issues/2973)
 
 ## HDX Datasets should be created and validated when the user requests an export job \#3108
 
-[https://github.com/ushahidi/platform/issues/3108](https://github.com/ushahidi/platform/issues/3108)
+[https://github.com/streetsignal/platform/issues/3108](https://github.com/streetsignal/platform/issues/3108)
 
 Essentially when a user has finished tagging/attributing a dataset we take them to a page where there is some essential information required before the dataset can be uploaded to HDX.
 
@@ -154,15 +154,15 @@ Essentially when a user has finished tagging/attributing a dataset we take them 
 
 ## HDX M&E insights
 
-When talking with Hazel \(M&E at Ushahidi\) interest in ‘notifying’ the wider development space was expressed. Not only it being available and searchable but ‘broadcastable’
+When talking with Hazel \(M&E at StreetSignal\) interest in ‘notifying’ the wider development space was expressed. Not only it being available and searchable but ‘broadcastable’
 
 Using the same ‘ids’ or being able to merge the language/conventions already used within platform or have it seamlessly port over was of critical concern.
 
 Having a process to which the wider development network could ‘validate’ the data to lend it credibility within the wider development network was important for grassroots orgs and those M&E professionals who work alongside grassroots orgs.
 
-There was concern around current projects being heavy on the qualitative or ‘open-ended’ responses which could be hard to tag. They are currently hard to draw insight from within the current Ushahidi platform but if hxl tagging can improve the way that these qualitative insights are used then that would be great. These often require prior context. We could get a data point that simply says ‘I hate my job’ but this is in the context of receiving training, further education and certificates for a healthcare program that aims to provide better lifestyles for young girls.
+There was concern around current projects being heavy on the qualitative or ‘open-ended’ responses which could be hard to tag. They are currently hard to draw insight from within the current StreetSignal platform but if hxl tagging can improve the way that these qualitative insights are used then that would be great. These often require prior context. We could get a data point that simply says ‘I hate my job’ but this is in the context of receiving training, further education and certificates for a healthcare program that aims to provide better lifestyles for young girls.
 
-This follows on to a concept such as ‘theming’ for M&E workers so that they can tag and draw down the same data but across different themes. They expressed the interest in just downloading a ‘theme’ and the tags/attributes associated with it and not necessarily the accompanying data. Also the ability to download just the number of data points \(or posts in Ushahidi platform\) alongside the tagged information was important.
+This follows on to a concept such as ‘theming’ for M&E workers so that they can tag and draw down the same data but across different themes. They expressed the interest in just downloading a ‘theme’ and the tags/attributes associated with it and not necessarily the accompanying data. Also the ability to download just the number of data points \(or posts in StreetSignal platform\) alongside the tagged information was important.
 
 Are current platform runs on ‘categories’ and ‘collections’ tags and attributes are a more sophisticated form of this. Our M&E staff use the categories often to inform the surveys that are sent out using the platform \(to collect data\) and then cyclically build more categories when the initial set is seen as insufficient. The ability to consistently rework the data and way that it is described/tagged is key to those drawing insights for reporting to ‘higher powers’
 

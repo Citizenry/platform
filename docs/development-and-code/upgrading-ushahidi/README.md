@@ -2,7 +2,7 @@
 description: If you want to upgrade your selfhosted deployment please follow these guides.
 ---
 
-# Upgrading Ushahidi
+# Upgrading StreetSignal
 
 If you are on version V3.x.x \(Kohana\) please read the following before upgrading to V4.x.x \(Lumen\). Some things has changed that affect your api.
 

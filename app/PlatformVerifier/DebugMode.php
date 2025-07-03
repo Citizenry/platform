@@ -2,7 +2,7 @@
 
 namespace App\PlatformVerifier;
 
-use Ushahidi\Core\Tool\OutputText;
+use StreetSignal\Core\Tool\OutputText;
 
 // Methods to check whether the installation debug mode is enabled , as well
 // to create and delete the file that enables it

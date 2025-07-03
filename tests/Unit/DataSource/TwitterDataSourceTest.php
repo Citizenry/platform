@@ -8,12 +8,12 @@
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\DataSource;
+namespace StreetSignal\Tests\Unit\DataSource;
 
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Core\Entity\Config;
-use Ushahidi\DataSource\Twitter\Twitter;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Core\Entity\Config;
+use StreetSignal\DataSource\Twitter\Twitter;
 
 /**
  * @backupGlobals disabled
@@ -25,7 +25,7 @@ class TwitterDataSourceTest extends TestCase
     {
         $mockTwitterOAuth = M::mock(\Abraham\TwitterOAuth\TwitterOAuth::class);
         $mockResponse = M::mock(\Abraham\TwitterOAuth\Response::class);
-        $mockRepo = M::mock(\Ushahidi\Modules\V3\Repository\ConfigRepository::class);
+        $mockRepo = M::mock(\StreetSignal\Modules\V3\Repository\ConfigRepository::class);
 
         $twitter = new Twitter(
             [],
@@ -47,7 +47,7 @@ class TwitterDataSourceTest extends TestCase
         $mockTwitterOAuth = M::mock(\Abraham\TwitterOAuth\TwitterOAuth::class);
         $mockTwitterOAuth->shouldReceive('setTimeouts')->once();
         $mockResponse = M::mock(\Abraham\TwitterOAuth\Response::class);
-        $mockRepo = M::mock(\Ushahidi\Modules\V3\Repository\ConfigRepository::class);
+        $mockRepo = M::mock(\StreetSignal\Modules\V3\Repository\ConfigRepository::class);
 
         $twitter = new Twitter(
             [
@@ -85,7 +85,7 @@ class TwitterDataSourceTest extends TestCase
         $mockTwitterOAuth = M::mock(\Abraham\TwitterOAuth\TwitterOAuth::class);
         $mockTwitterOAuth->shouldReceive('setTimeouts')->once();
         $mockResponse = M::mock(\Abraham\TwitterOAuth\Response::class);
-        $mockRepo = M::mock(\Ushahidi\Modules\V3\Repository\ConfigRepository::class);
+        $mockRepo = M::mock(\StreetSignal\Modules\V3\Repository\ConfigRepository::class);
 
         $twitter = new Twitter(
             [
@@ -140,7 +140,7 @@ class TwitterDataSourceTest extends TestCase
         $mockTwitterOAuth = M::mock(\Abraham\TwitterOAuth\TwitterOAuth::class);
         $mockTwitterOAuth->shouldReceive('setTimeouts')->once();
         $mockResponse = M::mock(\Abraham\TwitterOAuth\Response::class);
-        $mockRepo = M::mock(\Ushahidi\Modules\V3\Repository\ConfigRepository::class);
+        $mockRepo = M::mock(\StreetSignal\Modules\V3\Repository\ConfigRepository::class);
 
         $twitter = new Twitter(
             [

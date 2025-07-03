@@ -4,11 +4,11 @@ namespace Tests\Unit\Modules\V5\Action\Post\Handler;
 
 use App\Bus\Query\Query;
 use Illuminate\Pagination\LengthAwarePaginator;
-use Ushahidi\Modules\V5\Actions\Post\Handlers\ListPostsQueryHandler;
-use Ushahidi\Modules\V5\Actions\Post\Queries\ListPostsQuery;
-use Ushahidi\Modules\V5\Models\Post\Post;
-use Ushahidi\Modules\V5\Repository\Post\PostRepository;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Modules\V5\Actions\Post\Handlers\ListPostsQueryHandler;
+use StreetSignal\Modules\V5\Actions\Post\Queries\ListPostsQuery;
+use StreetSignal\Modules\V5\Models\Post\Post;
+use StreetSignal\Modules\V5\Repository\Post\PostRepository;
+use StreetSignal\Tests\TestCase;
 
 class ListPostsQueryHandlerTest extends TestCase
 {

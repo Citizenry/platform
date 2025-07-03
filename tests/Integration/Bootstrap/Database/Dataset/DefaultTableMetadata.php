@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Ushahidi\Tests\Integration\Bootstrap\Database\Dataset;
+namespace StreetSignal\Tests\Integration\Bootstrap\Database\Dataset;
 
-use Ushahidi\Tests\Integration\Bootstrap\Database\Dataset\AbstractTableMetadata;
+use StreetSignal\Tests\Integration\Bootstrap\Database\Dataset\AbstractTableMetadata;
 
 class DefaultTableMetadata extends AbstractTableMetadata
 {

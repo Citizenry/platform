@@ -8,9 +8,9 @@
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\Util;
+namespace StreetSignal\Tests\Unit\Util;
 
-use Ushahidi\Core\Tool\BoundingBox;
+use StreetSignal\Core\Tool\BoundingBox;
 
 /**
  * @backupGlobals disabled

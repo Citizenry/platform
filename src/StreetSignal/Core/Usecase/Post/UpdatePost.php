@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * StreetSignal Platform Update Use Case
+ *
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @package    StreetSignal\Platform
+ * @copyright  2014 StreetSignal
+ * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
+ */
+
+namespace StreetSignal\Core\Usecase\Post;
+
+use StreetSignal\Contracts\Entity;
+use StreetSignal\Core\Usecase\UpdateUsecase;
+use StreetSignal\Core\Usecase\Post\Concerns\FindPost;
+
+class UpdatePost extends UpdateUsecase
+{
+    // This replaces the default getEntity() logic to allow loading
+    // posts by locale, parent id and id.
+    use FindPost {
+        // In the case of updates, we have to apply the payload after fetch.
+        getEntity as private getEntityWithoutPayload;
+    }
+
+    // UpdateUsecase
+    protected function getEntity()
+    {
+        return $this->getEntityWithoutPayload();
+    }
+
+    // UpdateUsecase
+    protected function verifyValid(Entity $entity)
+    {
+        $changed = $entity->getChanged();
+
+        // Always pass values to validation
+
+        if (isset($entity->values)) {
+            $changed['values'] = $entity->values;
+        }
+
+        if (!$this->validator->check($changed, $entity->asArray())) {
+            $this->validatorError($entity);
+        }
+    }
+}

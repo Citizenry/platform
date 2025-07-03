@@ -7,7 +7,7 @@ Feature: Testing the current user API
 		Then the response is JSON
 		And the response has a "id" property
 		And the type of the "id" property is "numeric"
-		And the "email" property equals "admin@ushahidi.com"
+		And the "email" property equals "admin@streetsignal.com"
 		Then the guzzle status code should be 200
 
 	@oauth2Skip
@@ -16,7 +16,7 @@ Feature: Testing the current user API
 		And that the request "data" is:
 			"""
 			{
-				"email":"admin@v3.ushahidi.com",
+				"email":"admin@v3.streetsignal.com",
 				"realname":"Admin User"
 			}
 			"""
@@ -27,7 +27,7 @@ Feature: Testing the current user API
 		And the type of the "id" property is "numeric"
 		And the "id" property equals "2"
 		And the response has a "email" property
-		And the "email" property equals "admin@v3.ushahidi.com"
+		And the "email" property equals "admin@v3.streetsignal.com"
 		Then the guzzle status code should be 200
 
 	Scenario: Get the current user fails if no user authenticated
@@ -44,7 +44,7 @@ Feature: Testing the current user API
 		And that the request "data" is:
 			"""
 			{
-				"email":"test2@v3.ushahidi.com",
+				"email":"test2@v3.streetsignal.com",
 				"realname":"Test User, Jr"
 			}
 			"""
@@ -55,6 +55,6 @@ Feature: Testing the current user API
 		And the type of the "id" property is "numeric"
 		And the "id" property equals "3"
 		And the response has a "email" property
-		And the "email" property equals "test2@v3.ushahidi.com"
+		And the "email" property equals "test2@v3.streetsignal.com"
 		Then the guzzle status code should be 200
 

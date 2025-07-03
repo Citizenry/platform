@@ -14,13 +14,13 @@ folders:
         to: /home/vagrant/Code/platform-api
 sites:
     -
-        map: api.ushahidi.test
+        map: api.streetsignal.test
         to: /home/vagrant/Code/platform-api/httpdocs
     -
         map: ushv3.dev
         to: /home/vagrant/Code/platform-api/httpdocs
 databases:
-    - ushahidi
+    - streetsignal
 features:
     - postgresql: false
     - mysql: true

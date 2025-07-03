@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Modules\V5\Action\Post\Query;
 
-use Ushahidi\Modules\V5\Actions\Post\Queries\ListPostsQuery;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Modules\V5\Actions\Post\Queries\ListPostsQuery;
+use StreetSignal\Tests\TestCase;
 
 class ListPostsQueryTest extends TestCase
 {

@@ -6,97 +6,97 @@
 [main]
 host = https://www.transifex.com
 
-[ushahidi-v3-api.configphp]
+[streetsignal-v3-api.configphp]
 file_filter = resources/lang/<lang>/config.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.contactsphp]
+[streetsignal-v3-api.contactsphp]
 file_filter = resources/lang/<lang>/contacts.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.csvphp]
+[streetsignal-v3-api.csvphp]
 file_filter = resources/lang/<lang>/csv.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.exportphp]
+[streetsignal-v3-api.exportphp]
 file_filter = resources/lang/<lang>/export.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.form_attributephp]
+[streetsignal-v3-api.form_attributephp]
 file_filter = resources/lang/<lang>/form_attribute.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.form_contactphp]
+[streetsignal-v3-api.form_contactphp]
 file_filter = resources/lang/<lang>/form_contact.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.formphp]
+[streetsignal-v3-api.formphp]
 file_filter = resources/lang/<lang>/form.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.form_rolephp]
+[streetsignal-v3-api.form_rolephp]
 file_filter = resources/lang/<lang>/form_role.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.hxl_metadataphp]
+[streetsignal-v3-api.hxl_metadataphp]
 file_filter = resources/lang/<lang>/hxl_metadata.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.layersphp]
+[streetsignal-v3-api.layersphp]
 file_filter = resources/lang/<lang>/layers.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.mediaphp]
+[streetsignal-v3-api.mediaphp]
 file_filter = resources/lang/<lang>/media.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.messagephp]
+[streetsignal-v3-api.messagephp]
 file_filter = resources/lang/<lang>/message.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.notificationsphp]
+[streetsignal-v3-api.notificationsphp]
 file_filter = resources/lang/<lang>/notifications.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.postphp]
+[streetsignal-v3-api.postphp]
 file_filter = resources/lang/<lang>/post.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.rolephp]
+[streetsignal-v3-api.rolephp]
 file_filter = resources/lang/<lang>/role.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.tagphp]
+[streetsignal-v3-api.tagphp]
 file_filter = resources/lang/<lang>/tag.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.userphp]
+[streetsignal-v3-api.userphp]
 file_filter = resources/lang/<lang>/user.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.user_settingphp]
+[streetsignal-v3-api.user_settingphp]
 file_filter = resources/lang/<lang>/user_setting.php
 source_lang = en
 type = PHP_ARRAY
 
-[ushahidi-v3-api.validationphp]
+[streetsignal-v3-api.validationphp]
 file_filter = resources/lang/<lang>/validation.php
 source_lang = en
 type = PHP_ARRAY

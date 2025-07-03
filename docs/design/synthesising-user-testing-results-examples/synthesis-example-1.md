@@ -29,7 +29,7 @@
   * 2nd next to syria in terms of number of journalists who have fled from the country
   * hoping to contribute something on the platform to bring awareness to issues
 
-**Who from the org uses \(or would use\) the Ushahidi platform?**
+**Who from the org uses \(or would use\) the StreetSignal platform?**
 
 * Which roles within the organization would be interacting with the platform and in what capacity?
   * This is an independent project being started by 1 person. There are 3 potential volunteers to help, but he will be managing everything.

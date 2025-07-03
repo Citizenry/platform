@@ -1,21 +1,21 @@
 <?php
 
 /**
- * Ushahidi Config Console Command
+ * StreetSignal Config Console Command
  *
- * @author     Ushahidi Team <team@ushahidi.com>
- * @copyright  2014 Ushahidi
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2014 StreetSignal
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Ushahidi\Core\Usecase\CreateUsecase;
+use StreetSignal\Core\Usecase\CreateUsecase;
 use Illuminate\Contracts\Events\Dispatcher;
 use App\Console\Commands\Concerns\ConsoleFormatter;
-use Ushahidi\Core\Tool\Authorizer\ConsoleAuthorizer;
-use Ushahidi\Contracts\Repository\Entity\ApiKeyRepository as EntityApiKeyRepository;
+use StreetSignal\Core\Tool\Authorizer\ConsoleAuthorizer;
+use StreetSignal\Contracts\Repository\Entity\ApiKeyRepository as EntityApiKeyRepository;
 
 class ApikeySetCommand extends Command
 {
@@ -36,7 +36,7 @@ class ApikeySetCommand extends Command
     protected $description = 'Set apikey';
 
     /**
-     * @var \Ushahidi\Contracts\Usecase
+     * @var \StreetSignal\Contracts\Usecase
      */
     protected $usecase;
 

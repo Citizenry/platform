@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Ushahidi\Tests\Integration\Bootstrap\Database;
+namespace StreetSignal\Tests\Integration\Bootstrap\Database;
 
-use Ushahidi\Tests\Integration\Bootstrap\Database\Dataset\AbstractDataset;
-use Ushahidi\Tests\Integration\Bootstrap\Database\Dataset\DefaultTableMetadata;
+use StreetSignal\Tests\Integration\Bootstrap\Database\Dataset\AbstractDataset;
+use StreetSignal\Tests\Integration\Bootstrap\Database\Dataset\DefaultTableMetadata;
 
 
 class Dataset extends AbstractDataset

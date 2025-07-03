@@ -1,19 +1,19 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Core\Entity;
+namespace StreetSignal\Tests\Unit\Core\Entity;
 
-use Ushahidi\Contracts\Entity;
+use StreetSignal\Contracts\Entity;
 
 /**
- * Ushahidi Export Job
+ * StreetSignal Export Job
  *
- * @author     Ushahidi Team <team@ushahidi.com>
- * @copyright  2018 Ushahidi
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2018 StreetSignal
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 class MockExportJobEntity implements Entity
 {
-    use \Ushahidi\Core\Concerns\StatefulData;
+    use \StreetSignal\Core\Concerns\StatefulData;
 
     public $id;
 

@@ -7,7 +7,7 @@ Feature: Testing the Users API
 		And that the request "data" is:
 			"""
 			{
-				"email":"linda@ushahidi.com",
+				"email":"linda@streetsignal.com",
 				"realname":"Linda Kamau",
 				"password":"testing",
 				"role":"admin"
@@ -18,7 +18,7 @@ Feature: Testing the Users API
 		And the response has a "result.id" property
 		And the type of the "result.id" property is "numeric"
 		And the response has a "result.email" property
-		And the "result.email" property equals "linda@ushahidi.com"
+		And the "result.email" property equals "linda@streetsignal.com"
 		And the "result.role" property equals "admin"
 		And the response does not have a "result.password" property
 		Then the guzzle status code should be 200
@@ -29,7 +29,7 @@ Feature: Testing the Users API
 		And that the request "data" is:
 			"""
 			{
-				"email":"Mike@ushahidi.com",
+				"email":"Mike@streetsignal.com",
 				"realname":"Mike Mackay",
 				"password":"testing",
 				"role":"admin",
@@ -50,7 +50,7 @@ Feature: Testing the Users API
 						"user_id": "1",
 						"data_provider": null,
 						"type": "email",
-						"contact": "robbie@ushahidi.com",
+						"contact": "robbie@streetsignal.com",
 						"created": "0",
 						"updated": null,
 						"can_notify": "0",
@@ -66,7 +66,7 @@ Feature: Testing the Users API
 		And the type of the "result.id" property is "numeric"
 		And the "result.id" property equals "1"
 		And the response has a "result.email" property
-		And the "result.email" property equals "Mike@ushahidi.com"
+		And the "result.email" property equals "Mike@streetsignal.com"
 		And the "result.role" property equals "admin"
 		Then the guzzle status code should be 200
 
@@ -94,7 +94,7 @@ Feature: Testing the Users API
 		And that the request "data" is:
 			"""
 			{
-				"email":"tom@ushahidi.com",
+				"email":"tom@streetsignal.com",
 				"realname":"Tom Kamau",
 				"password":"tomkamau"
 			}
@@ -151,7 +151,7 @@ Feature: Testing the Users API
 		And the response has a "result.id" property
 		And the type of the "result.id" property is "numeric"
 		And the "result.realname" property equals "Test User"
-		And the "result.email" property equals "test@v3.ushahidi.com"
+		And the "result.email" property equals "test@v3.streetsignal.com"
 		Then the guzzle status code should be 200
 
 	Scenario: Loading own user gives full details
@@ -164,7 +164,7 @@ Feature: Testing the Users API
 		And the response has a "result.id" property
 		And the type of the "result.id" property is "numeric"
 		And the "result.realname" property equals "Robbie Mackay"
-		And the "result.email" property equals "robbie@ushahidi.com"
+		And the "result.email" property equals "robbie@streetsignal.com"
 		Then the guzzle status code should be 200
 
 	Scenario: Loading own user without login

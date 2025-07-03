@@ -12,7 +12,7 @@ Deploy-ready versions from the platform-release repository, which contains produ
 
 ### Installing with Vagrant
 
-This is the preferred option for local development. The Ushahidi dev team uses this setup for most of their development work.
+This is the preferred option for local development. The StreetSignal dev team uses this setup for most of their development work.
 
 {% content-ref url="vagrant-setup.md" %}
 [vagrant-setup.md](vagrant-setup.md)

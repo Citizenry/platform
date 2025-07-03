@@ -1,6 +1,6 @@
 # Variables
 
-Variables are defined in [\_settings.scss](https://github.com/ushahidi/platform-pattern-library/blob/gh-pages/assets/sass/_settings.scss). A few common variables are breakpoints, color, z-index and spacing, but other variables are available.
+Variables are defined in [\_settings.scss](https://github.com/streetsignal/platform-pattern-library/blob/gh-pages/assets/sass/_settings.scss). A few common variables are breakpoints, color, z-index and spacing, but other variables are available.
 
 ## Example use
 

@@ -4,9 +4,9 @@ services:
     image: mariadb:10.11
     environment:
       MARIADB_ROOT_PASSWORD: root
-      MARIADB_DATABASE: ushahidi
-      MARIADB_USER: ushahidi
-      MARIADB_PASSWORD: ushahidi
+      MARIADB_DATABASE: streetsignal
+      MARIADB_USER: streetsignal
+      MARIADB_PASSWORD: streetsignal
       LANG: C.UTF_8
     command:
       - --character-set-server=utf8mb4
@@ -29,11 +29,11 @@ services:
       ENABLE_PLATFORM_TASKS: "false"
       RUN_PLATFORM_MIGRATIONS: "true"
       DB_CONNECTION: mysql
-      DB_DATABASE: ushahidi
+      DB_DATABASE: streetsignal
       DB_HOST: mysql
       DB_PORT: 3306
-      DB_USERNAME: ushahidi
-      DB_PASSWORD: ushahidi
+      DB_USERNAME: streetsignal
+      DB_PASSWORD: streetsignal
       REDIS_HOST: redis
       CACHE_DRIVER: redis
       QUEUE_DRIVER: redis
@@ -60,11 +60,11 @@ services:
       TASK_RUN_PERIOD_SECS: "30"
       RUN_PLATFORM_MIGRATIONS: "false"
       DB_CONNECTION: mysql
-      DB_DATABASE: ushahidi
+      DB_DATABASE: streetsignal
       DB_HOST: mysql
       DB_PORT: 3306
-      DB_USERNAME: ushahidi
-      DB_PASSWORD: ushahidi
+      DB_USERNAME: streetsignal
+      DB_PASSWORD: streetsignal
       REDIS_HOST: redis
       CACHE_DRIVER: redis
       QUEUE_DRIVER: redis

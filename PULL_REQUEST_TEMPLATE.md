@@ -6,6 +6,6 @@ Test checklist:
 
 - [ ] I certify that I ran my checklist
 
-Fixes ushahidi/platform# .
+Fixes streetsignal/platform# .
 
-Ping @ushahidi/platform
+Ping @streetsignal/platform

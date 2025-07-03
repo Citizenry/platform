@@ -1,15 +1,15 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Modules\V3\Jobs;
+namespace StreetSignal\Tests\Unit\Modules\V3\Jobs;
 
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Core\Entity\ExportJob;
-use Ushahidi\Core\Entity\ExportBatch;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Core\Entity\ExportJob;
+use StreetSignal\Core\Entity\ExportBatch;
 use Illuminate\Support\Facades\Storage;
-use Ushahidi\Modules\V3\Jobs\CombineExportedPostBatchesJob;
-use Ushahidi\Contracts\Repository\Entity\ExportJobRepository;
-use Ushahidi\Contracts\Repository\Entity\ExportBatchRepository;
+use StreetSignal\Modules\V3\Jobs\CombineExportedPostBatchesJob;
+use StreetSignal\Contracts\Repository\Entity\ExportJobRepository;
+use StreetSignal\Contracts\Repository\Entity\ExportBatchRepository;
 
 /**
  * @group api

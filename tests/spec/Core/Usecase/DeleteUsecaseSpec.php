@@ -1,13 +1,13 @@
 <?php
 
-namespace spec\Ushahidi\Core\Usecase;
+namespace spec\StreetSignal\Core\Usecase;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Ushahidi\Contracts\Authorizer;
-use Ushahidi\Contracts\Entity;
-use Ushahidi\Contracts\Formatter;
-use Ushahidi\Contracts\Repository\DeleteRepository;
+use StreetSignal\Contracts\Authorizer;
+use StreetSignal\Contracts\Entity;
+use StreetSignal\Contracts\Formatter;
+use StreetSignal\Contracts\Repository\DeleteRepository;
 
 class DeleteUsecaseSpec extends ObjectBehavior
 {

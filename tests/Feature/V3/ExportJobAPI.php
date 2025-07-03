@@ -1,10 +1,10 @@
 <?php
 
-namespace Ushahidi\Tests\Feature\V3;
+namespace StreetSignal\Tests\Feature\V3;
 
 use Faker;
 use Laravel\Lumen\Testing\DatabaseTransactions;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Tests\TestCase;
 
 /**
  * @group api
@@ -18,10 +18,10 @@ class ExportJobAPI extends TestCase
     public function testCreateJob()
     {
         $this->withoutMiddleware();
-        $this->expectsJobs(\Ushahidi\Modules\V3\Jobs\ExportPostsJob::class);
+        $this->expectsJobs(\StreetSignal\Modules\V3\Jobs\ExportPostsJob::class);
 
         $this
-            ->actingAs(new \Ushahidi\Authzn\GenericUser(['id' => 2]))
+            ->actingAs(new \StreetSignal\Authzn\GenericUser(['id' => 2]))
             ->json('POST', '/api/v3/exports/jobs', [
                 'fields' => 'test',
                 'filters' => [
@@ -54,7 +54,7 @@ class ExportJobAPI extends TestCase
         $this->withoutMiddleware();
 
         $this
-            ->actingAs(new \Ushahidi\Modules\Auth\GenericUser(['id' => 2]))
+            ->actingAs(new \StreetSignal\Modules\Auth\GenericUser(['id' => 2]))
             ->json('POST', '/api/v3/exports/jobs', [
                 'fields' => 'test',
                 'filters' => [

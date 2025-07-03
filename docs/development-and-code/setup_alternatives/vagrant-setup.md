@@ -47,7 +47,7 @@ Please make sure you install everything in this list before you proceed with the
 Clone the repository (this will create a directory named _platform)_
 
 ```bash
-git clone https://github.com/ushahidi/platform.git
+git clone https://github.com/streetsignal/platform.git
 ```
 
 Go into the platform directory
@@ -68,7 +68,7 @@ If you haven't used git before or need help with git specific issues, make sure 
 
 ### Getting the web server running
 
-Once you have the code, the next step is to prepare a web server. For this part, we will use vagrant, with the Vagrant and Homestead.yml files that ship with Ushahidi.
+Once you have the code, the next step is to prepare a web server. For this part, we will use vagrant, with the Vagrant and Homestead.yml files that ship with StreetSignal.
 
 First up we need to install the PHP dependencies. In the _platform_ directory, run:
 
@@ -134,7 +134,7 @@ Change to the project directory. This is shared by Vagrant / VirtualBox between 
 cd ~/Code/platform-api
 ```
 
-Set required php version. For current version of Ushahidi this should be 7.3:
+Set required php version. For current version of StreetSignal this should be 7.3:
 
 ```bash
 sudo update-alternatives --set php /usr/bin/php7.3
@@ -156,7 +156,7 @@ composer install
 
 ```
 192.168.33.110  platform-api
-192.168.33.110  api.ushahidi.test
+192.168.33.110  api.streetsignal.test
 ```
 
 {% hint style="info" %}

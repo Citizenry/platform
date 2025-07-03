@@ -43,9 +43,9 @@ List all posts matching search criteria as supplied in query parameters. Multipl
         + offset: 0 (string) <!-- Actually a number, fix API -->
         + order: asc (string)
         + orderby: created (string)
-        + curr: https://quakemap.api.ushahidi.io/api/v3/posts?offset=0&limit=20 (string)
-        + next: https://quakemap.api.ushahidi.io/api/v3/posts?offset=20&limit=20 (string)
-        + prev: https://quakemap.api.ushahidi.io/api/v3/posts?offset=0&limit=20 (string)
+        + curr: https://quakemap.api.streetsignal.io/api/v3/posts?offset=0&limit=20 (string)
+        + next: https://quakemap.api.streetsignal.io/api/v3/posts?offset=20&limit=20 (string)
+        + prev: https://quakemap.api.streetsignal.io/api/v3/posts?offset=0&limit=20 (string)
         + total_count: 100 (number)
 
 ### Create a New Post [POST /api/v3/posts]
@@ -174,20 +174,20 @@ List all posts matching search criteria as supplied in query parameters. Multipl
 
 ### Post
 + id: 530 (number)
-+ url: https://quakemap.api.ushahidi.io/api/v3/posts/530 (string)
++ url: https://quakemap.api.streetsignal.io/api/v3/posts/530 (string)
 + parent (object, nullable)
     + id: 1
-    + url: https://demo.api.ushahidi.io/api/v3/posts/1
+    + url: https://demo.api.streetsignal.io/api/v3/posts/1
 + title: Need help (required)
 + content: Asrang VDC of Gorkha hasn't received any help yet. Need relief efforts (required)
 + created: `2014-11-11T08:40:51+00:00`
 + updated: `2014-11-11T08:40:51+00:00`
 + form
     + id: 1
-    + url: https://quakemap.api.ushahidi.io/api/v3/forms/1
+    + url: https://quakemap.api.streetsignal.io/api/v3/forms/1
 + user
     + id: 1
-    + url: https://quakemap.api.ushahidi.io/api/v3/users/1
+    + url: https://quakemap.api.streetsignal.io/api/v3/users/1
 + message
 + color: #2274B4 (string)
 + type: report (string)
@@ -209,7 +209,7 @@ List all posts matching search criteria as supplied in query parameters. Multipl
 + tags (array)
     + (object)
       + id: 1 (number)
-      + url: https://quakemap.api.ushahidi.io/api/v3/tags/1 (string)
+      + url: https://quakemap.api.streetsignal.io/api/v3/tags/1 (string)
 + sets: 1, 2 (array[string])
 + source: SMS (string) - Original Message source ie. SMS, Twitter
 + contact: rjmackay (string) - Contact Identifier ie. SMS number, twitter handle

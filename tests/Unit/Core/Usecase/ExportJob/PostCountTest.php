@@ -1,14 +1,14 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Core\Usecase\ExportJob;
+namespace StreetSignal\Tests\Unit\Core\Usecase\ExportJob;
 
 use Faker;
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Contracts\Repository\Entity\ExportJobRepository;
-use Ushahidi\Contracts\Session;
-use Ushahidi\Core\Entity\ExportJob;
-use Ushahidi\Core\Usecase\Export\Job\PostCount;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Contracts\Repository\Entity\ExportJobRepository;
+use StreetSignal\Contracts\Session;
+use StreetSignal\Core\Entity\ExportJob;
+use StreetSignal\Core\Usecase\Export\Job\PostCount;
 
 /**
  * @group api

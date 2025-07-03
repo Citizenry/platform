@@ -1,12 +1,12 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Modules\V3\Repository;
+namespace StreetSignal\Tests\Unit\Modules\V3\Repository;
 
 use Faker;
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Core\Entity\Tag;
-use Ushahidi\Modules\V3\Repository\TagRepository;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Core\Entity\Tag;
+use StreetSignal\Modules\V3\Repository\TagRepository;
 
 /**
  * @backupGlobals disabled

@@ -1,11 +1,11 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Modules\V3\Repository;
+namespace StreetSignal\Tests\Unit\Modules\V3\Repository;
 
-use Ushahidi\Modules\V3\Repository\UserRepository;
-use Ushahidi\Core\Entity\User;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Tests\DatabaseTransactions;
+use StreetSignal\Modules\V3\Repository\UserRepository;
+use StreetSignal\Core\Entity\User;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Tests\DatabaseTransactions;
 use Mockery as M;
 use Faker;
 
@@ -20,7 +20,7 @@ class UserRepositoryTest extends TestCase
     public function testGetResetToken()
     {
         $db = M::mock(\Ohanzee\Database::class);
-        $resolver = M::mock(\Ushahidi\Core\Tool\OhanzeeResolver::class);
+        $resolver = M::mock(\StreetSignal\Core\Tool\OhanzeeResolver::class);
         $resolver->shouldReceive('connection')->andReturn($db);
 
         $repo = new UserRepository($resolver);

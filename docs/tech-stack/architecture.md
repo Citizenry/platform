@@ -2,7 +2,7 @@
 
 ## High Level Data Flows
 
-At a high level Ushahidi consumes messages from various channels (SMS, Email, Twitter, our own web interface), transforms these into posts. Ushahidi core stores and exposes this data in a REST API. The primary consumers of the REST API are our web client and mobile app.
+At a high level StreetSignal consumes messages from various channels (SMS, Email, Twitter, our own web interface), transforms these into posts. StreetSignal core stores and exposes this data in a REST API. The primary consumers of the REST API are our web client and mobile app.
 
 ![Data Flow](<../../.gitbook/assets/data-flow (1) (1) (1) (1).png>) [source](https://www.planttext.com/?text=RP71Ri8m38RlVWehf-sGDq0LQ6CI1n2YJ3jKFGIQKaiXGOsd7YRU7RTgkmKj1ylvVyVvd2mZcvQ\_hmw0YPt5pzYOXYh2TyC6Frpe08fZHyosBQ78jxd4zTMGAm5yg2ogwOZ27q1PBw-u3v6dN1tM-H5N-ur24x7VI3wRky1Kqzam1H\_L80-Xc47UGcjBk0l6Dfn845Utcp1ysHDkl53LvYp-BwHkwTAmpWQ64JNL-Y4I1VeuASytmuYyqCxM\_\_d5M50kvXPFS7ygidIAj9UkGkTrbhm9mDBwIdxe0G00)
 
@@ -14,7 +14,7 @@ The Platform is split into 3 layers: Presentation (Client / Web interface), Serv
 
 \[Presentation| %20%20%20%20\[AngularJS] %20%20%20%20\[Endpoints] ]
 
-\[Services| %20%20%20%20\[API]o->\[Kohana]%20 %20%20%20%20\[API]o->\[Ushahidi%20Core] %20%20%20%20\[Kohana]-->\[PHP] %20%20%20%20\[Ushahidi%20Core]-->\[PHP]%20%20%20 ]
+\[Services| %20%20%20%20\[API]o->\[Kohana]%20 %20%20%20%20\[API]o->\[StreetSignal%20Core] %20%20%20%20\[Kohana]-->\[PHP] %20%20%20%20\[StreetSignal%20Core]-->\[PHP]%20%20%20 ]
 
 \[Data| %20%20%20%20\[MySQL] ]
 
@@ -24,7 +24,7 @@ The Platform is split into 3 layers: Presentation (Client / Web interface), Serv
 
 ### API
 
-The REST API provides all data access. This provides for the main Ushahidi user interface, but also any external services and partners that need to access data.
+The REST API provides all data access. This provides for the main StreetSignal user interface, but also any external services and partners that need to access data.
 
 The API layer consists of a core application (models, usecases, etc) and a delivery layer (routing and controllers). The core application is pure object-oriented PHP and the delivery mechanism is a PHP application built using the Kohana Framework.
 

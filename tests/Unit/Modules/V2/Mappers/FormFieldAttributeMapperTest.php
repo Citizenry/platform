@@ -1,18 +1,18 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Modules\V2\Mappers;
+namespace StreetSignal\Tests\Unit\Modules\V2\Mappers;
 
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Core\Entity\FormStage;
-use Ushahidi\Core\Entity\FormAttribute;
-use Ushahidi\Modules\V2\Jobs\ImportForms;
-use Ushahidi\Tests\Unit\Modules\V2\ImportMock;
-use Ushahidi\Modules\V2\Contracts\ImportDataTools;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Core\Entity\FormStage;
+use StreetSignal\Core\Entity\FormAttribute;
+use StreetSignal\Modules\V2\Jobs\ImportForms;
+use StreetSignal\Tests\Unit\Modules\V2\ImportMock;
+use StreetSignal\Modules\V2\Contracts\ImportDataTools;
 use DMS\PHPUnitExtensions\ArraySubset\ArraySubsetAsserts;
-use Ushahidi\Modules\V2\Mappers\FormFieldAttributeMapper;
-use Ushahidi\Modules\V2\Contracts\ImportMappingRepository;
-use Ushahidi\Contracts\Repository\Entity\FormStageRepository;
+use StreetSignal\Modules\V2\Mappers\FormFieldAttributeMapper;
+use StreetSignal\Modules\V2\Contracts\ImportMappingRepository;
+use StreetSignal\Contracts\Repository\Entity\FormStageRepository;
 
 /**
  * @backupGlobals disabled

@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * StreetSignal Platform Update Post Tag Repository
+ *
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @package    StreetSignal\Platform
+ * @copyright  2014 StreetSignal
+ * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
+ */
+
+namespace StreetSignal\Contracts\Repository\Usecase;
+
+use StreetSignal\Contracts\Entity;
+
+interface UpdatePostTagRepository
+{
+    /**
+     * @param int $id
+     *
+     * @return Entity
+     */
+    public function get($id);
+
+    /**
+     * @param string $tag
+     *
+     * @return Entity
+     */
+    public function getByTag($tag);
+
+    /**
+     * @param string|Entity $tag_or_id
+     *
+     * @return boolean
+     */
+    public function doesTagExist($tag_or_id);
+}

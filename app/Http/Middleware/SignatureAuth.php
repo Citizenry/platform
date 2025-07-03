@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Ushahidi\Core\Tool\Verifier;
+use StreetSignal\Core\Tool\Verifier;
 
 class SignatureAuth
 {
@@ -25,7 +25,7 @@ class SignatureAuth
     public function handle($request, Closure $next)
     {
         $api_key = $request->input('api_key');
-        $signature = $request->header('X-Ushahidi-Signature');
+        $signature = $request->header('X-StreetSignal-Signature');
         $shared_secret = getenv('PLATFORM_SHARED_SECRET');
         $fullURL = $request->fullUrl();
 

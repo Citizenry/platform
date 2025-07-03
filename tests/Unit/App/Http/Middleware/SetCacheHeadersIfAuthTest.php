@@ -3,18 +3,18 @@
 /**
  * Unit tests for Signature Auth Middleware
  *
- * @author     Ushahidi Team <team@ushahidi.com>
- * @copyright  2020 Ushahidi
+ * @author     StreetSignal Team <team@streetsignal.com>
+ * @copyright  2020 StreetSignal
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 
-namespace Ushahidi\Tests\Unit\App\Http\Middleware;
+namespace StreetSignal\Tests\Unit\App\Http\Middleware;
 
 use Illuminate\Contracts\Auth\Factory as AuthFactory;
 use Illuminate\Contracts\Auth\Guard as AuthGuard;
 use Illuminate\Http\Request;
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
+use StreetSignal\Tests\TestCase;
 use App\Http\Middleware\SetCacheHeadersIfAuth;
 
 /**

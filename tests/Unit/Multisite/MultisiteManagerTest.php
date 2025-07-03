@@ -1,14 +1,14 @@
 <?php
 
-namespace Ushahidi\Tests\Unit\Multisite;
+namespace StreetSignal\Tests\Unit\Multisite;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Multisite\MultisiteManager;
-use Ushahidi\Multisite\Site;
-use Ushahidi\Multisite\SiteNotFoundException;
-use Ushahidi\Multisite\SiteRepository;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Multisite\MultisiteManager;
+use StreetSignal\Multisite\Site;
+use StreetSignal\Multisite\SiteNotFoundException;
+use StreetSignal\Multisite\SiteRepository;
 
 class MultisiteManagerTest extends TestCase
 {

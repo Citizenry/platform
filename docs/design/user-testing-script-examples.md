@@ -8,7 +8,7 @@ description: Example user testing scripts to conduct user testing from.
 
 You always need a plan before you conduct a user test. A plan will define who you are testing, as well as the structure of each session \(another word for this is a “research protocol”\).
 
-Ushahidi typically structure a user testing session as follows:
+StreetSignal typically structure a user testing session as follows:
 
 **Introduction and preamble -** introduce the test, what you want to learn generally, and give the participant some guidelines. This also gives them a chance to ask you any burning questions before you begin.
 
@@ -28,7 +28,7 @@ Ideally, we would test this with data workers from partner orgs in DREAMS.
 
 ### Preamble
 
-We are improving our data export features so that Ushahidi will be more effective for data work and M&E in your organization. We’d like to get your feedback on some screens of a process where exporting data is important. We want to understand how easy or difficult it is to complete some tasks. I’ll ask you to complete 3 tasks and then ask some general questions at the end, if that’s alright. The test should not take longer than 30 minutes.
+We are improving our data export features so that StreetSignal will be more effective for data work and M&E in your organization. We’d like to get your feedback on some screens of a process where exporting data is important. We want to understand how easy or difficult it is to complete some tasks. I’ll ask you to complete 3 tasks and then ask some general questions at the end, if that’s alright. The test should not take longer than 30 minutes.
 
 Before we start there are a few things I’d like you to keep in mind.
 
@@ -51,7 +51,7 @@ Here we may extract some of the more general assumptions that we make as platfor
 
 #### Task 1: Locate data export items in the information architecture
 
-* Open a live Ushahidi deployment in production and ask the participant to point out/navigate to areas on the site where they would expect to find the ability to export all of their data. Allow them to explore for about a minute or so for each idea of where things are. They will think as they navigate.
+* Open a live StreetSignal deployment in production and ask the participant to point out/navigate to areas on the site where they would expect to find the ability to export all of their data. Allow them to explore for about a minute or so for each idea of where things are. They will think as they navigate.
 * “Can you tell us why this location came to mind?”
 * Ask for another place they might expect to find the ability to export data. Repeat step 2.
 
@@ -104,7 +104,7 @@ If they are too familiar we run the risk of the test being about what they speci
 
 #### Preamble
 
-We are improving the way that users can ‘tag’ and assign a label to specific kinds of data within an Ushahidi deployment so that the process of extracting meaningful insights from data will be easier.  
+We are improving the way that users can ‘tag’ and assign a label to specific kinds of data within an StreetSignal deployment so that the process of extracting meaningful insights from data will be easier.  
 We’re particularly interested in how clear the method of ‘tagging’ is within our system.  
 We’d like to get your feedback on some pages of a process. I’ll ask you to complete some simple tasks and I’ll be asking questions as you complete these tasks.  
 You have no need to feel pressure here, we’re testing the pages, not you, so don’t be afraid to explore and speak your mind. In fact we’d encourage you to be an honest and talkative as possible.  
@@ -217,7 +217,7 @@ Q: Can you tell me what you think ‘Export to HDX’ means? \(Do people assume 
 
 General wrap-up questions
 
-#### Current Ushahidi user specific questions:
+#### Current StreetSignal user specific questions:
 
 If we released this feature tomorrow, how would it impact your work in your organization? If yes/no, ask for more information?
 

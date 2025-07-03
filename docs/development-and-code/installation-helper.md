@@ -1,6 +1,6 @@
 # ⚙️ Installation Helper‌
 
-We are introducing a new feature to make it easier for open source deployers to identify and solve common problems during the installation process. To achieve this goal, the Ushahidi Platform now bundles an installation helper utility that can be used to gain information about the state of the installation.
+We are introducing a new feature to make it easier for open source deployers to identify and solve common problems during the installation process. To achieve this goal, the StreetSignal Platform now bundles an installation helper utility that can be used to gain information about the state of the installation.
 
 ## Overview
 
@@ -10,7 +10,7 @@ Please see below for instructions on how to use this handy little tool.
 
 ### For general users
 
-If you have installed a release of the Ushahidi Platform that contains the installation helper, you should be able to access the helper from your browser.
+If you have installed a release of the StreetSignal Platform that contains the installation helper, you should be able to access the helper from your browser.
 
 To access the verifier:
 
@@ -26,7 +26,7 @@ gulp dev:verifier
 1. then add `/verifier` after the main URL address of your deployment.
 
 {% hint style="info" %}
-For instance, if the address of your deployment is [https://ushahidi.example.com](https://ushahidi.example.com) , the helper will be available at this address: [https://ushahidi.example.com\*\*/verifier\*\*](https://ushahidi.example.com\*\*/verifier\*\*)
+For instance, if the address of your deployment is [https://streetsignal.example.com](https://streetsignal.example.com) , the helper will be available at this address: [https://streetsignal.example.com\*\*/verifier\*\*](https://streetsignal.example.com\*\*/verifier\*\*)
 {% endhint %}
 
 ![](<../../.gitbook/assets/screenshot-2019-09-17-at-08.05.51 (1) (1) (2) (2) (1).png>)

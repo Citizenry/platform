@@ -246,7 +246,7 @@ Feature: Testing the Posts API
 				"status":"draft",
 				"locale":"en_US",
 				"author_realname": "Robbie Mackay",
-				"author_email": "robbie@ushahidi.com",
+				"author_email": "robbie@streetsignal.com",
 				"post_content":
 				{
 
@@ -469,7 +469,7 @@ Feature: Testing the Posts API
 				"status":"published",
 				"locale":"en_US",
 				"author_realname": "Some User",
-				"author_email": "someuser@ushahidi.com",
+				"author_email": "someuser@streetsignal.com",
 				"values":
 				{
 					"full_name":["David Kobia"],

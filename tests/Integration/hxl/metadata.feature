@@ -8,8 +8,8 @@ Feature: Testing the HXL Metadata API
           {
               "license_id": 1,
               "organisation_id": "org-id-here",
-              "organisation_name": "ushahidi",
-              "dataset_title": "ushahidi-dataset",
+              "organisation_name": "streetsignal",
+              "dataset_title": "streetsignal-dataset",
               "source": "other",
               "private": true
           }
@@ -28,8 +28,8 @@ Feature: Testing the HXL Metadata API
           {
               "license_id": 1,
               "organisation_id": "org-id-here",
-              "organisation_name": "ushahidi",
-              "dataset_title": "ushahidi-dataset",
+              "organisation_name": "streetsignal",
+              "dataset_title": "streetsignal-dataset",
               "source": "other",
               "private": true,
               "user_id": 10
@@ -49,8 +49,8 @@ Feature: Testing the HXL Metadata API
           {
               "license_id": 999,
               "organisation_id": "org-id-here",
-              "organisation_name": "ushahidi",
-              "dataset_title": "ushahidi-dataset",
+              "organisation_name": "streetsignal",
+              "dataset_title": "streetsignal-dataset",
               "source": "other",
               "private": true
           }

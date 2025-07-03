@@ -6,20 +6,20 @@
  * Time: 1:36 PM
  */
 
-namespace Ushahidi\Tests\Unit\Core\Usecase\Post;
+namespace StreetSignal\Tests\Unit\Core\Usecase\Post;
 
 use Faker;
 use Mockery as M;
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Core\Entity\ExportJob;
-use Ushahidi\Core\Entity\HXL\HXLLicense;
-use Ushahidi\Core\Entity\HXL\HXLMetadata;
-use Ushahidi\Core\Entity\Post;
-use Ushahidi\Core\Entity\User;
-use Ushahidi\Core\Tool\SearchData;
-use Ushahidi\Modules\V3\Repository\ExportJobRepository;
-use Ushahidi\Modules\V3\Repository\Form\AttributeRepository;
-use Ushahidi\Modules\V3\Repository\Post\ExportRepository;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Core\Entity\ExportJob;
+use StreetSignal\Core\Entity\HXL\HXLLicense;
+use StreetSignal\Core\Entity\HXL\HXLMetadata;
+use StreetSignal\Core\Entity\Post;
+use StreetSignal\Core\Entity\User;
+use StreetSignal\Core\Tool\SearchData;
+use StreetSignal\Modules\V3\Repository\ExportJobRepository;
+use StreetSignal\Modules\V3\Repository\Form\AttributeRepository;
+use StreetSignal\Modules\V3\Repository\Post\ExportRepository;
 
 class ExportTest extends TestCase
 {
@@ -50,16 +50,16 @@ class ExportTest extends TestCase
         $this->formAttributeRepository = M::mock(AttributeRepository::class);
 
         $this->hxlLicenseId = service('repository.hxl_license')->create(new HXLLicense([
-            'code' => 'ushahidi'.rand(),
-            'name' => 'ushahidi-dataset',
+            'code' => 'streetsignal'.rand(),
+            'name' => 'streetsignal-dataset',
             'link' => 'other',
         ]));
 
         $this->hxlMetaDataId = service('repository.hxl_meta_data')->create(new HXLMetadata([
             'license_id' => $this->hxlLicenseId,
             'organisation_id' => 'org-id-here',
-            'organisation_name' => 'ushahidi',
-            'dataset_title' => 'ushahidi-dataset',
+            'organisation_name' => 'streetsignal',
+            'dataset_title' => 'streetsignal-dataset',
             'source' => 'other',
             'private' => true,
             'user_id' => $this->userId,

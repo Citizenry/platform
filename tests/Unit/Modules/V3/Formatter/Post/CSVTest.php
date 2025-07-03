@@ -6,11 +6,11 @@
  * Time: 1:33 PM
  */
 
-namespace Ushahidi\Tests\Unit\Modules\V3\Formatter\Post;
+namespace StreetSignal\Tests\Unit\Modules\V3\Formatter\Post;
 
-use Ushahidi\Tests\TestCase;
-use Ushahidi\Tests\Unit\Core\Entity\MockPostEntity;
-use Ushahidi\Modules\V3\Formatter\Post\CSV;
+use StreetSignal\Tests\TestCase;
+use StreetSignal\Tests\Unit\Core\Entity\MockPostEntity;
+use StreetSignal\Modules\V3\Formatter\Post\CSV;
 
 class CSVTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ushahidi\Tests;
+namespace StreetSignal\Tests;
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Console\Kernel;
