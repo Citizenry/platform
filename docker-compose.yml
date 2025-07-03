@@ -40,7 +40,7 @@ services:
       XDEBUG_MODE: ${XDEBUG_MODE:-off}
     command: start
     ports:
-      - "8080:8080"
+      - "8081:8080"
     volumes:
       - storage-app-public:/var/www/storage/app/public
       - .:/var/www
