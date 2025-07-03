@@ -1,12 +1,4 @@
-[client]: https://github.com/streetsignal/platform-client
-[download]: https://github.com/streetsignal/platform-release/releases
-[setup-guides]: https://docs.streetsignal.com/platform-developer-documentation/development-and-code/setup_alternatives
-[support]: https://www.streetsignal.com/support
-[rest-api-docs]: https://docs.streetsignal.com/platform-developer-documentation/tech-stack/api-documentation
-[getin]: https://www.streetsignal.com/support/get-involved
-[issues]: https://github.com/streetsignal/platform/issues
-[ush2]: https://github.com/streetsignal/StreetSignal_Web
-[streetsignal]: http://streetsignal.com
+
 
 StreetSignal Platform
 =================

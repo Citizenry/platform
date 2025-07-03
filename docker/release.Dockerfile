@@ -1,6 +1,6 @@
 FROM golang:1.14
 
-RUN go get github.com/ushahidi/github-release
+RUN go get github.com/citizenry/github-release
 
 COPY docker/release.run.sh /release.run.sh
 

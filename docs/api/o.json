@@ -10,8 +10,8 @@
                 "twitter": false
             },
             "links": {
-                "developer": "http://smssync.ushahidi.com/",
-                "signup": "http://smssync.ushahidi.com/"
+                "developer": "http://smssync.streetsignal.org/",
+                "signup": "http://smssync.streetsignal.org/"
             },
             "options": {
                 "intro_step1": {

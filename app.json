@@ -5,9 +5,9 @@
     "streetsignal",
     "crowdmap"
   ],
-  "website": "http://streetsignal.com",
-  "repository": "https://github.com/streetsignal/platform",
-  "logo": "https://www.streetsignal.com/uploads/about-images/streetsignal-stamp.png",
+  "website": "http://streetsignal.org",
+  "repository": "https://github.com/citizenry/platform",
+  "logo": "https://www.streetsignal.org/uploads/about-images/streetsignal-stamp.png",
   "success_url": "/",
   "addons": [
     "cleardb",

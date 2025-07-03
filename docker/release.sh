@@ -17,7 +17,7 @@ CWD=$(pwd)
 composer install --no-scripts;
 
 TMP_DIR=$(mktemp -d 2>/dev/null || mktemp -d -t platform-build)
-WORK_DIR=$TMP_DIR/ushahidi-platform-bundle-${VERSION}
+WORK_DIR=$TMP_DIR/streetsignal-platform-bundle-${VERSION}
 mkdir $WORK_DIR
 
 if [ -z "$DEST_DIR" ]; then
@@ -32,7 +32,7 @@ echo "Building tarball"
 if [ ! -d "$DEST_DIR" ]; then
     mkdir -p "$DEST_DIR"
 fi
-TARFILE="${DEST_DIR}/ushahidi-platform-bundle-${VERSION}.tar"
+TARFILE="${DEST_DIR}/streetsignal-platform-bundle-${VERSION}.tar"
 
 tar -C $TMP_DIR -cf $TARFILE \
     --exclude 'build' \
@@ -45,7 +45,7 @@ tar -C $TMP_DIR -cf $TARFILE \
     --exclude '.env.travis' \
     --exclude '.git' \
     --exclude '.gitbook' \
-    ushahidi-platform-bundle-${VERSION}/
+    streetsignal-platform-bundle-${VERSION}/
 
 gzip -f $TARFILE
 echo "Release tarball: ${TARFILE}.gz"
