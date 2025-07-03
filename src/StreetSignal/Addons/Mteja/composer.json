@@ -1,7 +1,7 @@
 {
     "name": "streetsignal/mteja-addon",
     "description": "Mteja Addon for StreetSignal DataSource",
-    "homepage": "http://streetsignal.com/",
+    "homepage": "http://streetsignal.org/",
     "type": "library",
     "license": "AGPL-3.0",
     "repositories": [],

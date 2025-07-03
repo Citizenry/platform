@@ -1,7 +1,7 @@
 {
     "name": "streetsignal/infobip-support",
     "description": "Infobip addon for the StreetSignal data source component",
-    "homepage": "http://streetsignal.com/",
+    "homepage": "http://streetsignal.org/",
     "type": "library",
     "license": "AGPL-3.0",
     "repositories": [],

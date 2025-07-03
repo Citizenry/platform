@@ -1,20 +1,20 @@
 {
     "name": "streetsignal/v3",
     "description": "StreetSignal Platform V3 API codebase",
-    "homepage": "http://streetsignal.com/",
+    "homepage": "http://streetsignal.org/",
     "type": "project",
     "license": "AGPL-3.0",
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/streetsignal/kohana-validation"
+            "url": "https://github.com/citizenry/kohana-validation"
         }
     ],
     "require": {
         "aura/di": "~3.4",
         "beheh/flaps": "dev-master",
         "league/event": "^2.2@dev",
-        "streetsignal/kohana-validation": "dev-master"
+        "citizenry/kohana-validation": "dev-master"
     },
     "autoload": {
         "psr-4": {

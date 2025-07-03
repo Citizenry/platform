@@ -1,7 +1,7 @@
 {
     "name": "streetsignal/datasource",
     "description": "StreetSignal Data Source Component",
-    "homepage": "http://streetsignal.com/",
+    "homepage": "http://streetsignal.org/",
     "type": "project",
     "repositories": [],
     "require": {
