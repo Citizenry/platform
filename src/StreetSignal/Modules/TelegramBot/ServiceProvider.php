@@ -24,7 +24,7 @@ class ServiceProvider extends BaseServiceProvider
             ->namespace('StreetSignal\Modules\TelegramBot\Http\Controllers')
             ->group(__DIR__ . '/routes/api.php');
 
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/Migrations');
     }
 
     /**
@@ -34,6 +34,11 @@ class ServiceProvider extends BaseServiceProvider
      */
     public function register()
     {
+        $this->app->singleton(ConversationManager::class);
+        $this->app->singleton(AuthenticationManager::class);
+        $this->app->singleton(FormFlowManager::class);
+        $this->app->singleton(StreetSignalApiClient::class);
+        
         $this->app->singleton(TelegramBotService::class, function ($app) {
             return new TelegramBotService(
                 config('telegram.bot_token'),
@@ -42,10 +47,5 @@ class ServiceProvider extends BaseServiceProvider
                 $app->make(FormFlowManager::class)
             );
         });
-
-        $this->app->singleton(ConversationManager::class);
-        $this->app->singleton(AuthenticationManager::class);
-        $this->app->singleton(FormFlowManager::class);
-        $this->app->singleton(StreetSignalApiClient::class);
     }
 }
