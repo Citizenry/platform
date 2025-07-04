@@ -14,7 +14,8 @@ class AddUserToMessages extends AbstractMigration
             ->addColumn('user_id', 'integer', [
                 'after' => 'post_id',
                 'null' => true,
-                'default' => null
+                'default' => null,
+                'signed' => false
             ])
             ->addForeignKey('user_id', 'users', 'id', [
                 'delete' => 'SET NULL',
