@@ -19,9 +19,11 @@ class AddHxlMetadataTable extends AbstractMigration
             ->addColumn('license_id', 'integer', [
                 'null' => false,
                 'comment' => 'Dataset license in HDX',
+                'signed' => false,
             ])
             ->addColumn('user_id', 'integer', [
                 'null' => false,
+                'signed' => false,
             ])
             ->addColumn('organisation', 'string', [
                 'null' => false,
