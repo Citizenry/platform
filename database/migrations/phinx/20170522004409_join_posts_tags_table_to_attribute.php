@@ -10,7 +10,7 @@ class JoinPostsTagsTableToAttribute extends AbstractMigration
 
         $this->table('posts_tags')
             ->addColumn('id', 'integer', ['null' => false])
-            ->addColumn('form_attribute_id', 'integer')
+            ->addColumn('form_attribute_id', 'integer', ['signed' => false])
             ->addColumn('created', 'integer', ['default' => 0])
             ->update();
 
