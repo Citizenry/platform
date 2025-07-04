@@ -15,8 +15,8 @@ class CreateNotifications extends AbstractMigration
     public function change()
     {
         $this->table('notifications')
-            ->addColumn('user_id', 'integer', ['null' => false])
-            ->addColumn('set_id', 'integer', ['null' => false])
+            ->addColumn('user_id', 'integer', ['null' => false, 'signed' => false])
+            ->addColumn('set_id', 'integer', ['null' => false, 'signed' => false])
             ->addColumn('created', 'integer', ['default' => 0])
             ->addForeignKey('user_id', 'users', 'id', [
                 'delete' => 'CASCADE',
