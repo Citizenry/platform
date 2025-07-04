@@ -41,20 +41,20 @@ class InitialOauth extends AbstractMigration
             ->create();
 
         $this->table('oauth_session_access_tokens')
-            ->addColumn('session_id', 'integer')
+            ->addColumn('session_id', 'integer', ['signed' => false])
             ->addColumn('access_token', 'string', ['limit' => 40])
             ->addColumn('access_token_expires', 'integer')
             ->addIndex(['access_token', 'session_id'], ['unique' => true])
             ->create();
 
         $this->table('oauth_session_authcodes')
-            ->addColumn('session_id', 'integer')
+            ->addColumn('session_id', 'integer', ['signed' => false])
             ->addColumn('auth_code', 'string', ['limit' => 40])
             ->addColumn('auth_code_expires', 'integer')
             ->create();
 
         $this->table('oauth_session_redirects', ['id' => false])
-            ->addColumn('session_id', 'integer')
+            ->addColumn('session_id', 'integer', ['signed' => false])
             ->addColumn('redirect_uri', 'string')
             ->create();
 
@@ -62,7 +62,7 @@ class InitialOauth extends AbstractMigration
                 'id' => false,
                 'primary_key' => 'session_access_token_id',
                 ])
-            ->addColumn('session_access_token_id', 'integer')
+            ->addColumn('session_access_token_id', 'integer', ['signed' => false])
             ->addColumn('refresh_token', 'string', ['limit' => 40])
             ->addColumn('refresh_token_expires', 'integer')
             ->addColumn('client_id', 'string', ['limit' => 40])
@@ -80,8 +80,8 @@ class InitialOauth extends AbstractMigration
             // not allow ['id' => 'id'] definitions, but there is a PR to fix it:
             // https://github.com/robmorgan/phinx/pull/158
             // ->addColumn('id', 'biginteger')
-            ->addColumn('session_access_token_id', 'integer', ['null' => true])
-            ->addColumn('scope_id', 'integer', ['null' => true])
+            ->addColumn('session_access_token_id', 'integer', ['null' => true, 'signed' => false])
+            ->addColumn('scope_id', 'integer', ['null' => true, 'signed' => false])
             ->addIndex(['session_access_token_id', 'scope_id'], ['unique' => true])
             ->create();
 
@@ -89,8 +89,8 @@ class InitialOauth extends AbstractMigration
                 'id' => false,
                 'primary_key' => ['oauth_session_authcode_id', 'scope_id'],
                 ])
-            ->addColumn('oauth_session_authcode_id', 'integer')
-            ->addColumn('scope_id', 'integer')
+            ->addColumn('oauth_session_authcode_id', 'integer', ['signed' => false])
+            ->addColumn('scope_id', 'integer', ['signed' => false])
             ->create();
     }
 
