@@ -21,7 +21,7 @@ class Initial extends AbstractMigration
             ->create();
 
         $this->table('contacts')
-            ->addColumn('user_id', 'integer', ['null' => true])
+            ->addColumn('user_id', 'integer', ['null' => true, 'signed' => false])
             ->addColumn('data_provider', 'string', [
                 'limit' => 150,
                 'null' => true,
@@ -38,7 +38,7 @@ class Initial extends AbstractMigration
             ->create();
 
         $this->table('forms')
-            ->addColumn('parent_id', 'integer', ['null' => true])
+            ->addColumn('parent_id', 'integer', ['null' => true, 'signed' => false])
             ->addColumn('name', 'string')
             ->addColumn('description', 'text')
             ->addColumn('type', 'string', [
@@ -78,7 +78,7 @@ class Initial extends AbstractMigration
             ->create();
 
         $this->table('form_groups')
-            ->addColumn('form_id', 'integer')
+            ->addColumn('form_id', 'integer', ['signed' => false])
             ->addColumn('label', 'string', ['limit' => 150])
             ->addColumn('priority', 'integer', ['default' => 99])
             ->addColumn('icon', 'string', [
@@ -91,12 +91,12 @@ class Initial extends AbstractMigration
                 'id' => false,
                 'primary_key' => ['form_group_id', 'form_attribute_id'],
                 ])
-            ->addColumn('form_group_id', 'integer')
-            ->addColumn('form_attribute_id', 'integer')
+            ->addColumn('form_group_id', 'integer', ['signed' => false])
+            ->addColumn('form_attribute_id', 'integer', ['signed' => false])
             ->create();
 
         $this->table('media')
-            ->addColumn('user_id', 'integer', ['null' => true])
+            ->addColumn('user_id', 'integer', ['null' => true, 'signed' => false])
             ->addColumn('mime', 'string', ['limit' => 50])
             ->addColumn('caption', 'string', ['default' => ''])
             ->addColumn('o_filename', 'string')
@@ -111,9 +111,10 @@ class Initial extends AbstractMigration
             ->addColumn('parent_id', 'integer', [
                 'null' => true,
                 'comment' => 'marks messages being replied to',
+                'signed' => false,
                 ])
-            ->addColumn('contact_id', 'integer', ['null' => true])
-            ->addColumn('post_id', 'integer', ['null' => true])
+            ->addColumn('contact_id', 'integer', ['null' => true, 'signed' => false])
+            ->addColumn('post_id', 'integer', ['null' => true, 'signed' => false])
             ->addColumn('data_provider', 'string', [
                 'limit' => 150,
                 'null' => true,
@@ -145,9 +146,9 @@ class Initial extends AbstractMigration
             ->create();
 
         $this->table('posts')
-            ->addColumn('parent_id', 'integer', ['null' => true])
-            ->addColumn('form_id', 'integer', ['null' => true])
-            ->addColumn('user_id', 'integer', ['null' => true])
+            ->addColumn('parent_id', 'integer', ['null' => true, 'signed' => false])
+            ->addColumn('form_id', 'integer', ['null' => true, 'signed' => false])
+            ->addColumn('user_id', 'integer', ['null' => true, 'signed' => false])
             ->addColumn('type', 'string', [
                'limit' => 20,
                'default' => 'report',
@@ -178,30 +179,30 @@ class Initial extends AbstractMigration
                 'id' => false,
                 'primary_key' => ['post_id', 'media_id'],
                 ])
-            ->addColumn('post_id', 'integer')
-            ->addColumn('media_id', 'integer')
+            ->addColumn('post_id', 'integer', ['signed' => false])
+            ->addColumn('media_id', 'integer', ['signed' => false])
             ->create();
 
         $this->table('posts_sets', [
                 'id' => false,
                 'primary_key' => ['post_id', 'set_id'],
                 ])
-            ->addColumn('post_id', 'integer')
-            ->addColumn('set_id', 'integer')
+            ->addColumn('post_id', 'integer', ['signed' => false])
+            ->addColumn('set_id', 'integer', ['signed' => false])
             ->create();
 
         $this->table('posts_tags', [
                 'id' => false,
                 'primary_key' => ['post_id', 'tag_id'],
                 ])
-            ->addColumn('post_id', 'integer')
-            ->addColumn('tag_id', 'integer')
+            ->addColumn('post_id', 'integer', ['signed' => false])
+            ->addColumn('tag_id', 'integer', ['signed' => false])
             ->create();
 
         $this->table('post_comments')
-            ->addColumn('parent_id', 'integer', ['null' => true])
-            ->addColumn('post_id', 'integer')
-            ->addColumn('user_id', 'integer', ['null' => true])
+            ->addColumn('parent_id', 'integer', ['null' => true, 'signed' => false])
+            ->addColumn('post_id', 'integer', ['signed' => false])
+            ->addColumn('user_id', 'integer', ['null' => true, 'signed' => false])
             ->addColumn('content', 'text')
             ->addColumn('status', 'string', [
                 'limit' => 20,
@@ -213,15 +214,15 @@ class Initial extends AbstractMigration
             ->create();
 
         $this->table('post_datetime')
-            ->addColumn('post_id', 'integer')
-            ->addColumn('form_attribute_id', 'integer')
+            ->addColumn('post_id', 'integer', ['signed' => false])
+            ->addColumn('form_attribute_id', 'integer', ['signed' => false])
             ->addColumn('value', 'datetime', ['null' => true])
             ->addColumn('created', 'integer', ['default' => 0])
             ->create();
 
         $this->table('post_decimal')
-            ->addColumn('post_id', 'integer')
-            ->addColumn('form_attribute_id', 'integer')
+            ->addColumn('post_id', 'integer', ['signed' => false])
+            ->addColumn('form_attribute_id', 'integer', ['signed' => false])
             ->addColumn('value', 'decimal', [
                 'precision' => 12,
                 'scale' => 4,
@@ -232,37 +233,37 @@ class Initial extends AbstractMigration
 
         // phinx custom type "geometry"
         $this->table('post_geometry')
-            ->addColumn('post_id', 'integer')
-            ->addColumn('form_attribute_id', 'integer')
+            ->addColumn('post_id', 'integer', ['signed' => false])
+            ->addColumn('form_attribute_id', 'integer', ['signed' => false])
             ->addColumn('value', 'geometry', ['null' => true])
             ->addColumn('created', 'integer', ['default' => 0])
             ->create();
 
         $this->table('post_int')
-            ->addColumn('post_id', 'integer')
-            ->addColumn('form_attribute_id', 'integer')
+            ->addColumn('post_id', 'integer', ['signed' => false])
+            ->addColumn('form_attribute_id', 'integer', ['signed' => false])
             ->addColumn('value', 'integer', ['null' => true])
             ->addColumn('created', 'integer', ['default' => 0])
             ->create();
 
         // phinx custom type "point"
         $this->table('post_point')
-            ->addColumn('post_id', 'integer')
-            ->addColumn('form_attribute_id', 'integer')
+            ->addColumn('post_id', 'integer', ['signed' => false])
+            ->addColumn('form_attribute_id', 'integer', ['signed' => false])
             ->addColumn('value', 'point', ['null' => true])
             ->addColumn('created', 'integer', ['default' => 0])
             ->create();
 
         $this->table('post_text')
-            ->addColumn('post_id', 'integer')
-            ->addColumn('form_attribute_id', 'integer')
+            ->addColumn('post_id', 'integer', ['signed' => false])
+            ->addColumn('form_attribute_id', 'integer', ['signed' => false])
             ->addColumn('value', 'text', ['null' => true])
             ->addColumn('created', 'integer', ['default' => 0])
             ->create();
 
         $this->table('post_varchar')
-            ->addColumn('post_id', 'integer')
-            ->addColumn('form_attribute_id', 'integer')
+            ->addColumn('post_id', 'integer', ['signed' => false])
+            ->addColumn('form_attribute_id', 'integer', ['signed' => false])
             ->addColumn('value', 'string', ['null' => true])
             ->addColumn('created', 'integer', ['default' => 0])
             ->create();
@@ -278,7 +279,7 @@ class Initial extends AbstractMigration
             ->create();
 
         $this->table('sets')
-            ->addColumn('user_id', 'integer', ['null' => true])
+            ->addColumn('user_id', 'integer', ['null' => true, 'signed' => false])
             ->addColumn('name', 'string')
             ->addColumn('filter', 'text', ['null' => true])
             ->addColumn('created', 'integer', ['default' => 0])
@@ -286,7 +287,7 @@ class Initial extends AbstractMigration
             ->create();
 
         $this->table('tags')
-            ->addColumn('parent_id', 'integer', ['null' => true])
+            ->addColumn('parent_id', 'integer', ['null' => true, 'signed' => false])
             ->addColumn('tag', 'string', ['limit' => 50])
             ->addColumn('slug', 'string', ['limit' => 50])
             ->addColumn('type', 'string', [
@@ -309,10 +310,10 @@ class Initial extends AbstractMigration
             ->create();
 
         $this->table('tasks')
-            ->addColumn('parent_id', 'integer', ['null' => true])
-            ->addColumn('post_id', 'integer', ['null' => true])
-            ->addColumn('assignee', 'integer', ['null' => true])
-            ->addColumn('assignor', 'integer', ['null' => true])
+            ->addColumn('parent_id', 'integer', ['null' => true, 'signed' => false])
+            ->addColumn('post_id', 'integer', ['null' => true, 'signed' => false])
+            ->addColumn('assignee', 'integer', ['null' => true, 'signed' => false])
+            ->addColumn('assignor', 'integer', ['null' => true, 'signed' => false])
             ->addColumn('description', 'string')
             ->addColumn('status', 'string', [
                 'limit' => 20,
