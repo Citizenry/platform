@@ -8,6 +8,7 @@ namespace StreetSignal\Addons\Mteja;
  * @author     StreetSignal Team <team@streetsignal.com>
  * @package    Addons\Mteja
  * @copyright  2022 Ushahidi
+ * @copyright 2025 Jascha Wanger / Tarnover, LLC
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License Version 3 (GPLv3)
  */
 

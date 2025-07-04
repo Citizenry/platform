@@ -1,4 +1,5 @@
 Copyright (C) 2013 Ushahidi
+Copyright 2025 Jascha Wanger / Tarnover, LLC
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the [GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.en.html) as published by

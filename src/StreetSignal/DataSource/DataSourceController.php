@@ -8,6 +8,7 @@ namespace StreetSignal\DataSource;
  * @author     StreetSignal Team <team@streetsignal.com>
  * @package    StreetSignal\DataSource
  * @copyright  2013 Ushahidi
+ * @copyright 2025 Jascha Wanger / Tarnover, LLC
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 

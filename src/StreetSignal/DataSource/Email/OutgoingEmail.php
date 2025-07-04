@@ -8,6 +8,7 @@ namespace StreetSignal\DataSource\Email;
  * @author     StreetSignal Team <team@streetsignal.com>
  * @package    DataSource\Email
  * @copyright  2013 Ushahidi
+ * @copyright 2025 Jascha Wanger / Tarnover, LLC
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License Version 3 (GPLv3)
  */
 

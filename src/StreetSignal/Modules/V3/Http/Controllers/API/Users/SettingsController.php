@@ -10,6 +10,7 @@ use StreetSignal\Modules\V3\Http\Controllers\RESTController;
  *
  * @author     StreetSignal Team <team@streetsignal.com>
  * @copyright  2018 Ushahidi
+ * @copyright 2025 Jascha Wanger / Tarnover, LLC
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 class SettingsController extends RESTController
