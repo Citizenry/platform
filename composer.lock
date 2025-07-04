@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1892752a03c68466b44819ded70d33be",
+    "content-hash": "070329be8bdd462a66a1167e4824c57a",
     "packages": [
         {
             "name": "abraham/twitteroauth",
@@ -3020,6 +3020,70 @@
             "time": "2025-06-03T18:27:04+00:00"
         },
         {
+            "name": "kohana/core",
+            "version": "v3.3.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kohana/core.git",
+                "reference": "bdbe81afb5a09cee4269d2e2210a0d293265231a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kohana/core/zipball/bdbe81afb5a09cee4269d2e2210a0d293265231a",
+                "reference": "bdbe81afb5a09cee4269d2e2210a0d293265231a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "kohana/koharness": "*@dev",
+                "kohana/unittest": "3.3.*@dev"
+            },
+            "suggest": {
+                "ext-curl": "*",
+                "ext-http": "*",
+                "ext-mcrypt": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.3/develop": "3.3.x-dev",
+                    "dev-3.4/develop": "3.4.x-dev"
+                },
+                "installer-paths": {
+                    "vendor/{$vendor}/{$name}": [
+                        "type:kohana-module"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kohana Team",
+                    "email": "team@kohanaframework.org",
+                    "homepage": "http://kohanaframework.org/team",
+                    "role": "developer"
+                }
+            ],
+            "description": "Core system classes for the Kohana application framework",
+            "homepage": "http://kohanaframework.org",
+            "keywords": [
+                "framework",
+                "kohana"
+            ],
+            "support": {
+                "forum": "http://forum.kohanaframework.org",
+                "irc": "irc://irc.freenode.net/kohana",
+                "issues": "http://dev.kohanaframework.org",
+                "source": "http://github.com/kohana/core"
+            },
+            "time": "2016-07-25T13:15:13+00:00"
+        },
+        {
             "name": "laminas/laminas-diactoros",
             "version": "2.26.0",
             "source": {
@@ -5420,6 +5484,73 @@
                 }
             ],
             "time": "2024-09-09T07:06:30+00:00"
+        },
+        {
+            "name": "ohanzee/database",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kohana/ohanzee-db.git",
+                "reference": "26dc07ed3041551258a6d5d70a01bf454d28ab32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kohana/ohanzee-db/zipball/26dc07ed3041551258a6d5d70a01bf454d28ab32",
+                "reference": "26dc07ed3041551258a6d5d70a01bf454d28ab32",
+                "shasum": ""
+            },
+            "require": {
+                "kohana/core": ">=3.3",
+                "php": ">=5.3.6"
+            },
+            "replace": {
+                "kohana/database": ">=3.3"
+            },
+            "suggest": {
+                "ext-mysql": "*",
+                "ext-pdo": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Kohana Team",
+                    "email": "team@kohanaframework.org",
+                    "homepage": "http://kohanaframework.org/team",
+                    "role": "developer"
+                },
+                {
+                    "name": "Ohanzee Contributors",
+                    "homepage": "http://ohanzee.org/contributors.html",
+                    "role": "developer"
+                }
+            ],
+            "description": "Official Ohanzee component for database SQL queries",
+            "homepage": "http://ohanzee.org/",
+            "keywords": [
+                "component",
+                "database",
+                "db",
+                "kohana",
+                "ohanzee",
+                "query builder",
+                "sql"
+            ],
+            "support": {
+                "forum": "http://discourse.kohanaframework.org/category/ohanzee-components",
+                "irc": "irc://irc.freenode.net/kohana",
+                "issues": "http://github.com/kohana/ohanzee-db/issues",
+                "source": "http://github.com/kohana/ohanzee-db"
+            },
+            "time": "2014-08-21T16:41:35+00:00"
         },
         {
             "name": "paragonie/constant_time_encoding",
@@ -10609,28 +10740,28 @@
         },
         {
             "name": "willdurand/negotiation",
-            "version": "v2.3.1",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/willdurand/Negotiation.git",
-                "reference": "03436ededa67c6e83b9b12defac15384cb399dc9"
+                "reference": "68e9ea0553ef6e2ee8db5c1d98829f111e623ec2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/willdurand/Negotiation/zipball/03436ededa67c6e83b9b12defac15384cb399dc9",
-                "reference": "03436ededa67c6e83b9b12defac15384cb399dc9",
+                "url": "https://api.github.com/repos/willdurand/Negotiation/zipball/68e9ea0553ef6e2ee8db5c1d98829f111e623ec2",
+                "reference": "68e9ea0553ef6e2ee8db5c1d98829f111e623ec2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=7.1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.5"
+                "symfony/phpunit-bridge": "^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -10659,9 +10790,9 @@
             ],
             "support": {
                 "issues": "https://github.com/willdurand/Negotiation/issues",
-                "source": "https://github.com/willdurand/Negotiation/tree/2.x"
+                "source": "https://github.com/willdurand/Negotiation/tree/3.1.0"
             },
-            "time": "2017-05-14T17:21:12+00:00"
+            "time": "2022-01-30T20:08:53+00:00"
         }
     ],
     "packages-dev": [
@@ -11496,16 +11627,16 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.13.1",
+            "version": "1.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "1720ddd719e16cf0db4eb1c6eca108031636d46c"
+                "reference": "d25e62e636b0a9b01e3bdebb7823b474876dd829"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/1720ddd719e16cf0db4eb1c6eca108031636d46c",
-                "reference": "1720ddd719e16cf0db4eb1c6eca108031636d46c",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/d25e62e636b0a9b01e3bdebb7823b474876dd829",
+                "reference": "d25e62e636b0a9b01e3bdebb7823b474876dd829",
                 "shasum": ""
             },
             "require": {
@@ -11544,7 +11675,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.13.1"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.13.2"
             },
             "funding": [
                 {
@@ -11552,7 +11683,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-04-29T12:36:36+00:00"
+            "time": "2025-07-04T14:07:32+00:00"
         },
         {
             "name": "nunomaduro/collision",
@@ -14834,16 +14965,16 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "league/csv": 20,
-        "php-coveralls/php-coveralls": 20,
         "beheh/flaps": 20,
-        "league/event": 20
+        "league/csv": 20,
+        "league/event": 20,
+        "php-coveralls/php-coveralls": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.4 <8.4"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }

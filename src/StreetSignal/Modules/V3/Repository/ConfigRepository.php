@@ -91,6 +91,10 @@ class ConfigRepository implements
             if (count($query)) {
                 $config = $query->as_array('config_key', 'config_value');
                 $config = array_map(function ($config_value) {
+                    // Handle case where config_value is already an array
+                    if (is_array($config_value)) {
+                        return $config_value;
+                    }
                     return json_decode($config_value, true);
                 }, $config);
             }

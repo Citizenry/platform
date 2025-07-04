@@ -25,6 +25,7 @@
         "league/flysystem-aws-s3-v3": "^3.0",
         "netresearch/jsonmapper": "^1.6.0",
         "nyholm/psr7": "^1.5",
+        "ohanzee/database": "^0.1.2",
         "php-http/curl-client": "^2.2",
         "predis/predis": "^2.2.2",
         "robmorgan/phinx": "^0.13.0",
@@ -34,7 +35,7 @@
         "symm/gisconverter": "~1.0.5",
         "telegram-bot/api": "^2.3",
         "wikimedia/composer-merge-plugin": "^2.0",
-        "willdurand/negotiation": "^2.3"
+        "willdurand/negotiation": "^3.1"
     },
     "require-dev": {
         "behat/behat": "^3.3",

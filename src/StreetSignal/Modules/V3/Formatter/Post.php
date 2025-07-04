@@ -73,6 +73,12 @@ class Post extends API
     protected function formatTags($tags)
     {
         $output = [];
+        
+        // Handle case where tags is null or not an array
+        if (!is_array($tags) && !is_object($tags)) {
+            return $output;
+        }
+        
         foreach ($tags as $tagid) {
             $output[] = $this->getRelation('tags', $tagid);
         }
