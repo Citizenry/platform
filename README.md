@@ -1,11 +1,9 @@
-
-
 StreetSignal Platform
 =================
 
 ## What is StreetSignal Platform?
 
-StreetSignal Platform is an open source web application for information collection, visualization and interactive mapping. It helps you to collect info from: SMS, Twitter, RSS feeds, Email. It helps you to process that information, categorize it, geo-locate it and publish it on a map.
+StreetSignal is a fork of Ushahidi Platform and is an open source web application for information collection, visualization and interactive mapping. It helps you to collect info from: SMS, Twitter, RSS feeds, Email. It helps you to process that information, categorize it, geo-locate it and publish it on a map. We have updated it to be more useful for reporting activity and crowd sourced oversight. 
 
 This repository contains the backend code with the REST API implementation.
 
@@ -23,7 +21,7 @@ The backend will be listening on localhost:8080.
 
 > **What about the browser client application?**
 
-> Once your Platform backend is running, head over to the [platform-client-mzima](https://github.com/streetsignal/platform-client-mzima) repository to get the in-browser Platform experience!
+> Once your Platform backend is running, head over to the [platform-client-mzima](https://github.com/StreetSignal/platform-client-mzima) repository to get the in-browser Platform experience!
 
 ### Other helpful commands
 
@@ -42,34 +40,23 @@ To take everything down (including deleting the database) `make down` will do th
 ## Manuals and documentation
 
 ### A note for grassroots organizations
-If you are starting a deployment for a grassroots organization, you can apply for a free social-impact responder account [here](https://www.streetsignal.com/pricing/apply-for-free) after verifying that you meet the criteria.
+If you are starting a deployment for a grassroots organization, you can apply for a free social-impact responder account [here](https://www.StreetSignal.com/pricing/apply-for-free) after verifying that you meet the criteria.
 
 
 ### Platform User Manual
 
 The official reference on how to use the Platform. Create surveys, configure data sources... it's all in there!
-[Platform User Manual](https://docs.streetsignal.com/platform-user-manual/)
+[Platform User Manual](https://docs.StreetSignal.com/platform-user-manual/)
 
 ### Platform Developer Documentation
 
 Key pointers on installing and developing on the Platform.
 
-[Platform Developer Documentation](https://docs.streetsignal.com/platform-developer-documentation/)
+[Platform Developer Documentation](https://docs.StreetSignal.com/platform-developer-documentation/)
 
 ## Credits
 
 ## Contributors ✨
 
-Thanks goes to the wonderful people who [[Contribute](CONTRIBUTING.md)]! See the list of contributors at [all-contributors](docs/contributors-to-streetsignal.md)
+Thanks goes to the wonderful people who [[Contribute](CONTRIBUTING.md)]! See the list of contributors at [all-contributors](docs/contributors-to-StreetSignal.md)
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-## Useful Links
-- [Code of Conduct](https://docs.streetsignal.com/platform-developer-documentation/code-of-conduct)
-- [Download][download]
-- [Installation guides][setup-guides]
-- [Developer and User Support][support]
-- [REST API docs][rest-api-docs]
-- [Get Involved][getin]
-- [Bug tracker][issues]
-- [About StreetSignal][streetsignal]
-- [StreetSignal Platform v2][ush2]
