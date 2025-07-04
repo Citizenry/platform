@@ -15,8 +15,8 @@ class CreateNotificationQueue extends AbstractMigration
     public function change()
     {
         $this->table('notification_queue')
-             ->addColumn('post_id', 'integer', ['null' => false])
-             ->addColumn('set_id', 'integer', ['null' => false])
+             ->addColumn('post_id', 'integer', ['null' => false, 'signed' => false])
+             ->addColumn('set_id', 'integer', ['null' => false, 'signed' => false])
              ->addColumn('created', 'integer', ['default' => 0])
              ->addForeignKey('post_id', 'posts', 'id', [
                  'delete' => 'CASCADE',
