@@ -18,12 +18,12 @@ class AddFormsTagsTable extends AbstractMigration
                 'id' => false,
                 'primary_key' => ['form_id', 'tag_id'],
                 ])
-            ->addColumn('form_id', 'integer')
+            ->addColumn('form_id', 'integer', ['signed' => false])
             ->addForeignKey('form_id', 'forms', 'id', [
                 'delete' => 'CASCADE',
                 'update' => 'CASCADE'
                 ])
-            ->addColumn('tag_id', 'integer')
+            ->addColumn('tag_id', 'integer', ['signed' => false])
             ->addForeignKey('tag_id', 'tags', 'id', [
                 'delete' => 'CASCADE',
                 'update' => 'CASCADE'
