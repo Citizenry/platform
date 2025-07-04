@@ -19,6 +19,9 @@ RUN curl -sL https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_V
 # Install PHP extensions
 RUN docker-php-ext-install pdo_mysql
 
+# Install Redis extension via PECL
+RUN pecl install redis && docker-php-ext-enable redis
+
 WORKDIR /var/www
 
 # Install Composer

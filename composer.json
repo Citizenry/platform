@@ -88,7 +88,10 @@
         "psr-4": {
             "Tests\\": "tests/",
             "StreetSignal\\Tests\\": "tests/"
-        }
+        },
+        "classmap": [
+            "tests/Support/Stubs/"
+        ]
     },
     "extra": {
         "laravel": {

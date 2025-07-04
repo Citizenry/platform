@@ -34,13 +34,21 @@ trait DatabaseTransactions
         $this->parentBeginDatabaseTransaction();
 
         $this->database = $this->app->make(OhanzeeResolver::class)->connection();
-        // Start a transaction
-        $this->database->begin();
+        // Start a transaction - use beginTransaction() for Laravel 9 compatibility
+        if (method_exists($this->database, 'beginTransaction')) {
+            $this->database->beginTransaction();
+        } elseif (method_exists($this->database, 'begin')) {
+            $this->database->begin();
+        }
     }
 
     public function rollbackDatabaseTransaction()
     {
-        $this->database->rollback();
+        if (method_exists($this->database, 'rollBack')) {
+            $this->database->rollBack();
+        } elseif (method_exists($this->database, 'rollback')) {
+            $this->database->rollback();
+        }
     }
 
     public function tearDown(): void
