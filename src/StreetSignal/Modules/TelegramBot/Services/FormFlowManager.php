@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Log;
 
 class FormFlowManager
 {
-    protected TelegramBotService $botService;
+    protected $botService;
     protected ConversationManager $conversationManager;
     protected StreetSignalApiClient $apiClient;
 
@@ -252,7 +252,7 @@ class FormFlowManager
     /**
      * Process field input based on field type
      */
-    protected function processFieldInput(Message $message, array $field): mixed
+    protected function processFieldInput(Message $message, array $field)
     {
         $fieldType = $field['type'] ?? 'text';
         $text = trim($message->getText());

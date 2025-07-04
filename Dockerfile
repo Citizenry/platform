@@ -4,12 +4,15 @@ LABEL org.opencontainers.image.source="https://github.com/ushahidi/platform"
 # TODO: non-root user container setup
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
-# Install system dependencies
+# Install system dependencies including nginx
 RUN apk add --no-cache \
     $PHPIZE_DEPS \
     bash \
     curl \
-    git
+    git \
+    nginx \
+    supervisor \
+    gettext
 
 # Install dockerize
 ENV DOCKERIZE_VERSION v0.6.1
@@ -37,7 +40,17 @@ COPY . .
 COPY docker/utils.sh /utils.sh
 COPY docker/run.tasks.conf /etc/chaperone.d/
 COPY docker/run.run.sh /run.run.sh
+COPY docker/nginx.conf /etc/nginx/nginx.conf
+COPY docker/run.nginx.conf /etc/nginx/http.d/default.conf
 RUN echo '#!/bin/bash\n. /utils.sh\n"$@"' > /bin/util ; chmod +x /bin/util ;
+
+# Create nginx directories and set permissions
+RUN mkdir -p /var/log/nginx /var/lib/nginx/tmp /run/nginx && \
+    chown -R nginx:nginx /var/log/nginx /var/lib/nginx /run/nginx
+
+# Create supervisor configuration
+RUN mkdir -p /etc/supervisor/conf.d
+COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 ARG GIT_COMMIT_ID
 ARG GIT_BUILD_REF
@@ -48,9 +61,13 @@ ENV ENABLE_PLATFORM_TASKS=true \
     VHOST_ROOT=/var/www/httpdocs \
     VHOST_INDEX=index.php \
     PHP_EXEC_TIME_LIMIT=3600 \
+    HTTP_PORT=8080 \
     GIT_COMMIT_ID=${GIT_COMMIT_ID} \
     GIT_BUILD_REF=${GIT_BUILD_REF}
 
-ENTRYPOINT ["dockerize", "-wait", "tcp://mysql:3306", "-timeout", "60s"]
-# The default command to run PHP-FPM
-CMD [ "php-fpm" ]
+# Create entrypoint script
+COPY docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["dockerize", "-wait", "tcp://mysql:3306", "-timeout", "60s", "/entrypoint.sh"]
+CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

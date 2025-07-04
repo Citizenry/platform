@@ -39,7 +39,8 @@ services:
       ENABLE_NGINX: "true"
       ENABLE_PHPFPM: "true"
       ENABLE_PLATFORM_TASKS: "false"
-      RUN_PLATFORM_MIGRATIONS: "true"
+      RUN_PLATFORM_MIGRATIONS: "false"
+      DB_MIGRATIONS_HANDLED: "false"
       DB_CONNECTION: mysql
       DB_DATABASE: streetsignal
       DB_HOST: mysql
@@ -75,6 +76,7 @@ services:
       ENABLE_QUEUE_LISTEN: "true"
       TASK_RUN_PERIOD_SECS: "30"
       RUN_PLATFORM_MIGRATIONS: "false"
+      DB_MIGRATIONS_HANDLED: "false"
       DB_CONNECTION: mysql
       DB_DATABASE: streetsignal
       DB_HOST: mysql

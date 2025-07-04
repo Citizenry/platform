@@ -29,7 +29,7 @@ class ConfigCollection extends ResourceCollection
         ];
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->collection);
     }
