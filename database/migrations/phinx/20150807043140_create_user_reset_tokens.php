@@ -15,7 +15,7 @@ class CreateUserResetTokens extends AbstractMigration
     public function change()
     {
         $this->table('user_reset_tokens')
-            ->addColumn('user_id', 'integer', ['null' => true])
+            ->addColumn('user_id', 'integer', ['null' => true, 'signed' => false])
             ->addColumn('reset_token', 'string', ['limit' => 40])
             ->addColumn('created', 'integer', ['default' => 0])
             ->addForeignKey('user_id', 'users', 'id', [
