@@ -10,7 +10,7 @@ class MigrateCommand extends PhinxMigrateCommand
     /**
      * @inheritdoc
      */
-    protected function configure()
+    protected function configure(): void
     {
         parent::configure();
 

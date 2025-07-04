@@ -11,7 +11,7 @@
 
 namespace StreetSignal\Modules\V3\Validator\Post;
 
-use Kohana\Validation\Validation;
+
 use StreetSignal\Core\Facade\Feature;
 use StreetSignal\Contracts\Permission;
 use StreetSignal\Core\Concerns\AdminAccess;
@@ -112,22 +112,22 @@ class Create extends LegacyValidator
                 [[$this->form_repo, 'exists'], [':value']],
             ],
             'values' => [
-                [[$this, 'checkValues'], [':validation', ':value', ':fulldata']],
-                [[$this, 'checkRequiredPostAttributes'], [':validation', ':value', ':fulldata']],
-                [[$this, 'checkRequiredTaskAttributes'], [':validation', ':value', ':fulldata']],
+                [[$this, 'checkValues'], [':value', ':fulldata']],
+                [[$this, 'checkRequiredPostAttributes'], [':value', ':fulldata']],
+                [[$this, 'checkRequiredTaskAttributes'], [':value', ':fulldata']],
             ],
             'post_date' => [
                 [[$this, 'validDate'], [':value']],
             ],
             'tags' => [
-                [[$this, 'checkTags'], [':validation', ':value']],
+                [[$this, 'checkTags'], [':value']],
             ],
             'user_id' => [
                 [[$this->user_repo, 'exists'], [':value']],
                 [[$this, 'onlyAuthorOrUserSet'], [':value', ':fulldata']],
             ],
             'author_email' => [
-                ['Kohana\Validation\Valid::email'],
+                ['email'],
             ],
             'author_realname' => [
                 ['max_length', [':value', 150]],
@@ -138,8 +138,8 @@ class Create extends LegacyValidator
                     'draft',
                     'archived'
                 ]]],
-                [[$this, 'checkApprovalRequired'], [':validation', ':value', ':fulldata']],
-                [[$this, 'checkPublishedLimit'], [':validation', ':value']]
+                [[$this, 'checkApprovalRequired'], [':value', ':fulldata']],
+                [[$this, 'checkPublishedLimit'], [':value']]
             ],
             'type' => [
                 ['in_array', [':value', [
@@ -152,33 +152,35 @@ class Create extends LegacyValidator
                 [[$this->role_repo, 'exists'], [':value']],
             ],
             'completed_stages' => [
-                [[$this, 'checkStageInForm'], [':validation', ':value', ':fulldata']],
-                [[$this, 'checkRequiredStages'], [':validation', ':fulldata']]
+                [[$this, 'checkStageInForm'], [':value', ':fulldata']],
+                [[$this, 'checkRequiredStages'], [':fulldata']]
             ]
         ];
     }
 
-    public function checkPublishedLimit(Validation $validation, $status)
+    public function checkPublishedLimit($status)
     {
         $limit = Feature::getLimit('posts');
         if ($limit !== INF && $status == 'published') {
             $total_published = $this->repo->getPublishedTotal();
 
             if ($total_published >= $limit) {
-                $validation->error('status', 'publishedPostsLimitReached');
+                $this->validation_engine->error('status', 'publishedPostsLimitReached');
+                return false;
             }
         }
+        return true;
     }
 
-    public function checkApprovalRequired(Validation $validation, $status, $fullData)
+    public function checkApprovalRequired($status, $fullData)
     {
         // Status hasn't changed, moving on
         if (!$status) {
-            return;
+            return true;
         }
 
         if ($status === 'draft' && !isset($fullData['id'])) {
-            return;
+            return true;
         }
 
         $user = $this->getUser();
@@ -187,24 +189,28 @@ class Create extends LegacyValidator
             ($this->isUserAdmin($user) or $this->acl->hasPermission($user, Permission::MANAGE_POSTS));
         // .. if yes, any status is ok.
         if ($userCanChangeStatus) {
-            return;
+            return true;
         }
 
         $requireApproval = $this->repo->doesPostRequireApproval($fullData['form_id']);
 
         // Are we trying to change publish a post that requires approval?
         if ($requireApproval && $status !== 'draft') {
-            $validation->error('status', 'postNeedsApprovalBeforePublishing');
+            $this->validation_engine->error('status', 'postNeedsApprovalBeforePublishing');
+            return false;
         // Are we trying to unpublish or archive an auto-approved post?
         } elseif (!$requireApproval && $status !== 'published') {
-            $validation->error('status', 'postCanOnlyBeUnpublishedByAdmin');
+            $this->validation_engine->error('status', 'postCanOnlyBeUnpublishedByAdmin');
+            return false;
         }
+
+        return true;
     }
 
-    public function checkTags(Validation $validation, $tags)
+    public function checkTags($tags)
     {
         if (!$tags) {
-            return;
+            return true;
         }
 
         foreach ($tags as $key => $tag) {
@@ -213,17 +219,19 @@ class Create extends LegacyValidator
             }
 
             if (! $this->tag_repo->doesTagExist($tag)) {
-                $validation->error('tags', 'tagDoesNotExist', [$tag]);
+                $this->validation_engine->error('tags', 'tagDoesNotExist', [$tag]);
+                return false;
             }
         }
+        return true;
     }
 
-    public function checkValues(Validation $validation, $attributes, $fullData)
+    public function checkValues($attributes, $fullData)
     {
 
         $attributes = !empty($fullData['values']) ? $fullData['values'] : [];
         if (!$attributes) {
-            return;
+            return true;
         }
 
         $post_id = ! empty($fullData['id']) ? $fullData['id'] : 0;
@@ -232,16 +240,17 @@ class Create extends LegacyValidator
             // Check attribute exists
             $attribute = $this->attribute_repo->getByKey($key, $fullData['form_id'], true);
             if (! $attribute->id) {
-                $validation->error('values', 'attributeDoesNotExist', [$key]);
-                return;
+                $this->validation_engine->error('values', 'attributeDoesNotExist', [$key]);
+                return false;
             }
 
             // Are there multiple values? Are they greater than cardinality limit?
             if (count($values) > $attribute->cardinality and $attribute->cardinality != 0) {
-                $validation->error('values', 'tooManyValues', [
+                $this->validation_engine->error('values', 'tooManyValues', [
                     $attribute->label,
                     $attribute->cardinality
                 ]);
+                return false;
             }
 
             // Run checks on individual values type specific validation
@@ -250,12 +259,15 @@ class Create extends LegacyValidator
                 $validator->setConfig($attribute->config);
 
                 if (!is_array($values)) {
-                    $validation->error('values', 'notAnArray', [$attribute->label]);
+                    $this->validation_engine->error('values', 'notAnArray', [$attribute->label]);
+                    return false;
                 } elseif ($error = $validator->check($values)) {
-                    $validation->error('values', $error, [$attribute->label, $values]);
+                    $this->validation_engine->error('values', $error, [$attribute->label, $values]);
+                    return false;
                 }
             }
         }
+        return true;
     }
 
     /**
@@ -265,19 +277,20 @@ class Create extends LegacyValidator
      * @param  Array      $attributes
      * @param  Array      $fullData
      */
-    public function checkStageInForm(Validation $validation, $completed_stages, $fullData)
+    public function checkStageInForm($completed_stages, $fullData)
     {
         if (!$completed_stages) {
-            return;
+            return true;
         }
 
         foreach ($completed_stages as $stage_id) {
             // Check stage exists in form
             if (! $this->stage_repo->existsInForm($stage_id, $fullData['form_id'])) {
-                $validation->error('completed_stages', 'stageDoesNotExist', [$stage_id]);
-                return;
+                $this->validation_engine->error('completed_stages', 'stageDoesNotExist', [$stage_id]);
+                return false;
             }
         }
+        return true;
     }
 
     /**
@@ -287,7 +300,7 @@ class Create extends LegacyValidator
      * @param  Array      $attributes
      * @param  Array      $fullData
      */
-    public function checkRequiredStages(Validation $validation, $fullData)
+    public function checkRequiredStages($fullData)
     {
         $completed_stages = !empty($fullData['completed_stages']) ? $fullData['completed_stages'] : [];
 
@@ -299,10 +312,12 @@ class Create extends LegacyValidator
                 // Check the required stages have been completed
                 if (! in_array($stage->id, $completed_stages)) {
                     // If its not completed, add a validation error
-                    $validation->error('completed_stages', 'stageRequired', [$stage->label]);
+                    $this->validation_engine->error('completed_stages', 'stageRequired', [$stage->label]);
+                    return false;
                 }
             }
         }
+        return true;
     }
 
     /**
@@ -312,7 +327,7 @@ class Create extends LegacyValidator
      * @param  Array      $attributes
      * @param  Array      $fullData
      */
-    public function checkRequiredPostAttributes(Validation $validation, $attributes, $fullData)
+    public function checkRequiredPostAttributes($attributes, $fullData)
     {
         // Get the post stage
         $stage = $this->stage_repo->getPostStage($fullData['form_id']);
@@ -326,9 +341,11 @@ class Create extends LegacyValidator
             // TODO: Refactor Title and Description to be handled as Post Values
             if (!in_array($attr->type, ['title', 'description']) && !array_key_exists($attr->key, $attributes)) {
                 // If a required attribute isn't completed, throw an error
-                $validation->error('values', 'postAttributeRequired', [$attr->label, $stage->label]);
+                $this->validation_engine->error('values', 'postAttributeRequired', [$attr->label, $stage->label]);
+                return false;
             }
         }
+        return true;
     }
 
     /**
@@ -338,10 +355,10 @@ class Create extends LegacyValidator
      * @param  Array      $attributes
      * @param  Array      $fullData
      */
-    public function checkRequiredTaskAttributes(Validation $validation, $attributes, $fullData)
+    public function checkRequiredTaskAttributes($attributes, $fullData)
     {
         if (empty($fullData['completed_stages'])) {
-            return;
+            return true;
         }
 
         // If a stage is being marked completed
@@ -355,10 +372,12 @@ class Create extends LegacyValidator
                 if (!array_key_exists($attr->key, $attributes)) {
                     $stage = $this->stage_repo->get($stage_id);
                     // If a required attribute isn't completed, throw an error
-                    $validation->error('values', 'taskAttributeRequired', [$attr->label, $stage->label]);
+                    $this->validation_engine->error('values', 'taskAttributeRequired', [$attr->label, $stage->label]);
+                    return false;
                 }
             }
         }
+        return true;
     }
 
     /**

@@ -10,7 +10,7 @@ class MigrateMakeCommand extends PhinxCreateCommand
     /**
      * @inheritdoc
      */
-    protected function configure()
+    protected function configure(): void
     {
         parent::configure();
 

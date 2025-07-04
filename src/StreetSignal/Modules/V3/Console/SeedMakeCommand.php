@@ -9,7 +9,7 @@ class SeedMakeCommand extends PhinxSeedCreateCommand
     /**
      * @inheritdoc
      */
-    protected function configure()
+    protected function configure(): void
     {
         parent::configure();
 

@@ -4,17 +4,12 @@
     "homepage": "http://streetsignal.org/",
     "type": "project",
     "license": "AGPL-3.0",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/citizenry/kohana-validation"
-        }
-    ],
+    
     "require": {
         "aura/di": "~3.4",
         "beheh/flaps": "dev-master",
-        "league/event": "^2.2@dev",
-        "citizenry/kohana-validation": "dev-master"
+        "league/event": "^2.2@dev"
+        
     },
     "autoload": {
         "psr-4": {

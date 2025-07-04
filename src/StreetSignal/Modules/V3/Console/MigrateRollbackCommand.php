@@ -10,7 +10,7 @@ class MigrateRollbackCommand extends PhinxRollbackCommand
     /**
      * @inheritdoc
      */
-    protected function configure()
+    protected function configure(): void
     {
         parent::configure();
 

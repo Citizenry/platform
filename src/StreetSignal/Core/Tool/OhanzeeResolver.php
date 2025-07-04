@@ -11,41 +11,74 @@
 
 namespace StreetSignal\Core\Tool;
 
-use Ohanzee\Database;
+use Illuminate\Database\Connection;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Config;
 
 class OhanzeeResolver
 {
     /**
-     * @var \Ohanzee\Database
+     * @var Connection
      */
     protected $currentConnection;
 
+    /**
+     * @var string
+     */
+    protected $currentConnectionName = 'default';
+
     public function useDefaultConnection()
     {
-        $config = config('ohanzee-db'); // In construct() ??
-
-        $this->currentConnection = Database::instance('default', $config['default']);
+        $this->currentConnectionName = 'default';
+        $this->currentConnection = DB::connection('default');
     }
 
     public function setConnection($name, $config)
     {
-        $defaults = config('ohanzee-db')['default']; // In construct() ??
+        // Create a new database connection configuration
+        $connectionConfig = [
+            'driver' => 'mysql',
+            'host' => $config['host'],
+            'port' => $config['port'] ?? 3306,
+            'database' => $config['database'],
+            'username' => $config['username'],
+            'password' => $config['password'],
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ];
 
-        $defaults['connection']['hostname'] = $config['host'];
-        $defaults['connection']['database'] = $config['database'];
-        $defaults['connection']['username'] = $config['username'];
-        $defaults['connection']['password'] = $config['password'];
-
-        // @todo check if config already exists
-        $this->currentConnection = Database::instance($name, $defaults);
+        // Add the connection to Laravel's database manager
+        Config::set("database.connections.{$name}", $connectionConfig);
+        
+        // Purge any existing connection with this name
+        DB::purge($name);
+        
+        // Set as current connection
+        $this->currentConnectionName = $name;
+        $this->currentConnection = DB::connection($name);
     }
 
     public function connection()
     {
         if (!$this->currentConnection) {
-            throw new \RuntimeException('Database not configured yet');
+            // Default to the default Laravel connection
+            $this->currentConnection = DB::connection();
+            $this->currentConnectionName = 'default';
         }
 
         return $this->currentConnection;
+    }
+
+    /**
+     * Get the current connection name
+     *
+     * @return string
+     */
+    public function getConnectionName()
+    {
+        return $this->currentConnectionName;
     }
 }

@@ -10,7 +10,7 @@ class MigrateStatusCommand extends PhinxStatusCommand
     /**
      * @inheritdoc
      */
-    protected function configure()
+    protected function configure(): void
     {
         parent::configure();
 

@@ -55,7 +55,7 @@ $app->singleton(
 */
 
 $app->extend(\Illuminate\Foundation\PackageManifest::class, function ($manifest) {
-    return new \Ushahidi\Core\LaravelPackageManifest(
+    return new \StreetSignal\Core\LaravelPackageManifest(
         $manifest->files,
         $manifest->basePath,
         $manifest->manifestPath

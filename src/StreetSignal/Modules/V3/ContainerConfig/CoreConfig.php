@@ -466,7 +466,7 @@ class CoreConfig extends ContainerConfig
         // Rather than a shared engine as we would if we used lazyNew->set->lazyGet->
         $di->setters[\StreetSignal\Core\Concerns\ValidationEngine::class]['setValidation'] = $di->lazy(function () {
             // Create a new ValidationEngine
-            return new \StreetSignal\Core\Tool\KohanaValidationEngine(app('translator'));
+            return new \StreetSignal\Core\Tool\LaravelValidationEngine(app('translator'), app('validator'));
         });
     }
 }
