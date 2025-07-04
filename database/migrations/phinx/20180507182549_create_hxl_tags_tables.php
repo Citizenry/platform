@@ -38,11 +38,13 @@ class CreateHxlTagsTables extends AbstractMigration
         $this->table('hxl_tag_attributes', ['id' => false, 'primary_key' => ['tag_id', 'attribute_id']])
             ->addColumn('tag_id', 'integer', [
                 'null' => false,
-                'default' => false
+                'default' => false,
+                'signed' => false
             ])
             ->addColumn('attribute_id', 'integer', [
                 'null' => false,
-                'default' => false
+                'default' => false,
+                'signed' => false
             ])
             ->addIndex(['attribute_id', 'tag_id'], ['unique' => true])
             ->addForeignKey('attribute_id', 'hxl_attributes', 'id')
@@ -57,7 +59,8 @@ class CreateHxlTagsTables extends AbstractMigration
             ])
             ->addColumn('hxl_tag_id', 'integer', [
                 'null' => false,
-                'default' => false
+                'default' => false,
+                'signed' => false
             ])
             ->addForeignKey('hxl_tag_id', 'hxl_tags', 'id')
             ->create();
