@@ -16,7 +16,7 @@ class AddLayers extends AbstractMigration
     public function change()
     {
         $this->table('layers')
-            ->addColumn('media_id', 'integer', ['null' => true])
+            ->addColumn('media_id', 'integer', ['null' => true, 'signed' => false])
             ->addColumn('name', 'string', ['limit' => 50])
             ->addColumn('type', 'string', [
                 'limit' => 20,
