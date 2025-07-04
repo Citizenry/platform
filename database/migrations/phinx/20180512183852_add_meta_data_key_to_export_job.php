@@ -9,6 +9,7 @@ class AddMetaDataKeyToExportJob extends AbstractMigration
         $this->table('export_job')
             ->addColumn('hxl_meta_data_id', 'integer', [
                 'null' => true,
+                'signed' => false,
             ])
             ->addIndex(['hxl_meta_data_id'], ['unique' => true,'name' => 'hxl_meta_data_id_unique'])
             ->addForeignKey(
