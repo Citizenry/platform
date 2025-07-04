@@ -1,4 +1,3 @@
-version: "2"
 services:
   mysql:
     image: mariadb:10.11
@@ -15,6 +14,8 @@ services:
       # - --default-authentication-plugin=mysql_native_password
     ports:
       - "33061:3306"
+    networks:
+      - internal
   redis:
     image: redis:7.2-alpine
   platform:
@@ -38,7 +39,6 @@ services:
       CACHE_DRIVER: redis
       QUEUE_DRIVER: redis
       XDEBUG_MODE: ${XDEBUG_MODE:-off}
-    command: start
     ports:
       - "8081:8080"
     volumes:
@@ -68,7 +68,6 @@ services:
       REDIS_HOST: redis
       CACHE_DRIVER: redis
       QUEUE_DRIVER: redis
-    command: start
     volumes:
       - storage-app-public:/var/www/storage/app/public
 

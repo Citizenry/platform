@@ -4,7 +4,9 @@ namespace StreetSignal\Modules\TelegramBot\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use StreetSignal\Modules\V5\Http\Controllers\RESTController;
+use App\Bus\Command\CommandBus;
+use App\Bus\Query\QueryBus;
+use StreetSignal\Modules\V5\Http\Controllers\V5Controller;
 use StreetSignal\Modules\TelegramBot\Services\TelegramBotService;
 use StreetSignal\Modules\TelegramBot\Models\TelegramBotConfig;
 use StreetSignal\Modules\TelegramBot\Requests\TelegramConfigRequest;
@@ -12,12 +14,13 @@ use TelegramBot\Api\BotApi;
 use TelegramBot\Api\Exception;
 use Illuminate\Support\Facades\Log;
 
-class TelegramBotController extends RESTController
+class TelegramBotController extends V5Controller
 {
     protected TelegramBotService $botService;
 
-    public function __construct(TelegramBotService $botService)
+    public function __construct(QueryBus $queryBus, CommandBus $commandBus, TelegramBotService $botService)
     {
+        parent::__construct($queryBus, $commandBus);
         $this->botService = $botService;
     }
 

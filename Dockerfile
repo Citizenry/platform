@@ -1,34 +1,40 @@
-FROM ushahidi/php-fpm-nginx:php-7.4
+FROM php:8.2-fpm-alpine
 LABEL org.opencontainers.image.source="https://github.com/ushahidi/platform"
 
 # TODO: non-root user container setup
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
-COPY docker-php-ext-enable /usr/local/bin/
-RUN apt-get update 
-RUN apt-get install -y php-pear php${PHP_MAJOR_VERSION}-dev
-RUN pecl channel-update pecl.php.net
-RUN pecl channel-update pecl.php.net
-RUN pecl install xdebug-3.1.6 
-ENV PHP_INI_DIR=/etc/php/${PHP_MAJOR_VERSION}/fpm
-RUN docker-php-ext-enable xdebug
-ENV PHP_INI_DIR=/etc/php/${PHP_MAJOR_VERSION}/cli
-RUN docker-php-ext-enable xdebug
-COPY docker-php-ext-xdebug.ini /etc/php/${PHP_MAJOR_VERSION}/fpm/conf.d
+# Install system dependencies
+RUN apk add --no-cache \
+    $PHPIZE_DEPS \
+    bash \
+    curl \
+    git
+
+# Install dockerize
+ENV DOCKERIZE_VERSION v0.6.1
+RUN curl -sL https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz | tar xz \
+    && mv dockerize /usr/local/bin/dockerize
+
+# Install PHP extensions
+RUN docker-php-ext-install pdo_mysql
 
 WORKDIR /var/www
+
+# Install Composer
 COPY composer.json ./
 COPY composer.lock ./
-RUN composer self-update --2
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
+    php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
+    php -r "unlink('composer-setup.php');"
 RUN composer install --no-autoloader --no-scripts
 
+# Copy application code and scripts
 COPY . .
 COPY docker/utils.sh /utils.sh
 COPY docker/run.tasks.conf /etc/chaperone.d/
 COPY docker/run.run.sh /run.run.sh
 RUN echo '#!/bin/bash\n. /utils.sh\n"$@"' > /bin/util ; chmod +x /bin/util ;
-
-RUN $DOCKERCES_MANAGE_UTIL add /run.run.sh
 
 ARG GIT_COMMIT_ID
 ARG GIT_BUILD_REF
@@ -42,4 +48,6 @@ ENV ENABLE_PLATFORM_TASKS=true \
     GIT_COMMIT_ID=${GIT_COMMIT_ID} \
     GIT_BUILD_REF=${GIT_BUILD_REF}
 
-CMD [ "start" ]
+ENTRYPOINT ["dockerize", "-wait", "tcp://mysql:3306", "-timeout", "60s"]
+# The default command to run PHP-FPM
+CMD [ "php-fpm" ]
