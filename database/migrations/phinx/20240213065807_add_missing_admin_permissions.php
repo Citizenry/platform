@@ -12,6 +12,9 @@ class AddMissingAdminPermissions extends AbstractMigration
      */
     public function up()
     {
+        // First add the missing permission if it doesn't exist
+        $this->execute("INSERT IGNORE INTO `permissions` (`name`) VALUES ('Delete Their Own Posts')");
+
         $this->execute("INSERT INTO `roles_permissions` (`role`, `permission`)
             VALUES ('admin', 'Manage Users')");
 
