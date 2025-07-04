@@ -14,6 +14,7 @@ class FormAttributesRelations extends AbstractMigration
             ->addColumn('form_group_id', 'integer', [
                 'default' => null,
                 'null' => true,
+                'signed' => false,
             ])
             ->addForeignKey('form_group_id', 'form_groups', 'id', [
                 'delete' => 'CASCADE',
@@ -51,8 +52,8 @@ class FormAttributesRelations extends AbstractMigration
                 'id' => false,
                 'primary_key' => ['form_group_id', 'form_attribute_id'],
             ])
-            ->addColumn('form_group_id', 'integer')
-            ->addColumn('form_attribute_id', 'integer')
+            ->addColumn('form_group_id', 'integer', ['signed' => false])
+            ->addColumn('form_attribute_id', 'integer', ['signed' => false])
             ->addForeignKey('form_group_id', 'form_groups', 'id')
             ->addForeignKey('form_attribute_id', 'form_attributes', 'id')
             ->create();
