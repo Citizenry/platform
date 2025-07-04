@@ -7,7 +7,7 @@ namespace StreetSignal\DataSource\Contracts;
  *
  * @author     StreetSignal Team <team@streetsignal.com>
  * @package    Contracts
- * @copyright  2022 StreetSignal
+ * @copyright  2022 Ushahidi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License Version 3 (GPLv3)
  *
  */

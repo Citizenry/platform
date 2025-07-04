@@ -6,7 +6,7 @@
  * @author    StreetSignal Team <technologyteam@streetsignal.com>
  * @package   StreetSignal\Application
  * @license   https://www.gnu.org/licenses/agpl-3.0.html (AGPL3)
- * @copyright 2020 StreetSignal
+ * @copyright 2020 Ushahidi
  */
 
 namespace StreetSignal\Modules\V5\Http\Controllers;

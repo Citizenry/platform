@@ -7,7 +7,7 @@ namespace StreetSignal\DataSource\Twilio;
  *
  * @author     StreetSignal Team <team@streetsignal.com>
  * @package    DataSource\Twilio
- * @copyright  2013 StreetSignal
+ * @copyright  2013 Ushahidi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License Version 3 (GPLv3)
  */
 

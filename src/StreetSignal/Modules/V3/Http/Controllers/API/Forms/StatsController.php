@@ -9,7 +9,7 @@ use StreetSignal\Modules\V3\Http\Controllers\RESTController;
  * StreetSignal API Form Stats Controller
  *
  * @author     StreetSignal Team <team@streetsignal.com>
- * @copyright  2018 StreetSignal
+ * @copyright  2018 Ushahidi
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 class StatsController extends RESTController

@@ -7,7 +7,7 @@ namespace StreetSignal\Addons\Infobip;
  *
  * @author     StreetSignal Team <team@streetsignal.com>
  * @package    Addons\Infobip
- * @copyright  2023 StreetSignal
+ * @copyright  2023 Ushahidi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License Version 3 (GPLv3)
  */
 

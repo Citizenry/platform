@@ -7,7 +7,7 @@ namespace StreetSignal\Core\Tool\ExternalServices;
  *
  * @author    StreetSignal Team <team@streetsignal.com>
  * @package   ExternalServices\HDX
- * @copyright 2018 StreetSignal
+ * @copyright 2018 Ushahidi
  * @license   http://www.gnu.org/copyleft/gpl.html GNU General Public License Version 3 (GPLv3)
  */
 

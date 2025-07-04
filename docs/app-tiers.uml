@@ -7,9 +7,9 @@
 
 [Services|
     [API]o->[Kohana] 
-    [API]o->[Ushahidi Core]
+    [API]o->[StreetSignal Core]
     [Kohana]-->[PHP]
-    [Ushahidi Core]-->[PHP]   
+    [StreetSignal Core]-->[PHP]   
 ]
 
 [Data|

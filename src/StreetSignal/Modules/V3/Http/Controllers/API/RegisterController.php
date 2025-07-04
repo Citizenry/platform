@@ -11,7 +11,7 @@ use StreetSignal\Modules\V3\Http\Controllers\RESTController;
  * StreetSignal API Register Controller
  *
  * @author     StreetSignal Team <team@streetsignal.com>
- * @copyright  2015 StreetSignal
+ * @copyright  2015 Ushahidi
  * @license    https://www.gnu.org/licenses/agpl-3.0.html GNU Affero General Public License Version 3 (AGPL3)
  */
 class RegisterController extends RESTController

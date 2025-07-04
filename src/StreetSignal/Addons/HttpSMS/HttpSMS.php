@@ -7,7 +7,7 @@ namespace StreetSignal\Addons\HttpSMS;
  *
  * @author     StreetSignal Team <team@streetsignal.com>
  * @package    Addons\HttpSMS
- * @copyright  2023 StreetSignal
+ * @copyright  2023 Ushahidi
  * @license    http://www.gnu.org/copyleft/gpl.html GNU General Public License Version 3 (GPLv3)
  */
 
