@@ -169,6 +169,7 @@ return [
         StreetSignal\Modules\V2\ServiceProvider::class,
         StreetSignal\Modules\V3\ServiceProvider::class,
         StreetSignal\Modules\V5\ServiceProvider::class,
+        StreetSignal\Modules\TelegramBot\ServiceProvider::class,
 
     ],
 

@@ -25,7 +25,6 @@
         "league/flysystem-aws-s3-v3": "^3.0",
         "netresearch/jsonmapper": "^1.6.0",
         "nyholm/psr7": "^1.5",
-        
         "php-http/curl-client": "^2.2",
         "predis/predis": "^2.2.2",
         "robmorgan/phinx": "^0.13.0",
@@ -33,7 +32,7 @@
         "symfony/event-dispatcher": "^6.0",
         "symfony/psr-http-message-bridge": "^2.0",
         "symm/gisconverter": "~1.0.5",
-        
+        "telegram-bot/api": "^2.3",
         "wikimedia/composer-merge-plugin": "^2.0",
         "willdurand/negotiation": "^2.3"
     },
