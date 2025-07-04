@@ -7,7 +7,7 @@ class AddExportJobBatches extends AbstractMigration
     public function change()
     {
         $this->table('export_batches') // @todo revisit name?
-            ->addColumn('export_job_id', 'integer', ['null' => false])
+            ->addColumn('export_job_id', 'integer', ['null' => false, 'signed' => false])
             ->addColumn('status', 'string', [
                 'null' => false,
                 'default' => 'pending'

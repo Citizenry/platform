@@ -10,8 +10,8 @@ class AddPostMarkdownTable extends AbstractMigration
     public function up()
     {
         $this->table('post_markdown')
-          ->addColumn('post_id', 'integer')
-          ->addColumn('form_attribute_id', 'integer')
+          ->addColumn('post_id', 'integer', ['signed' => false])
+          ->addColumn('form_attribute_id', 'integer', ['signed' => false])
           ->addColumn('value', 'text', ['null' => true])
           ->addColumn('created', 'integer', ['default' => 0])
           ->addColumn('updated', 'integer', ['null' => true])

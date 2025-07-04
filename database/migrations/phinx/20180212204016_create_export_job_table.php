@@ -11,7 +11,7 @@ class CreateExportJobTable extends AbstractMigration
     public function up()
     {
         $this->table('export_job')
-            ->addColumn('user_id', 'integer', ['null' => false])
+            ->addColumn('user_id', 'integer', ['null' => false, 'signed' => false])
             ->addColumn('entity_type', 'string', ['null' => false])
             ->addColumn('fields', 'string', ['null' => true])
             ->addColumn('filters', 'string', ['null' => true])

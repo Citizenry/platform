@@ -13,6 +13,7 @@ class AddMessageNotificationPostId extends AbstractMigration
             ->addColumn('notification_post_id', 'integer', [
                     'comment' => "Source post this message is a notification for",
                     'null' => true,
+                    'signed' => false,
                 ])
             ->addForeignKey('notification_post_id', 'posts', 'id', [
                 'delete' => 'SET NULL',

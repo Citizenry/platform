@@ -10,7 +10,7 @@ class AddTosTable extends AbstractMigration
     public function up()
     {
         $this->table('tos')
-          ->addColumn('user_id', 'integer', ['null' => false])
+          ->addColumn('user_id', 'integer', ['null' => false, 'signed' => false])
           ->addColumn('agreement_date', 'integer', ['null' => false])
           ->addColumn('tos_version_date', 'integer', ['null' => false])
           ->addForeignKey('user_id', 'users', 'id', [

@@ -9,8 +9,8 @@ class AddPostLockTable extends AbstractMigration
     public function up()
     {
         $this->table('post_locks')
-          ->addColumn('post_id', 'integer')
-          ->addColumn('user_id', 'integer')
+          ->addColumn('post_id', 'integer', ['signed' => false])
+          ->addColumn('user_id', 'integer', ['signed' => false])
           ->addColumn('expires', 'integer', ['null' => false])
           ->addForeignKey('user_id', 'users', 'id', [
                 'delete' => 'CASCADE',

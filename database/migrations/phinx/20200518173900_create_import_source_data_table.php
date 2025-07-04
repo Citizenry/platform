@@ -7,7 +7,7 @@ class CreateImportSourceDataTable extends AbstractMigration
     public function change()
     {
         $this->table('import_source_datas')
-            ->addColumn('import_id', 'integer')
+            ->addColumn('import_id', 'integer', ['signed' => false])
             ->addColumn('source_table', 'string')
             ->addColumn('row_id', 'string')
             ->addColumn('data', 'json')

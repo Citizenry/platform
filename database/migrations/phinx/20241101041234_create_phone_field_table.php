@@ -32,8 +32,8 @@ class CreatePhoneFieldTable extends AbstractMigration
     public function change()
     {
         $this->table('post_phone')
-            ->addColumn('post_id', 'integer')
-            ->addColumn('form_attribute_id', 'integer')
+            ->addColumn('post_id', 'integer', ['signed' => false])
+            ->addColumn('form_attribute_id', 'integer', ['signed' => false])
             ->addColumn('value', 'string', [
                'limit' => 32,
                ])

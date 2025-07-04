@@ -33,8 +33,8 @@ class ContactPostState extends AbstractMigration
     public function up()
     {
         $this->table('targeted_survey_state')
-            ->addColumn('post_id', 'integer', ['null' => false])
-            ->addColumn('contact_id', 'integer', ['null' => false])
+            ->addColumn('post_id', 'integer', ['null' => false, 'signed' => false])
+            ->addColumn('contact_id', 'integer', ['null' => false, 'signed' => false])
             ->addColumn('status', 'string', ['null' => false, 'default' => 'PENDING'])
             ->addColumn('created', 'integer', ['default' => 0])
             ->addColumn('updated', 'integer', ['default' => 0])

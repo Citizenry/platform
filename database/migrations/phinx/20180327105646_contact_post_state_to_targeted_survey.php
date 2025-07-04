@@ -13,11 +13,11 @@ class ContactPostStateToTargetedSurvey extends AbstractMigration
     {
         $this->table('targeted_survey_state')->drop()->save();
         $this->table('targeted_survey_state')
-            ->addColumn('form_id', 'integer', ['null' => false])
-            ->addColumn('post_id', 'integer', ['null' => false])
-            ->addColumn('contact_id', 'integer', ['null' => false])
-            ->addColumn('message_id', 'integer', ['default' => null, 'null' => true])
-            ->addColumn('form_attribute_id', 'integer', ['null' => true])
+            ->addColumn('form_id', 'integer', ['null' => false, 'signed' => false])
+            ->addColumn('post_id', 'integer', ['null' => false, 'signed' => false])
+            ->addColumn('contact_id', 'integer', ['null' => false, 'signed' => false])
+            ->addColumn('message_id', 'integer', ['default' => null, 'null' => true, 'signed' => false])
+            ->addColumn('form_attribute_id', 'integer', ['null' => true, 'signed' => false])
             ->addColumn('survey_status', 'string', ['null' => false, 'default' => 'PENDING'])
             ->addColumn('created', 'integer', ['default' => 0])
             ->addColumn('updated', 'integer', ['default' => 0])
@@ -52,8 +52,8 @@ class ContactPostStateToTargetedSurvey extends AbstractMigration
     {
         $this->table('targeted_survey_state')->drop()->save();
         $this->table('targeted_survey_state')
-            ->addColumn('post_id', 'integer', ['null' => false])
-            ->addColumn('contact_id', 'integer', ['null' => false])
+            ->addColumn('post_id', 'integer', ['null' => false, 'signed' => false])
+            ->addColumn('contact_id', 'integer', ['null' => false, 'signed' => false])
             ->addColumn('status', 'string', ['null' => false, 'default' => 'PENDING'])
             ->addColumn('created', 'integer', ['default' => 0])
             ->addColumn('updated', 'integer', ['default' => 0])

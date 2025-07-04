@@ -7,7 +7,7 @@ class CreateImportMappingTable extends AbstractMigration
     public function change()
     {
         $this->table('import_mappings')
-            ->addColumn('import_id', 'integer')
+            ->addColumn('import_id', 'integer', ['signed' => false])
             ->addColumn('source_type', 'string')
             ->addColumn('source_id', 'string')
             ->addColumn('dest_type', 'string')

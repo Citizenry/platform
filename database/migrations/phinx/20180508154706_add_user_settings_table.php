@@ -18,7 +18,7 @@ class AddUserSettingsTable extends AbstractMigration
                 'null' => false,
                 'default' => false
             ])
-            ->addColumn('user_id', 'integer', ['null' => false])
+            ->addColumn('user_id', 'integer', ['null' => false, 'signed' => false])
             ->addColumn('created', 'integer', ['default' => 0])
             ->addColumn('updated', 'integer', ['default' => 0])
             ->addIndex(
