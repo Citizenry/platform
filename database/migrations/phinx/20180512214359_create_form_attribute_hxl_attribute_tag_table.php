@@ -9,19 +9,23 @@ class CreateFormAttributeHxlAttributeTagTable extends AbstractMigration
         $this->table('form_attribute_hxl_attribute_tag')
             ->addColumn('form_attribute_id', 'integer', [
                 'null' => false,
-                'default' => false
+                'default' => false,
+                'signed' => false
             ])
             ->addColumn('hxl_attribute_id', 'integer', [
                 'null' => true,
-                'default' => null
+                'default' => null,
+                'signed' => false
             ])
             ->addColumn('hxl_tag_id', 'integer', [
                 'null' => false,
-                'default' => false
+                'default' => false,
+                'signed' => false
             ])
             ->addColumn('export_job_id', 'integer', [
                 'null' => false,
-                'default' => false
+                'default' => false,
+                'signed' => false
             ])
             ->addForeignKey('form_attribute_id', 'form_attributes', 'id', ['delete'=>'CASCADE', 'update'=>'CASCADE'])
             ->addForeignKey('hxl_attribute_id', 'hxl_attributes', 'id', ['delete'=>'CASCADE', 'update'=>'CASCADE'])
