@@ -5,7 +5,7 @@
 ### What does StreetSignal Do? <a id="what-does-streetsignal-do"></a>
 
 * StreetSignal is a tool for collecting, managing, and visualizing data.
-* Data can be collected from anyone, anytime, anywhere by SMS, email, web, Twitter, and RSS.
+* Data can be collected from anyone, anytime, anywhere by SMS, email, web, Twitter, RSS, and **Telegram**.
 * Posts can be managed and triaged with filters and workflows.
 * Data can be viewed in many ways: on a map, in a list, or as a visualization.
 
@@ -15,29 +15,113 @@ Anyone can use StreetSignal, but traditionally it has been a tool used by Crisis
 
 ### Technical Specifications <a id="technical-specifications"></a>
 
-**Development stack**
+**Current Development Stack (v5)**
 
-{% hint style="warning" %}
-**TODO: Add info about v4.**
-{% endhint %}
+* **Backend**: StreetSignal Platform is built on a modern PHP stack using Laravel 9.x
+* **PHP Version**: 7.4 - 8.3 (8.2+ recommended for optimal performance)
+* **Database**: MySQL 5.7+ or PostgreSQL 9.6+
+* **Dependencies**: Managed with Composer
+* **API**: RESTful API v5 with comprehensive endpoints
+* **Authentication**: OAuth 2.0 via Laravel Passport
+* **New Features**: Telegram Bot integration, enhanced security, improved performance
 
-* StreetSignal 3.x was built on a PHP stack: dependencies are managed with composer, we’re using Kohana 3 but phasing that out, and we’ve isolated the core logic of the platform standalone Entity and Usecase classes.
-* The user interface of StreetSignal 3.x is now a separate app \(the client\) built purely in JS, HTML + CSS using AngularJS, Single SPA and a collection of other libraries, with a build pipeline using gulp and Webpack.
-* What’s new \(and improved\)?
-  * Dependencies are properly managed and easier to update or replace needed.
-  * We’re using our own API to build the app, it gets first class support. 
-  * You can work on just the UI without delving into the API code
-  * Modern libraries mean they’re still being supported, we don’t have the burden of supporting legacy libraries ourselves.
+**Frontend Stack**
+
+* The user interface is a separate application (platform-client-mzima) built with modern JavaScript frameworks
+* **Framework**: Angular/React-based single-page application
+* **Build Tools**: Modern build pipeline with Webpack and npm
+* **Mapping**: Leaflet.js for interactive maps
+* **Styling**: Component-based CSS architecture
+
+**What's New and Improved?**
+
+* **Laravel 9 Framework**: Modern, secure, and well-maintained framework
+* **PHP 8.2+ Support**: Latest PHP features and performance improvements
+* **Telegram Bot Integration**: Interactive chat-based report submission
+* **Enhanced API**: Comprehensive v5 API with better documentation
+* **Improved Security**: OAuth 2.0, rate limiting, and input validation
+* **Better Testing**: Comprehensive test suite with PHPUnit and Behat
+* **Docker Support**: Containerized development environment
+* **Modern Dependencies**: Up-to-date libraries and security patches
 
 #### Code is easier to customize
 
-* code is more structured making it easier to find what you want
-* code is doesn’t repeat itself so a change can be made in one place, not need to be copied everywhere else
-* UI is isolated to the client, allowing work on just the UI without having to delve into the API code
+* **Modular Architecture**: Clean separation of concerns with Laravel's structure
+* **Service-Oriented Design**: Business logic isolated in service classes
+* **Repository Pattern**: Data access abstraction for easier testing and maintenance
+* **Event-Driven**: Laravel events for extensible functionality
+* **API-First**: Frontend and backend completely decoupled
+* **Modern PHP**: Type hints, namespaces, and PSR standards
 
-#### The stack
+#### The Current Stack
 
-Back-end: [Linux](http://en.wikipedia.org/wiki/Linux), [PHP](https://php.net/), [Apache](http://httpd.apache.org/)/[Nginx](http://wiki.nginx.org/Main), [MySQL](http://www.mysql.com/) or [PostgreSQL](http://www.postgresql.org/)
+**Backend Technologies:**
+- **OS**: Linux (Ubuntu/Debian recommended)
+- **Language**: PHP 7.4 - 8.3
+- **Framework**: Laravel 9.x
+- **Web Server**: Apache/Nginx
+- **Database**: MySQL 5.7+ or PostgreSQL 9.6+
+- **Cache**: Redis (recommended) or Memcached
+- **Queue**: Redis, Database, or SQS
+- **Search**: Elasticsearch (optional)
 
-Front-end: [AngularJS](https://angularjs.org/), [Single SPA](https://single-spa.js.org/), [Javascript](http://en.wikipedia.org/wiki/JavaScript), [Html](http://en.wikipedia.org/wiki/HTML), [CSS](http://en.wikipedia.org/wiki/Cascading_Style_Sheets). Built with [NodeJS](http://nodejs.org/), [Gulp.js](https://gulpjs.com/) and [Webpack](https://webpack.js.org/). Using [Leaflet](http://leafletjs.com/) for mapping, and a collection of other frontend libraries
+**Frontend Technologies:**
+- **Framework**: Modern JavaScript (Angular/React)
+- **Build Tools**: Webpack, npm/yarn
+- **Mapping**: Leaflet.js
+- **UI Components**: Component-based architecture
+- **Styling**: SCSS/CSS modules
 
+**Development Tools:**
+- **Containerization**: Docker & Docker Compose
+- **Testing**: PHPUnit, Behat, Jest
+- **Code Quality**: PHP_CodeSniffer, ESLint
+- **CI/CD**: GitHub Actions, Travis CI
+- **Documentation**: API Blueprint, Swagger
+
+**Data Sources:**
+- **Web Interface**: Browser-based submission
+- **SMS**: Multiple provider integrations
+- **Email**: IMAP-based collection
+- **Twitter**: API integration
+- **RSS Feeds**: Automated aggregation
+- **Telegram Bot**: Interactive chat interface *(NEW)*
+- **API**: Direct programmatic access
+
+#### Development Environment Setup
+
+**Quick Start with Docker:**
+```bash
+# Clone repository
+git clone https://github.com/streetsignal/platform.git
+cd platform
+
+# Start development environment
+make start
+
+# Backend will be available at localhost:8080
+```
+
+**Manual Setup:**
+```bash
+# Install dependencies
+composer install
+
+# Configure environment
+cp .env.example .env
+php artisan key:generate
+
+# Setup database
+php artisan migrate
+php artisan passport:install
+
+# Start development server
+php artisan serve
+```
+
+**Frontend Setup:**
+```bash
+# Clone frontend repository
+git clone https://github.com/streetsignal/platform-client-mzima.git
+
+# Follow frontend-specific setup instructions

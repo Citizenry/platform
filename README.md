@@ -1,13 +1,20 @@
-StreetSignal Platform
-=================
+# StreetSignal Platform
 
 ## What is StreetSignal Platform?
 
-StreetSignal is a fork of Ushahidi Platform and is an open source web application for information collection, visualization and interactive mapping. It helps you to collect info from: SMS, Twitter, RSS feeds, Email. It helps you to process that information, categorize it, geo-locate it and publish it on a map. We have updated it to be more useful for reporting activity and crowd sourced oversight. 
+StreetSignal is a fork of Ushahidi Platform and is an open source web application for information collection, visualization and interactive mapping. It helps you to collect info from: SMS, Twitter, RSS feeds, Email, and **Telegram**. It helps you to process that information, categorize it, geo-locate it and publish it on a map. We have updated it to be more useful for reporting activity and crowd sourced oversight.
 
 This repository contains the backend code with the REST API implementation.
 
 Head over to the [Platform Client repository][client] for the browser app code.
+
+## Requirements
+
+- **PHP**: 7.4 - 8.3 (PHP 8.2+ recommended)
+- **Laravel**: 9.x
+- **Database**: MySQL 5.7+ or PostgreSQL 9.6+
+- **Docker**: For containerized development
+- **Make**: For build automation
 
 ## Setup essentials
 
@@ -28,20 +35,78 @@ The backend will be listening on localhost:8080.
 You may use `make start` to restart the containers (does a full container build).
 
 You may use `make apply` to apply dependency and migration changes to containers (without full container build). **Note:** this requires containers to be up.
-​
+
 To stop Docker containers run `make stop`
 
 To take everything down (including deleting the database) `make down` will do that for you.
 
+## Recent Updates
 
+### PHP 8.2+ Compatibility
+- Updated to support PHP 8.2 and 8.3
+- Fixed compatibility issues with modern PHP versions
+- Updated dependencies for better performance and security
 
-**WIP**: to run the automated tests ...
+### Telegram Bot Integration
+- **NEW**: Full Telegram bot integration for report submission
+- Supports both anonymous and authenticated submissions
+- Multi-step form flows with media upload support
+- OAuth-based account linking
+- Rate limiting and spam protection
+
+### Laravel 9 Upgrade
+- Upgraded to Laravel 9.x for improved performance
+- Enhanced security features
+- Better dependency management
+
+## Data Sources
+
+StreetSignal Platform supports multiple data collection methods:
+
+- **Web Interface**: Browser-based report submission
+- **SMS**: Text message integration via multiple providers
+- **Email**: Email-to-report conversion
+- **Twitter**: Social media monitoring and collection
+- **RSS Feeds**: Automated content aggregation
+- **Telegram Bot**: Interactive chat-based reporting *(NEW)*
+- **API**: Direct programmatic access
+
+## Development
+
+### Testing
+```bash
+# Run all tests
+composer test
+
+# Run unit tests only
+composer unit
+
+# Run with coverage
+composer test-dev
+```
+
+### Code Quality
+```bash
+# Lint code
+composer lint
+
+# Fix linting issues
+composer fixlint
+```
+
+### Database
+```bash
+# Run migrations
+composer migrate
+
+# Generate Passport keys
+composer bootstrap:passport
+```
 
 ## Manuals and documentation
 
 ### A note for grassroots organizations
 If you are starting a deployment for a grassroots organization, you can apply for a free social-impact responder account [here](https://www.StreetSignal.com/pricing/apply-for-free) after verifying that you meet the criteria.
-
 
 ### Platform User Manual
 
@@ -54,9 +119,39 @@ Key pointers on installing and developing on the Platform.
 
 [Platform Developer Documentation](https://docs.StreetSignal.com/platform-developer-documentation/)
 
+## API Documentation
+
+- **API v3**: Legacy API (maintenance mode)
+- **API v5**: Current API with full feature support
+- **Telegram Bot API**: New integration endpoints
+
+## Security
+
+- Regular security updates and dependency management
+- OAuth 2.0 authentication via Laravel Passport
+- Rate limiting and abuse protection
+- Input validation and sanitization
+- Secure file upload handling
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on:
+
+- Code standards and guidelines
+- Development workflow
+- Testing requirements
+- Security considerations
+
 ## Credits
 
 ## Contributors ✨
 
 Thanks goes to the wonderful people who [[Contribute](CONTRIBUTING.md)]! See the list of contributors at [all-contributors](docs/contributors-to-StreetSignal.md)
+
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## License
+
+StreetSignal Platform is licensed under the [AGPL-3.0](LICENSE-AGPL) license.
+
+[client]: https://github.com/StreetSignal/platform-client-mzima
