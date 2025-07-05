@@ -19,4 +19,3 @@ Route::get('/', "IndexController@index");
 // Route::get('/migrate', 'MigrateController@migrate');
 
 
-
