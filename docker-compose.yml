@@ -50,6 +50,8 @@ services:
       REDIS_HOST: redis
       CACHE_DRIVER: redis
       QUEUE_DRIVER: redis
+      OAUTH_CLIENT_ID: streetsignal-ios
+      OAUTH_CLIENT_SECRET: 35e7f0bca957836d05ca0492211b0ac707671261
       XDEBUG_MODE: ${XDEBUG_MODE:-off}
     ports:
       - "8081:8080"

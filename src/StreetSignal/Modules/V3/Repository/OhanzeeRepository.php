@@ -12,7 +12,7 @@
 
 namespace StreetSignal\Modules\V3\Repository;
 
-use Ohanzee\DB;
+use DB;
 use RuntimeException;
 use StreetSignal\Contracts\Entity;
 use StreetSignal\Contracts\Search;
@@ -84,9 +84,7 @@ abstract class OhanzeeRepository implements
     // DeleteRepository
     public function get($id)
     {
-        return $this->getEntity($this->selectOne([
-            $this->getTable() . '.id' => $id
-        ]));
+        return $this->getEntity($this->selectOne(['id' => $id]));
     }
 
     // CreateRepository
@@ -116,8 +114,8 @@ abstract class OhanzeeRepository implements
 
         if (!empty($sorting['orderby'])) {
             $order = isset($sorting['order']) ? strtoupper($sorting['order']) : 'ASC';
-            $this->search_query->order_by(
-                $this->getTable() . '.' . $sorting['orderby'],
+            $this->search_query->orderBy(
+                $sorting['orderby'],
                 ($order == 'DESC' ? 'DESC' : 'ASC')
             );
         }
@@ -138,23 +136,19 @@ abstract class OhanzeeRepository implements
     {
         $query = $this->getSearchQuery();
 
-        $results = $query->distinct(true)->execute($this->db());
+        $results = $query->distinct()->get();
 
-        return $this->getCollection($results->as_array());
+        return $this->getCollection($results->toArray());
     }
 
     // SearchRepository
     public function getSearchTotal()
     {
         // Assume we can simply count the results to get a total
-        $query = $this->getSearchQuery(true)
-            ->resetSelect()
-            ->select([DB::expr('COUNT(*)'), 'total']);
-        // Fetch the result and...
-        $result = $query->execute($this->db());
-
-        // ... return the total.
-        return (int) $result->get('total', 0);
+        $query = $this->getSearchQuery(true);
+        
+        // Return the count
+        return (int) $query->count();
     }
 
     /**
@@ -206,8 +200,8 @@ abstract class OhanzeeRepository implements
     {
         $result = $this->selectQuery($where)
             ->limit(1)
-            ->execute($this->db());
-        return $result->current();
+            ->first();
+        return $result ? (array) $result : null;
     }
 
     /**
@@ -217,24 +211,23 @@ abstract class OhanzeeRepository implements
      */
     protected function selectCount(array $where = [])
     {
-        $result = $this->selectQuery($where)
-            ->resetSelect()
-            ->select([DB::expr('COUNT(*)'), 'total'])
-            ->execute($this->db());
-        return $result->get('total') ?: 0;
+        return $this->selectQuery($where)->count();
     }
 
     /**
      * Return a SELECT query, optionally with preconditions.
      * @param  Array $where optional hash of conditions
-     * @return Database_Query_Builder_Select
+     * @return \Illuminate\Database\Query\Builder
      */
     protected function selectQuery(array $where = [])
     {
-        $query = DB::select($this->getTable() . '.*')->from($this->getTable());
+        $query = $this->db()->table($this->getTable());
         foreach ($where as $column => $value) {
-            $predicate = is_array($value) ? 'IN' : '=';
-            $query->where($column, $predicate, $value);
+            if (is_array($value)) {
+                $query->whereIn($column, $value);
+            } else {
+                $query->where($column, '=', $value);
+            }
         }
         return $query;
     }
@@ -253,12 +246,7 @@ abstract class OhanzeeRepository implements
             ));
         }
 
-        $query = DB::insert($this->getTable())
-            ->columns(array_keys($input))
-            ->values(array_values($input));
-
-        list($id) = $query->execute($this->db());
-        return $id;
+        return $this->db()->table($this->getTable())->insertGetId($input);
     }
 
     /**
@@ -286,13 +274,16 @@ abstract class OhanzeeRepository implements
             return 0; // nothing would be updated, just ignore
         }
 
-        $query = DB::update($this->getTable())->set($input);
+        $query = $this->db()->table($this->getTable());
         foreach ($where as $column => $value) {
-            $query->where($column, '=', $value);
+            if (is_array($value)) {
+                $query->whereIn($column, $value);
+            } else {
+                $query->where($column, '=', $value);
+            }
         }
 
-        $count = $query->execute($this->db());
-        return $count;
+        return $query->update($input);
     }
 
     /**
@@ -310,15 +301,16 @@ abstract class OhanzeeRepository implements
             ));
         }
 
-        $query = DB::delete($this->getTable());
+        $query = $this->db()->table($this->getTable());
         foreach ($where as $column => $value) {
-            $predicate = is_array($value) ? 'IN' : '=';
-            $query->where($column, $predicate, $value);
+            if (is_array($value)) {
+                $query->whereIn($column, $value);
+            } else {
+                $query->where($column, '=', $value);
+            }
         }
 
-        $count = $query->execute($this->db());
-
-        return $count;
+        return $query->delete();
     }
 
 
@@ -329,8 +321,6 @@ abstract class OhanzeeRepository implements
      */
     public function exists($id)
     {
-        return (bool) $this->selectCount([
-            $this->getTable() . '.id' => $id
-        ]);
+        return (bool) $this->selectCount(['id' => $id]);
     }
 }

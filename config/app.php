@@ -154,6 +154,7 @@ return [
         StreetSignal\Authzn\ServiceProvider::class,
         StreetSignal\Multisite\MultisiteServiceProvider::class,
         StreetSignal\DataSource\DataSourceServiceProvider::class,
+        StreetSignal\Addons\Infobip\LaravelServiceProvider::class,
 
         /*
          * Application Service Providers...

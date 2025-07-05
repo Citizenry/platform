@@ -19,7 +19,7 @@ class ClientRepository extends LaravelPassportClientRepository
      */
     public function find($id)
     {
-        return Client::find($id);
+        return Client::where('id', $id)->first();
     }
 
     /**
@@ -211,5 +211,40 @@ class ClientRepository extends LaravelPassportClientRepository
         $client->tokens()->update(['revoked' => true]);
 
         $client->forceFill(['revoked' => true])->save();
+    }
+    /**
+     * Determine if the given client's secret is valid.
+     *
+     * @param  string  $clientId
+     * @param  string  $clientSecret
+     * @return bool
+     */
+    public function validateSecret($clientId, $clientSecret)
+    {
+        // Add logging to trace OAuth flow
+        error_log("=== validateSecret called ===");
+        error_log("Client ID: " . $clientId);
+        error_log("Client Secret: " . $clientSecret);
+        
+        $client = $this->find($clientId);
+        
+        if (!$client) {
+            error_log("Client not found!");
+            return false;
+        }
+        
+        if ($client->revoked) {
+            error_log("Client is revoked!");
+            return false;
+        }
+        
+        error_log("Client found - Secret: " . $client->secret);
+        error_log("Password client: " . ($client->password_client ? 'Yes' : 'No'));
+        
+        // Use plain text comparison since Passport::hashClientSecrets(false) is set
+        $result = hash_equals($client->secret, $clientSecret);
+        error_log("validateSecret result: " . ($result ? 'true' : 'false'));
+        
+        return $result;
     }
 }

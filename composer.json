@@ -96,12 +96,13 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+            
+        ]
         },
         "merge-plugin": {
             "include": [
-                "src/StreetSignal/*/composer.json",
-                "src/StreetSignal/**/*/composer.json"
+                "src/StreetSignal/Modules/*/composer.json"
             ],
             "require": [],
             "recurse": true,

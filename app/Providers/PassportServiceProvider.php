@@ -11,18 +11,28 @@ use Laravel\Passport\ClientRepository as LaravelPassportClientRepository;
 use Laravel\Passport\Bridge\UserRepository as LaravelPassportUserRepository;
 use Laravel\Passport\PassportServiceProvider as LaravelPassportServiceProvider;
 use Laravel\Passport\Bridge\RefreshTokenRepository as LaravelPassportRefreshTokenRepository;
+use Laravel\Passport\Passport;
+use Illuminate\Support\Facades\Route;
 
 class PassportServiceProvider extends LaravelPassportServiceProvider
 {
     /**
-     * Bootstrap the application services.
+     * Register the application services.
      *
      * @return void
      */
-    public function boot()
+    public function register()
     {
+        parent::register();
+        
+
         $this->app->bind(
             LaravelPassportClientRepository::class,
+            \App\Passport\ClientRepository::class
+        );
+
+        $this->app->bind(
+            \League\OAuth2\Server\Repositories\ClientRepositoryInterface::class,
             \App\Passport\ClientRepository::class
         );
 
@@ -35,7 +45,15 @@ class PassportServiceProvider extends LaravelPassportServiceProvider
             LaravelPassportRefreshTokenRepository::class,
             \App\Passport\RefreshTokenRepository::class
         );
+    }
 
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
         parent::boot();
     }
 
@@ -53,7 +71,7 @@ class PassportServiceProvider extends LaravelPassportServiceProvider
                 $this->app->make(UserRepository::class),
                 // Auth::createUserProvider($config['provider']),
                 $this->app->make(TokenRepository::class),
-                $this->app->make(LaravelPassportClientRepository::class),
+                $this->app->make(\League\OAuth2\Server\Repositories\ClientRepositoryInterface::class),
                 $this->app->make('encrypter')
             ))->user($request);
         }, $this->app['request']);

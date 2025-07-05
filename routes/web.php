@@ -17,3 +17,6 @@ Route::get('/', "IndexController@index");
 
 // Migration
 // Route::get('/migrate', 'MigrateController@migrate');
+
+
+

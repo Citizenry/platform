@@ -12,7 +12,7 @@
 
 namespace StreetSignal\Modules\V3\Repository;
 
-use Ohanzee\DB;
+use Illuminate\Support\Facades\DB;
 use StreetSignal\Contracts\Entity;
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Entity\Role;
@@ -29,36 +29,33 @@ class RoleRepository extends OhanzeeRepository implements
 
     protected function getPermissions($role)
     {
-        return DB::select('permission')->from('roles_permissions')
+        return DB::table('roles_permissions')
                 ->where('role', '=', $role)
-                ->execute($this->db())
-                ->as_array(null, 'permission');
+                ->pluck('permission')
+                ->toArray();
     }
 
     protected function updatePermissions($role, $permissions)
     {
         $current_permissions = $this->getPermissions($role);
 
-        $insert_query = DB::insert('roles_permissions', ['role', 'permission']);
-
         $new_permissions = array_diff($permissions, $current_permissions);
 
         foreach ($new_permissions as $permission) {
-            $insert_query->values([$role, $permission]);
-        }
-
-        if ($new_permissions) {
-            $insert_query->execute($this->db());
+            DB::table('roles_permissions')->insert([
+                'role' => $role,
+                'permission' => $permission
+            ]);
         }
 
         // Remove permissions that are no longer needed
         $discarded_permissions = array_diff($current_permissions, $permissions);
 
         if ($discarded_permissions) {
-            DB::delete('roles_permissions')
-                ->where('permission', 'IN', $discarded_permissions)
+            DB::table('roles_permissions')
                 ->where('role', '=', $role)
-                ->execute($this->db());
+                ->whereIn('permission', $discarded_permissions)
+                ->delete();
         }
     }
 

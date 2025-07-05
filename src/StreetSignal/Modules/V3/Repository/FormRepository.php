@@ -12,7 +12,6 @@
 
 namespace StreetSignal\Modules\V3\Repository;
 
-use Ohanzee\DB;
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Entity\Form;
 use StreetSignal\Core\Concerns\Event;
@@ -83,10 +82,6 @@ class FormRepository extends OhanzeeRepository implements
     {
         $this->checkAutoIncMode();
 
-        $first = $collection->first()->asArray();
-        unset($first['can_create'], $first['tags']);
-        $columns = array_keys($first);
-
         $values = $collection->map(function ($entity) {
             $data = $entity->asArray();
 
@@ -96,14 +91,15 @@ class FormRepository extends OhanzeeRepository implements
             return $data;
         })->all();
 
-        $query = DB::insert($this->getTable())
-            ->columns($columns);
+        $insertId = $this->db()->table($this->getTable())->insertGetId($values[0]);
+        
+        // For multiple inserts, we need to handle them individually to get proper IDs
+        $ids = [$insertId];
+        for ($i = 1; $i < count($values); $i++) {
+            $ids[] = $this->db()->table($this->getTable())->insertGetId($values[$i]);
+        }
 
-        call_user_func_array([$query, 'values'], $values);
-
-        list($insertId, $created) = $query->execute($this->db());
-
-        return range($insertId, $insertId + $created - 1);
+        return $ids;
     }
 
     // UpdateRepository
@@ -144,13 +140,12 @@ class FormRepository extends OhanzeeRepository implements
       */
     public function isTypeHidden($form_id, $type)
     {
-        $query = DB::select($type)
-            ->from('forms')
-            ->where('id', '=', $form_id);
+        $result = $this->db()->table('forms')
+            ->select($type)
+            ->where('id', '=', $form_id)
+            ->first();
 
-        $results = $query->execute($this->db())->as_array();
-
-        return count($results) > 0 ? $results[0][$type] : false;
+        return $result ? $result->$type : false;
     }
 
     /**
@@ -160,24 +155,22 @@ class FormRepository extends OhanzeeRepository implements
      */
     public function getRolesThatCanCreatePosts($form_id)
     {
-        $query = DB::select('forms.everyone_can_create', 'roles.name')
-            ->distinct(true)
-            ->from('forms')
-            ->join('form_roles', 'LEFT')
-            ->on('forms.id', '=', 'form_roles.form_id')
-            ->join('roles', 'LEFT')
-            ->on('roles.id', '=', 'form_roles.role_id')
-            ->where('forms.id', '=', $form_id);
+        $results = $this->db()->table('forms')
+            ->select('forms.everyone_can_create', 'roles.name')
+            ->distinct()
+            ->leftJoin('form_roles', 'forms.id', '=', 'form_roles.form_id')
+            ->leftJoin('roles', 'roles.id', '=', 'form_roles.role_id')
+            ->where('forms.id', '=', $form_id)
+            ->get()
+            ->toArray();
 
-        $results =  $query->execute($this->db())->as_array();
-
-        $everyone_can_create = (count($results) == 0 ? 1 : $results[0]['everyone_can_create']);
+        $everyone_can_create = (count($results) == 0 ? 1 : $results[0]->everyone_can_create);
 
         $roles = [];
 
         foreach ($results as $role) {
-            if (!is_null($role['name'])) {
-                $roles[] = $role['name'];
+            if (!is_null($role->name)) {
+                $roles[] = $role->name;
             }
         }
 
@@ -192,25 +185,23 @@ class FormRepository extends OhanzeeRepository implements
      */
     public function getAllFormStagesAttributes(array $form_ids = []): Collection
     {
-        $query = DB::select(
-            ['forms.id', 'form_id'],
-            ['form_stages.id', 'form_stage_id'],
-            'form_attributes.*'
-        )
-            ->from('forms')
-            ->join('form_stages')
-            ->on('forms.id', '=', 'form_stages.form_id')
-            ->join('form_attributes')
-            ->on('form_stages.id', '=', 'form_attributes.form_stage_id')
-            ->order_by('form_stages.id')
-            ->order_by('form_stages.priority')
-            ->order_by('form_attributes.priority');
+        $query = $this->db()->table('forms')
+            ->select(
+                'forms.id as form_id',
+                'form_stages.id as form_stage_id',
+                'form_attributes.*'
+            )
+            ->join('form_stages', 'forms.id', '=', 'form_stages.form_id')
+            ->join('form_attributes', 'form_stages.id', '=', 'form_attributes.form_stage_id')
+            ->orderBy('form_stages.id')
+            ->orderBy('form_stages.priority')
+            ->orderBy('form_attributes.priority');
 
         if (!empty($form_ids)) {
-            $query->where('forms.id', 'IN', $form_ids);
+            $query->whereIn('forms.id', $form_ids);
         }
 
-        $results = $query->execute($this->db())->as_array();
+        $results = $query->get()->toArray();
 
         return new Collection($results);
     }

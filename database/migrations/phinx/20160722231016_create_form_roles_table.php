@@ -7,8 +7,8 @@ class CreateFormRolesTable extends AbstractMigration
     public function change()
     {
         $this->table('form_roles')
-            ->addColumn('form_id', 'integer', ['null' => false])
-            ->addColumn('role_id', 'integer', ['null' => false])
+            ->addColumn('form_id', 'integer', ['null' => false, 'signed' => false])
+            ->addColumn('role_id', 'integer', ['null' => false, 'signed' => false])
             ->addForeignKey('form_id', 'forms', 'id', ['delete'=> 'CASCADE', 'update'=> 'CASCADE'])
             ->addForeignKey('role_id', 'roles', 'id', ['delete'=> 'CASCADE', 'update'=> 'CASCADE'])
             ->create()

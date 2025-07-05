@@ -14,7 +14,7 @@
 
 namespace StreetSignal\Modules\V3\Repository;
 
-use Ohanzee\DB;
+use DB;
 use Illuminate\Support\Str;
 use StreetSignal\Contracts\Entity;
 use StreetSignal\Contracts\Hasher;
@@ -76,12 +76,11 @@ class UserRepository extends OhanzeeRepository implements
         // Unfortunately there is a circular reference created if the Contact repo is
         // injected into the User repo to avoid this we access the table directly
         // NOTE: This creates a hard coded dependency on the table naming for contacts
-        $query = DB::select('*')->from('contacts')
-                    ->where('user_id', '=', $entity_id);
+        $results = $this->db()->table('contacts')
+                    ->where('user_id', '=', $entity_id)
+                    ->get();
 
-        $results = $query->execute($this->db());
-
-        return $results->as_array();
+        return $results->toArray();
     }
 
     // CreateRepository
@@ -133,13 +132,14 @@ class UserRepository extends OhanzeeRepository implements
             return $data;
         })->all();
 
-        $query = DB::insert($this->getTable())
-            ->columns($columns);
-
-        call_user_func_array([$query, 'values'], $values);
-
-        list($insertId, $created) = $query->execute($this->db());
-        $newIds = range($insertId, $insertId + $created - 1);
+        // For multiple inserts, we need to insert them one by one to get IDs
+        $newIds = [];
+        foreach ($values as $value) {
+            $newIds[] = $this->db()->table($this->getTable())->insertGetId($value);
+        }
+        $insertId = $newIds[0];
+        $created = count($values);
+        // Use the actual IDs we collected during insertion
 
         $contacts = collect($newIds)
             ->combine($collection)
@@ -190,14 +190,14 @@ class UserRepository extends OhanzeeRepository implements
         $table = $this->getTable();
 
         if ($search->q) {
-            $query->and_where_open();
-            $query->where('email', 'LIKE', "%" . $search->q . "%");
-            $query->or_where('realname', 'LIKE', "%" . $search->q . "%");
-            $query->and_where_close();
+            $query->where(function($q) use ($search) {
+                $q->where('email', 'LIKE', "%" . $search->q . "%")
+                  ->orWhere('realname', 'LIKE', "%" . $search->q . "%");
+            });
 
             // Adding search contacts
-            $query->join('contacts', 'left')->on("$table.id", '=', 'contacts.user_id')
-            ->or_where('contacts.contact', 'like', '%' . $search->q . '%');
+            $query->leftJoin('contacts', "$table.id", '=', 'contacts.user_id')
+                  ->orWhere('contacts.contact', 'like', '%' . $search->q . '%');
         }
 
         if ($search->role) {
@@ -206,7 +206,7 @@ class UserRepository extends OhanzeeRepository implements
                 $role = explode(',', $search->role);
             }
 
-            $query->where('role', 'IN', $role);
+            $query->whereIn('role', $role);
         }
 
         return $query;
@@ -248,10 +248,7 @@ class UserRepository extends OhanzeeRepository implements
         ];
 
         // Save the token
-        DB::insert('user_reset_tokens')
-            ->columns(array_keys($input))
-            ->values(array_values($input))
-            ->execute($this->db());
+        $this->db()->table('user_reset_tokens')->insert($input);
 
         return $token;
     }
@@ -259,13 +256,10 @@ class UserRepository extends OhanzeeRepository implements
     // ResetPasswordRepository
     public function isValidResetToken($token): bool
     {
-        $result = DB::select([DB::expr('COUNT(*)'), 'total'])
-            ->from('user_reset_tokens')
+        $count = $this->db()->table('user_reset_tokens')
             ->where('reset_token', '=', $token)
             ->where('created', '>', time() - 1800) // Expire tokens after less than 30 mins
-            ->execute($this->db());
-
-        $count = $result->get('total') ?: 0;
+            ->count();
 
         return $count !== 0;
     }
@@ -273,21 +267,23 @@ class UserRepository extends OhanzeeRepository implements
     // ResetPasswordRepository
     public function setPassword($token, $password)
     {
-        $sub = DB::select('user_id')
-            ->from('user_reset_tokens')
-            ->where('reset_token', '=', $token);
+        $userId = $this->db()->table('user_reset_tokens')
+            ->where('reset_token', '=', $token)
+            ->value('user_id');
 
-        $this->executeUpdate(['id' => $sub], [
-            'password' => $this->hasher->hash($password)
-        ]);
+        if ($userId) {
+            $this->executeUpdate(['id' => $userId], [
+                'password' => $this->hasher->hash($password)
+            ]);
+        }
     }
 
     // ResetPasswordRepository
     public function deleteResetToken($token)
     {
-        $result = DB::delete('user_reset_tokens')
+        $this->db()->table('user_reset_tokens')
             ->where('reset_token', '=', $token)
-            ->execute($this->db());
+            ->delete();
     }
 
     /**

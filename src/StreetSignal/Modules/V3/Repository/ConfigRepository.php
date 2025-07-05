@@ -11,8 +11,8 @@
 
 namespace StreetSignal\Modules\V3\Repository;
 
-use Ohanzee\DB;
-use Ohanzee\Database;
+use DB;
+use Database;
 use StreetSignal\Core\Concerns\Event;
 use StreetSignal\Contracts\Entity;
 use StreetSignal\Core\Tool\OhanzeeResolver;
@@ -84,13 +84,17 @@ class ConfigRepository implements
 
         $config = [];
         try {
-            $query = DB::select('config.*')
-                ->from('config')
+            $query = $this->db()->table('config')
+                ->select('group_name', 'config_key', 'config_value')
                 ->where('group_name', '=', $group)
-                ->execute($this->db());
+                ->get();
 
             if (count($query)) {
-                $config = $query->as_array('config_key', 'config_value');
+                $config = [];
+                foreach ($query as $row) {
+                    $row = (array) $row;
+                    $config[$row['config_key']] = $row['config_value'];
+                }
                 $config = array_map(function ($config_value) {
                     // Handle case where config_value is already an array
                     if (is_array($config_value)) {
@@ -99,7 +103,7 @@ class ConfigRepository implements
                     return json_decode($config_value, true);
                 }, $config);
             }
-        } catch (\Ohanzee\Database\Exception $e) {
+        } catch (\Exception $e) {
             // If error was NOT because table doesn't exist
             if (!preg_match("/Table '.*' doesn't exist/", $e->getMessage())) {
                 // Throw the error again
@@ -201,24 +205,17 @@ class ConfigRepository implements
     {
         $group = $entity->getId();
 
-        DB::delete('config')->where('group_name', '=', $group)->execute($this->db());
+        $this->db()->table('config')->where('group_name', '=', $group)->delete();
     }
 
     private function insertOrUpdate($group, $key, $value)
     {
         $value = json_encode($value);
 
-        DB::query(Database::INSERT, "
-			INSERT INTO `config`
-			(`group_name`, `config_key`, `config_value`) VALUES (:group, :key, :value)
-			ON DUPLICATE KEY UPDATE `config_value` = :value;
-		")
-        ->parameters([
-            ':group' => $group,
-            ':key' => $key,
-            ':value' => $value
-        ])
-        ->execute($this->db());
+        $this->db()->table('config')->updateOrInsert(
+            ['group_name' => $group, 'config_key' => $key],
+            ['config_value' => $value]
+        );
     }
 
     // ConfigRepository

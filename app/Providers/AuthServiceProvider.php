@@ -34,8 +34,13 @@ class AuthServiceProvider extends ServiceProvider
         Passport::tokensExpireIn(Carbon::now()->addHours(15));
         Passport::refreshTokensExpireIn(Carbon::now()->addDays(7));
 
-        // Register routes
-        $this->passportRoutes();
+        // Set passport key path
+        Passport::loadKeysFrom(storage_path('passport/'));
+
+        // Do not hash client secrets
+        Passport::hashClientSecrets(false);
+
+        
     }
 
     /**
@@ -48,6 +53,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         // Here you may define how you wish users to be authenticated for your Lumen
+        $this->passportRoutes();
         // application. The callback which receives the incoming request instance
         // should return either a User instance or null. You're free to obtain
         // the User instance via an API token or any other method necessary.
@@ -57,9 +63,6 @@ class AuthServiceProvider extends ServiceProvider
         //         return User::where('api_token', $request->input('api_token'))->first();
         //     }
         // });
-
-        // Set passport key path
-        Passport::loadKeysFrom(storage_path('passport/'));
 
         // Define passport scopes
         $this->defineScopes();

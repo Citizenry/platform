@@ -25,7 +25,7 @@ class MediaCollection extends ResourceCollection
         return $this->collection;
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->collection);
     }
