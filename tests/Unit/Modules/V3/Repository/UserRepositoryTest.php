@@ -19,35 +19,17 @@ class UserRepositoryTest extends TestCase
 
     public function testGetResetToken()
     {
-        $db = M::mock(\Ohanzee\Database::class);
+        $db = M::mock(\Illuminate\Database\Connection::class);
         $resolver = M::mock(\StreetSignal\Core\Tool\OhanzeeResolver::class);
         $resolver->shouldReceive('connection')->andReturn($db);
 
         $repo = new UserRepository($resolver);
         $user = new User(['id' => 1]);
 
-        $db->shouldReceive('quote_table')->with('user_reset_tokens')->andReturn('`user_reset_tokens`');
-        $db->shouldReceive('quote_column')->with('reset_token')->andReturn('`reset_token`');
-        $db->shouldReceive('quote_column')->with('user_id')->andReturn('`user_id`');
-        $db->shouldReceive('quote_column')->with('created')->andReturn('`created`');
-        $db->shouldReceive('quote')
-            ->with(M::any())
-            ->andReturnUsing(function ($data) {
-                if (is_string($data)) {
-                    return "\"$data\"";
-                }
-
-                return $data;
-            });
-        $db->shouldReceive('query')
-        ->with(
-            \Ohanzee\Database::INSERT,
-            \Hamcrest\Matchers::matchesPattern(
-                '/INSERT INTO `user_reset_tokens` \(`reset_token`, `user_id`, `created`\) VALUES \("(.*?)", 1, (.*?)\)/'
-            ),
-            false,
-            []
-        );
+        // Mock Laravel's query builder chain
+        $queryBuilder = M::mock(\Illuminate\Database\Query\Builder::class);
+        $db->shouldReceive('table')->with('user_reset_tokens')->andReturn($queryBuilder);
+        $queryBuilder->shouldReceive('insert')->andReturn(true);
 
         $token = $repo->getResetToken($user);
 

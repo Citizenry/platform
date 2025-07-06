@@ -14,9 +14,9 @@ namespace StreetSignal\Modules\V3\Repository\HXL;
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Entity\HXL\HXLMetadata;
 use StreetSignal\Contracts\Repository\Entity\HXLMetadataRepository as HXLMetadataRepositoryContract;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 
-class HXLMetadataRepository extends OhanzeeRepository implements
+class HXLMetadataRepository extends BaseRepository implements
     HXLMetadataRepositoryContract
 {
     // OhanzeeRepository

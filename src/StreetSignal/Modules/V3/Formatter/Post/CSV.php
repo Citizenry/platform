@@ -14,7 +14,7 @@ namespace StreetSignal\Modules\V3\Formatter\Post;
 
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Tool\FileData;
-use League\Flysystem\Util\MimeType;
+use League\MimeTypeDetection\FinfoMimeTypeDetector;
 use StreetSignal\Modules\V3\Formatter\API;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
@@ -368,18 +368,19 @@ class CSV extends API
 
         $extension = pathinfo($filepath, PATHINFO_EXTENSION);
 
-        $mimeType = MimeType::detectByFileExtension($extension) ?: 'text/plain';
+        $detector = new FinfoMimeTypeDetector();
+        $mimeType = $detector->detectMimeTypeFromPath($filepath) ?: 'text/plain';
 
         $config = ['mimetype' => $mimeType];
 
-        $this->fs->putStream($filepath, $stream, $config);
+        $this->fs->writeStream($filepath, $stream, $config);
 
         if (is_resource($stream)) {
             fclose($stream);
         }
 
-        $size = $this->fs->getSize($filepath);
-        $type = $this->fs->getMimetype($filepath);
+        $size = $this->fs->fileSize($filepath);
+        $type = $this->fs->mimeType($filepath);
 
         return new FileData([
             'file' => $filepath,

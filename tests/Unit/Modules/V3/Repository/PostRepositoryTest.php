@@ -6,7 +6,7 @@ use Faker;
 use Ohanzee\DB;
 use Mockery as M;
 use StreetSignal\Tests\TestCase;
-use Ohanzee\Database;
+use Illuminate\Database\Connection;
 use Aura\Di\Injection\Factory;
 use StreetSignal\Core\Entity\Post;
 use StreetSignal\Core\Entity\User;
@@ -62,6 +62,20 @@ class PostRepositoryTest extends TestCase
     {
         $faker = Faker\Factory::create();
 
+        $repo = service('repository.post');
+        
+        // Inject the test's database connection directly into the repository's resolver
+        $repoReflection = new \ReflectionClass($repo);
+        $resolverProperty = $repoReflection->getProperty('resolver');
+        $resolverProperty->setAccessible(true);
+        $resolver = $resolverProperty->getValue($repo);
+        
+        // Use reflection to inject the test's database connection into the resolver
+        $resolverReflection = new \ReflectionClass($resolver);
+        $connectionProperty = $resolverReflection->getProperty('connection');
+        $connectionProperty->setAccessible(true);
+        $connectionProperty->setValue($resolver, $this->database);
+        
         // Generate post data
         $post1 = new Post([
             'title' => $faker->sentence,
@@ -112,7 +126,6 @@ class PostRepositoryTest extends TestCase
             ]
         ]);
 
-        $repo = service('repository.post');
         $inserted = $repo->createMany(collect([
             $post1,
             $post2,
@@ -181,6 +194,20 @@ class PostRepositoryTest extends TestCase
     {
         $faker = Faker\Factory::create();
 
+        $repo = service('repository.post');
+        
+        // Inject the test's database connection directly into the repository's resolver
+        $repoReflection = new \ReflectionClass($repo);
+        $resolverProperty = $repoReflection->getProperty('resolver');
+        $resolverProperty->setAccessible(true);
+        $resolver = $resolverProperty->getValue($repo);
+        
+        // Use reflection to inject the test's database connection into the resolver
+        $resolverReflection = new \ReflectionClass($resolver);
+        $connectionProperty = $resolverReflection->getProperty('connection');
+        $connectionProperty->setAccessible(true);
+        $connectionProperty->setValue($resolver, $this->database);
+
         // Generate post data
         $post1 = new Post([
             'title' => $faker->sentence,
@@ -230,7 +257,6 @@ class PostRepositoryTest extends TestCase
             ]
         ]);
 
-        $repo = service('repository.post');
         $inserted = $repo->createMany(collect([
             $post1,
             $post2
@@ -286,10 +312,29 @@ class PostRepositoryTest extends TestCase
     public function doTestSetSearchParams($canManagePosts, $limitPosts, $expectedLimit = null)
     {
         // we don't need to test anything but the LIMIT on the end of the sql so mock everything else in the db
-        $db = M::mock(Database::class);
-        $db->shouldReceive('quote_column');
-        $db->shouldReceive('quote_table');
-        $db->shouldReceive('quote');
+        $db = M::mock(Connection::class);
+        $grammar = M::mock('Illuminate\Database\Query\Grammars\Grammar');
+        $processor = M::mock('Illuminate\Database\Query\Processors\Processor');
+        $queryBuilder = M::mock('Illuminate\Database\Query\Builder');
+        
+        $db->shouldReceive('getQueryGrammar')->andReturn($grammar);
+        $db->shouldReceive('getPostProcessor')->andReturn($processor);
+        $db->shouldReceive('table')->andReturn($queryBuilder);
+        
+        $fakeLimit = 10000; // this limit should be overridden if limitPosts
+        
+        // Mock all the query builder methods that might be called
+        $queryBuilder->shouldReceive('join')->andReturn($queryBuilder);
+        $queryBuilder->shouldReceive('leftJoin')->andReturn($queryBuilder);
+        $queryBuilder->shouldReceive('on')->andReturn($queryBuilder);
+        $queryBuilder->shouldReceive('select')->andReturn($queryBuilder);
+        $queryBuilder->shouldReceive('where')->andReturn($queryBuilder);
+        $queryBuilder->shouldReceive('whereIn')->andReturn($queryBuilder);
+        $queryBuilder->shouldReceive('orderBy')->andReturn($queryBuilder);
+        $queryBuilder->shouldReceive('limit')->andReturn($queryBuilder);
+        $queryBuilder->shouldReceive('offset')->andReturn($queryBuilder);
+        $queryBuilder->shouldReceive('groupBy')->andReturn($queryBuilder);
+        $queryBuilder->shouldReceive('compile')->with($db)->andReturn('SELECT * FROM posts LIMIT ' . ($expectedLimit ?? $fakeLimit));
         $resolver = M::mock(OhanzeeResolver::class);
         $resolver->shouldReceive('connection')->andReturn($db);
         $form_attribute_repo = M::mock(FormAttributeRepository::class);
@@ -325,7 +370,6 @@ class PostRepositoryTest extends TestCase
         $repo->setPostPermissions($postPermissions);
 
         $search = M::Mock(SearchData::class);
-        $fakeLimit = 10000; // this limit should be overridden if limitPosts
         $search->shouldReceive('getSorting')->andReturn(['limit' => $fakeLimit]);
         $search->shouldReceive('getFilter')->with('limitPosts')->andReturn($limitPosts)->once();
         $search->shouldReceive('getFilter'); // we only care about limitPosts

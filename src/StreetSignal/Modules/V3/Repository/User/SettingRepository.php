@@ -16,9 +16,9 @@ use StreetSignal\Contracts\Entity;
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Entity\UserSetting;
 use StreetSignal\Contracts\Repository\Entity\UserSettingRepository as UserSettingRepositoryContract;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 
-class SettingRepository extends OhanzeeRepository implements
+class SettingRepository extends BaseRepository implements
     UserSettingRepositoryContract
 {
     // OhanzeeRepository

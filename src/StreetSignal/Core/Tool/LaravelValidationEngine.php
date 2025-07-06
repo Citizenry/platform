@@ -126,18 +126,36 @@ class LaravelValidationEngine implements ValidationEngine
                     $object = $ruleName[0];
                     $method = $ruleName[1];
                     
+                    // Set current field value for parameter resolution
+                    if (isset($this->data[$field])) {
+                        $this->setCurrentFieldValue($this->data[$field]);
+                    }
+                    
                     // Call the custom validation method
                     $result = call_user_func_array([$object, $method], $this->resolveParams($params));
                     
                     // If validation fails, the method should have already added errors
-                    if ($result === false) {
-                        continue;
-                    }
+                    // Skip adding this as a Laravel validation rule since it's custom
+                    continue;
                 } else {
                     // Standard validation rule
                     if (!empty($params)) {
                         $resolvedParams = $this->resolveParams($params);
-                        $this->rules[$field][] = $ruleName . ':' . implode(',', array_slice($resolvedParams, 1));
+                        $paramValues = array_slice($resolvedParams, 1);
+                        
+                        // Filter out non-scalar values and convert to strings
+                        $stringParams = [];
+                        foreach ($paramValues as $param) {
+                            if (is_scalar($param) || is_null($param)) {
+                                $stringParams[] = (string)$param;
+                            } elseif (is_array($param)) {
+                                $stringParams[] = json_encode($param);
+                            } else {
+                                $stringParams[] = 'object';
+                            }
+                        }
+                        
+                        $this->rules[$field][] = $ruleName . ':' . implode(',', $stringParams);
                     } else {
                         $this->rules[$field][] = $ruleName;
                     }

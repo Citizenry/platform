@@ -292,7 +292,7 @@ final class RackspaceAdapter extends AbstractAdapter
     /**
      * {@inheritdoc}
      */
-    public function getSize($path)
+    public function fileSize($path)
     {
         return $this->getMetadata($path);
     }
@@ -300,7 +300,7 @@ final class RackspaceAdapter extends AbstractAdapter
     /**
      * {@inheritdoc}
      */
-    public function getMimetype($path)
+    public function mimeType($path)
     {
         return $this->getMetadata($path);
     }

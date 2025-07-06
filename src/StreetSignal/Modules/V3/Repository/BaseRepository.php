@@ -21,7 +21,7 @@ use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Tool\OhanzeeResolver;
 use StreetSignal\Core\Concerns\CollectionLoader;
 
-abstract class OhanzeeRepository implements
+abstract class BaseRepository implements
     Repository\CreateRepository,
     Repository\ReadRepository,
     Repository\UpdateRepository,

@@ -20,10 +20,10 @@ use StreetSignal\Contracts\Repository\Entity\FormStageRepository as FormStageRep
 use StreetSignal\Contracts\Repository\Entity\FormRepository as FormRepositoryContract;
 use StreetSignal\Core\Concerns\UserContext;
 use StreetSignal\Core\Tool\Permissions\InteractsWithFormPermissions;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 use StreetSignal\Contracts\Search;
 
-class StageRepository extends OhanzeeRepository implements
+class StageRepository extends BaseRepository implements
     FormStageRepositoryContract
 {
     use UserContext;
@@ -99,9 +99,9 @@ class StageRepository extends OhanzeeRepository implements
         $sorting = $search->getSorting();
 
         if (!empty($sorting['orderby'])) {
-            $this->search_query->order_by(
+            $this->search_query->orderBy(
                 $this->getTable() . '.' . $sorting['orderby'],
-                isset($sorting['order']) ? $sorting['order'] : null
+                isset($sorting['order']) ? $sorting['order'] : 'ASC'
             );
         }
 
@@ -134,22 +134,21 @@ class StageRepository extends OhanzeeRepository implements
 
     public function getFormByStageId($id)
     {
-        $query = DB::select('form_id')
-                ->from('form_stages')
-                ->where('id', '=', $id);
+        $result = $this->db()->table('form_stages')
+                ->select('form_id')
+                ->where('id', '=', $id)
+                ->first();
 
-        $results = $query->execute($this->db());
-
-        return count($results) > 0 ? $results[0]['form_id'] : false;
+        return $result ? $result->form_id : false;
     }
 
     // FormStageRepository
     public function getByForm($form_id)
     {
-        $query = $this->selectQuery(compact($form_id), $form_id);
-        $results = $query->execute($this->db());
+        $query = $this->selectQuery(['form_id' => $form_id], $form_id);
+        $results = $query->get();
 
-        return $this->getCollection($results->as_array());
+        return $this->getCollection($results->toArray());
     }
 
     /**
@@ -162,27 +161,29 @@ class StageRepository extends OhanzeeRepository implements
     {
             $stages = [];
 
-            $query = DB::select('id')
-                    ->from('form_stages')
+            $query = $this->db()->table('form_stages')
+                    ->select('id')
                     ->where('form_id', '=', $form_id);
 
         if ($post_status === 'published') {
             $query->where('show_when_published', '=', 0);
         } else {
-            $query->and_where_open()
-            ->where('show_when_published', '=', 0)
-            ->or_where('task_is_internal_only', '=', 1)
-            ->and_where_close();
+            $query->where(function($q) {
+                $q->where('show_when_published', '=', 0)
+                  ->orWhere('task_is_internal_only', '=', 1);
+            });
         }
 
-            $results = $query->execute($this->db())->as_array();
+            $results = $query->get();
 
         foreach ($results as $stage) {
-            array_push($stages, $stage['id']);
+            array_push($stages, $stage->id);
         }
 
             return $stages;
     }
+
+    // FormStageRepository</search>
 
     // FormStageRepository
     public function existsInForm($id, $form_id)
@@ -199,9 +200,9 @@ class StageRepository extends OhanzeeRepository implements
             ], $form_id)
             ->select('form_stages.*');
 
-        $results = $query->execute($this->db());
+        $results = $query->get();
 
-        return $this->getCollection($results->as_array());
+        return $this->getCollection($results->toArray());
     }
 
     // FormStageRepository

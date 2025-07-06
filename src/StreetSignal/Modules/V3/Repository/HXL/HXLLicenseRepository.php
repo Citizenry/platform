@@ -15,9 +15,9 @@ namespace StreetSignal\Modules\V3\Repository\HXL;
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Entity\HXL\HXLLicense;
 use StreetSignal\Contracts\Repository\Entity\HXLLicenseRepository as HXLLicenseRepositoryContract;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 
-class HXLLicenseRepository extends OhanzeeRepository implements
+class HXLLicenseRepository extends BaseRepository implements
     HXLLicenseRepositoryContract
 {
     // OhanzeeRepository

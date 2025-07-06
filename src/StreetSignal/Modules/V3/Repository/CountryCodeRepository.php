@@ -18,7 +18,7 @@ use StreetSignal\Contracts\Repository\ReadRepository;
 use StreetSignal\Contracts\Repository\SearchRepository;
 use StreetSignal\Contracts\Repository\Entity\CountryCodeRepository as CountryCodeRepositoryContract;
 
-class CountryCodeRepository extends OhanzeeRepository implements
+class CountryCodeRepository extends BaseRepository implements
     CountryCodeRepositoryContract,
     ReadRepository,
     SearchRepository

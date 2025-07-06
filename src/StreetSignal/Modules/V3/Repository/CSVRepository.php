@@ -18,7 +18,7 @@ use StreetSignal\Core\Entity\CSV;
 use StreetSignal\Contracts\Repository\Entity\CSVRepository as CSVRepositoryContract;
 use StreetSignal\Core\Concerns\Event;
 
-class CSVRepository extends OhanzeeRepository implements
+class CSVRepository extends BaseRepository implements
     CSVRepositoryContract
 {
 

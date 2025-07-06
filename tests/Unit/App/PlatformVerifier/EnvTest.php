@@ -51,6 +51,10 @@ class EnvTest extends TestCase
         $envCheckerMock->shouldReceive('envExists')
             ->andReturn(true);
 
+        // Mock isMissingEnvKey to return false for all required keys
+        $envCheckerMock->shouldReceive('isMissingEnvKey')
+            ->andReturn(false);
+
         $result = $envCheckerMock->verifyRequirements(false);
 
         $this->assertEquals(['success' => [
@@ -70,9 +74,14 @@ class EnvTest extends TestCase
         $envCheckerMock->shouldReceive('envExists')
             ->andReturn(true);
 
+        // Set specific expectation first
         $envCheckerMock->shouldReceive('isMissingEnvKey')
             ->with('DB_CONNECTION')
             ->andReturn(true);
+        
+        // Then set general expectation for all other keys
+        $envCheckerMock->shouldReceive('isMissingEnvKey')
+            ->andReturn(false);
 
         $result = $envCheckerMock->verifyRequirements(false);
 
@@ -92,6 +101,7 @@ class EnvTest extends TestCase
         $envCheckerMock->shouldReceive('envExists')
             ->andReturn(true);
 
+        // Set specific expectations first
         $envCheckerMock->shouldReceive('isMissingEnvKey')
             ->with('DB_CONNECTION')
             ->andReturn(true);
@@ -99,6 +109,10 @@ class EnvTest extends TestCase
         $envCheckerMock->shouldReceive('isMissingEnvKey')
             ->with('DB_USERNAME')
             ->andReturn(true);
+
+        // Then set general expectation for all other keys
+        $envCheckerMock->shouldReceive('isMissingEnvKey')
+            ->andReturn(false);
 
         $result = $envCheckerMock->verifyRequirements(false);
         $this->assertEquals(['errors' => [

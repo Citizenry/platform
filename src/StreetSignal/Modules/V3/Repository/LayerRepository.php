@@ -16,7 +16,7 @@ use StreetSignal\Contracts\Entity;
 use StreetSignal\Core\Entity\Layer;
 use StreetSignal\Core\Tool\SearchData;
 
-class LayerRepository extends OhanzeeRepository
+class LayerRepository extends BaseRepository
 {
     // Use the JSON transcoder to encode properties
     use Concerns\JsonTranscode;

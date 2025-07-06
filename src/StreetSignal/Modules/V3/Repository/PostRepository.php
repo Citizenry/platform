@@ -13,7 +13,6 @@
 namespace StreetSignal\Modules\V3\Repository;
 
 use Ohanzee\DB;
-use Ohanzee\Database;
 use StreetSignal\Contracts\Entity;
 use StreetSignal\Core\Entity\Post;
 use StreetSignal\Core\Entity\Media;
@@ -36,7 +35,7 @@ use StreetSignal\Contracts\Repository\Entity\FormStageRepository as FormStageRep
 use StreetSignal\Contracts\Repository\Entity\FormAttributeRepository as FormAttributeRepositoryContract;
 use StreetSignal\Contracts\Search;
 
-class PostRepository extends OhanzeeRepository implements
+class PostRepository extends BaseRepository implements
     PostRepositoryContract,
     UpdatePostRepository,
     SetPostRepository
@@ -370,7 +369,7 @@ class PostRepository extends OhanzeeRepository implements
 
         if (!empty($sorting['orderby'])) {
             $order = isset($sorting['order']) ? strtoupper($sorting['order']) : 'ASC';
-            $this->search_query->order_by(
+            $this->search_query->orderBy(
                 $this->getTable() . '.' . $sorting['orderby'],
                 ($order == 'DESC' ? 'DESC' : 'ASC')
             );
@@ -1032,12 +1031,12 @@ class PostRepository extends OhanzeeRepository implements
         // .. Add orderby time *after* order by groups
         if ($search->timeline) {
             // Order by label, then time
-            $this->search_query->order_by('label');
-            $this->search_query->order_by('time_label');
+            $this->search_query->orderBy('label');
+            $this->search_query->orderBy('time_label');
         } else {
             // Order by count, then label
-            $this->search_query->order_by('total', 'DESC');
-            $this->search_query->order_by('label');
+            $this->search_query->orderBy('total', 'DESC');
+            $this->search_query->orderBy('label');
         }
 
         // Fetch the results and...
@@ -1306,16 +1305,21 @@ class PostRepository extends OhanzeeRepository implements
             return $data;
         })->all();
 
-        $query = DB::insert($this->getTable())
-            ->columns($columns);
-
-        call_user_func_array([$query, 'values'], $values);
-
-        list($insertId, $created) = $query->execute($this->db());
-        $newPostIds = range($insertId, $insertId + $created - 1);
+        // Use individual inserts to ensure same transaction context as tests
+        $newPostIds = [];
+        foreach ($values as $value) {
+            $cleanValue = $this->removeNullValues($value);
+            $newPostIds[] = $this->executeInsert($cleanValue);
+        }
 
         // Loop over entities, and aggregate values by attribute
         // Combine post ids with entities
+        // Ensure arrays have same length before combining
+        $postCount = count($newPostIds);
+        $collectionCount = $collection->count();
+        if ($postCount !== $collectionCount) {
+            throw new \InvalidArgumentException("Post ID count ($postCount) does not match collection count ($collectionCount)");
+        }
         $postsById = collect($newPostIds)->combine($collection);
 
         // Grab values from post entities, combined with attribute key and post id
@@ -1521,7 +1525,7 @@ class PostRepository extends OhanzeeRepository implements
             ->join('form_stages', 'INNER')->on('form_stages.id', '=', 'form_attributes.form_stage_id')
             ->where('form_stages.form_id', '=', $form_id)
             ->where('form_attributes.type', '=', 'tags')
-            ->order_by('form_attributes.priority', 'ASC')
+            ->orderBy('form_attributes.priority', 'ASC')
             ->limit(1)
             ->execute($this->db());
 

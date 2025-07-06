@@ -19,9 +19,9 @@ use StreetSignal\Contracts\Repository\Entity\HXLFormAttributeHXLAttributeTagRepo
     as HXLFormAttributeHXLAttributeTagRepositoryContract;
 use StreetSignal\Contracts\Repository\ReadRepository;
 use StreetSignal\Contracts\Repository\SearchRepository;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 
-class HXLFormAttributeHXLAttributeTagRepository extends OhanzeeRepository implements
+class HXLFormAttributeHXLAttributeTagRepository extends BaseRepository implements
     HXLFormAttributeHXLAttributeTagRepositoryContract,
     SearchRepository,
     ReadRepository

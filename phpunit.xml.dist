@@ -34,5 +34,6 @@
     <env name="QUEUE_DRIVER" value="sync"/>
     <env name="MAIL_DRIVER" value="log"/>
     <env name="MAIL_PRETEND" value="true"/>
+    
   </php>
 </phpunit>

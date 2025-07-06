@@ -29,7 +29,7 @@ use StreetSignal\Contracts\Repository\Usecase\UserRegisterRepository;
 use StreetSignal\Contracts\Repository\Usecase\UserResetPasswordRepository;
 use StreetSignal\Contracts\Repository\Entity\UserRepository as UserRepositoryContract;
 
-class UserRepository extends OhanzeeRepository implements
+class UserRepository extends BaseRepository implements
     UserRepositoryContract,
     UserRegisterRepository,
     UserResetPasswordRepository

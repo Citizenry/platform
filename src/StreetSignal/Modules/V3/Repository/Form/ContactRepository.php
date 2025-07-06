@@ -16,7 +16,7 @@ use Ohanzee\DB;
 use StreetSignal\Core\Entity;
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Concerns\Event;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 use StreetSignal\Core\Tool\OhanzeeResolver;
 use StreetSignal\Contracts\Repository\SearchRepository;
 use StreetSignal\Contracts\Repository\Entity\FormRepository;
@@ -24,7 +24,7 @@ use StreetSignal\Contracts\Repository\Entity\MessageRepository;
 use StreetSignal\Contracts\Repository\Entity\FormContactRepository;
 use StreetSignal\Contracts\Repository\Entity\TargetedSurveyStateRepository;
 
-class ContactRepository extends OhanzeeRepository implements
+class ContactRepository extends BaseRepository implements
     FormContactRepository,
     SearchRepository
 {

@@ -20,7 +20,7 @@ use StreetSignal\Contracts\Entity;
 use StreetSignal\Modules\V3\Repository\Concerns\FormsTags;
 use StreetSignal\Contracts\Repository\Entity\FormRepository as FormRepositoryContract;
 
-class FormRepository extends OhanzeeRepository implements
+class FormRepository extends BaseRepository implements
     FormRepositoryContract
 {
     use FormsTags;

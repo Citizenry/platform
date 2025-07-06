@@ -21,7 +21,7 @@ use StreetSignal\Core\Entity\SavedSearch;
 use StreetSignal\Contracts\Repository\Entity\SetRepository as SetRepositoryContract;
 use StreetSignal\Contracts\Search;
 
-class SetRepository extends OhanzeeRepository implements SetRepositoryContract
+class SetRepository extends BaseRepository implements SetRepositoryContract
 {
     // Use the JSON transcoder to encode properties
     use Concerns\JsonTranscode;

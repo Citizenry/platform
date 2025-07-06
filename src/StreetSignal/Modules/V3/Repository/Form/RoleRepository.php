@@ -16,9 +16,9 @@ use Ohanzee\DB;
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Entity\FormRole;
 use StreetSignal\Contracts\Repository\Entity\FormRoleRepository;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 
-class RoleRepository extends OhanzeeRepository implements
+class RoleRepository extends BaseRepository implements
     FormRoleRepository
 {
     // OhanzeeRepository

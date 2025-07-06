@@ -19,7 +19,7 @@ use StreetSignal\Core\Entity\ApiKey;
 use StreetSignal\Contracts\Repository\Entity\ApiKeyRepository as ApiKeyRepositoryContract;
 use StreetSignal\Core\Concerns\AdminAccess;
 
-class ApiKeyRepository extends OhanzeeRepository implements ApiKeyRepositoryContract
+class ApiKeyRepository extends BaseRepository implements ApiKeyRepositoryContract
 {
     use AdminAccess;
 

@@ -16,7 +16,7 @@ use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Entity\Permission;
 use StreetSignal\Contracts\Repository\Entity\PermissionRepository as PermissionRepositoryContract;
 
-class PermissionRepository extends OhanzeeRepository implements
+class PermissionRepository extends BaseRepository implements
     PermissionRepositoryContract
 {
     // OhanzeeRepository

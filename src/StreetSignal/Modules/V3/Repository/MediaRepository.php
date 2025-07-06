@@ -17,7 +17,7 @@ use StreetSignal\Core\Entity\Media;
 use StreetSignal\Contracts\Repository\Entity\MediaRepository as MediaRepositoryContract;
 use StreetSignal\Core\Tool\Uploader;
 
-class MediaRepository extends OhanzeeRepository implements
+class MediaRepository extends BaseRepository implements
     MediaRepositoryContract
 {
     private $upload;

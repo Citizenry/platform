@@ -19,7 +19,7 @@ use StreetSignal\Contracts\Entity;
 use StreetSignal\Core\Concerns\UserContext;
 use StreetSignal\Contracts\Repository\Entity\TosRepository as TosRepositoryContract;
 
-class TosRepository extends OhanzeeRepository implements
+class TosRepository extends BaseRepository implements
     TosRepositoryContract
 {
     use UserContext;
