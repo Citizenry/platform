@@ -1,0 +1,32 @@
+{
+  "name": "streetsignal-platform-docs",
+  "version": "1.0.0",
+  "description": "StreetSignal Platform Documentation",
+  "scripts": {
+    "docs:install": "gitbook install",
+    "docs:serve": "gitbook serve",
+    "docs:build": "gitbook build",
+    "docs:pdf": "gitbook pdf . ./docs.pdf",
+    "docs:epub": "gitbook epub . ./docs.epub",
+    "docs:mobi": "gitbook mobi . ./docs.mobi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/streetsignal/platform.git"
+  },
+  "keywords": [
+    "streetsignal",
+    "documentation",
+    "platform",
+    "crisis-mapping",
+    "crowdsourcing"
+  ],
+  "author": "StreetSignal Team",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
