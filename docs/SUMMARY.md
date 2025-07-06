@@ -103,14 +103,7 @@
   * [Installing the bot](the-streetsignal-platform-facebook-bot/the-facebook-bot/installing-the-bot-for-development-and-testing.md)
   * [The bot script](the-streetsignal-platform-facebook-bot/the-facebook-bot/the-bot-script.md)
 
-## Hackathon and events
 
-* [Installathon, May 2019](hackathon-and-events/installathon-may-2019/README.md)
-  * [Welcome to the hackathon!](hackathon-and-events/installathon-may-2019/welcome-to-the-hackathon.md)
-* [Write/Speak/Code 2019](hackathon-and-events/write-speak-code-2019.md)
-* [Open Design: Bangalore](hackathon-and-events/open-design-bangalore.md)
-* [Open Design: Taipei](hackathon-and-events/open-design-taipei.md)
-* [📑 Google season of docs](hackathon-and-events/google-season-of-docs.md)
 
 ## Enhancement Proposals
 
