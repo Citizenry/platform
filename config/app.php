@@ -155,6 +155,9 @@ return [
         StreetSignal\Multisite\MultisiteServiceProvider::class,
         StreetSignal\DataSource\DataSourceServiceProvider::class,
         StreetSignal\Addons\Infobip\LaravelServiceProvider::class,
+        StreetSignal\Addons\AfricasTalking\ServiceProvider::class,
+        StreetSignal\Addons\HttpSMS\ServiceProvider::class,
+        StreetSignal\Addons\Mteja\ServiceProvider::class,
 
         /*
          * Application Service Providers...
