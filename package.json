@@ -2,13 +2,11 @@
   "name": "streetsignal-platform-docs",
   "version": "1.0.0",
   "description": "StreetSignal Platform Documentation",
+  "type": "module",
   "scripts": {
-    "docs:install": "gitbook install",
-    "docs:serve": "gitbook serve",
-    "docs:build": "gitbook build",
-    "docs:pdf": "gitbook pdf . ./docs.pdf",
-    "docs:epub": "gitbook epub . ./docs.epub",
-    "docs:mobi": "gitbook mobi . ./docs.mobi"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "repository": {
     "type": "git",
@@ -24,9 +22,9 @@
   "author": "StreetSignal Team",
   "license": "AGPL-3.0",
   "devDependencies": {
-    "gitbook-cli": "^2.3.2"
+    "vitepress": "^1.0.0"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=18.0.0"
   }
 }
