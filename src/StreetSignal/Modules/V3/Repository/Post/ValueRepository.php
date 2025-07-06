@@ -14,12 +14,12 @@ namespace StreetSignal\Modules\V3\Repository\Post;
 
 use Ohanzee\DB;
 use StreetSignal\Core\Entity\PostValue;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 use StreetSignal\Contracts\Repository\Entity\PostValueRepository;
 use StreetSignal\Contracts\Repository\Usecase\ValuesForPostRepository;
 use StreetSignal\Contracts\Repository\Usecase\UpdatePostValueRepository;
 
-abstract class ValueRepository extends OhanzeeRepository implements
+abstract class ValueRepository extends BaseRepository implements
     PostValueRepository,
     ValuesForPostRepository,
     UpdatePostValueRepository

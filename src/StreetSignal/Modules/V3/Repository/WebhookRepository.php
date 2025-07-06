@@ -21,7 +21,7 @@ use StreetSignal\Core\Concerns\AdminAccess;
 use StreetSignal\Core\Concerns\UserContext;
 use StreetSignal\Contracts\Repository\Entity\WebhookRepository as WebhookRepositoryContract;
 
-class WebhookRepository extends OhanzeeRepository implements WebhookRepositoryContract
+class WebhookRepository extends BaseRepository implements WebhookRepositoryContract
 {
     use UserContext;
     use AdminAccess;

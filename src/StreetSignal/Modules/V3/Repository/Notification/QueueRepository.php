@@ -16,9 +16,9 @@ use StreetSignal\Contracts\Entity;
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Entity\NotificationQueue;
 use StreetSignal\Contracts\Repository\Entity\NotificationQueueRepository as NotificationQueueRepositoryContract;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 
-class QueueRepository extends OhanzeeRepository implements NotificationQueueRepositoryContract
+class QueueRepository extends BaseRepository implements NotificationQueueRepositoryContract
 {
     protected function getTable()
     {

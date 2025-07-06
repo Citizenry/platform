@@ -18,7 +18,7 @@ use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Entity\Role;
 use StreetSignal\Contracts\Repository\Entity\RoleRepository as RoleRepositoryContract;
 
-class RoleRepository extends OhanzeeRepository implements
+class RoleRepository extends BaseRepository implements
     RoleRepositoryContract
 {
     // OhanzeeRepository

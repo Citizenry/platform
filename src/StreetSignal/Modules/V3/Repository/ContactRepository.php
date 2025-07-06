@@ -24,7 +24,7 @@ use StreetSignal\Contracts\Repository\SearchRepository;
 use StreetSignal\Contracts\Repository\UpdateRepository;
 use StreetSignal\Contracts\Repository\Entity\ContactRepository as ContactRepositoryContract;
 
-class ContactRepository extends OhanzeeRepository implements
+class ContactRepository extends BaseRepository implements
     ContactRepositoryContract,
     CreateRepository,
     UpdateRepository,
@@ -138,7 +138,9 @@ class ContactRepository extends OhanzeeRepository implements
         $query = DB::insert($this->getTable())
             ->columns($columns);
 
-        call_user_func_array([$query, 'values'], $values);
+        foreach ($values as $value) {
+            $query->values($value);
+        }
 
         list($insertId, $created) = $query->execute($this->db());
 

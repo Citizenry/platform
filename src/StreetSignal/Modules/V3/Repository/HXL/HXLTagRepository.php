@@ -17,12 +17,12 @@ use Ohanzee\Database;
 use StreetSignal\Core\Entity\HXL\HXLTag;
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Tool\OhanzeeResolver;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 use StreetSignal\Contracts\Repository\ReadRepository;
 use StreetSignal\Contracts\Repository\SearchRepository;
 use StreetSignal\Contracts\Repository\Entity\HXLTagRepository as HXLTagRepositoryContract;
 
-class HXLTagRepository extends OhanzeeRepository implements
+class HXLTagRepository extends BaseRepository implements
     HXLTagRepositoryContract,
     SearchRepository,
     ReadRepository

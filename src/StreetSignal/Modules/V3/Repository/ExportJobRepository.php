@@ -26,7 +26,7 @@ use StreetSignal\Modules\V3\Events\SendToHDXEvent;
 use StreetSignal\Contracts\Repository\Entity\PostRepository;
 use StreetSignal\Contracts\Repository\Entity\ExportJobRepository as ExportJobRepositoryContract;
 
-class ExportJobRepository extends OhanzeeRepository implements ExportJobRepositoryContract
+class ExportJobRepository extends BaseRepository implements ExportJobRepositoryContract
 {
     // Use the JSON transcoder to encode properties
     use Concerns\JsonTranscode;

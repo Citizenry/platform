@@ -16,7 +16,7 @@ use Ohanzee\DB;
 use StreetSignal\Core\Entity;
 use StreetSignal\Contracts\Repository\Entity\TargetedSurveyStateRepository as TargetedSurveyStateRepositoryContract;
 
-class TargetedSurveyStateRepository extends OhanzeeRepository implements
+class TargetedSurveyStateRepository extends BaseRepository implements
     TargetedSurveyStateRepositoryContract
 {
     // OhanzeeRepository

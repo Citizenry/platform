@@ -18,14 +18,14 @@ use StreetSignal\Core\Entity\Tag;
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Contracts\Entity;
 use StreetSignal\Contracts\ValidationEngine;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 use StreetSignal\Modules\V3\Repository\Concerns;
 use StreetSignal\Contracts\Repository\Usecase\DeleteTagRepository;
 use StreetSignal\Contracts\Repository\Usecase\UpdateTagRepository;
 use StreetSignal\Contracts\Repository\Usecase\UpdatePostTagRepository;
 use StreetSignal\Contracts\Repository\Entity\TagRepository as TagRepositoryContract;
 
-class TagRepository extends OhanzeeRepository implements
+class TagRepository extends BaseRepository implements
     UpdateTagRepository,
     DeleteTagRepository,
     UpdatePostTagRepository,
@@ -148,7 +148,9 @@ class TagRepository extends OhanzeeRepository implements
         $query = DB::insert($this->getTable())
             ->columns($columns);
 
-        call_user_func_array([$query, 'values'], $values);
+        foreach ($values as $value) {
+            $query->values($value);
+        }
 
         list($insertId, $created) = $query->execute($this->db());
 

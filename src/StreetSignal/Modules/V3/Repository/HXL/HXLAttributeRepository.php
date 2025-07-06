@@ -15,12 +15,12 @@ namespace StreetSignal\Modules\V3\Repository\HXL;
 use Ohanzee\Database;
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Core\Entity\HXL\HXLAttribute;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 use StreetSignal\Contracts\Repository\ReadRepository;
 use StreetSignal\Contracts\Repository\SearchRepository;
 use StreetSignal\Contracts\Repository\Entity\HXLAttributeRepository as HXLAttributeRepositoryContract;
 
-class HXLAttributeRepository extends OhanzeeRepository implements
+class HXLAttributeRepository extends BaseRepository implements
     HXLAttributeRepositoryContract,
     SearchRepository,
     ReadRepository

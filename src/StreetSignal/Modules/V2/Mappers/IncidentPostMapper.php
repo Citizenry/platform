@@ -7,7 +7,7 @@ use StreetSignal\Modules\V2\Import;
 use StreetSignal\Core\Entity\Post;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
-use League\Flysystem\Util\MimeType;
+use League\MimeTypeDetection\FinfoMimeTypeDetector;
 use StreetSignal\Modules\V2\Contracts\Mapper;
 use StreetSignal\Modules\V2\Contracts\ImportDataTools;
 use StreetSignal\Modules\V2\Contracts\ImportMappingRepository;
@@ -333,7 +333,8 @@ class IncidentPostMapper implements Mapper
                 // If this is a photo, save caption too
                 if ($type === self::MEDIA_PHOTO) {
                     $extension = pathinfo($media->media_link, PATHINFO_EXTENSION);
-                    $mimeType = MimeType::detectByFileExtension(strtolower($extension)) ?: 'text/plain';
+                    $detector = new FinfoMimeTypeDetector();
+                $mimeType = $detector->detectMimeTypeFromPath($filename) ?: 'text/plain';
 
                     return [
                         'o_filename' => $media->media_link,

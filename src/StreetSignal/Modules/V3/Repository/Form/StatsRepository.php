@@ -19,11 +19,11 @@ use StreetSignal\Core\Entity;
 use StreetSignal\Core\Concerns\Event;
 use StreetSignal\Core\Tool\OhanzeeResolver;
 use StreetSignal\Modules\V3\Repository\FormRepository;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 use StreetSignal\Contracts\Repository\SearchRepository;
 use StreetSignal\Contracts\Repository\Entity\FormStatsRepository;
 
-class StatsRepository extends OhanzeeRepository implements
+class StatsRepository extends BaseRepository implements
     FormStatsRepository,
     SearchRepository
 {

@@ -23,7 +23,7 @@ use StreetSignal\Contracts\Repository\Usecase\CreateMessageRepository;
 use StreetSignal\Contracts\Repository\Usecase\UpdateMessageRepository;
 use StreetSignal\Contracts\Repository\Entity\MessageRepository as MessageRepositoryContract;
 
-class MessageRepository extends OhanzeeRepository implements
+class MessageRepository extends BaseRepository implements
     MessageRepositoryContract,
     UpdateMessageRepository,
     CreateMessageRepository
@@ -65,8 +65,7 @@ class MessageRepository extends OhanzeeRepository implements
     protected function setSearchConditions(SearchData $search)
     {
         $query = $this->search_query
-            ->join('contacts')
-                ->on('contact_id', '=', 'contacts.id');
+            ->leftJoin('contacts', 'messages.contact_id', '=', 'contacts.id');
 
         if ($search->box === 'outbox') {
             // Outbox only shows outgoing messages
@@ -127,20 +126,20 @@ class MessageRepository extends OhanzeeRepository implements
         $direction = Message::OUTGOING;
         $query = $this->selectQuery(compact('status', 'direction'))
             ->limit($limit)
-            ->order_by('created', 'ASC')
+            ->orderBy('messages.created', 'ASC')
             // Include contact in same query
-            ->join('contacts', 'LEFT')->on('contacts.id', '=', 'messages.contact_id')
+            ->leftJoin('contacts', 'contacts.id', '=', 'messages.contact_id')
             ->select('contacts.contact')
-            ->select(['contacts.type', 'contact_type'])
+            ->select(['contacts.type as contact_type'])
             ;
 
         if ($data_source) {
             $query->where('messages.data_source', '=', $data_source);
         }
 
-        $results = $query->execute($this->db());
+        $results = $query->get();
 
-        return $this->getCollection($results->as_array());
+        return $this->getCollection($results->toArray());
     }
 
     // MessageRepository
@@ -150,11 +149,11 @@ class MessageRepository extends OhanzeeRepository implements
         $direction = Message::OUTGOING;
         $query = $this->selectQuery(compact('status', 'direction'))
             ->limit($limit)
-            ->order_by('created', 'ASC')
+            ->orderBy('messages.created', 'ASC')
             // Include contact in same query
-            ->join('contacts', 'LEFT')->on('contacts.id', '=', 'messages.contact_id')
+            ->leftJoin('contacts', 'contacts.id', '=', 'messages.contact_id')
             ->select('contacts.contact')
-            ->select(['contacts.type', 'contact_type'])
+            ->select(['contacts.type as contact_type'])
             // Only return messages without a specified provider
             ->where('messages.data_source', 'IS', null)
             ;
@@ -163,9 +162,9 @@ class MessageRepository extends OhanzeeRepository implements
             $query->where('messages.type', '=', $type);
         }
 
-        $results = $query->execute($this->db());
+        $results = $query->get();
 
-        return $this->getCollection($results->as_array());
+        return $this->getCollection($results->toArray());
     }
 
     // MessageRepository
@@ -236,7 +235,9 @@ class MessageRepository extends OhanzeeRepository implements
         $query = DB::insert($this->getTable())
             ->columns($columns);
 
-        call_user_func_array([$query, 'values'], $values);
+        foreach ($values as $value) {
+            $query->values($value);
+        }
 
         list($insertId, $created) = $query->execute($this->db());
 
@@ -283,14 +284,14 @@ class MessageRepository extends OhanzeeRepository implements
         $query = DB::select([DB::expr('ABS(' . $this->getTable() . '.' . 'data_source_message_id' . ')'), 'uid'])
             ->from($this->getTable())
             ->where('data_source', '=', $data_source)
-            ->order_by(
+            ->orderBy(
                 'uid',
                 'desc'
             )
             ->limit(1);
-        $result =   $query->execute($this->db());
+        $result = $query->first();
 
-        $last_uid = $result->get('uid', 0) ? $result->get('uid', 0) : null;
+        $last_uid = $result && isset($result->uid) ? $result->uid : null;
 
         return $last_uid;
     }

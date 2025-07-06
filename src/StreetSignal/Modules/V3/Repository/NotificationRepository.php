@@ -19,7 +19,7 @@ use StreetSignal\Core\Concerns\UserContext;
 use StreetSignal\Core\Entity\Notification;
 use StreetSignal\Contracts\Repository\Entity\NotificationRepository as NotificationRepositoryContract;
 
-class NotificationRepository extends OhanzeeRepository implements NotificationRepositoryContract
+class NotificationRepository extends BaseRepository implements NotificationRepositoryContract
 {
     use UserContext;
     use AdminAccess;

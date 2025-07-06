@@ -19,12 +19,12 @@ use StreetSignal\Core\Entity\PostLock;
 use League\Event\ListenerInterface;
 use StreetSignal\Contracts\Entity;
 use StreetSignal\Core\Concerns\UserContext;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 use StreetSignal\Contracts\Repository\Entity\PostLockRepository;
 use StreetSignal\Modules\V3\Repository\UserRepository;
 use StreetSignal\Core\Tool\OhanzeeResolver;
 
-class LockRepository extends OhanzeeRepository implements PostLockRepository
+class LockRepository extends BaseRepository implements PostLockRepository
 {
     // Provides getUser()
     use UserContext;

@@ -15,10 +15,10 @@ namespace StreetSignal\Modules\V3\Repository\Webhook;
 use StreetSignal\Core\Tool\SearchData;
 use StreetSignal\Contracts\Entity;
 use StreetSignal\Core\Entity\WebhookJob;
-use StreetSignal\Modules\V3\Repository\OhanzeeRepository;
+use StreetSignal\Modules\V3\Repository\BaseRepository;
 use StreetSignal\Contracts\Repository\Entity\WebhookJobRepository as WebhookJobRepositoryContract;
 
-class JobRepository extends OhanzeeRepository implements WebhookJobRepositoryContract
+class JobRepository extends BaseRepository implements WebhookJobRepositoryContract
 {
     protected function getTable()
     {

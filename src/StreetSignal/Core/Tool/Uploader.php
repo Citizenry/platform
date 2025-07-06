@@ -15,7 +15,7 @@ namespace StreetSignal\Core\Tool;
 use League\Flysystem\Filesystem;
 use StreetSignal\Core\Tool\UploadData;
 use StreetSignal\Core\Tool\FileData;
-use League\Flysystem\Util\MimeType;
+use League\MimeTypeDetection\FinfoMimeTypeDetector;
 use StreetSignal\Multisite\MultisiteManager;
 
 class Uploader
@@ -63,11 +63,12 @@ class Uploader
         // Stream the temporary file into the filesystem, creating or overwriting.
         $stream = fopen($file->tmp_name, 'r+');
         $extension = pathinfo($filepath, PATHINFO_EXTENSION);
-        $mimeType = MimeType::detectByFileExtension($extension) ?: 'text/plain';
+        $detector = new FinfoMimeTypeDetector();
+        $mimeType = $detector->detectMimeTypeFromFile($file->tmp_name) ?: 'text/plain';
         $config = ['mimetype' => $mimeType];
 
         try {
-            $this->fs->putStream($filepath, $stream, $config);
+            $this->fs->writeStream($filepath, $stream, $config);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             // Flysystem and FlysystemRackspace are very leaky abstractions
             // so we have to manually catch guzzle errors here
@@ -86,8 +87,8 @@ class Uploader
         }
 
         // Get meta information about the file.
-        $size = $this->fs->getSize($filepath);
-        $type = $this->fs->getMimetype($filepath);
+        $size = $this->fs->fileSize($filepath);
+        $type = $this->fs->mimeType($filepath);
 
         // Get width and height of file, if it is an image.
         if ($this->isImage($type)) {
