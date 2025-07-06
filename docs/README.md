@@ -1,7 +1,5 @@
 # StreetSignal Platform
 
-[![Build Status](https://travis-ci.org/streetsignal/platform.png)](https://travis-ci.org/streetsignal/platform) [![Coverage Status](https://coveralls.io/repos/github/streetsignal/platform/badge.svg)](https://coveralls.io/github/streetsignal/platform) [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
 ![StreetSignal Logo](streetsignal-logo.png)
 
 ## What is StreetSignal?
