@@ -10,7 +10,7 @@ StreetSignal is a fork of Ushahidi Platform and is an open source web applicatio
 
 This repository contains the backend code with the REST API implementation.
 
-Head over to the [Platform Client repository][client] for the browser app code.
+Head over to the [Platform Client repository](https://github.com/Citizenry/streetsignal-platform-clients) for the browser app code.
 
 ## 🚀 Quickstart (Full Stack with Docker)
 
