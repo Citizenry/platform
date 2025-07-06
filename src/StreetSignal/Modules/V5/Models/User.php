@@ -26,6 +26,7 @@ class User extends BaseModel
         'password',
         'role',
         'language',
+        'avatar_path',
         'created',
         'updated'
     ];

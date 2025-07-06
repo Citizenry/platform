@@ -37,6 +37,17 @@ class UserResource extends Resource
             '00000000000000000000000000000000';
     }
 
+    private function getAvatarUrl()
+    {
+        if ($this->avatar_path) {
+            // Return full URL to custom avatar
+            return url('storage/avatars/' . $this->avatar_path);
+        }
+        
+        // Fall back to Gravatar
+        return $this->getGravatar($this->email);
+    }
+
     /**
      * Transform the resource into an array.
      *
@@ -57,7 +68,7 @@ class UserResource extends Resource
             'failed_attempts' => $this->failed_attempts,
             'last_login' => $this->last_login,
             'last_attempt' => $this->last_attempt,
-            'gravatar' => $this->getGravatar($this->email),
+            'gravatar' => $this->getAvatarUrl(),
             'contacts' => [],
             'permissions' => $this->getResourcePermissions(),
             'allowed_privileges' => $this->getResourcePrivileges()

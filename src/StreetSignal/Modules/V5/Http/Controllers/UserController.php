@@ -17,6 +17,8 @@ use StreetSignal\Modules\V5\DTO\UserSearchFields;
 use StreetSignal\Modules\V5\Requests\UserRequest;
 use Illuminate\Support\Facades\Log;
 use StreetSignal\Core\Exception\NotFoundException;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
 
 class UserController extends V5Controller
 {
@@ -158,4 +160,46 @@ class UserController extends V5Controller
         $this->commandBus->handle(new DeleteUserCommand($id));
         return $this->deleteResponse($id);
     } //end store()
+
+    /**
+     * Upload avatar for the authenticated user.
+     *
+     * @param Request $request
+     * @return UserResource
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function uploadAvatar(Request $request)
+    {
+        $id = Auth::id();
+        if (!$id) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+        $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+
+        $user = $this->queryBus->handle(new FetchUserByIdQuery($id));
+        $this->authorize('update', $user);
+
+        /** @var UploadedFile $file */
+        $file = $request->file('avatar');
+        
+        // Delete old avatar if exists
+        if ($user->avatar_path && Storage::disk('public')->exists('avatars/' . $user->avatar_path)) {
+            Storage::disk('public')->delete('avatars/' . $user->avatar_path);
+        }
+
+        // Generate unique filename
+        $filename = $id . '_' . time() . '.' . $file->getClientOriginalExtension();
+        
+        // Store the file
+        $file->storeAs('avatars', $filename, 'public');
+
+        // Update user record
+        $user->avatar_path = $filename;
+        $user->save();
+
+        return new UserResource($user);
+    } //end uploadAvatar()
 } //end class

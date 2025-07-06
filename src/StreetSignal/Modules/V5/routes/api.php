@@ -177,6 +177,7 @@ $router->group([
         function () use ($router) {
             $router->get('/me', 'UserController@showMe');
             $router->put('/me', 'UserController@updateMe');
+            $router->post('/me/avatar', 'UserController@uploadAvatar');
         }
     );
 
