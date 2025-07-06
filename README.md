@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="logo-hz.png" alt="StreetSignal Logo" width="300"/>
+</div>
+
 # StreetSignal Platform
 
 ## What is StreetSignal Platform?
@@ -7,6 +11,78 @@ StreetSignal is a fork of Ushahidi Platform and is an open source web applicatio
 This repository contains the backend code with the REST API implementation.
 
 Head over to the [Platform Client repository][client] for the browser app code.
+
+## 🚀 Quickstart (Full Stack with Docker)
+
+This guide will help you get the complete StreetSignal application stack running locally, including both the backend API and frontend client.
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/)
+- [Make](https://www.gnu.org/software/make/) command (for build automation)
+- [Git](https://git-scm.com/) (to clone the frontend repository)
+
+### 1. Clone Required Repositories
+
+You'll need both the platform (backend) and client (frontend) repositories:
+
+```bash
+# Clone the platform repository (if you haven't already)
+git clone https://github.com/StreetSignal/platform.git
+cd platform
+
+# Clone the client repository to the expected location
+git clone https://github.com/StreetSignal/platform-client-mzima.git /home/jascha/Documents/Citizenry/platform-client-mzima
+```
+
+### 2. Start the Full Stack
+
+From the platform directory, run:
+
+```bash
+make start
+```
+
+This command will:
+- Build all Docker containers
+- Set up the database with migrations and seed data
+- Start the backend API server
+- Build and start the frontend client
+- Configure all necessary services (MySQL, Redis, etc.)
+
+### 3. Access the Application
+
+Once all services are running:
+
+- **Frontend (Web Client)**: http://localhost:3000
+- **Backend API**: http://localhost:8081
+- **Database**: MySQL on port 33061
+
+### 4. Default Credentials
+
+The system will be seeded with default data. Check the database seeder files for default user credentials.
+
+### Other Useful Commands
+
+```bash
+# View logs from all services
+make logs
+
+# Stop all services
+make stop
+
+# Restart services (with rebuild)
+make start
+
+# Apply changes without full rebuild
+make apply
+
+# Enter the platform container for debugging
+make enter
+
+# Completely tear down (including database)
+make down
+```
 
 ## Requirements
 
@@ -24,7 +100,7 @@ The shortest path to get up and running is:
 - Install Make command (parses Makefile)
 - Run `make start`
 
-The backend will be listening on localhost:8080.
+The backend will be listening on localhost:8081.
 
 > **What about the browser client application?**
 
