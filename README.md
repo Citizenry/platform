@@ -32,7 +32,7 @@ git clone https://github.com/StreetSignal/platform.git
 cd platform
 
 # Clone the client repository to the expected location
-git clone https://github.com/StreetSignal/platform-client-mzima.git /home/jascha/Documents/Citizenry/platform-client-mzima
+git clone https://github.com/StreetSignal/platform-client-mzima.git /path/to/your/repos/platform-client-mzima
 ```
 
 ### 2. Start the Full Stack
@@ -104,7 +104,7 @@ The backend will be listening on localhost:8081.
 
 > **What about the browser client application?**
 
-> Once your Platform backend is running, head over to the [platform-client-mzima](https://github.com/StreetSignal/platform-client-mzima) repository to get the in-browser Platform experience!
+> Once your Platform backend is running, head over to the [platform-client-mzima](https://github.com/Citizenry/streetsignal-platform-clients) repository to get the in-browser Platform experience!
 
 ### Other helpful commands
 
