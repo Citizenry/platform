@@ -186,8 +186,8 @@ class UserController extends V5Controller
         $file = $request->file('avatar');
         
         // Delete old avatar if exists
-        if ($user->avatar_path && Storage::disk('public')->exists('avatars/' . $user->avatar_path)) {
-            Storage::disk('public')->delete('avatars/' . $user->avatar_path);
+        if ($user->avatar_path && Storage::disk('public')->exists($user->avatar_path)) {
+            Storage::disk('public')->delete($user->avatar_path);
         }
 
         // Generate unique filename
@@ -197,7 +197,7 @@ class UserController extends V5Controller
         $file->storeAs('avatars', $filename, 'public');
 
         // Update user record
-        $user->avatar_path = $filename;
+        $user->avatar_path = 'avatars/' . $filename;
         $user->save();
 
         return new UserResource($user);
