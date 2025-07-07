@@ -28,11 +28,11 @@ You'll need both the platform (backend) and client (frontend) repositories:
 
 ```bash
 # Clone the platform repository (if you haven't already)
-git clone https://github.com/StreetSignal/platform.git
+git clone https://github.com/StreetSignal/streetsignal-platform.git
 cd platform
 
 # Clone the client repository to the expected location
-git clone https://github.com/StreetSignal/platform-client-mzima.git /path/to/your/repos/platform-client-mzima
+git clone https://github.com/Citizenry/streetsignal-platform-clients.git /path/to/your/repos/platform-client-mzima
 ```
 
 ### 2. Start the Full Stack
